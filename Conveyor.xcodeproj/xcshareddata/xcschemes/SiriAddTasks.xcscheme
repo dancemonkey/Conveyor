@@ -58,6 +58,7 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
+      intentQueryString = "add donald duck to today list in Conveyor"
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
@@ -67,21 +68,32 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.notificationcenterui">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "10807E29225CC28900F9D9B8"
-            BuildableName = "Conveyor.app"
-            BlueprintName = "Conveyor"
+            BlueprintIdentifier = "10807E8B225CC48500F9D9B8"
+            BuildableName = "SiriAddTasks.appex"
+            BlueprintName = "SiriAddTasks"
             ReferencedContainer = "container:Conveyor.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "10807E8B225CC48500F9D9B8"
+            BuildableName = "SiriAddTasks.appex"
+            BlueprintName = "SiriAddTasks"
+            ReferencedContainer = "container:Conveyor.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
+      intentQueryString = "add donald duck to today list in Conveyor"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
