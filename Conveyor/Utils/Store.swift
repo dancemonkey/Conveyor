@@ -16,6 +16,12 @@ class Store {
   convenience init(testing: Bool) {
     self.init()
     self.testing = testing
+    if !testing {
+      container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    } else {
+      container = self.mockContainer
+    }
+    context = container.viewContext
   }
   private var testing: Bool = false
   private var testingModel: NSManagedObjectModel = {
@@ -34,18 +40,7 @@ class Store {
   
   // MARK: CoreData stack properties
   private var container: NSPersistentContainer!
-  
-  var context: NSManagedObjectContext {
-    get {
-      if !testing {
-        container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-      } else {
-        container = self.mockContainer
-      }
-      let context = container.viewContext
-      return context
-    }
-  }
+  var context: NSManagedObjectContext!
   
   // MARK: Store service functions
   
@@ -122,7 +117,8 @@ class Store {
   
   // MARK: Item Creation
   func addNewItem(text: String?, in bucket: Bucket) {
-    let item = Item(context: self.context)
+//    let item = Item(context: context)
+    let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
     item.bucket = bucket.rawValue
     switch bucket {
     case .today:

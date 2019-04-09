@@ -19,21 +19,6 @@ enum Bucket: String {
 @objc(Item)
 public class Item: NSManagedObject {
   
-  //  var isOverdue: Bool {
-  //    get {
-  //      guard let bucket = Bucket(rawValue: self.bucket ?? "") else { return false }
-  //      if bucket == .today {
-  //        guard let changeDate = Store().getNextBucketChange() else { return false }
-  //        if changeDate < Date() {
-  //          return true
-  //        }
-  //      }
-  //      return false
-  //    }
-  //  }
-  
-  //  var isOverDue: Bool = false
-  
   func complete() {
     self.bucket = Bucket.today.rawValue
     self.state = ItemState.done.rawValue

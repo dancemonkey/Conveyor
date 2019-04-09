@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var timer: Timer?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let store = Store()
+    let store = Store(testing: false)
     let center = UNUserNotificationCenter.current()
     guard let _ = store.getNextBucketChange() else {
       store.setNextBucketChange()
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func shouldChangeBuckets() -> Bool {
-    let store = Store()
+    let store = Store(testing: false)
     guard let changeDate = store.getNextBucketChange() else {
       return false
     }
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func changeAllItemBuckets() {
     DispatchQueue.main.async {
-      Store().changeAllItemBuckets()
+      Store(testing: false).changeAllItemBuckets()
     }
   }
   
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UNUserNotificationCenter.current().getNotificationSettings { (settings) in
       if settings.authorizationStatus == .authorized {
         DispatchQueue.main.async {
-          let store = Store()
+          let store = Store(testing: false)
           application.applicationIconBadgeNumber = store.getBadgeCount()
         }
       }
@@ -106,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     if shouldChangeBuckets() {
       changeAllItemBuckets()
-      let store = Store()
+      let store = Store(testing: false)
       DispatchQueue.main.async {
         application.applicationIconBadgeNumber = store.getBadgeCount()
       }
@@ -125,10 +125,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      application to it. This property is optional since there are legitimate
      error conditions that could cause the creation of the store to fail.
      */
-    let container = NSPersistentContainer(name: "ToToLa")
+    let container = NSPersistentContainer(name: "Conveyor")
     
     // setting up group access
-    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.DrewLanning.conveyor")!.appendingPathComponent("ToToLa.sqlite")
+    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.DrewLanning.conveyor")!.appendingPathComponent("Conveyor.sqlite")
     let description = NSPersistentStoreDescription()
     description.shouldInferMappingModelAutomatically = true
     description.shouldMigrateStoreAutomatically = true

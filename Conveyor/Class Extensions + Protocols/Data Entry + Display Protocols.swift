@@ -25,13 +25,13 @@ protocol ItemDisplayer: AnyObject {
 
 extension ItemDisplayer where Self: ItemListVC {
   func initializeFRC() -> NSFetchedResultsController<Item> {
-    let store = Store()
+    let store = Store(testing: false)
     let context = store.context
     let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
     let predicate = NSPredicate(format: "bucket == %@", "\(self.title!.lowercased())")
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
     fetchRequest.predicate = predicate
-    let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }
   

@@ -30,6 +30,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     setupKeyboardObserver()
     tableView.delegate = self
     tableView.dataSource = self
+    
     frc = initializeFRC()
     frc.delegate = self
     do {
@@ -195,14 +196,14 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
     let bucket = Bucket(rawValue: item.bucket ?? "")!
     var actions: [UIContextualAction] = []
     let delete = UIContextualAction(style: .destructive, title: nil) { (action, view, success: (Bool) -> Void) in
-      let store = Store()
+      let store = Store(testing: false)
       store.delete(item: item)
       store.save()
       success(true)
     }
     let move = UIContextualAction(style: .normal, title: nil) { (_, _, success: @escaping (Bool) -> Void) in
       guard let alert = AlertFactory.move(item: item, completion: { [weak self] in
-        let store = Store()
+        let store = Store(testing: false)
         store.save()
         if item.bucket!.lowercased() != self?.title!.lowercased() {
           self?.showToast(from: .bottom, with: "Moved to \(item.bucket!.capitalized)")
@@ -219,7 +220,7 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
     actions.append(move)
     if bucket == .later {
       let hold = UIContextualAction(style: .normal, title: nil) { [weak self] (_, _, success: @escaping (Bool) -> Void) in
-        let store = Store()
+        let store = Store(testing: false)
         let holdSetting = Settings.lockOption()
         if itemState == .held {
           item.unHold()
@@ -257,7 +258,7 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
     let item = items[indexPath.row]
     let itemState = ItemState(rawValue: item.state!)!
     let complete = UIContextualAction(style: .normal, title: nil) { [weak self] (_, _, success: (Bool) -> Void) in
-      let store = Store()
+      let store = Store(testing: false)
       let doneSetting = Settings.doneOption()
       if itemState == .done {
         item.unComplete()
@@ -338,7 +339,7 @@ extension ItemListVC {
         button.tintColor = ColorStyles.primaryFaded
       }
     }
-    let store = Store()
+    let store = Store(testing: false)
     guard let text = self.entryField.text else {
       stopEditing()
       return
