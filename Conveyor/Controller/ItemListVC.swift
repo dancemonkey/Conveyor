@@ -33,11 +33,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     
     frc = initializeFRC()
     frc.delegate = self
-    do {
-      try frc.performFetch()
-    } catch {
-      print("stop trying to make fetch happen")
-    }
+    performFetch()
     if INPreferences.siriAuthorizationStatus() == .notDetermined {
       INPreferences.requestSiriAuthorization { (status) in
         if status == .authorized {
@@ -50,6 +46,14 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateHeading()
+  }
+  
+  func performFetch() {
+    do {
+      try frc.performFetch()
+    } catch {
+      print("stop trying to make fetch happen")
+    }
   }
   
   func applyGlobalStyles() {

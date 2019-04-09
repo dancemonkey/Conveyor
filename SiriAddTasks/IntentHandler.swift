@@ -8,7 +8,6 @@
 
 import Intents
 import CoreData
-//import Conveyor
 
 class IntentHandler: INExtension {
   
@@ -31,7 +30,6 @@ class IntentHandler: INExtension {
     }()
   
   override func handler(for intent: INIntent) -> Any {
-    print("handling intent")
     // This is the default implementation.  If you want different objects to handle different intents,
     // you can override this and return the handler you want for that particular intent.
     
@@ -55,12 +53,11 @@ class IntentHandler: INExtension {
     }
   
     func add(tasks: [INSpeakableString], to list: Bucket) {
-      print("adding tasks to model")
       let context = persistentContainer.viewContext
       for task in tasks {
-        let item = Item(context: context)
+        let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
         item.title = task.spokenPhrase
-        item.state = .none
+        item.state = ItemState.none.rawValue
         item.bucket = list.rawValue
         item.creation = Date() as NSDate
       }
@@ -76,10 +73,8 @@ class IntentHandler: INExtension {
 extension IntentHandler: INAddTasksIntentHandling {
 
   public func handle(intent: INAddTasksIntent, completion: @escaping (INAddTasksIntentResponse) -> Void) {
-    print("handling addTasksIntent")
     let list = intent.targetTaskList
     guard let title = list?.title else {
-      print("failed to find list title")
       completion(INAddTasksIntentResponse(code: .failure, userActivity: nil))
       return
     }
@@ -93,7 +88,6 @@ extension IntentHandler: INAddTasksIntentHandling {
     let response = INAddTasksIntentResponse(code: .success, userActivity: nil)
     response.modifiedTaskList = list
     response.addedTasks = tasks
-    print(response)
     completion(response)
   }
 

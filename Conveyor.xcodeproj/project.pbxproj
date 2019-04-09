@@ -14,7 +14,6 @@
 		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2D225CC28900F9D9B8 /* AppDelegate.swift */; };
 		10807E30225CC28900F9D9B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2F225CC28900F9D9B8 /* ViewController.swift */; };
-		10807E33225CC28900F9D9B8 /* MainBackup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10807E31225CC28900F9D9B8 /* MainBackup.storyboard */; };
 		10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
 		10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */; };
@@ -86,7 +85,6 @@
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10807E2D225CC28900F9D9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10807E2F225CC28900F9D9B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		10807E32225CC28900F9D9B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainBackup.storyboard; sourceTree = "<group>"; };
 		10807E35225CC28900F9D9B8 /* Conveyor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conveyor.xcdatamodel; sourceTree = "<group>"; };
 		10807E37225CC28C00F9D9B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10807E3A225CC28C00F9D9B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				10807E58225CC2F500F9D9B8 /* Class Extensions + Protocols */,
 				10807E5F225CC30E00F9D9B8 /* Utils */,
 				10807E2D225CC28900F9D9B8 /* AppDelegate.swift */,
-				10807E31225CC28900F9D9B8 /* MainBackup.storyboard */,
 				101BCD51225CC8CC007470B9 /* Main.storyboard */,
 				10807E37225CC28C00F9D9B8 /* Assets.xcassets */,
 				10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */,
@@ -364,6 +361,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -415,7 +415,6 @@
 				10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */,
 				101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */,
 				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
-				10807E33225CC28900F9D9B8 /* MainBackup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,14 +504,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		10807E31225CC28900F9D9B8 /* MainBackup.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				10807E32225CC28900F9D9B8 /* Base */,
-			);
-			name = MainBackup.storyboard;
-			sourceTree = "<group>";
-		};
 		10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
