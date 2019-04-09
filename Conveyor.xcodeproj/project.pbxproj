@@ -14,6 +14,35 @@
 		10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
 		10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */; };
 		10807E46225CC28C00F9D9B8 /* ConveyorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E45225CC28C00F9D9B8 /* ConveyorTests.swift */; };
+		10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E51225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf */; };
+		10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E52225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf */; };
+		10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E53225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf */; };
+		10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */; };
+		10807E5D225CC2F500F9D9B8 /* UITextField ID Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */; };
+		10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */; };
+		10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
+		10807E6B225CC30E00F9D9B8 /* Font Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E61225CC30E00F9D9B8 /* Font Styles.swift */; };
+		10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
+		10807E6D225CC30E00F9D9B8 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E63225CC30E00F9D9B8 /* AlertFactory.swift */; };
+		10807E6E225CC30E00F9D9B8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
+		10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E65225CC30E00F9D9B8 /* Store.swift */; };
+		10807E70225CC30E00F9D9B8 /* ToastFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E66225CC30E00F9D9B8 /* ToastFactory.swift */; };
+		10807E71225CC30E00F9D9B8 /* AppIntentVocabulary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10807E67225CC30E00F9D9B8 /* AppIntentVocabulary.plist */; };
+		10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E68225CC30E00F9D9B8 /* Color Style.swift */; };
+		10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E69225CC30E00F9D9B8 /* Date Styles.swift */; };
+		10807E7C225CC36800F9D9B8 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E77225CC36700F9D9B8 /* ToastView.swift */; };
+		10807E7D225CC36800F9D9B8 /* ItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E78225CC36700F9D9B8 /* ItemListCell.swift */; };
+		10807E7E225CC36800F9D9B8 /* ItemEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E79225CC36700F9D9B8 /* ItemEntryField.swift */; };
+		10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */; };
+		10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E7B225CC36800F9D9B8 /* SettingsCells.swift */; };
+		10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
+		10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
+		10807E86225CC44800F9D9B8 /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E85225CC44800F9D9B8 /* ItemListVC.swift */; };
+		10807E8F225CC48500F9D9B8 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E8E225CC48500F9D9B8 /* IntentHandler.swift */; };
+		10807E93225CC48500F9D9B8 /* SiriAddTasks.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E98225CC5DF00F9D9B8 /* TabController.swift */; };
+		10807E9C225CC5E000F9D9B8 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */; };
+		10807E9D225CC5E000F9D9B8 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +53,28 @@
 			remoteGlobalIDString = 10807E29225CC28900F9D9B8;
 			remoteInfo = Conveyor;
 		};
+		10807E91225CC48500F9D9B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10807E22225CC28900F9D9B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10807E8B225CC48500F9D9B8;
+			remoteInfo = SiriAddTasks;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10807E97225CC48500F9D9B8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				10807E93225CC48500F9D9B8 /* SiriAddTasks.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +88,37 @@
 		10807E41225CC28C00F9D9B8 /* ConveyorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConveyorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10807E45225CC28C00F9D9B8 /* ConveyorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConveyorTests.swift; sourceTree = "<group>"; };
 		10807E47225CC28C00F9D9B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10807E51225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
+		10807E52225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		10807E53225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingsCell Protocol.swift"; sourceTree = "<group>"; };
+		10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField ID Extension.swift"; sourceTree = "<group>"; };
+		10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data Entry + Display Protocols.swift"; sourceTree = "<group>"; };
+		10807E60225CC30E00F9D9B8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		10807E61225CC30E00F9D9B8 /* Font Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font Styles.swift"; sourceTree = "<group>"; };
+		10807E62225CC30E00F9D9B8 /* State Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State Protocols.swift"; sourceTree = "<group>"; };
+		10807E63225CC30E00F9D9B8 /* AlertFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		10807E64225CC30E00F9D9B8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		10807E65225CC30E00F9D9B8 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		10807E66225CC30E00F9D9B8 /* ToastFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastFactory.swift; sourceTree = "<group>"; };
+		10807E67225CC30E00F9D9B8 /* AppIntentVocabulary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppIntentVocabulary.plist; sourceTree = "<group>"; };
+		10807E68225CC30E00F9D9B8 /* Color Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color Style.swift"; sourceTree = "<group>"; };
+		10807E69225CC30E00F9D9B8 /* Date Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date Styles.swift"; sourceTree = "<group>"; };
+		10807E77225CC36700F9D9B8 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		10807E78225CC36700F9D9B8 /* ItemListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCell.swift; sourceTree = "<group>"; };
+		10807E79225CC36700F9D9B8 /* ItemEntryField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemEntryField.swift; sourceTree = "<group>"; };
+		10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketSelectBtn.swift; sourceTree = "<group>"; };
+		10807E7B225CC36800F9D9B8 /* SettingsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
+		10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		10807E85225CC44800F9D9B8 /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
+		10807E87225CC46000F9D9B8 /* Conveyor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Conveyor.entitlements; sourceTree = "<group>"; };
+		10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SiriAddTasks.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		10807E8E225CC48500F9D9B8 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		10807E90225CC48500F9D9B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10807E98225CC5DF00F9D9B8 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
+		10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,14 +136,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10807E89225CC48500F9D9B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		10807E21225CC28900F9D9B8 = {
 			isa = PBXGroup;
 			children = (
+				10807E57225CC2D900F9D9B8 /* Resources */,
 				10807E2C225CC28900F9D9B8 /* Conveyor */,
 				10807E44225CC28C00F9D9B8 /* ConveyorTests */,
+				10807E8D225CC48500F9D9B8 /* SiriAddTasks */,
 				10807E2B225CC28900F9D9B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +162,7 @@
 			children = (
 				10807E2A225CC28900F9D9B8 /* Conveyor.app */,
 				10807E41225CC28C00F9D9B8 /* ConveyorTests.xctest */,
+				10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,13 +170,17 @@
 		10807E2C225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXGroup;
 			children = (
+				10807E87225CC46000F9D9B8 /* Conveyor.entitlements */,
+				10807E76225CC32500F9D9B8 /* Model */,
+				10807E75225CC32000F9D9B8 /* View */,
+				10807E74225CC31A00F9D9B8 /* Controller */,
+				10807E58225CC2F500F9D9B8 /* Class Extensions + Protocols */,
+				10807E5F225CC30E00F9D9B8 /* Utils */,
 				10807E2D225CC28900F9D9B8 /* AppDelegate.swift */,
-				10807E2F225CC28900F9D9B8 /* ViewController.swift */,
 				10807E31225CC28900F9D9B8 /* Main.storyboard */,
 				10807E37225CC28C00F9D9B8 /* Assets.xcassets */,
 				10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */,
 				10807E3C225CC28C00F9D9B8 /* Info.plist */,
-				10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */,
 			);
 			path = Conveyor;
 			sourceTree = "<group>";
@@ -99,6 +194,94 @@
 			path = ConveyorTests;
 			sourceTree = "<group>";
 		};
+		10807E50225CC2D400F9D9B8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				10807E51225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf */,
+				10807E52225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf */,
+				10807E53225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		10807E57225CC2D900F9D9B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10807E50225CC2D400F9D9B8 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10807E58225CC2F500F9D9B8 /* Class Extensions + Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */,
+				10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */,
+				10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */,
+			);
+			path = "Class Extensions + Protocols";
+			sourceTree = "<group>";
+		};
+		10807E5F225CC30E00F9D9B8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10807E60225CC30E00F9D9B8 /* Constants.swift */,
+				10807E61225CC30E00F9D9B8 /* Font Styles.swift */,
+				10807E62225CC30E00F9D9B8 /* State Protocols.swift */,
+				10807E63225CC30E00F9D9B8 /* AlertFactory.swift */,
+				10807E64225CC30E00F9D9B8 /* Settings.swift */,
+				10807E65225CC30E00F9D9B8 /* Store.swift */,
+				10807E66225CC30E00F9D9B8 /* ToastFactory.swift */,
+				10807E67225CC30E00F9D9B8 /* AppIntentVocabulary.plist */,
+				10807E68225CC30E00F9D9B8 /* Color Style.swift */,
+				10807E69225CC30E00F9D9B8 /* Date Styles.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		10807E74225CC31A00F9D9B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10807E2F225CC28900F9D9B8 /* ViewController.swift */,
+				10807E85225CC44800F9D9B8 /* ItemListVC.swift */,
+				10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */,
+				10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */,
+				10807E98225CC5DF00F9D9B8 /* TabController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		10807E75225CC32000F9D9B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */,
+				10807E79225CC36700F9D9B8 /* ItemEntryField.swift */,
+				10807E78225CC36700F9D9B8 /* ItemListCell.swift */,
+				10807E7B225CC36800F9D9B8 /* SettingsCells.swift */,
+				10807E77225CC36700F9D9B8 /* ToastView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10807E76225CC32500F9D9B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */,
+				10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */,
+				10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10807E8D225CC48500F9D9B8 /* SiriAddTasks */ = {
+			isa = PBXGroup;
+			children = (
+				10807E8E225CC48500F9D9B8 /* IntentHandler.swift */,
+				10807E90225CC48500F9D9B8 /* Info.plist */,
+			);
+			path = SiriAddTasks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,10 +292,12 @@
 				10807E26225CC28900F9D9B8 /* Sources */,
 				10807E27225CC28900F9D9B8 /* Frameworks */,
 				10807E28225CC28900F9D9B8 /* Resources */,
+				10807E97225CC48500F9D9B8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				10807E92225CC48500F9D9B8 /* PBXTargetDependency */,
 			);
 			name = Conveyor;
 			productName = Conveyor;
@@ -137,6 +322,23 @@
 			productReference = 10807E41225CC28C00F9D9B8 /* ConveyorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		10807E8B225CC48500F9D9B8 /* SiriAddTasks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10807E94225CC48500F9D9B8 /* Build configuration list for PBXNativeTarget "SiriAddTasks" */;
+			buildPhases = (
+				10807E88225CC48500F9D9B8 /* Sources */,
+				10807E89225CC48500F9D9B8 /* Frameworks */,
+				10807E8A225CC48500F9D9B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriAddTasks;
+			productName = SiriAddTasks;
+			productReference = 10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,10 +351,18 @@
 				TargetAttributes = {
 					10807E29225CC28900F9D9B8 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 					10807E40225CC28C00F9D9B8 = {
 						CreatedOnToolsVersion = 10.2;
 						TestTargetID = 10807E29225CC28900F9D9B8;
+					};
+					10807E8B225CC48500F9D9B8 = {
+						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
@@ -171,6 +381,7 @@
 			targets = (
 				10807E29225CC28900F9D9B8 /* Conveyor */,
 				10807E40225CC28C00F9D9B8 /* ConveyorTests */,
+				10807E8B225CC48500F9D9B8 /* SiriAddTasks */,
 			);
 		};
 /* End PBXProject section */
@@ -180,13 +391,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10807E71225CC30E00F9D9B8 /* AppIntentVocabulary.plist in Resources */,
 				10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */,
 				10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */,
+				10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */,
+				10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */,
+				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
 				10807E33225CC28900F9D9B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		10807E3F225CC28C00F9D9B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10807E8A225CC48500F9D9B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,9 +422,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10807E7C225CC36800F9D9B8 /* ToastView.swift in Sources */,
+				10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */,
+				10807E7D225CC36800F9D9B8 /* ItemListCell.swift in Sources */,
 				10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */,
+				10807E6D225CC30E00F9D9B8 /* AlertFactory.swift in Sources */,
+				10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */,
+				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
+				10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */,
+				10807E9C225CC5E000F9D9B8 /* SettingsTVC.swift in Sources */,
+				10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */,
+				10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */,
+				10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */,
+				10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */,
+				10807E9D225CC5E000F9D9B8 /* SettingsVC.swift in Sources */,
+				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
 				10807E30225CC28900F9D9B8 /* ViewController.swift in Sources */,
+				10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */,
 				10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */,
+				10807E86225CC44800F9D9B8 /* ItemListVC.swift in Sources */,
+				10807E5D225CC2F500F9D9B8 /* UITextField ID Extension.swift in Sources */,
+				10807E6B225CC30E00F9D9B8 /* Font Styles.swift in Sources */,
+				10807E7E225CC36800F9D9B8 /* ItemEntryField.swift in Sources */,
+				10807E70225CC30E00F9D9B8 /* ToastFactory.swift in Sources */,
+				10807E6E225CC30E00F9D9B8 /* Settings.swift in Sources */,
+				10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */,
+				10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +459,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10807E88225CC48500F9D9B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10807E8F225CC48500F9D9B8 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +474,11 @@
 			isa = PBXTargetDependency;
 			target = 10807E29225CC28900F9D9B8 /* Conveyor */;
 			targetProxy = 10807E42225CC28C00F9D9B8 /* PBXContainerItemProxy */;
+		};
+		10807E92225CC48500F9D9B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10807E8B225CC48500F9D9B8 /* SiriAddTasks */;
+			targetProxy = 10807E91225CC48500F9D9B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -295,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,10 +621,13 @@
 		10807E4B225CC28C00F9D9B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conveyor/Conveyor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = Conveyor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,17 +635,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		10807E4C225CC28C00F9D9B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Conveyor/Conveyor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = Conveyor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +656,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -438,6 +702,46 @@
 			};
 			name = Release;
 		};
+		10807E95225CC48500F9D9B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = SiriAddTasks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.SiriAddTasks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10807E96225CC48500F9D9B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = SiriAddTasks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.SiriAddTasks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +768,15 @@
 			buildConfigurations = (
 				10807E4E225CC28C00F9D9B8 /* Debug */,
 				10807E4F225CC28C00F9D9B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10807E94225CC48500F9D9B8 /* Build configuration list for PBXNativeTarget "SiriAddTasks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10807E95225CC48500F9D9B8 /* Debug */,
+				10807E96225CC48500F9D9B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
