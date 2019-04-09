@@ -119,6 +119,7 @@
 		10807E98225CC5DF00F9D9B8 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		10807E9E225CC6B100F9D9B8 /* SiriAddTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriAddTasks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +277,7 @@
 		10807E8D225CC48500F9D9B8 /* SiriAddTasks */ = {
 			isa = PBXGroup;
 			children = (
+				10807E9E225CC6B100F9D9B8 /* SiriAddTasks.entitlements */,
 				10807E8E225CC48500F9D9B8 /* IntentHandler.swift */,
 				10807E90225CC48500F9D9B8 /* Info.plist */,
 			);
@@ -352,6 +354,9 @@
 					10807E29225CC28900F9D9B8 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -363,6 +368,11 @@
 					};
 					10807E8B225CC48500F9D9B8 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -705,6 +715,7 @@
 		10807E95225CC48500F9D9B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SiriAddTasks/SiriAddTasks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = SiriAddTasks/Info.plist;
@@ -725,6 +736,7 @@
 		10807E96225CC48500F9D9B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SiriAddTasks/SiriAddTasks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				INFOPLIST_FILE = SiriAddTasks/Info.plist;
