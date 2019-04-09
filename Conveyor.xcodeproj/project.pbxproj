@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101BCD51225CC8CC007470B9 /* Main.storyboard */; };
+		1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
+		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
+		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
+		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2D225CC28900F9D9B8 /* AppDelegate.swift */; };
 		10807E30225CC28900F9D9B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2F225CC28900F9D9B8 /* ViewController.swift */; };
 		10807E33225CC28900F9D9B8 /* MainBackup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10807E31225CC28900F9D9B8 /* MainBackup.storyboard */; };
@@ -477,6 +481,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */,
+				1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */,
+				1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */,
+				1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */,
 				10807E8F225CC48500F9D9B8 /* IntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
