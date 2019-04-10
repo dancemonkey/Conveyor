@@ -71,10 +71,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   func initializeFRC() -> NSFetchedResultsController<Item> {
     let context = persistentContainer.viewContext
     let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-    // TODAY: settings option to configure if all buckets or just Today shows on extension
-    let predicate = NSPredicate(format: "bucket == %@", "today")
+    // TODO: settings option to configure if all buckets or just Today shows on extension
+    // TODO: show DONE items using same settings option for main container app
+    let todayPredicate = NSPredicate(format: "bucket == %@", "today")
+    let incompletePredicate = NSPredicate(format: "state != %@", "done")
+    let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
-    fetchRequest.predicate = predicate
+    fetchRequest.predicate = compoundPredicate
     let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }
