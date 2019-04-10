@@ -117,7 +117,6 @@ class Store {
   
   // MARK: Item Creation
   func addNewItem(text: String?, in bucket: Bucket) {
-//    let item = Item(context: context)
     let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
     item.bucket = bucket.rawValue
     switch bucket {

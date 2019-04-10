@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101BCD51225CC8CC007470B9 /* Main.storyboard */; };
+		10240DC3225E1CC1001FC721 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10240DC2225E1CC1001FC721 /* NotificationCenter.framework */; };
+		10240DC6225E1CC1001FC721 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10240DC5225E1CC1001FC721 /* TodayViewController.swift */; };
+		10240DC9225E1CC1001FC721 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10240DC7225E1CC1001FC721 /* MainInterface.storyboard */; };
+		10240DCD225E1CC1001FC721 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 10240DC0225E1CC1001FC721 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		10240DD1225E1ED3001FC721 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
+		10240DD2225E1ED7001FC721 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
+		10240DD3225E20C0001FC721 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
+		10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
@@ -49,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		10240DCB225E1CC1001FC721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10807E22225CC28900F9D9B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10240DBF225E1CC1001FC721;
+			remoteInfo = TodayWidget;
+		};
 		10807E42225CC28C00F9D9B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 10807E22225CC28900F9D9B8 /* Project object */;
@@ -72,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				10240DCD225E1CC1001FC721 /* TodayWidget.appex in Embed App Extensions */,
 				10807E93225CC48500F9D9B8 /* SiriAddTasks.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -81,6 +97,12 @@
 
 /* Begin PBXFileReference section */
 		101BCD51225CC8CC007470B9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		10240DC0225E1CC1001FC721 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		10240DC2225E1CC1001FC721 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		10240DC5225E1CC1001FC721 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		10240DC8225E1CC1001FC721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		10240DCA225E1CC1001FC721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10807E2D225CC28900F9D9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10807E35225CC28900F9D9B8 /* Conveyor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conveyor.xcdatamodel; sourceTree = "<group>"; };
@@ -125,6 +147,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10240DBD225E1CC1001FC721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10240DC3225E1CC1001FC721 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10807E27225CC28900F9D9B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +179,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10240DC1225E1CC1001FC721 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10240DC2225E1CC1001FC721 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10240DC4225E1CC1001FC721 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				10240DD5225E235D001FC721 /* TodayWidget.entitlements */,
+				10240DC5225E1CC1001FC721 /* TodayViewController.swift */,
+				10240DC7225E1CC1001FC721 /* MainInterface.storyboard */,
+				10240DCA225E1CC1001FC721 /* Info.plist */,
+			);
+			path = TodayWidget;
+			sourceTree = "<group>";
+		};
 		10807E21225CC28900F9D9B8 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +205,8 @@
 				10807E2C225CC28900F9D9B8 /* Conveyor */,
 				10807E44225CC28C00F9D9B8 /* ConveyorTests */,
 				10807E8D225CC48500F9D9B8 /* SiriAddTasks */,
+				10240DC4225E1CC1001FC721 /* TodayWidget */,
+				10240DC1225E1CC1001FC721 /* Frameworks */,
 				10807E2B225CC28900F9D9B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +217,7 @@
 				10807E2A225CC28900F9D9B8 /* Conveyor.app */,
 				10807E41225CC28C00F9D9B8 /* ConveyorTests.xctest */,
 				10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */,
+				10240DC0225E1CC1001FC721 /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +340,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		10240DBF225E1CC1001FC721 /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10240DD0225E1CC1001FC721 /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				10240DBC225E1CC1001FC721 /* Sources */,
+				10240DBD225E1CC1001FC721 /* Frameworks */,
+				10240DBE225E1CC1001FC721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = 10240DC0225E1CC1001FC721 /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		10807E29225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10807E4A225CC28C00F9D9B8 /* Build configuration list for PBXNativeTarget "Conveyor" */;
@@ -301,6 +370,7 @@
 			);
 			dependencies = (
 				10807E92225CC48500F9D9B8 /* PBXTargetDependency */,
+				10240DCC225E1CC1001FC721 /* PBXTargetDependency */,
 			);
 			name = Conveyor;
 			productName = Conveyor;
@@ -352,6 +422,14 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Drew Lanning";
 				TargetAttributes = {
+					10240DBF225E1CC1001FC721 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					10807E29225CC28900F9D9B8 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
@@ -396,11 +474,20 @@
 				10807E29225CC28900F9D9B8 /* Conveyor */,
 				10807E40225CC28C00F9D9B8 /* ConveyorTests */,
 				10807E8B225CC48500F9D9B8 /* SiriAddTasks */,
+				10240DBF225E1CC1001FC721 /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		10240DBE225E1CC1001FC721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10240DC9225E1CC1001FC721 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10807E28225CC28900F9D9B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +519,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		10240DBC225E1CC1001FC721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10240DD2225E1ED7001FC721 /* Item+CoreDataProperties.swift in Sources */,
+				10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */,
+				10240DD1225E1ED3001FC721 /* Item+CoreDataClass.swift in Sources */,
+				10240DD3225E20C0001FC721 /* State Protocols.swift in Sources */,
+				10240DC6225E1CC1001FC721 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10807E26225CC28900F9D9B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +586,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		10240DCC225E1CC1001FC721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10240DBF225E1CC1001FC721 /* TodayWidget */;
+			targetProxy = 10240DCB225E1CC1001FC721 /* PBXContainerItemProxy */;
+		};
 		10807E43225CC28C00F9D9B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 10807E29225CC28900F9D9B8 /* Conveyor */;
@@ -500,6 +604,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		10240DC7225E1CC1001FC721 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10240DC8225E1CC1001FC721 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		10807E39225CC28C00F9D9B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,6 +623,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		10240DCE225E1CC1001FC721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10240DCF225E1CC1001FC721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		10807E48225CC28C00F9D9B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -756,6 +910,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		10240DD0225E1CC1001FC721 /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10240DCE225E1CC1001FC721 /* Debug */,
+				10240DCF225E1CC1001FC721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		10807E25225CC28900F9D9B8 /* Build configuration list for PBXProject "Conveyor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
