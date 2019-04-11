@@ -37,7 +37,6 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     if INPreferences.siriAuthorizationStatus() == .notDetermined {
       INPreferences.requestSiriAuthorization { (status) in
         if status == .authorized {
-          print("siri authorized")
         }
       }
     }
@@ -46,7 +45,6 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateHeading()
-    performFetch()
     tableView.reloadData()
   }
   

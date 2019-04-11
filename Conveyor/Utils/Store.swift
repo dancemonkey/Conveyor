@@ -22,6 +22,7 @@ class Store {
       container = self.mockContainer
     }
     context = container.viewContext
+    context.stalenessInterval = 0
   }
   private var testing: Bool = false
   private var testingModel: NSManagedObjectModel = {
@@ -46,7 +47,7 @@ class Store {
   
   func save() {
     do {
-      try context.save() //self.container.viewContext.save()
+      try context.save()
     } catch {
       print(error)
     }

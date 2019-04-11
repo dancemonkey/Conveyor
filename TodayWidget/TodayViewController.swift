@@ -53,12 +53,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   }
   
   func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encountered, use NCUpdateResult.Failed
-    // If there's no update required, use NCUpdateResult.NoData
-    // If there's an update, use NCUpdateResult.NewData
-    
+    fetch()
     completionHandler(NCUpdateResult.newData)
   }
   
@@ -67,7 +62,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     case .expanded:
       let items = frc?.fetchedObjects?.count ?? 0
       preferredContentSize = CGSize(width: 0, height: Int(tableView.rowHeight) * items)
-      print(preferredContentSize)
     case .compact:
       preferredContentSize = maxSize
     @unknown default:
@@ -79,13 +73,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let context = persistentContainer.viewContext
     let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
     let todayPredicate = NSPredicate(format: "bucket == %@", "today")
-    if Settings.doneOption() == .delete {
-      let incompletePredicate = NSPredicate(format: "state != %@", "done")
-      let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
-      fetchRequest.predicate = compoundPredicate
-    } else if Settings.doneOption() == .strikethrough {
-      fetchRequest.predicate = todayPredicate
-    }
+    let incompletePredicate = NSPredicate(format: "state != %@", "done")
+    fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
@@ -127,19 +116,14 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension TodayViewController: ItemCompleter {
   func complete(item: Item) {
-    if let state = item.state, let itemState = ItemState(rawValue: state) {
-      if itemState == .none || itemState == .overdue {
-        if Settings.doneOption() == .strikethrough {
-          item.complete()
-        } else if Settings.doneOption() == .delete {
-          persistentContainer.viewContext.delete(item)
-        }
-      } else if itemState == .done {
-        item.unComplete()
-      }
+    if Settings.doneOption() == .strikethrough {
+      item.complete()
+    } else if Settings.doneOption() == .delete {
+      persistentContainer.viewContext.delete(item)
     }
     do {
       try persistentContainer.viewContext.save()
+      Settings.didChangeObjectOn()
     } catch {
       print(error)
     }

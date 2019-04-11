@@ -21,7 +21,7 @@ enum DoneOption: Int {
 }
 
 enum UserDefaultKeys: String {
-  case doneSetting, badgeSetting, alwaysAsk, holdSetting, everLaunched
+  case doneSetting, badgeSetting, alwaysAsk, holdSetting, everLaunched, didChangeObject
 }
 
 class Settings {
@@ -32,6 +32,10 @@ class Settings {
         UserDefaults(suiteName: GroupName.value.rawValue)!
         }()
     }
+  }
+  
+  static var didChangeObject: Bool {
+    return defaults.bool(forKey: UserDefaultKeys.didChangeObject.rawValue)
   }
   
   static func setFirstLaunchDefaults() {
@@ -68,5 +72,13 @@ class Settings {
       return false
     }
     return true
+  }
+  
+  static func didChangeObjectOn() {
+    defaults.set(true, forKey: UserDefaultKeys.didChangeObject.rawValue)
+  }
+  
+  static func didChangeObjectOff() {
+    defaults.set(false, forKey: UserDefaultKeys.didChangeObject.rawValue)
   }
 }

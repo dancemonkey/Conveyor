@@ -39,13 +39,6 @@ class WidgetCell: UITableViewCell {
         completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
         completeBtn.alpha = 0.3
         title.textColor = ColorStyles.accent
-      } else if itemState == .done {
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: title.text ?? "")
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
-        title.attributedText = attributeString
-        title.textColor = ColorStyles.blackText
-        title.alpha = 0.3
-        completeBtn.setImage(#imageLiteral(resourceName: "widgetUnComplete"), for: .normal)
       }
     }
     self.complete = {

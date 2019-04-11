@@ -89,6 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if shouldChangeBuckets() {
       changeAllItemBuckets()
     }
+    if Settings.didChangeObject {
+      persistentContainer.viewContext.refreshAllObjects()
+      Settings.didChangeObjectOff()
+    }
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
