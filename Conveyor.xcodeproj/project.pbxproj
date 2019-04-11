@@ -54,6 +54,13 @@
 		10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E98225CC5DF00F9D9B8 /* TabController.swift */; };
 		10807E9C225CC5E000F9D9B8 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */; };
 		10807E9D225CC5E000F9D9B8 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */; };
+		10E6F455225F799D009F1951 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
+		10E6F456225F79B0009F1951 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
+		10E6F458225F79D0009F1951 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F457225F79D0009F1951 /* WidgetCell.swift */; };
+		10E6F459225F7B99009F1951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
+		10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E68225CC30E00F9D9B8 /* Color Style.swift */; };
+		10E6F45B225F7BED009F1951 /* Font Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E61225CC30E00F9D9B8 /* Font Styles.swift */; };
+		10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +151,8 @@
 		10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		10807E9E225CC6B100F9D9B8 /* SiriAddTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriAddTasks.entitlements; sourceTree = "<group>"; };
+		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
+		10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +203,8 @@
 				10240DC5225E1CC1001FC721 /* TodayViewController.swift */,
 				10240DC7225E1CC1001FC721 /* MainInterface.storyboard */,
 				10240DCA225E1CC1001FC721 /* Info.plist */,
+				10E6F457225F79D0009F1951 /* WidgetCell.swift */,
+				10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */,
 			);
 			path = TodayWidget;
 			sourceTree = "<group>";
@@ -484,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E6F459225F7B99009F1951 /* Assets.xcassets in Resources */,
 				10240DC9225E1CC1001FC721 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,11 +535,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E6F455225F799D009F1951 /* Settings.swift in Sources */,
 				10240DD2225E1ED7001FC721 /* Item+CoreDataProperties.swift in Sources */,
 				10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */,
 				10240DD1225E1ED3001FC721 /* Item+CoreDataClass.swift in Sources */,
+				10E6F456225F79B0009F1951 /* Constants.swift in Sources */,
+				10E6F45B225F7BED009F1951 /* Font Styles.swift in Sources */,
 				10240DD3225E20C0001FC721 /* State Protocols.swift in Sources */,
+				10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */,
 				10240DC6225E1CC1001FC721 /* TodayViewController.swift in Sources */,
+				10E6F458225F79D0009F1951 /* WidgetCell.swift in Sources */,
+				10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

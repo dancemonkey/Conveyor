@@ -35,14 +35,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     frc = initializeFRC()
+    fetch()
+    self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+    tableView.delegate = self
+    tableView.dataSource = self
+  }
+  
+  func fetch() {
     do {
       try frc.performFetch()
     } catch {
       print(error)
     }
-    self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-    tableView.delegate = self
-    tableView.dataSource = self
   }
   
   func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -71,12 +75,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   func initializeFRC() -> NSFetchedResultsController<Item> {
     let context = persistentContainer.viewContext
     let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-    // TODO: show DONE items using same settings option for main container app
     let todayPredicate = NSPredicate(format: "bucket == %@", "today")
-    let incompletePredicate = NSPredicate(format: "state != %@", "done")
-    let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
+    if Settings.doneOption() == .delete {
+      let incompletePredicate = NSPredicate(format: "state != %@", "done")
+      let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
+      fetchRequest.predicate = compoundPredicate
+    } else if Settings.doneOption() == .strikethrough {
+      fetchRequest.predicate = todayPredicate
+    }
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
-    fetchRequest.predicate = compoundPredicate
     let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }
@@ -94,9 +101,32 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "todayCell")!
-    cell.textLabel?.text = frc.fetchedObjects![indexPath.row].title
+    let cell = tableView.dequeueReusableCell(withIdentifier: "todayCell") as! WidgetCell
+    cell.configure(with: frc.fetchedObjects![indexPath.row], and: self)
     return cell
   }
   
+}
+
+extension TodayViewController: ItemCompleter {
+  func complete(item: Item) {
+    if let state = item.state, let itemState = ItemState(rawValue: state) {
+      if itemState == .none || itemState == .overdue {
+        if Settings.doneOption() == .strikethrough {
+          item.complete()
+        } else if Settings.doneOption() == .delete {
+          persistentContainer.viewContext.delete(item)
+        }
+      } else if itemState == .done {
+        item.unComplete()
+      }
+    }
+    do {
+      try persistentContainer.viewContext.save()
+    } catch {
+      print(error)
+    }
+    fetch()
+    tableView.reloadData()
+  }
 }

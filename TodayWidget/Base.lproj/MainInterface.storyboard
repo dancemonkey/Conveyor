@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +23,45 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="eoe-g3-jQA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="eoe-g3-jQA" customClass="WidgetCell" customModule="TodayWidget" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eoe-g3-jQA" id="Lhr-DM-bQQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-PI-Q4R">
+                                                    <rect key="frame" x="8" y="5" width="45" height="45"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="6m4-co-1AO"/>
+                                                        <constraint firstAttribute="width" constant="45" id="OoD-qM-sL1"/>
+                                                    </constraints>
+                                                    <color key="tintColor" name="primary"/>
+                                                    <state key="normal" image="widgetComplete"/>
+                                                    <connections>
+                                                        <action selector="completeWithSender:" destination="eoe-g3-jQA" eventType="touchUpInside" id="4EX-em-iwi"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-r3-h4Q">
+                                                    <rect key="frame" x="69" y="17" width="219" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CkJ-PI-Q4R" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="2Xw-FG-55o"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2yb-r3-h4Q" secondAttribute="trailing" constant="16" id="3zv-2S-UKJ"/>
+                                                <constraint firstItem="2yb-r3-h4Q" firstAttribute="leading" secondItem="CkJ-PI-Q4R" secondAttribute="trailing" constant="16" id="ACD-ut-KrH"/>
+                                                <constraint firstItem="CkJ-PI-Q4R" firstAttribute="leading" secondItem="Lhr-DM-bQQ" secondAttribute="leading" constant="8" id="T3A-Td-076"/>
+                                                <constraint firstItem="2yb-r3-h4Q" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="V9p-65-UTF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="completeBtn" destination="CkJ-PI-Q4R" id="ONL-NL-VRq"/>
+                                            <outlet property="title" destination="2yb-r3-h4Q" id="KbH-0n-9va"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -52,4 +85,10 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="widgetComplete" width="25" height="25"/>
+        <namedColor name="primary">
+            <color red="1" green="0.36862745098039218" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
