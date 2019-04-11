@@ -31,7 +31,7 @@ class DoneCell: UITableViewCell, SettingsCell {
   }
   
   func configure() {
-    let doneSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.doneSetting.rawValue)
+    let doneSetting = Settings.defaults.integer(forKey: UserDefaultKeys.doneSetting.rawValue)
     doneSettingSegmented.selectedSegmentIndex = doneSetting
     setHelpText()
     styleViews()
@@ -43,8 +43,7 @@ class DoneCell: UITableViewCell, SettingsCell {
   }
   
   func updateSettings() {
-    let defaults = UserDefaults.standard
-    defaults.set(doneSettingSegmented.selectedSegmentIndex, forKey: UserDefaultKeys.doneSetting.rawValue)
+    Settings.defaults.set(doneSettingSegmented.selectedSegmentIndex, forKey: UserDefaultKeys.doneSetting.rawValue)
   }
   
   internal func setHelpText() {
@@ -84,7 +83,7 @@ class BadgeCell: UITableViewCell, SettingsCell {
   }
   
   func configure() {
-    let badgeSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.badgeSetting.rawValue)
+    let badgeSetting = Settings.defaults.integer(forKey: UserDefaultKeys.badgeSetting.rawValue)
     badgeSettingSegmented.selectedSegmentIndex = badgeSetting
     setHelpText()
     styleViews()
@@ -96,8 +95,7 @@ class BadgeCell: UITableViewCell, SettingsCell {
   }
   
   func updateSettings() {
-    let defaults = UserDefaults.standard
-    defaults.set(badgeSettingSegmented.selectedSegmentIndex, forKey: UserDefaultKeys.badgeSetting.rawValue)
+    Settings.defaults.set(badgeSettingSegmented.selectedSegmentIndex, forKey: UserDefaultKeys.badgeSetting.rawValue)
   }
   
   internal func setHelpText() {
@@ -131,11 +129,11 @@ class HoldCell: UITableViewCell, SettingsCell {
   }
   
   func configure() {
-    let alwaysAsk = UserDefaults.standard.bool(forKey: UserDefaultKeys.alwaysAsk.rawValue)
+    let alwaysAsk = Settings.defaults.bool(forKey: UserDefaultKeys.alwaysAsk.rawValue)
     alwaysAskSwitch.isOn = alwaysAsk
     holdSettingSegmented.isEnabled = !alwaysAsk
     if !alwaysAsk {
-      let badgeSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.holdSetting.rawValue)
+      let badgeSetting = Settings.defaults.integer(forKey: UserDefaultKeys.holdSetting.rawValue)
       holdSettingSegmented.selectedSegmentIndex = badgeSetting
     }
     setHelpText()
@@ -148,7 +146,7 @@ class HoldCell: UITableViewCell, SettingsCell {
   }
   
   func updateSettings() {
-    let defaults = UserDefaults.standard
+    let defaults = Settings.defaults
     defaults.set(alwaysAskSwitch.isOn, forKey: UserDefaultKeys.alwaysAsk.rawValue)
     holdSettingSegmented.isEnabled = !alwaysAskSwitch.isOn
     if alwaysAskSwitch.isOn == false {

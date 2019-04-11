@@ -12,6 +12,10 @@ enum DefaultKeys: String {
   case bucketChangeDate
 }
 
+enum GroupName: String {
+  case value = "group.com.DrewLanning.conveyor"
+}
+
 enum ItemActions: String {
   case hold, move, delete, complete
   

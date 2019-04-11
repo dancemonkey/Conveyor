@@ -53,13 +53,13 @@ class Store {
   }
   
   func getNextBucketChange() -> Date? {
-    let defaults = UserDefaults()
+    let defaults = Settings.defaults
     let nextChange = defaults.object(forKey: DefaultKeys.bucketChangeDate.rawValue)
     return nextChange as? Date
   }
   
   func setNextBucketChange() {
-    let defaults = UserDefaults()
+    let defaults = Settings.defaults
     let cal = Calendar.current
     let tomorrow = cal.date(byAdding: .day, value: 1, to: Date())!
     let nextBucketChange = Calendar.current.startOfDay(for: tomorrow)

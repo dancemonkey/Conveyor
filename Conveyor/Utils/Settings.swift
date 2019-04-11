@@ -26,38 +26,45 @@ enum UserDefaultKeys: String {
 
 class Settings {
   
+  static var defaults: UserDefaults {
+    get {
+      return {
+        UserDefaults(suiteName: GroupName.value.rawValue)!
+        }()
+    }
+  }
+  
   static func setFirstLaunchDefaults() {
-    let defaults = UserDefaults.standard
     defaults.set(true, forKey: UserDefaultKeys.alwaysAsk.rawValue)
   }
   
   static func badgeOption() -> BadgeOption {
-    let badgeSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.badgeSetting.rawValue)
+    let badgeSetting = defaults.integer(forKey: UserDefaultKeys.badgeSetting.rawValue)
     let badge = BadgeOption(rawValue: badgeSetting) ?? .all
     return badge
   }
   
   static func lockOption() -> LockOption {
-    let askSetting = UserDefaults.standard.bool(forKey: UserDefaultKeys.alwaysAsk.rawValue)
+    let askSetting = defaults.bool(forKey: UserDefaultKeys.alwaysAsk.rawValue)
     if askSetting {
       return .ask
     } else {
-      let lockSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.holdSetting.rawValue)
+      let lockSetting = defaults.integer(forKey: UserDefaultKeys.holdSetting.rawValue)
       let lock = LockOption(rawValue: lockSetting) ?? .one
       return lock
     }
   }
   
   static func doneOption() -> DoneOption {
-    let doneSetting = UserDefaults.standard.integer(forKey: UserDefaultKeys.doneSetting.rawValue)
+    let doneSetting = defaults.integer(forKey: UserDefaultKeys.doneSetting.rawValue)
     let done = DoneOption(rawValue: doneSetting) ?? .strikethrough
     return done
   }
   
   static func everLaunched() -> Bool {
-    let launchedEver = UserDefaults.standard.bool(forKey: UserDefaultKeys.everLaunched.rawValue)
+    let launchedEver = defaults.bool(forKey: UserDefaultKeys.everLaunched.rawValue)
     if launchedEver == false {
-      UserDefaults.standard.set(true, forKey: UserDefaultKeys.everLaunched.rawValue)
+      defaults.set(true, forKey: UserDefaultKeys.everLaunched.rawValue)
       return false
     }
     return true
