@@ -13,6 +13,7 @@ import CoreData
 class TodayViewController: UIViewController, NCWidgetProviding {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var allDoneLbl: UILabel!
   var frc: NSFetchedResultsController<Item>!
   
   lazy var persistentContainer: NSPersistentContainer = {
@@ -39,6 +40,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     tableView.delegate = self
     tableView.dataSource = self
+    allDoneLbl.font = FontStyles.mainTitleFont
+    allDoneLbl.textColor = ColorStyles.blackText.withAlphaComponent(0.5)
   }
   
   func fetch() {
@@ -97,13 +100,27 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return frc.fetchedObjects?.count ?? 0
+    let count = frc.fetchedObjects?.count ?? 0
+    if count == 0 {
+      allDoneLbl.isHidden = false
+      tableView.isHidden = true
+    } else {
+      allDoneLbl.isHidden = true
+      tableView.isHidden = false
+    }
+    return count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "todayCell") as! WidgetCell
     cell.configure(with: frc.fetchedObjects![indexPath.row], and: self)
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let url: URL = URL(string: "Conveyor://") {
+      self.extensionContext?.open(url, completionHandler: nil)
+    }
   }
   
 }

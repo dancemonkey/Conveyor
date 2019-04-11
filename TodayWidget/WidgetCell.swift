@@ -29,6 +29,7 @@ class WidgetCell: UITableViewCell {
   
   func configure(with item: Item, and delegate: ItemCompleter) {
     self.title.text = item.title ?? "No item title"
+    title.font = FontStyles.itemCellFont
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
       if itemState == .none {

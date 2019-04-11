@@ -22,7 +22,7 @@ class DoneCell: UITableViewCell, SettingsCell {
 
   enum HelpText: String {
     case delete = #"Items are deleted as soon as you mark them as "Complete"."#
-    case strikethrough = #"Completed items are kept but struck through, then deleted automatically during the "Bucket Change" each night."#
+    case strikethrough = #"Completed items are struck through, then purged the first time the app is opened the following day."#
   }
   
   override func awakeFromNib() {

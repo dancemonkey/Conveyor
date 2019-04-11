@@ -212,7 +212,7 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
         let store = Store(testing: false)
         store.save()
         if item.bucket!.lowercased() != self?.title!.lowercased() {
-          self?.showToast(from: .bottom, with: "Moved to \(item.bucket!.capitalized)")
+          self?.showToast(from: .bottom, with: "Postponed until \(item.bucket!.capitalized)")
         }
         success(true)
       }) else { return }
@@ -366,7 +366,7 @@ extension ItemListVC {
     // show toast if adding item to different bucket
     let currentBucket = Bucket(rawValue: self.title!.lowercased())
     if currentBucket != bucket {
-      showToast(from: .bottom, with: "Added to \(bucket.rawValue.capitalized)")
+      showToast(from: .bottom, with: "Scheduled for \(bucket.rawValue.capitalized)")
     }
   }
 }
