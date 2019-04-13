@@ -216,9 +216,9 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
       }) else { return }
       self.present(alert, animated: true, completion: nil)
     }
-    delete.image = ItemActions.delete.getImage()
+    delete.image = Constants.ItemActions.delete.getImage()
     delete.backgroundColor = ColorStyles.accent
-    move.image = ItemActions.move.getImage()
+    move.image = Constants.ItemActions.move.getImage()
     move.backgroundColor = ColorStyles.secondary
     actions.append(delete)
     actions.append(move)
@@ -247,9 +247,9 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
         }
       }
       if itemState == .held {
-        hold.image = ItemActions.hold.getUnholdImage()
+        hold.image = Constants.ItemActions.hold.getUnholdImage()
       } else {
-        hold.image = ItemActions.hold.getImage()
+        hold.image = Constants.ItemActions.hold.getImage()
       }
       hold.backgroundColor = ColorStyles.primary
       actions.append(hold)
@@ -278,9 +278,9 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
       success(true)
     }
     if itemState == .done {
-      complete.image = ItemActions.complete.getUnCompleteImage()
+      complete.image = Constants.ItemActions.complete.getUnCompleteImage()
     } else {
-      complete.image = ItemActions.complete.getImage()
+      complete.image = Constants.ItemActions.complete.getImage()
     }
     complete.backgroundColor = ColorStyles.primary
     return UISwipeActionsConfiguration(actions: [complete])

@@ -44,7 +44,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-r3-h4Q">
-                                                    <rect key="frame" x="69" y="17" width="219" height="21"/>
+                                                    <rect key="frame" x="61" y="17" width="227" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                             <constraints>
                                                 <constraint firstItem="CkJ-PI-Q4R" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="2Xw-FG-55o"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2yb-r3-h4Q" secondAttribute="trailing" constant="16" id="3zv-2S-UKJ"/>
-                                                <constraint firstItem="2yb-r3-h4Q" firstAttribute="leading" secondItem="CkJ-PI-Q4R" secondAttribute="trailing" constant="16" id="ACD-ut-KrH"/>
+                                                <constraint firstItem="2yb-r3-h4Q" firstAttribute="leading" secondItem="CkJ-PI-Q4R" secondAttribute="trailing" constant="8" id="ACD-ut-KrH"/>
                                                 <constraint firstItem="CkJ-PI-Q4R" firstAttribute="leading" secondItem="Lhr-DM-bQQ" secondAttribute="leading" constant="8" id="T3A-Td-076"/>
                                                 <constraint firstItem="2yb-r3-h4Q" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="V9p-65-UTF"/>
                                             </constraints>

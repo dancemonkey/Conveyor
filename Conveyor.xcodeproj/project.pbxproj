@@ -61,6 +61,7 @@
 		10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E68225CC30E00F9D9B8 /* Color Style.swift */; };
 		10E6F45B225F7BED009F1951 /* Font Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E61225CC30E00F9D9B8 /* Font Styles.swift */; };
 		10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */; };
+		10F0C9C9226213910000D585 /* BadgeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C9C7226213200000D585 /* BadgeCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		10807E9E225CC6B100F9D9B8 /* SiriAddTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriAddTasks.entitlements; sourceTree = "<group>"; };
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
+		10F0C9C7226213200000D585 /* BadgeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeCounter.swift; path = ../Conveyor/Utils/BadgeCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				10240DCA225E1CC1001FC721 /* Info.plist */,
 				10E6F457225F79D0009F1951 /* WidgetCell.swift */,
 				10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */,
+				10F0C9C7226213200000D585 /* BadgeCounter.swift */,
 			);
 			path = TodayWidget;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */,
 				10240DC6225E1CC1001FC721 /* TodayViewController.swift in Sources */,
 				10E6F458225F79D0009F1951 /* WidgetCell.swift in Sources */,
+				10F0C9C9226213910000D585 /* BadgeCounter.swift in Sources */,
 				10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

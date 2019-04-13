@@ -55,7 +55,7 @@ class Store {
   
   func getNextBucketChange() -> Date? {
     let defaults = Settings.defaults
-    let nextChange = defaults.object(forKey: DefaultKeys.bucketChangeDate.rawValue)
+    let nextChange = defaults.object(forKey: Constants.DefaultKeys.bucketChangeDate.rawValue)
     return nextChange as? Date
   }
   
@@ -64,7 +64,7 @@ class Store {
     let cal = Calendar.current
     let tomorrow = cal.date(byAdding: .day, value: 1, to: Date())!
     let nextBucketChange = Calendar.current.startOfDay(for: tomorrow)
-    defaults.set(nextBucketChange, forKey: DefaultKeys.bucketChangeDate.rawValue)
+    defaults.set(nextBucketChange, forKey: Constants.DefaultKeys.bucketChangeDate.rawValue)
   }
   
   @objc func changeAllItemBuckets() {

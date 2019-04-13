@@ -8,26 +8,28 @@
 
 import UIKit
 
-enum DefaultKeys: String {
-  case bucketChangeDate
-}
-
-enum GroupName: String {
-  case value = "group.com.DrewLanning.conveyor"
-}
-
-enum ItemActions: String {
-  case hold, move, delete, complete
-  
-  func getImage() -> UIImage {
-    return UIImage(named: "\(self.rawValue)")!
+struct Constants {
+  enum DefaultKeys: String {
+    case bucketChangeDate
   }
   
-  func getUnCompleteImage() -> UIImage {
-    return UIImage(named: "unComplete")!
+  enum GroupName: String {
+    case value = "group.com.DrewLanning.conveyor"
   }
   
-  func getUnholdImage() -> UIImage {
-    return UIImage(named: "unLock")!
+  enum ItemActions: String {
+    case hold, move, delete, complete
+    
+    func getImage() -> UIImage {
+      return UIImage(named: "\(self.rawValue)")!
+    }
+    
+    func getUnCompleteImage() -> UIImage {
+      return UIImage(named: "unComplete")!
+    }
+    
+    func getUnholdImage() -> UIImage {
+      return UIImage(named: "unLock")!
+    }
   }
 }

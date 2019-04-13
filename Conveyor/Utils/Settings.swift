@@ -29,7 +29,7 @@ class Settings {
   static var defaults: UserDefaults {
     get {
       return {
-        UserDefaults(suiteName: GroupName.value.rawValue)!
+        UserDefaults(suiteName: Constants.GroupName.value.rawValue)!
         }()
     }
   }
