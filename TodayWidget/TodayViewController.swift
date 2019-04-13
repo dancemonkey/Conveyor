@@ -36,6 +36,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     frc = initializeFRC()
+    frc.delegate = self
     fetch()
     self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     tableView.delegate = self
@@ -127,7 +128,37 @@ extension TodayViewController: ItemCompleter {
     } catch {
       print(error)
     }
-    fetch()
-    tableView.reloadData()
+  }
+}
+
+extension TodayViewController: NSFetchedResultsControllerDelegate {
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
+  
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.endUpdates()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    switch (type) {
+    case .update:
+      tableView.reloadRows(at: [indexPath!], with: .fade)
+    case .insert:
+      if let indexPath = newIndexPath {
+        tableView.insertRows(at: [indexPath], with: .fade)
+      }
+    case .delete:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    case .move:
+      if let indexPath = indexPath, let newIndexPath = newIndexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [newIndexPath], with: .fade)
+      }
+    @unknown default:
+      fatalError()
+    }
   }
 }
