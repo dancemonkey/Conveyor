@@ -176,13 +176,13 @@ extension ItemListVC: NSFetchedResultsControllerDelegate {
 
 extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    guard let items = frc.fetchedObjects else { return 0 }
-    if items.count == 0 {
+    let items = frc.fetchedObjects?.count ?? 0
+    if items == 0 {
       showWatermark()
     } else {
       removeWatermark()
     }
-    return items.count
+    return items
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -25,6 +25,12 @@ class BadgeUpdater {
   func sendBadgeUpdateNotification() {
     let content = UNMutableNotificationContent()
     content.badge = self.getBadgeCount() as NSNumber
+    if self.getBadgeCount() == 0 {
+      let title = "You did it!"
+      let message = "You completed all of today's tasks. Way to go!"
+      content.title = title
+      content.body = message
+    }
     
     let date = Date().addingTimeInterval(1)
     let calendar = Calendar.current
