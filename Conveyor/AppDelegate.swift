@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if shouldChangeBuckets() {
       changeAllItemBuckets()
     }
-    application.setMinimumBackgroundFetchInterval(14400)
+    application.setMinimumBackgroundFetchInterval(7200)
     
     if Settings.everLaunched() == false {
       print("never launched, should ask for permissions and set initial default settings")
