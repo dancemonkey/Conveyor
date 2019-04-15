@@ -6,12 +6,12 @@
 	<array>
 		<dict>
 			<key>IntentName</key>
-			<string>INAddTaskIntent</string>
+			<string>INAddTasksIntent</string>
 			<key>IntentExamples</key>
 			<array>
-				<string>Add buy flowers to the Tomorrow list in Conveyor.</string>
-				<string>Add mow the lawn to the Later list in Conveyor.</string>
-				<string>Add walk the dog to Today list in Conveyor.</string>
+				<string>Add walk the dog to the Tomorrow list in Conveyor.</string>
+				<string>Add mow the lawn to Later list in Conveyor.</string>
+				<string>Add pay the bills to the Today list in Conveyor.</string>
 			</array>
 		</dict>
 	</array>
