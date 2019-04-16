@@ -20,6 +20,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   var stopEditingTap: UITapGestureRecognizer?
   var watermarkImage: UIImageView?
   var titleLabel: UILabel?
+  var mocSaveObserver: NSNotification?
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var entryField: ItemEntryField!
   @IBOutlet weak var entryFieldBottomConstraint: NSLayoutConstraint!
@@ -40,12 +41,28 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
         }
       }
     }
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateHeading()
+    performFetch()
     tableView.reloadData()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
+  
+  @objc func updateData() {
+    performFetch()
+    tableView.reloadData()
+  }
+  
+  @objc func willEnterForeground() {
+    updateData()
   }
   
   func performFetch() {

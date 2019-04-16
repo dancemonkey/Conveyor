@@ -29,7 +29,7 @@ class WidgetCell: UITableViewCell {
   
   func configure(with item: Item, and delegate: ItemCompleter) {
     self.title.text = item.title ?? "No item title"
-    title.font = FontStyles.itemCellFont
+    title.font = FontStyles.widgetItemCellFont
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
       if itemState == .none {
@@ -46,7 +46,7 @@ class WidgetCell: UITableViewCell {
     }
     completeBtn.layer.cornerRadius = 4.0
     completeBtn.layer.masksToBounds = true
-    completeBtn.alpha = 0.3
+    completeBtn.alpha = 0.6
   }
   
   override func prepareForReuse() {

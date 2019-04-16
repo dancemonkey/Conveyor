@@ -25,7 +25,6 @@ struct FontStyles {
   static var dataEntryFont: UIFont {
     get {
       return UIFont.preferredFont(forTextStyle: .body)
-      //      return UIFont(name: "SF-Pro-Text-Medium", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0, weight: .regular)
     }
   }
   
@@ -35,8 +34,14 @@ struct FontStyles {
   
   static var itemCellFont: UIFont {
     get {
+      return UIFont.systemFont(ofSize: 18.0, weight: .thin)
+//      return UIFont.preferredFont(forTextStyle: .body)
+    }
+  }
+  
+  static var widgetItemCellFont: UIFont {
+    get {
       return UIFont.preferredFont(forTextStyle: .body)
-      //      return UIFont(name: "SF-Pro-Text-Medium", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
     }
   }
   
