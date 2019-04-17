@@ -64,7 +64,7 @@ class IntentHandler: INExtension {
     do {
       try context.save()
       Settings.didChangeObjectOn()
-      BadgeUpdater(context: context).sendBadgeUpdateNotification()
+      BadgeUpdater(context: context).sendBadgeUpdateNotification(forCompletedTask: false)
     } catch {
       print(error)
     }

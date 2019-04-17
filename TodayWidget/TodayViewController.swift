@@ -128,7 +128,7 @@ extension TodayViewController: ItemCompleter {
     } catch {
       print(error)
     }
-    BadgeUpdater(context: persistentContainer.viewContext).sendBadgeUpdateNotification()
+    BadgeUpdater(context: persistentContainer.viewContext).sendBadgeUpdateNotification(forCompletedTask: true)
   }
 }
 

@@ -22,10 +22,10 @@ class BadgeUpdater {
     case today, overdue
   }
   
-  func sendBadgeUpdateNotification() {
+  func sendBadgeUpdateNotification(forCompletedTask: Bool) {
     let content = UNMutableNotificationContent()
     content.badge = self.getBadgeCount() as NSNumber
-    if self.getBadgeCount() == 0 {
+    if self.getBadgeCount() == 0 && forCompletedTask == true {
       let title = "You did it!"
       let message = "You completed all of today's tasks. Way to go!"
       content.title = title

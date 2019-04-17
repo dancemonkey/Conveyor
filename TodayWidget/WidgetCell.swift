@@ -37,7 +37,6 @@ class WidgetCell: UITableViewCell {
         title.textColor = ColorStyles.blackText
       } else if itemState == .overdue {
         completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
-        completeBtn.alpha = 0.3
         title.textColor = ColorStyles.accent
       }
     }
@@ -46,7 +45,6 @@ class WidgetCell: UITableViewCell {
     }
     completeBtn.layer.cornerRadius = 4.0
     completeBtn.layer.masksToBounds = true
-    completeBtn.alpha = 0.6
   }
   
   override func prepareForReuse() {
