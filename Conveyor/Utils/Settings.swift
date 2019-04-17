@@ -26,6 +26,32 @@ enum UserDefaultKeys: String {
 
 class Settings {
   
+  enum SettingsListOptions: CaseIterable {
+    case badge, lockingItems, completedItems
+    
+    func getTitle() -> String {
+      switch self {
+      case .badge:
+        return "Badge Options"
+      case .lockingItems:
+        return "Item Lock Options"
+      case .completedItems:
+        return "Item Completion Options"
+      }
+    }
+    
+    func getSegueId() -> String {
+      switch self {
+      case .badge:
+        return "showBadgeOptions"
+      case .lockingItems:
+        return "showLockOptions"
+      case .completedItems:
+        return "showCompletionOptions"
+      }
+    }
+  }
+  
   static var defaults: UserDefaults {
     get {
       return {

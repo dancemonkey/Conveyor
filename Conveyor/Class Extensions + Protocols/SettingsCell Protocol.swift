@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsCell: UITableViewCell {
+protocol SettingsCellProtocol: UITableViewCell {
   func configure()
   func setHelpText()
   func updateSettings()

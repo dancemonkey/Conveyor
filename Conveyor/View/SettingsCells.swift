@@ -10,7 +10,7 @@ import UIKit
 // THIS CONTAINS ALL 3 SETTING CELL SUBCLASSES
 // MARK: DONE CELL
 
-class DoneCell: UITableViewCell, SettingsCell {
+class DoneCell: UITableViewCell, SettingsCellProtocol {
   
   @IBOutlet weak var doneSettingSegmented: UISegmentedControl!
   @IBOutlet weak var helpTextLbl: UILabel!
@@ -39,7 +39,8 @@ class DoneCell: UITableViewCell, SettingsCell {
   
   func styleViews() {
     self.background.layer.cornerRadius = 4.0
-    self.background.backgroundColor = ColorStyles.secondary.withAlphaComponent(0.1)
+//    self.background.backgroundColor = ColorStyles.secondary.withAlphaComponent(0.1)
+    self.background.backgroundColor = .clear
   }
   
   func updateSettings() {
@@ -61,7 +62,7 @@ class DoneCell: UITableViewCell, SettingsCell {
 }
 
 // MARK: BADGE CELL
-class BadgeCell: UITableViewCell, SettingsCell {
+class BadgeCell: UITableViewCell, SettingsCellProtocol {
   
   @IBOutlet weak var badgeSettingSegmented: UISegmentedControl!
   @IBOutlet weak var helpTextLbl: UILabel!
@@ -91,7 +92,7 @@ class BadgeCell: UITableViewCell, SettingsCell {
   
   func styleViews() {
     self.background.layer.cornerRadius = 4.0
-    self.background.backgroundColor = ColorStyles.secondary.withAlphaComponent(0.1)
+    self.background.backgroundColor = .clear //ColorStyles.secondary.withAlphaComponent(0.1)
   }
   
   func updateSettings() {
@@ -116,7 +117,7 @@ class BadgeCell: UITableViewCell, SettingsCell {
 }
 
 // MARK: HOLD CELL
-class HoldCell: UITableViewCell, SettingsCell {
+class HoldCell: UITableViewCell, SettingsCellProtocol {
   
   @IBOutlet weak var alwaysAskSwitch: UISwitch!
   @IBOutlet weak var holdSettingSegmented: UISegmentedControl!
@@ -142,7 +143,7 @@ class HoldCell: UITableViewCell, SettingsCell {
   
   func styleViews() {
     self.background.layer.cornerRadius = 4.0
-    self.background.backgroundColor = ColorStyles.secondary.withAlphaComponent(0.1)
+    self.background.backgroundColor = .clear //ColorStyles.secondary.withAlphaComponent(0.1)
   }
   
   func updateSettings() {
