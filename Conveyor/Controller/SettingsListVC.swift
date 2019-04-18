@@ -11,6 +11,7 @@ import UIKit
 class SettingsListVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var copyrightLbl: UILabel!
   var settingsOptions: [Settings.SettingsListOptions]?
   
   override func viewDidLoad() {
@@ -21,6 +22,19 @@ class SettingsListVC: UIViewController {
     Settings.SettingsListOptions.allCases.forEach { (option) in
       settingsOptions?.append(option)
     }
+    setCopyrightText()
+  }
+  
+  func setCopyrightText() {
+    copyrightLbl.text = """
+    Conveyor 1.0
+    © 2019 Drew Lanning
+    All Rights Reserved
+    """
+  }
+  
+  @IBAction func doneTapped(sender: UIBarButtonItem) {
+    self.dismiss(animated: true, completion: nil)
   }
   
 }
@@ -35,13 +49,16 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell") as! SettingsCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableCellID.settingsCell.rawValue) as! SettingsCell
     if let option = settingsOptions?[indexPath.row] {
       cell.configure(with: option.getTitle(), segueID: option.getSegueId())
-    } else {
-      cell.configure(with: "No Title", segueID: "oops")
     }
     return cell
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let option = settingsOptions?[indexPath.row] {
+      performSegue(withIdentifier: option.getSegueId(), sender: self)
+    }
+  }
 }

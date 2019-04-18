@@ -17,6 +17,10 @@ struct Constants {
     case value = "group.com.DrewLanning.conveyor"
   }
   
+  enum TableCellID: String {
+    case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell
+  }
+  
   enum ItemActions: String {
     case hold, move, delete, complete
     

@@ -8,15 +8,15 @@
 
 import Foundation
 
-enum BadgeOption: Int {
+enum BadgeOption: Int, CaseIterable {
   case all = 0, overdue, none
 }
 
-enum LockOption: Int {
+enum LockOption: Int, CaseIterable {
   case one = 0, two, three, four, five, forever, ask
 }
 
-enum DoneOption: Int {
+enum DoneOption: Int, CaseIterable {
   case strikethrough = 0, delete
 }
 

@@ -56,8 +56,12 @@
 		10807E8F225CC48500F9D9B8 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E8E225CC48500F9D9B8 /* IntentHandler.swift */; };
 		10807E93225CC48500F9D9B8 /* SiriAddTasks.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E98225CC5DF00F9D9B8 /* TabController.swift */; };
-		10807E9C225CC5E000F9D9B8 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */; };
-		10807E9D225CC5E000F9D9B8 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */; };
+		1089FB202268978E008EFFEF /* BadgeOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB1F2268978E008EFFEF /* BadgeOptionCell.swift */; };
+		1089FB22226899AF008EFFEF /* BadgeOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */; };
+		1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2322689E61008EFFEF /* LockedItemsVC.swift */; };
+		1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */; };
+		1089FB2822689F88008EFFEF /* DoneOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2722689F88008EFFEF /* DoneOptionCell.swift */; };
+		1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2922689F94008EFFEF /* LockOptionCell.swift */; };
 		10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE42267D54C001E448E /* SettingsCell.swift */; };
 		10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE62267D643001E448E /* SettingsListVC.swift */; };
 		10E6F455225F799D009F1951 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
@@ -156,9 +160,13 @@
 		10807E8E225CC48500F9D9B8 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		10807E90225CC48500F9D9B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10807E98225CC5DF00F9D9B8 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
-		10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
-		10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		10807E9E225CC6B100F9D9B8 /* SiriAddTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SiriAddTasks.entitlements; sourceTree = "<group>"; };
+		1089FB1F2268978E008EFFEF /* BadgeOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeOptionCell.swift; sourceTree = "<group>"; };
+		1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeOptionVC.swift; sourceTree = "<group>"; };
+		1089FB2322689E61008EFFEF /* LockedItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedItemsVC.swift; sourceTree = "<group>"; };
+		1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedItemsOptionVC.swift; sourceTree = "<group>"; };
+		1089FB2722689F88008EFFEF /* DoneOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneOptionCell.swift; sourceTree = "<group>"; };
+		1089FB2922689F94008EFFEF /* LockOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOptionCell.swift; sourceTree = "<group>"; };
 		10CB7EE42267D54C001E448E /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		10CB7EE62267D643001E448E /* SettingsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListVC.swift; sourceTree = "<group>"; };
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
@@ -323,10 +331,11 @@
 			isa = PBXGroup;
 			children = (
 				10807E85225CC44800F9D9B8 /* ItemListVC.swift */,
-				10807E99225CC5DF00F9D9B8 /* SettingsTVC.swift */,
-				10807E9A225CC5DF00F9D9B8 /* SettingsVC.swift */,
 				10807E98225CC5DF00F9D9B8 /* TabController.swift */,
 				10CB7EE62267D643001E448E /* SettingsListVC.swift */,
+				1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */,
+				1089FB2322689E61008EFFEF /* LockedItemsVC.swift */,
+				1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -340,6 +349,9 @@
 				10807E7B225CC36800F9D9B8 /* SettingsCells.swift */,
 				10807E77225CC36700F9D9B8 /* ToastView.swift */,
 				10CB7EE42267D54C001E448E /* SettingsCell.swift */,
+				1089FB1F2268978E008EFFEF /* BadgeOptionCell.swift */,
+				1089FB2722689F88008EFFEF /* DoneOptionCell.swift */,
+				1089FB2922689F94008EFFEF /* LockOptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,25 +585,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */,
+				1089FB202268978E008EFFEF /* BadgeOptionCell.swift in Sources */,
 				10807E7C225CC36800F9D9B8 /* ToastView.swift in Sources */,
 				10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */,
 				10807E7D225CC36800F9D9B8 /* ItemListCell.swift in Sources */,
 				10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */,
 				10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */,
 				10807E6D225CC30E00F9D9B8 /* AlertFactory.swift in Sources */,
+				1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */,
 				10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */,
 				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
 				10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */,
-				10807E9C225CC5E000F9D9B8 /* SettingsTVC.swift in Sources */,
 				10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */,
 				10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */,
 				10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */,
 				10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */,
 				10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */,
-				10807E9D225CC5E000F9D9B8 /* SettingsVC.swift in Sources */,
 				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
 				10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */,
 				10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */,
+				1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */,
+				1089FB2822689F88008EFFEF /* DoneOptionCell.swift in Sources */,
+				1089FB22226899AF008EFFEF /* BadgeOptionVC.swift in Sources */,
 				10807E86225CC44800F9D9B8 /* ItemListVC.swift in Sources */,
 				10807E5D225CC2F500F9D9B8 /* UITextField ID Extension.swift in Sources */,
 				10807E6B225CC30E00F9D9B8 /* Font Styles.swift in Sources */,

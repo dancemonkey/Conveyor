@@ -15,18 +15,14 @@ class SettingsCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
+    self.layer.borderWidth = 0.25
+    self.layer.borderColor = UIColor.lightGray.cgColor
   }
   
   func configure(with title: String, segueID: String) {
     self.optionLbl.text = title
     self.segueID = segueID
+    optionLbl.font = FontStyles.settingsCellFont
   }
   
 }
