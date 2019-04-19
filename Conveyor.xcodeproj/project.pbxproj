@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1002F0BD22675B8B008418E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1002F0BC22675B8B008418E6 /* StoreKit.framework */; };
+		1011A5B3226A080300764234 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1011A5B2226A080300764234 /* Onboarding.storyboard */; };
+		1011A5B6226A08E600764234 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011A5B5226A08E600764234 /* OnboardingVC.swift */; };
+		1011A5B8226A090100764234 /* OnboardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011A5B7226A090100764234 /* OnboardingPageVC.swift */; };
 		101378162264D8C50013EFF3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
 		101378172264D9130013EFF3 /* BadgeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C9C7226213200000D585 /* BadgeCounter.swift */; };
 		101378182264D94D0013EFF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
@@ -115,6 +118,9 @@
 
 /* Begin PBXFileReference section */
 		1002F0BC22675B8B008418E6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1011A5B2226A080300764234 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		1011A5B5226A08E600764234 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		1011A5B7226A090100764234 /* OnboardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageVC.swift; sourceTree = "<group>"; };
 		101BCD51225CC8CC007470B9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		10240DC0225E1CC1001FC721 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		10240DC2225E1CC1001FC721 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -208,6 +214,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1011A5B4226A087700764234 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1011A5B2226A080300764234 /* Onboarding.storyboard */,
+				1011A5B5226A08E600764234 /* OnboardingVC.swift */,
+				1011A5B7226A090100764234 /* OnboardingPageVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		10240DC1225E1CC1001FC721 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +274,7 @@
 		10807E2C225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXGroup;
 			children = (
+				1011A5B4226A087700764234 /* Onboarding */,
 				10807E87225CC46000F9D9B8 /* Conveyor.entitlements */,
 				10807E76225CC32500F9D9B8 /* Model */,
 				10807E75225CC32000F9D9B8 /* View */,
@@ -542,6 +559,7 @@
 				10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */,
 				101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */,
 				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
+				1011A5B3226A080300764234 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +612,7 @@
 				10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */,
 				10807E6D225CC30E00F9D9B8 /* AlertFactory.swift in Sources */,
 				1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */,
+				1011A5B6226A08E600764234 /* OnboardingVC.swift in Sources */,
 				10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */,
 				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
 				10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */,
@@ -602,6 +621,7 @@
 				10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */,
 				10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */,
 				10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */,
+				1011A5B8226A090100764234 /* OnboardingPageVC.swift in Sources */,
 				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
 				10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */,
 				10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */,
