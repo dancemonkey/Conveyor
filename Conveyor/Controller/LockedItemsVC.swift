@@ -27,7 +27,6 @@ class LockedItemsOptionVC: UIViewController {
     Settings.defaults.set(option.rawValue, forKey: UserDefaultKeys.holdSetting.rawValue)
     tableView.reloadData()
   }
-  
 }
 
 extension LockedItemsOptionVC: UITableViewDataSource, UITableViewDelegate {

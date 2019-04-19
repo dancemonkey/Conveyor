@@ -38,15 +38,15 @@ class AlertFactory {
   }
   
   static func hold(item: Item, textfieldDelegate delegate: UITextFieldDelegate?, completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "Hold item", message: "For how long should the item be held?", preferredStyle: .alert)
-    let daySelect = UIAlertAction(title: "[Enter # of days to hold]", style: .default, handler: { (_) in
+    let controller = UIAlertController(title: "Lock item", message: "For how long should the item be locked?", preferredStyle: .alert)
+    let daySelect = UIAlertAction(title: "[Enter # of days to lock]", style: .default, handler: { (_) in
       if let holdDays = Int(controller.textFields![0].text!), holdDays != 0 {
         item.hold(forever: false, or: holdDays)
       }
       completion()
     })
     controller.addTextField { (field) in
-      field.placeholder = "Number of days to hold"
+      field.placeholder = "Number of days to lock"
       field.keyboardType = .numberPad
       field.font = FontStyles.dataEntryFont
       field.tag = TextFieldId.numberOfDays.rawValue
@@ -57,7 +57,7 @@ class AlertFactory {
     }
     daySelect.setValue(ColorStyles.blackText, forKey: "titleTextColor")
     controller.addAction(daySelect)
-    let foreverAction = UIAlertAction(title: "Hold Forever", style: .default, handler: { (_) in
+    let foreverAction = UIAlertAction(title: "Lock Forever", style: .default, handler: { (_) in
       item.hold(forever: true, or: nil)
       completion()
     })

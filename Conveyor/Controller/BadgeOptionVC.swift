@@ -27,7 +27,6 @@ class BadgeOptionVC: UIViewController {
     Settings.defaults.set(option.rawValue, forKey: UserDefaultKeys.badgeSetting.rawValue)
     tableView.reloadData()
   }
-  
 }
 
 extension BadgeOptionVC: UITableViewDataSource, UITableViewDelegate {

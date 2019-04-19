@@ -25,7 +25,7 @@ class ItemEntryField: UITextField {
     self.borderStyle = .line
     self.layer.borderWidth = 1.0
     self.layer.borderColor = ColorStyles.primaryFaded.cgColor
-    self.attributedPlaceholder = NSAttributedString(string: "add new item", attributes: [NSAttributedString.Key.foregroundColor: ColorStyles.blackText])
+    self.attributedPlaceholder = NSAttributedString(string: "add new task", attributes: [NSAttributedString.Key.foregroundColor: ColorStyles.blackText])
     UIView.animate(withDuration: 0.5) {
       self.backgroundColor = ColorStyles.blackText.withAlphaComponent(0.7)
     }

@@ -27,7 +27,6 @@ class CompletedItemsOptionVC: UIViewController {
     Settings.defaults.set(option.rawValue, forKey: UserDefaultKeys.doneSetting.rawValue)
     tableView.reloadData()
   }
-  
 }
 
 extension CompletedItemsOptionVC: UITableViewDataSource, UITableViewDelegate {

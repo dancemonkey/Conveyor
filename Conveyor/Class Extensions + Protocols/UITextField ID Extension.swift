@@ -38,9 +38,9 @@ extension UITextField {
     // For now this is all I need though
     if let target = self.textUpdateTarget {
       if let text = self.text, text != "" {
-        target.setValue("Hold \(text) days", forKey: "title")
+        target.setValue("Lock \(text) days", forKey: "title")
       } else if let text = self.text, text.isEmpty {
-        target.setValue("[Enter # of days to hold]", forKey: "title")
+        target.setValue("[Enter # of days to lock]", forKey: "title")
       }
     }
   }
