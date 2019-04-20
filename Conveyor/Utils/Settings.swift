@@ -51,16 +51,16 @@ class Settings {
       }
     }
     
-    func getHelpText() -> String {
-      switch self {
-      case .badge:
-        return "Which items should count towards the app badge?"
-      case .lockingItems:
-        return "What action is taken when you select the Lock option on an item in the Later list?"
-      case .completedItems:
-        return "What should be done with items you complete?"
-      }
-    }
+//    func getHelpText() -> String {
+//      switch self {
+//      case .badge:
+//        return "Which items should count towards the app badge?"
+//      case .lockingItems:
+//        return "What action is taken when you select the Lock option on an item in the Later list?"
+//      case .completedItems:
+//        return "What should be done with items you complete?"
+//      }
+//    }
   }
   
   static var defaults: UserDefaults {

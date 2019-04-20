@@ -437,6 +437,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ann-7A-1tu">
+                                <rect key="frame" x="32" y="96" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-OC-lCw">
                                 <rect key="frame" x="0.0" y="96" width="375" height="507"/>
                                 <color key="backgroundColor" name="white"/>
@@ -466,17 +472,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H70-9l-PhP">
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <color key="tintColor" name="primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="LbY-1o-sfG"/>
+                                    <constraint firstAttribute="height" constant="40" id="mAu-Io-P8D"/>
+                                </constraints>
+                                <color key="color" name="primary"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
+                            <constraint firstItem="ann-7A-1tu" firstAttribute="leading" secondItem="VcW-Ra-pFI" secondAttribute="leading" constant="32" id="0TT-yp-In4"/>
                             <constraint firstItem="VcW-Ra-pFI" firstAttribute="trailing" secondItem="3g2-OC-lCw" secondAttribute="trailing" id="9JF-YJ-6DP"/>
                             <constraint firstItem="3g2-OC-lCw" firstAttribute="leading" secondItem="VcW-Ra-pFI" secondAttribute="leading" id="HlH-K3-BAL"/>
+                            <constraint firstItem="VcW-Ra-pFI" firstAttribute="top" secondItem="ann-7A-1tu" secondAttribute="top" constant="-32" id="QJ2-Wc-JJT"/>
                             <constraint firstItem="3g2-OC-lCw" firstAttribute="top" secondItem="VcW-Ra-pFI" secondAttribute="top" constant="32" id="QsP-06-Eye"/>
+                            <constraint firstItem="VcW-Ra-pFI" firstAttribute="trailing" secondItem="ann-7A-1tu" secondAttribute="trailing" constant="32" id="eNh-S0-oXM"/>
                             <constraint firstItem="VcW-Ra-pFI" firstAttribute="bottom" secondItem="3g2-OC-lCw" secondAttribute="bottom" constant="64" id="g3W-g1-oTx"/>
+                            <constraint firstItem="H70-9l-PhP" firstAttribute="centerY" secondItem="xwj-3T-8BN" secondAttribute="centerY" id="qnM-Ym-veN"/>
+                            <constraint firstItem="ann-7A-1tu" firstAttribute="centerX" secondItem="xwj-3T-8BN" secondAttribute="centerX" id="roW-Up-KjL"/>
+                            <constraint firstItem="H70-9l-PhP" firstAttribute="centerX" secondItem="xwj-3T-8BN" secondAttribute="centerX" id="v0c-Cx-wXb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VcW-Ra-pFI"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="H70-9l-PhP" id="FRx-fM-IeU"/>
+                        <outlet property="deniedBadgeAuthLbl" destination="ann-7A-1tu" id="9hg-1m-XSx"/>
                         <outlet property="tableView" destination="3g2-OC-lCw" id="iFZ-t0-Qae"/>
                     </connections>
                 </viewController>

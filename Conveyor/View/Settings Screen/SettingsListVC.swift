@@ -13,6 +13,7 @@ class SettingsListVC: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var copyrightLbl: UILabel!
   var settingsOptions: [Settings.SettingsListOptions]?
+  var sectionHeaders: [String] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +24,7 @@ class SettingsListVC: UIViewController {
       settingsOptions?.append(option)
     }
     setCopyrightText()
+    sectionHeaders = ["General Settings", "Info"]
   }
   
   func setCopyrightText() {
@@ -42,6 +44,10 @@ class SettingsListVC: UIViewController {
 extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return sectionHeaders[section]
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

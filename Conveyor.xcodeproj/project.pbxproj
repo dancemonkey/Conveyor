@@ -349,10 +349,6 @@
 			children = (
 				10807E85225CC44800F9D9B8 /* ItemListVC.swift */,
 				10807E98225CC5DF00F9D9B8 /* TabController.swift */,
-				10CB7EE62267D643001E448E /* SettingsListVC.swift */,
-				1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */,
-				1089FB2322689E61008EFFEF /* LockedItemsVC.swift */,
-				1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,10 +361,7 @@
 				10807E78225CC36700F9D9B8 /* ItemListCell.swift */,
 				10807E7B225CC36800F9D9B8 /* SettingsCells.swift */,
 				10807E77225CC36700F9D9B8 /* ToastView.swift */,
-				10CB7EE42267D54C001E448E /* SettingsCell.swift */,
-				1089FB1F2268978E008EFFEF /* BadgeOptionCell.swift */,
-				1089FB2722689F88008EFFEF /* DoneOptionCell.swift */,
-				1089FB2922689F94008EFFEF /* LockOptionCell.swift */,
+				10CCB22C226BB4520029D7AF /* Settings Screen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +384,21 @@
 				10807E90225CC48500F9D9B8 /* Info.plist */,
 			);
 			path = SiriAddTasks;
+			sourceTree = "<group>";
+		};
+		10CCB22C226BB4520029D7AF /* Settings Screen */ = {
+			isa = PBXGroup;
+			children = (
+				10CB7EE42267D54C001E448E /* SettingsCell.swift */,
+				1089FB1F2268978E008EFFEF /* BadgeOptionCell.swift */,
+				1089FB2722689F88008EFFEF /* DoneOptionCell.swift */,
+				1089FB2922689F94008EFFEF /* LockOptionCell.swift */,
+				10CB7EE62267D643001E448E /* SettingsListVC.swift */,
+				1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */,
+				1089FB2322689E61008EFFEF /* LockedItemsVC.swift */,
+				1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */,
+			);
+			path = "Settings Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

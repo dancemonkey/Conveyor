@@ -11,7 +11,7 @@ import UIKit
 class AlertFactory {
   
   static func siriAuthNotification(completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "Siri Authorization", message: "Siri wants to be able to add tasks to your lists. You can change your mind later from iOS Settings.", preferredStyle: .alert)
+    let controller = UIAlertController(title: "Siri Authorization", message: "A Siri authorization request will pop up, approve if you want to be able to add to your lists using Siri. You can change your mind later from iOS Settings.", preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
       completion()
     }
@@ -20,7 +20,7 @@ class AlertFactory {
   }
   
   static func badgeAuthNotification(completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "Badge Authorization", message: "We use badges to show how many tasks you have due today (this is also configurable within the app and iOS Settings).", preferredStyle: .alert)
+    let controller = UIAlertController(title: "Badge Authorization", message: "A notification authorization will pop up, approve if you would like a badge on the app icon showing incomplete Today list items. You can change your mind later from iOS Settings.", preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
       completion()
     }

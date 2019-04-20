@@ -7,20 +7,49 @@
 //
 
 import UIKit
+import UserNotifications
 
 class BadgeOptionVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var deniedBadgeAuthLbl: UILabel!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var options: [BadgeOption]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    activityIndicator.hidesWhenStopped = true
+    activityIndicator.startAnimating()
+    
     options = []
     BadgeOption.allCases.forEach { (option) in
       options?.append(option)
     }
-    tableView.delegate = self
-    tableView.dataSource = self
+    
+    deniedBadgeAuthLbl.text = "You have not approved notifications for this app. Please visit the iOS Settings app to grant authorization if you would like to have badges."
+    deniedBadgeAuthLbl.numberOfLines = 4
+    deniedBadgeAuthLbl.font = FontStyles.settingsCellFont
+    deniedBadgeAuthLbl.textColor = ColorStyles.blackText
+    deniedBadgeAuthLbl.textAlignment = .center
+    
+    let center = UNUserNotificationCenter.current()
+    center.getNotificationSettings { (settings) in
+      if settings.authorizationStatus == .denied {
+        DispatchQueue.main.async { [weak self] in
+          self?.deniedBadgeAuthLbl.isHidden = false
+        }
+      } else {
+        DispatchQueue.main.async { [weak self] in
+          self?.deniedBadgeAuthLbl.isHidden = true
+          self?.tableView.delegate = self
+          self?.tableView.dataSource = self
+        }
+      }
+      DispatchQueue.main.async {
+        self.activityIndicator.stopAnimating()
+      }
+    }
   }
   
   func updateSettings(with option: BadgeOption) {
