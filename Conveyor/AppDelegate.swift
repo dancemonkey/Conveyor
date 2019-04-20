@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let store = Store(testing: false)
     let center = UNUserNotificationCenter.current()
+    
     guard let _ = store.getNextBucketChange() else {
       store.setNextBucketChange()
       return true

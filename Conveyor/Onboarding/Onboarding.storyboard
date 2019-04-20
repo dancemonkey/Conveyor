@@ -10,73 +10,90 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Page View Controller-->
+        <!--OnboardingVC-->
         <scene sceneID="89c-1m-xrW">
             <objects>
-                <pageViewController storyboardIdentifier="Onboarding" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fe4-4Z-9eb" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="Onboarding" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fe4-4Z-9eb" customClass="OnboardingVC" customModule="Conveyor" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r76-Bq-P0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-24" y="-67"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding PageVC-->
         <scene sceneID="g95-Qa-51l">
             <objects>
-                <viewController id="Xrj-1M-5LJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xrj-1M-5LJ" customClass="OnboardingPageVC" customModule="Conveyor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f2Q-NS-XmH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-Gk-5w3">
+                                <rect key="frame" x="0.0" y="44" width="375" height="406"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE1-Vh-4Ml">
+                                <rect key="frame" x="32" y="482" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-GG-wTH">
+                                <rect key="frame" x="32" y="519" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-cG-9cg">
+                                <rect key="frame" x="137.66666666666666" y="725" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8av-hV-FGs"/>
+                                    <constraint firstAttribute="width" constant="100" id="ab0-K4-16f"/>
+                                </constraints>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="skipPressedWithSender:" destination="Xrj-1M-5LJ" eventType="touchUpInside" id="ri9-f1-fmz"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOs-11-sgh">
+                                <rect key="frame" x="137.66666666666666" y="664" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="KGg-KD-kG8"/>
+                                    <constraint firstAttribute="width" constant="100" id="mEx-fx-6Pp"/>
+                                </constraints>
+                                <state key="normal" title="DONE"/>
+                                <connections>
+                                    <action selector="donePressedWithSender:" destination="Xrj-1M-5LJ" eventType="touchUpInside" id="hr4-4u-rzB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oSb-Gk-5w3" firstAttribute="leading" secondItem="kkM-aj-GKt" secondAttribute="leading" id="0sZ-PL-0Q0"/>
+                            <constraint firstItem="pmX-cG-9cg" firstAttribute="top" secondItem="aOs-11-sgh" secondAttribute="bottom" constant="16" id="4gO-6D-j7h"/>
+                            <constraint firstItem="pmX-cG-9cg" firstAttribute="centerX" secondItem="f2Q-NS-XmH" secondAttribute="centerX" id="7Pf-PT-hdT"/>
+                            <constraint firstItem="kkM-aj-GKt" firstAttribute="trailing" secondItem="sE1-Vh-4Ml" secondAttribute="trailing" constant="32" id="HDJ-jn-BSf"/>
+                            <constraint firstItem="kkM-aj-GKt" firstAttribute="trailing" secondItem="Cku-GG-wTH" secondAttribute="trailing" constant="32" id="MdV-ba-B9L"/>
+                            <constraint firstItem="sE1-Vh-4Ml" firstAttribute="top" secondItem="oSb-Gk-5w3" secondAttribute="bottom" constant="32" id="N1H-t5-fgC"/>
+                            <constraint firstItem="Cku-GG-wTH" firstAttribute="top" secondItem="sE1-Vh-4Ml" secondAttribute="bottom" constant="16" id="X8u-I1-Qez"/>
+                            <constraint firstItem="oSb-Gk-5w3" firstAttribute="top" secondItem="kkM-aj-GKt" secondAttribute="top" id="dki-eA-WVk"/>
+                            <constraint firstItem="Cku-GG-wTH" firstAttribute="leading" secondItem="kkM-aj-GKt" secondAttribute="leading" constant="32" id="iel-qm-NiJ"/>
+                            <constraint firstItem="aOs-11-sgh" firstAttribute="centerX" secondItem="f2Q-NS-XmH" secondAttribute="centerX" id="ilv-nd-lL6"/>
+                            <constraint firstItem="oSb-Gk-5w3" firstAttribute="trailing" secondItem="kkM-aj-GKt" secondAttribute="trailing" id="uJy-Dp-YxJ"/>
+                            <constraint firstItem="kkM-aj-GKt" firstAttribute="bottom" secondItem="pmX-cG-9cg" secondAttribute="bottom" constant="8" id="wAJ-vg-CKX"/>
+                            <constraint firstItem="sE1-Vh-4Ml" firstAttribute="leading" secondItem="kkM-aj-GKt" secondAttribute="leading" constant="32" id="xv6-dR-4QL"/>
+                            <constraint firstItem="oSb-Gk-5w3" firstAttribute="height" secondItem="f2Q-NS-XmH" secondAttribute="height" multiplier="0.5" id="z4V-q1-UHX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kkM-aj-GKt"/>
                     </view>
+                    <connections>
+                        <outlet property="doneBtn" destination="aOs-11-sgh" id="uLC-hx-4tG"/>
+                        <outlet property="screenshot" destination="oSb-Gk-5w3" id="RWN-eT-Pq1"/>
+                        <outlet property="skipBtn" destination="pmX-cG-9cg" id="qoC-AW-FTo"/>
+                        <outlet property="subTitleLbl" destination="Cku-GG-wTH" id="0tF-5p-fDY"/>
+                        <outlet property="titleLbl" destination="sE1-Vh-4Ml" id="6QB-dd-YAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVk-Tf-Kzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="730" y="-70"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YYh-pG-ph2">
-            <objects>
-                <viewController id="AbQ-cz-lDz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="klx-zU-gom">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8WM-o4-iyL"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w2o-iB-0LU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1446" y="-70"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="RPV-QT-9UI">
-            <objects>
-                <viewController id="nLp-nN-g1s" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Gc-n3-4SR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="PAx-Kx-R1V"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UKd-xQ-6yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2190" y="-70"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YqH-Ro-B7h">
-            <objects>
-                <viewController id="etm-zG-TJ9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LD0-5P-6yp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="krN-uP-R2V"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1C9-Qo-aBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2938" y="-67"/>
         </scene>
     </scenes>
 </document>

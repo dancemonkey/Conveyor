@@ -10,21 +10,61 @@ import UIKit
 
 class OnboardingPageVC: UIViewController {
   
+  @IBOutlet weak var titleLbl: UILabel!
+  @IBOutlet weak var subTitleLbl: UILabel!
+  @IBOutlet weak var screenshot: UIImageView!
+  @IBOutlet weak var doneBtn: UIButton!
+  @IBOutlet weak var skipBtn: UIButton!
+  typealias TitleText = (title: String, subtitle: String)
+  var text: TitleText?
+  var lastVC: Bool = false
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    if let titles = text {
+      titleLbl.text = titles.title
+      subTitleLbl.text = titles.subtitle
+    }
+    if lastVC {
+      doneBtn.isHidden = false
+    } else {
+      doneBtn.isHidden = true
+    }
+    styleViews()
   }
   
+  func setText(for title: String, andSubtitle subtitle: String) {
+    self.titleLbl.text = title
+    self.subTitleLbl.text = subtitle
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  func setImage(_ image: UIImage) {
+    self.screenshot.image = image
+  }
+  
+  private func styleViews() {
+    self.view.backgroundColor = ColorStyles.backgroundWhite
+    doneBtn.backgroundColor = ColorStyles.primary
+    doneBtn.layer.cornerRadius = 10.0
+    doneBtn.setTitleColor(ColorStyles.backgroundWhite, for: .normal)
+    skipBtn?.backgroundColor = .clear
+    skipBtn?.setTitleColor(ColorStyles.blackText.withAlphaComponent(0.7), for: .normal)
+    titleLbl.font = FontStyles.onboardingTitleFont
+    titleLbl.numberOfLines = 2
+    subTitleLbl.font = FontStyles.onboardingSubTitleFont
+    subTitleLbl.numberOfLines = 3
+  }
+  
+  @IBAction func skipPressed(sender: UIButton) {
+    // hack to test if works
+    self.dismiss(animated: true, completion: nil)
+//    self.dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func donePressed(sender: UIButton) {
+    // hack to test if works
+    self.dismiss(animated: true, completion: nil)
+//    self.dismiss(animated: true, completion: nil)
+  }
   
 }

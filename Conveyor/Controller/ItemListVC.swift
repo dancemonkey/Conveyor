@@ -32,6 +32,16 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     tableView.delegate = self
     tableView.dataSource = self
     
+    // mostly works, need refining so it loads on app start
+    // need to set hasLaunchedBefore to true when dismissing onboarding
+    let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
+    print(hasLaunchedBefore)
+    if hasLaunchedBefore == false {
+      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+      guard let vc = storyboard.instantiateInitialViewController() else { return }
+      self.present(vc, animated: true, completion: nil)
+    }
+    
     frc = initializeFRC()
     frc.delegate = self
     performFetch()

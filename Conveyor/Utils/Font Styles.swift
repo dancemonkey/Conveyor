@@ -12,13 +12,13 @@ struct FontStyles {
   
   static var tabBarFont: UIFont {
     get {
-      return UIFont(name: "SF-UI-Display-Bold", size: 20.0) ?? UIFont.systemFont(ofSize: 20.0, weight: .bold)
+      return UIFont(name: "SFUIDisplay-Bold", size: 20.0) ?? UIFont.systemFont(ofSize: 20.0, weight: .bold)
     }
   }
   
   static var mainTitleFont: UIFont {
     get {
-      return UIFont(name: "SF-Pro-Text-Semibold", size: 24.0) ?? UIFont.systemFont(ofSize: 24.0, weight: .medium)
+      return UIFont(name: "SFProText-Semibold", size: 24.0) ?? UIFont.systemFont(ofSize: 24.0, weight: .medium)
     }
   }
   
@@ -30,12 +30,12 @@ struct FontStyles {
   
   static var settingsCellFont: UIFont {
     get {
-      return UIFont(name: "SF-Pro-Text-Medium", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .regular)
+      return UIFont(name: "SFProText-Medium", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .regular)
     }
   }
   
   static var toastFont: UIFont {
-    return UIFont(name: "SF-Pro-Text-Medium", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
+    return UIFont(name: "SFProText-Medium", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
   }
   
   static var itemCellFont: UIFont {
@@ -47,6 +47,20 @@ struct FontStyles {
   static var widgetItemCellFont: UIFont {
     get {
       return UIFont.preferredFont(forTextStyle: .body)
+    }
+  }
+  
+  static var onboardingTitleFont: UIFont {
+    get {
+      let size: CGFloat = 18.0
+      return UIFont(name: "SFProText-Semibold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .semibold)
+    }
+  }
+  
+  static var onboardingSubTitleFont: UIFont {
+    get {
+      let size: CGFloat = 14.0
+      return UIFont(name: "SFProText-Medium", size: size) ?? UIFont.systemFont(ofSize: size, weight: .medium)
     }
   }
   
