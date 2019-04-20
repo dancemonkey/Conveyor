@@ -10,6 +10,24 @@ import UIKit
 
 class AlertFactory {
   
+  static func siriAuthNotification(completion: @escaping () -> ()) -> UIAlertController {
+    let controller = UIAlertController(title: "Siri Authorization", message: "Siri wants to be able to add tasks to your lists. You can change your mind later from iOS Settings.", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+      completion()
+    }
+    controller.addAction(ok)
+    return controller
+  }
+  
+  static func badgeAuthNotification(completion: @escaping () -> ()) -> UIAlertController {
+    let controller = UIAlertController(title: "Badge Authorization", message: "We use badges to show how many tasks you have due today (this is also configurable within the app and iOS Settings).", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+      completion()
+    }
+    controller.addAction(ok)
+    return controller
+  }
+  
   static func move(item: Item, completion: @escaping () -> ()) -> UIAlertController? {
     guard let currentBucket = Bucket(rawValue: item.bucket!) else { return nil }
     let controller = UIAlertController(title: "Move item to...", message: nil, preferredStyle: .actionSheet)

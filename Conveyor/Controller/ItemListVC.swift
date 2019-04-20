@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Intents
+import UserNotifications
 
 class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   
@@ -32,25 +33,9 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     tableView.delegate = self
     tableView.dataSource = self
     
-    // mostly works, need refining so it loads on app start
-    // need to set hasLaunchedBefore to true when dismissing onboarding
-    let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
-    print(hasLaunchedBefore)
-    if hasLaunchedBefore == false {
-      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-      guard let vc = storyboard.instantiateInitialViewController() else { return }
-      self.present(vc, animated: true, completion: nil)
-    }
-    
     frc = initializeFRC()
     frc.delegate = self
     performFetch()
-    if INPreferences.siriAuthorizationStatus() == .notDetermined {
-      INPreferences.requestSiriAuthorization { (status) in
-        if status == .authorized {
-        }
-      }
-    }
     
     NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
@@ -60,6 +45,27 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     updateHeading()
     performFetch()
     tableView.reloadData()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    // need to set hasLaunchedBefore to true when dismissing onboarding
+    let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
+    if hasLaunchedBefore == false && self.title == "Today" {
+      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+      guard let vc = storyboard.instantiateInitialViewController() else { return }
+      self.present(vc, animated: true, completion: nil)
+    }
+    
+    // show popup to request siri authorization
+    if INPreferences.siriAuthorizationStatus() == .notDetermined {
+      DispatchQueue.main.async {
+        let siriPopup = AlertFactory.siriAuthNotification {
+          INPreferences.requestSiriAuthorization { (status) in }
+        }
+        self.present(siriPopup, animated: true, completion: nil)
+      }
+    }
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -159,6 +165,21 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
           self.entryFieldBottomConstraint.constant = keyboardViewEndFrame.height
           self.watermarkImage?.isHidden = true
           self.view.layoutIfNeeded()
+        }
+      }
+    }
+  }
+  
+  func requestBadgeAuthorization() {
+    // Ask for badge permissions the first time they add something to Today
+    let center = UNUserNotificationCenter.current()
+    center.getNotificationSettings { (settings) in
+      if settings.authorizationStatus == .notDetermined {
+        DispatchQueue.main.async {
+          let badgePopup = AlertFactory.badgeAuthNotification(completion: {
+            center.requestAuthorization(options: .badge) { (granted, error) in }
+          })
+          self.present(badgePopup, animated: true, completion: nil)
         }
       }
     }
@@ -351,7 +372,7 @@ extension ItemListVC {
       entryField.selectAll(nil)
     }
   }
-
+  
   @objc func stopEditing() {
     view.endEditing(true)
     removeBlurEffect()
@@ -392,6 +413,9 @@ extension ItemListVC {
     let currentBucket = Bucket(rawValue: self.title!.lowercased())
     if currentBucket != bucket {
       showToast(from: .bottom, with: "Scheduled for \(bucket.rawValue.capitalized)")
+    }
+    if bucket == Bucket.today {
+      requestBadgeAuthorization()
     }
   }
 }

@@ -12,13 +12,16 @@ class OnboardingVC: UIPageViewController {
   
   typealias TextGroup = (title: String, subtitle: String)
   private var titleText: [TextGroup] = []
+  private var screenshots: [UIImage] = []
   
   fileprivate lazy var pages: [UIViewController] = {
     return [
       self.getViewController(withIdentifier: "page1", and: titleText[0], lastVC: false),
       self.getViewController(withIdentifier: "page1", and: titleText[1], lastVC: false),
       self.getViewController(withIdentifier: "page1", and: titleText[2], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[3], lastVC: true)
+      self.getViewController(withIdentifier: "page1", and: titleText[3], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[4], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[5], lastVC: true)
     ]
   }()
   
@@ -35,10 +38,12 @@ class OnboardingVC: UIPageViewController {
     self.delegate = self
     self.dataSource = self
     titleText = [
-    ("Welcome to Conveyor!", "Create tasks just by entering the title and scheduling it for Today, Tomorrow, or Later."),
-    ("Swipe right to complete a task.", "Swipe left to see other options, like reschedule and delete."),
-    ("Tasks change lists after midnight each night.", #"“Later” tasks move to “Tomorrow”, “Tomorrow” tasks move to “Today”, like a conveyor belt!"#),
-    ("You can lock tasks in the Later list.", #"“Later” tasks can be held in place for any number of days, or forever until you unlock them."#)
+    ("Welcome to Conveyor!", "Using Conveyor is simple. Just create tasks, scheduling them into one of three lists (Today, Tomorrow, or Later), then start getting things done!"),
+    ("Create a task", #"Tap on the "Add new task" field, type in the title, then select when you want the task scheduled."#),
+    ("Swipe right to complete a task", "Swipe left to see other options, like reschedule (to move a task to another list) and delete."),
+    ("Tasks reschedule themselves daily", #"After midnight (or the first time you open the app each day), “Later” tasks move to “Tomorrow”, “Tomorrow” tasks move to “Today”, and "Today" tasks become overdue."#),
+    ("Lock tasks in the Later list", #"A “Later” task can be held in place for any number of days, or forever (until you unlock it). Just in case you don't feel like dealing with it for a while."#),
+    ("You're ready to get started!", #"We're just going to ask for a couple of authorizations, so that you can see badges for what's due today and use Siri to add tasks."#)
     ]
     if let firstVC = pages.first {
       setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)

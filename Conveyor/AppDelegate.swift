@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let store = Store(testing: false)
-    let center = UNUserNotificationCenter.current()
     
     guard let _ = store.getNextBucketChange() else {
       store.setNextBucketChange()
@@ -29,17 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     application.setMinimumBackgroundFetchInterval(7200)
     
-    if Settings.everLaunched() == false {
-      print("never launched, should ask for permissions and set initial default settings")
-      Settings.setFirstLaunchDefaults()
-    }
-    
-    center.requestAuthorization(options: .badge) { (granted, error) in
-      if granted {
+    let center = UNUserNotificationCenter.current()
+    center.getNotificationSettings { (settings) in
+      if settings.authorizationStatus == .authorized {
         DispatchQueue.main.async {
+          let store = Store(testing: false)
           application.applicationIconBadgeNumber = store.getBadgeCount()
         }
       }
+    }
+    
+    if Settings.everLaunched() == false {
+      Settings.setFirstLaunchDefaults()
     }
     
     return true
@@ -94,6 +94,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     if shouldChangeBuckets() {
       changeAllItemBuckets()
+    }
+    let center = UNUserNotificationCenter.current()
+    center.getNotificationSettings { (settings) in
+      if settings.authorizationStatus == .authorized {
+        DispatchQueue.main.async {
+          let store = Store(testing: false)
+          application.applicationIconBadgeNumber = store.getBadgeCount()
+        }
+      }
     }
   }
   

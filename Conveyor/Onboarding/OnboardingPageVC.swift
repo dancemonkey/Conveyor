@@ -52,19 +52,20 @@ class OnboardingPageVC: UIViewController {
     titleLbl.font = FontStyles.onboardingTitleFont
     titleLbl.numberOfLines = 2
     subTitleLbl.font = FontStyles.onboardingSubTitleFont
-    subTitleLbl.numberOfLines = 3
+    subTitleLbl.numberOfLines = 4
+  }
+  
+  func finishOnboarding() {
+    UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
+    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func skipPressed(sender: UIButton) {
-    // hack to test if works
-    self.dismiss(animated: true, completion: nil)
-//    self.dismiss(animated: true, completion: nil)
+    finishOnboarding()
   }
   
   @IBAction func donePressed(sender: UIButton) {
-    // hack to test if works
-    self.dismiss(animated: true, completion: nil)
-//    self.dismiss(animated: true, completion: nil)
+    finishOnboarding()
   }
   
 }
