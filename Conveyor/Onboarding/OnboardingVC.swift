@@ -38,12 +38,20 @@ class OnboardingVC: UIPageViewController {
     self.delegate = self
     self.dataSource = self
     titleText = [
-    ("Welcome to Conveyor!", "Using Conveyor is simple. Just create tasks, scheduling them into one of three lists (Today, Tomorrow, or Later), then start getting things done!"),
+    ("Welcome to Conveyor!", "Using Conveyor is simple. Just create tasks, schedule them into one of three lists (Today, Tomorrow, or Later), then start getting things done!"),
     ("Create a task", #"Tap on the "Add new task" field, type in the title, then select when you want the task scheduled."#),
     ("Swipe right to complete a task", "Swipe left to see other options, like reschedule (to move a task to another list) and delete."),
-    ("Tasks reschedule themselves daily", #"After midnight (or the first time you open the app each day), “Later” tasks move to “Tomorrow”, “Tomorrow” tasks move to “Today”, and "Today" tasks become overdue."#),
-    ("Lock tasks in the Later list", #"A “Later” task can be held in place for any number of days, or forever (until you unlock it). Just in case you don't feel like dealing with it for a while."#),
+    ("Tasks reschedule themselves daily", #"After midnight (or the first time you open the app each day), Later tasks move to Tomorrow, Tomorrow tasks move to Today, and Today tasks become overdue."#),
+    ("Lock tasks in the Later list", #"A “Later” task can be locked in place for any number of days, or forever (until you unlock it). Just in case you don't feel like dealing with it for a while."#),
     ("You're ready to get started!", #"We're just going to ask for a couple of authorizations, so that you can see badges for what's due today and use Siri to add tasks."#)
+    ]
+    screenshots = [
+      // 0. Welcome screenshot
+      // 1. Creating a task, data entry field with keyboard accessory view buttons
+      // 2. Swipe actions on tasks
+      // 3. Tasks moving from list to list daily
+      // 4. Locking tasks on Later list
+      // 5. All done/get started using app
     ]
     if let firstVC = pages.first {
       setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)

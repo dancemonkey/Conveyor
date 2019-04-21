@@ -13,14 +13,10 @@ class BadgeOptionVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var deniedBadgeAuthLbl: UILabel!
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var options: [BadgeOption]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    activityIndicator.hidesWhenStopped = true
-    activityIndicator.startAnimating()
     
     options = []
     BadgeOption.allCases.forEach { (option) in
@@ -33,21 +29,23 @@ class BadgeOptionVC: UIViewController {
     deniedBadgeAuthLbl.textColor = ColorStyles.blackText
     deniedBadgeAuthLbl.textAlignment = .center
     
-    let center = UNUserNotificationCenter.current()
-    center.getNotificationSettings { (settings) in
-      if settings.authorizationStatus == .denied {
-        DispatchQueue.main.async { [weak self] in
-          self?.deniedBadgeAuthLbl.isHidden = false
+    tableView.delegate = self
+    tableView.dataSource = self
+    
+    DispatchQueue.global(qos: .background).async {
+      let center = UNUserNotificationCenter.current()
+      center.getNotificationSettings { (settings) in
+        if settings.authorizationStatus == .denied {
+          DispatchQueue.main.async { [weak self] in
+            self?.deniedBadgeAuthLbl.isHidden = false
+            self?.tableView.isHidden = true
+          }
+        } else {
+          DispatchQueue.main.async { [weak self] in
+            self?.deniedBadgeAuthLbl.isHidden = true
+            self?.tableView.isHidden = false
+          }
         }
-      } else {
-        DispatchQueue.main.async { [weak self] in
-          self?.deniedBadgeAuthLbl.isHidden = true
-          self?.tableView.delegate = self
-          self?.tableView.dataSource = self
-        }
-      }
-      DispatchQueue.main.async {
-        self.activityIndicator.stopAnimating()
       }
     }
   }
