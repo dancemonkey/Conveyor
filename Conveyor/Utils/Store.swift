@@ -12,6 +12,9 @@ import UserNotifications
 
 class Store {
   
+  let generator = UINotificationFeedbackGenerator()
+  let impactGenerator = UIImpactFeedbackGenerator(style: .light)
+  
   // MARK: Test Init
   convenience init(testing: Bool) {
     self.init()
@@ -130,6 +133,7 @@ class Store {
     }
     item.title = text
     item.creation = Date() as NSDate
+    generator.notificationOccurred(.success)
   }
   
   func delete(item: Item) {
@@ -143,6 +147,7 @@ class Store {
     if oldBucket != bucket.rawValue {
       item.state = ItemState.none.rawValue
     }
+    impactGenerator.impactOccurred()
   }
   
 }

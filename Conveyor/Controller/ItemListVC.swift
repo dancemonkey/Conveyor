@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Intents
 import UserNotifications
+import AVFoundation
 
 class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   
@@ -22,6 +23,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   var watermarkImage: UIImageView?
   var titleLabel: UILabel?
   var mocSaveObserver: NSNotification?
+  var radio: Radio?
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var entryField: ItemEntryField!
   @IBOutlet weak var entryFieldBottomConstraint: NSLayoutConstraint!
@@ -32,6 +34,8 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     setupKeyboardObserver()
     tableView.delegate = self
     tableView.dataSource = self
+    
+    radio = Radio()
     
     frc = initializeFRC()
     frc.delegate = self
@@ -320,10 +324,11 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
         } else if doneSetting == .delete {
           store.delete(item: item)
         }
-        self?.showToast(from: .bottom, with: ToastMessages.getPositiveMessage())
+        self?.radio?.playItemComplete()
       }
       store.save()
       success(true)
+      self?.showToast(from: .bottom, with: ToastMessages.getPositiveMessage())
     }
     if itemState == .done {
       complete.image = Constants.ItemActions.complete.getUnCompleteImage()

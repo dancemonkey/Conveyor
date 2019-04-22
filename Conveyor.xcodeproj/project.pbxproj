@@ -27,6 +27,8 @@
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
+		106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AFD226DF4F000D43FD6 /* slide-paper.aif */; };
+		106E2B00226DF57100D43FD6 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AFF226DF57100D43FD6 /* Radio.swift */; };
 		10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2D225CC28900F9D9B8 /* AppDelegate.swift */; };
 		10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
@@ -128,6 +130,8 @@
 		10240DC8225E1CC1001FC721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		10240DCA225E1CC1001FC721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		106E2AFD226DF4F000D43FD6 /* slide-paper.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-paper.aif"; sourceTree = "<group>"; };
+		106E2AFF226DF57100D43FD6 /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10807E2D225CC28900F9D9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10807E35225CC28900F9D9B8 /* Conveyor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conveyor.xcdatamodel; sourceTree = "<group>"; };
@@ -247,6 +251,14 @@
 			path = TodayWidget;
 			sourceTree = "<group>";
 		};
+		106E2AFC226DEEA900D43FD6 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				106E2AFD226DF4F000D43FD6 /* slide-paper.aif */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		10807E21225CC28900F9D9B8 = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +324,7 @@
 		10807E57225CC2D900F9D9B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				106E2AFC226DEEA900D43FD6 /* Sound */,
 				10807E50225CC2D400F9D9B8 /* Fonts */,
 			);
 			path = Resources;
@@ -340,6 +353,7 @@
 				10807E67225CC30E00F9D9B8 /* AppIntentVocabulary.plist */,
 				10807E68225CC30E00F9D9B8 /* Color Style.swift */,
 				10807E69225CC30E00F9D9B8 /* Date Styles.swift */,
+				106E2AFF226DF57100D43FD6 /* Radio.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -561,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10807E71225CC30E00F9D9B8 /* AppIntentVocabulary.plist in Resources */,
+				106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */,
 				10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */,
 				10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */,
 				10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */,
@@ -622,6 +637,7 @@
 				1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */,
 				1011A5B6226A08E600764234 /* OnboardingVC.swift in Sources */,
 				10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */,
+				106E2B00226DF57100D43FD6 /* Radio.swift in Sources */,
 				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
 				10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */,
 				10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */,

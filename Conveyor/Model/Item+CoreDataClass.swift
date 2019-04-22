@@ -19,18 +19,23 @@ enum Bucket: String {
 @objc(Item)
 public class Item: NSManagedObject {
   
+  let generator = UINotificationFeedbackGenerator()
+
   func complete() {
     self.bucket = Bucket.today.rawValue
     self.state = ItemState.done.rawValue
+    generator.notificationOccurred(.success)
   }
   
   func unComplete() {
     self.state = ItemState.none.rawValue
+    generator.notificationOccurred(.success)
   }
   
   func change(to newBucket: Bucket) {
     self.bucket = newBucket.rawValue
     self.change(to: .none)
+    generator.notificationOccurred(.success)
   }
   
   func change(to newState: ItemState) {
@@ -46,6 +51,7 @@ public class Item: NSManagedObject {
     } else {
       self.holdDays = 0
     }
+    generator.notificationOccurred(.success)
   }
   
   func unHold() {
