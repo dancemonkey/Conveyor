@@ -24,9 +24,9 @@ enum UserDefaultKeys: String {
   case doneSetting, badgeSetting, alwaysAsk, holdSetting, everLaunched, didChangeObject
 }
 
-class Settings {
+struct Settings {
   
-  enum SettingsListOptions: CaseIterable {
+  enum GeneralSettingsOptions: CaseIterable {
     case badge, lockingItems, completedItems
     
     func getTitle() -> String {
@@ -50,17 +50,31 @@ class Settings {
         return "showCompletionOptions"
       }
     }
+  }
+  enum InfoSettingsOptions: CaseIterable {
+    case support, iap, review
     
-//    func getHelpText() -> String {
-//      switch self {
-//      case .badge:
-//        return "Which items should count towards the app badge?"
-//      case .lockingItems:
-//        return "What action is taken when you select the Lock option on an item in the Later list?"
-//      case .completedItems:
-//        return "What should be done with items you complete?"
-//      }
-//    }
+    func getTitle() -> String {
+      switch self {
+      case .support:
+        return "Help/Support"
+      case .iap:
+        return "Unlock/Restore Features"
+      case .review:
+        return "Review on App Store"
+      }
+    }
+    
+    func getSegueId() -> String {
+      switch self {
+      case .support:
+        return "showSupport"
+      case .iap:
+        return "showIAP"
+      case .review:
+        return "showReview"
+      }
+    }
   }
   
   static var defaults: UserDefaults {

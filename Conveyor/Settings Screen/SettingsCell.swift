@@ -23,6 +23,8 @@ class SettingsCell: UITableViewCell {
     self.optionLbl.text = title
     self.segueID = segueID
     optionLbl.font = FontStyles.settingsCellFont
+    optionLbl.textColor = ColorStyles.blackText
+    selectionStyle = .none
   }
   
 }

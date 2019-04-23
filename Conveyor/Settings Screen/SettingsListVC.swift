@@ -12,19 +12,28 @@ class SettingsListVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var copyrightLbl: UILabel!
-  var settingsOptions: [Settings.SettingsListOptions]?
+  var generalOptions: [Settings.GeneralSettingsOptions]?
+  var infoOptions: [Settings.InfoSettingsOptions]?
   var sectionHeaders: [String] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
-    settingsOptions = []
-    Settings.SettingsListOptions.allCases.forEach { (option) in
-      settingsOptions?.append(option)
-    }
+    populateSettingsInfo()
     setCopyrightText()
+  }
+  
+  func populateSettingsInfo() {
     sectionHeaders = ["General Settings", "Info"]
+    generalOptions = []
+    infoOptions = []
+    Settings.GeneralSettingsOptions.allCases.forEach { (option) in
+      generalOptions?.append(option)
+    }
+    Settings.InfoSettingsOptions.allCases.forEach { (option) in
+      infoOptions?.append(option)
+    }
   }
   
   func setCopyrightText() {
@@ -43,7 +52,7 @@ class SettingsListVC: UIViewController {
 
 extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 2
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -51,20 +60,46 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Settings.SettingsListOptions.allCases.count
+    switch section {
+    case 0:
+      return Settings.GeneralSettingsOptions.allCases.count
+    case 1:
+      return Settings.InfoSettingsOptions.allCases.count
+    default:
+      return 0
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableCellID.settingsCell.rawValue) as! SettingsCell
-    if let option = settingsOptions?[indexPath.row] {
-      cell.configure(with: option.getTitle(), segueID: option.getSegueId())
+    switch indexPath.section {
+    case 0:
+      if let option = generalOptions?[indexPath.row] {
+        cell.configure(with: option.getTitle(), segueID: option.getSegueId())
+      }
+    case 1:
+      if let option = infoOptions?[indexPath.row] {
+        cell.configure(with: option.getTitle(), segueID: option.getSegueId())
+      }
+    default:
+      return cell
     }
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if let option = settingsOptions?[indexPath.row] {
-      performSegue(withIdentifier: option.getSegueId(), sender: self)
+    switch indexPath.section {
+    case 0:
+      if let option = generalOptions?[indexPath.row] {
+        performSegue(withIdentifier: option.getSegueId(), sender: self)
+      }
+    case 1:
+      if let option = infoOptions?[indexPath.row] {
+        performSegue(withIdentifier: option.getSegueId(), sender: self)
+      }
+    default:
+      print("You may ask yourself how did I get here?")
     }
+    
   }
 }
