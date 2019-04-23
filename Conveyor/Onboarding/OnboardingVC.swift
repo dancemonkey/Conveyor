@@ -16,20 +16,21 @@ class OnboardingVC: UIPageViewController {
   
   fileprivate lazy var pages: [UIViewController] = {
     return [
-      self.getViewController(withIdentifier: "page1", and: titleText[0], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[1], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[2], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[3], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[4], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[5], lastVC: true)
+      self.getViewController(withIdentifier: "page1", and: titleText[0], image: screenshots[0], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[1], image: screenshots[1], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[2], image: screenshots[2], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[3], image: screenshots[3], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[4], image: screenshots[4], lastVC: false),
+      self.getViewController(withIdentifier: "page1", and: titleText[5], image: screenshots[5], lastVC: true)
     ]
   }()
   
-  fileprivate func getViewController(withIdentifier identifier: String, and text: TextGroup, lastVC: Bool) -> UIViewController
+  fileprivate func getViewController(withIdentifier identifier: String, and text: TextGroup, image: UIImage, lastVC: Bool) -> UIViewController
   {
     let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: identifier) as! OnboardingPageVC
     vc.text = text
     vc.lastVC = lastVC
+    vc.image = image
     return vc
   }
   
@@ -47,11 +48,17 @@ class OnboardingVC: UIPageViewController {
     ]
     screenshots = [
       // 0. Welcome screenshot
+      UIImage(named: "welcome.png")!,
       // 1. Creating a task, data entry field with keyboard accessory view buttons
+      UIImage(named: "createTask.png")!,
       // 2. Swipe actions on tasks
+      UIImage(named: "completeTask.png")!,
       // 3. Tasks moving from list to list daily
+      UIImage(named: "tasksMove.png")!,
       // 4. Locking tasks on Later list
+      UIImage(named: "lockTasks.png")!,
       // 5. All done/get started using app
+      UIImage(named: "allDone")!
     ]
     if let firstVC = pages.first {
       setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)

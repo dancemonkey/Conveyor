@@ -24,6 +24,7 @@ class SettingsCell: UITableViewCell {
     self.segueID = segueID
     optionLbl.font = FontStyles.settingsCellFont
     optionLbl.textColor = ColorStyles.blackText
+    backgroundColor = ColorStyles.backgroundWhite
     selectionStyle = .none
   }
   

@@ -42,6 +42,7 @@ class SettingsListVC: UIViewController {
     © 2019 Drew Lanning
     All Rights Reserved
     """
+    copyrightLbl.textColor = ColorStyles.primary
   }
   
   @IBAction func doneTapped(sender: UIBarButtonItem) {

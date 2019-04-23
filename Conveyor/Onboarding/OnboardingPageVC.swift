@@ -18,6 +18,7 @@ class OnboardingPageVC: UIViewController {
   typealias TitleText = (title: String, subtitle: String)
   var text: TitleText?
   var lastVC: Bool = false
+  var image: UIImage?
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,30 +26,24 @@ class OnboardingPageVC: UIViewController {
       titleLbl.text = titles.title
       subTitleLbl.text = titles.subtitle
     }
-    if lastVC {
-      doneBtn.isHidden = false
-    } else {
-      doneBtn.isHidden = true
+    if let img = image {
+      self.screenshot.image = img
     }
     styleViews()
   }
   
-  func setText(for title: String, andSubtitle subtitle: String) {
-    self.titleLbl.text = title
-    self.subTitleLbl.text = subtitle
-  }
-  
-  func setImage(_ image: UIImage) {
-    self.screenshot.image = image
-  }
-  
   private func styleViews() {
     self.view.backgroundColor = ColorStyles.backgroundWhite
-    doneBtn.backgroundColor = ColorStyles.primary
-    doneBtn.layer.cornerRadius = 10.0
-    doneBtn.setTitleColor(ColorStyles.backgroundWhite, for: .normal)
-    skipBtn?.backgroundColor = .clear
-    skipBtn?.setTitleColor(ColorStyles.blackText.withAlphaComponent(0.7), for: .normal)
+    if lastVC {
+      skipBtn.setTitle("DONE", for: .normal)
+      skipBtn.backgroundColor = ColorStyles.primary
+      skipBtn.setTitleColor(ColorStyles.backgroundWhite, for: .normal)
+      skipBtn.layer.cornerRadius = 10
+    } else {
+      skipBtn?.backgroundColor = .clear
+      skipBtn?.setTitleColor(ColorStyles.blackText.withAlphaComponent(0.7), for: .normal)
+      skipBtn.setTitle("Skip", for: .normal)
+    }
     titleLbl.font = FontStyles.onboardingTitleFont
     titleLbl.numberOfLines = 2
     subTitleLbl.font = FontStyles.onboardingSubTitleFont
@@ -61,10 +56,6 @@ class OnboardingPageVC: UIViewController {
   }
   
   @IBAction func skipPressed(sender: UIButton) {
-    finishOnboarding()
-  }
-  
-  @IBAction func donePressed(sender: UIButton) {
     finishOnboarding()
   }
   
