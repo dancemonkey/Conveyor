@@ -26,6 +26,7 @@ struct Radio {
     let url = URL(fileURLWithPath: path!)
     do {
       player = try AVAudioPlayer(contentsOf: url)
+      player?.setVolume(1.5, fadeDuration: 0)
       player?.prepareToPlay()
       player?.play()
     } catch {

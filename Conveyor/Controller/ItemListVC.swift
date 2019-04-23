@@ -190,7 +190,9 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   }
   
   @IBAction func settingsTapped(sender: UIButton) {
-    performSegue(withIdentifier: "showSettings", sender: self)
+    let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+    guard let vc = storyboard.instantiateInitialViewController() else { return }
+    self.present(vc, animated: true, completion: nil)
   }
 }
 

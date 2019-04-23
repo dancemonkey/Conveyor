@@ -27,6 +27,7 @@
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
+		105363E4226F378A0093A549 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105363E3226F378A0093A549 /* Settings.storyboard */; };
 		106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AFD226DF4F000D43FD6 /* slide-paper.aif */; };
 		106E2B00226DF57100D43FD6 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AFF226DF57100D43FD6 /* Radio.swift */; };
 		10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2D225CC28900F9D9B8 /* AppDelegate.swift */; };
@@ -37,7 +38,6 @@
 		10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E51225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf */; };
 		10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E52225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf */; };
 		10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10807E53225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf */; };
-		10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */; };
 		10807E5D225CC2F500F9D9B8 /* UITextField ID Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */; };
 		10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */; };
 		10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
@@ -54,7 +54,6 @@
 		10807E7D225CC36800F9D9B8 /* ItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E78225CC36700F9D9B8 /* ItemListCell.swift */; };
 		10807E7E225CC36800F9D9B8 /* ItemEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E79225CC36700F9D9B8 /* ItemEntryField.swift */; };
 		10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */; };
-		10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E7B225CC36800F9D9B8 /* SettingsCells.swift */; };
 		10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		10807E86225CC44800F9D9B8 /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E85225CC44800F9D9B8 /* ItemListVC.swift */; };
@@ -130,6 +129,7 @@
 		10240DC8225E1CC1001FC721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		10240DCA225E1CC1001FC721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		106E2AFD226DF4F000D43FD6 /* slide-paper.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-paper.aif"; sourceTree = "<group>"; };
 		106E2AFF226DF57100D43FD6 /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,6 @@
 		10807E51225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		10807E52225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		10807E53225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettingsCell Protocol.swift"; sourceTree = "<group>"; };
 		10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField ID Extension.swift"; sourceTree = "<group>"; };
 		10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data Entry + Display Protocols.swift"; sourceTree = "<group>"; };
 		10807E60225CC30E00F9D9B8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -161,7 +160,6 @@
 		10807E78225CC36700F9D9B8 /* ItemListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCell.swift; sourceTree = "<group>"; };
 		10807E79225CC36700F9D9B8 /* ItemEntryField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemEntryField.swift; sourceTree = "<group>"; };
 		10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketSelectBtn.swift; sourceTree = "<group>"; };
-		10807E7B225CC36800F9D9B8 /* SettingsCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCells.swift; sourceTree = "<group>"; };
 		10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10807E85225CC44800F9D9B8 /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
@@ -286,6 +284,7 @@
 		10807E2C225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXGroup;
 			children = (
+				10CCB22C226BB4520029D7AF /* Settings Screen */,
 				1011A5B4226A087700764234 /* Onboarding */,
 				10807E87225CC46000F9D9B8 /* Conveyor.entitlements */,
 				10807E76225CC32500F9D9B8 /* Model */,
@@ -333,7 +332,6 @@
 		10807E58225CC2F500F9D9B8 /* Class Extensions + Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				10807E59225CC2F500F9D9B8 /* SettingsCell Protocol.swift */,
 				10807E5A225CC2F500F9D9B8 /* UITextField ID Extension.swift */,
 				10807E5B225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift */,
 			);
@@ -373,9 +371,7 @@
 				10807E7A225CC36700F9D9B8 /* BucketSelectBtn.swift */,
 				10807E79225CC36700F9D9B8 /* ItemEntryField.swift */,
 				10807E78225CC36700F9D9B8 /* ItemListCell.swift */,
-				10807E7B225CC36800F9D9B8 /* SettingsCells.swift */,
 				10807E77225CC36700F9D9B8 /* ToastView.swift */,
-				10CCB22C226BB4520029D7AF /* Settings Screen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +407,7 @@
 				1089FB21226899AF008EFFEF /* BadgeOptionVC.swift */,
 				1089FB2322689E61008EFFEF /* LockedItemsVC.swift */,
 				1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */,
+				105363E3226F378A0093A549 /* Settings.storyboard */,
 			);
 			path = "Settings Screen";
 			sourceTree = "<group>";
@@ -583,6 +580,7 @@
 				101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */,
 				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
 				1011A5B3226A080300764234 /* Onboarding.storyboard in Resources */,
+				105363E4226F378A0093A549 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,10 +638,8 @@
 				106E2B00226DF57100D43FD6 /* Radio.swift in Sources */,
 				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
 				10807E83225CC3E300F9D9B8 /* Item+CoreDataClass.swift in Sources */,
-				10807E80225CC36800F9D9B8 /* SettingsCells.swift in Sources */,
 				10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */,
 				10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */,
-				10807E5C225CC2F500F9D9B8 /* SettingsCell Protocol.swift in Sources */,
 				10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */,
 				1011A5B8226A090100764234 /* OnboardingPageVC.swift in Sources */,
 				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
