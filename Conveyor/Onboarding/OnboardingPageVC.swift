@@ -7,19 +7,19 @@
 //
 
 import UIKit
+import AVKit
 
 class OnboardingPageVC: UIViewController {
   
   @IBOutlet weak var titleLbl: UILabel!
   @IBOutlet weak var subTitleLbl: UILabel!
   @IBOutlet weak var screenshot: UIImageView!
-  @IBOutlet weak var doneBtn: UIButton!
   @IBOutlet weak var skipBtn: UIButton!
   typealias TitleText = (title: String, subtitle: String)
   var text: TitleText?
   var lastVC: Bool = false
   var image: UIImage?
-    
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     if let titles = text {

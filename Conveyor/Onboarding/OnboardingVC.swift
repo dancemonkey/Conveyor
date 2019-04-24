@@ -13,16 +13,15 @@ class OnboardingVC: UIPageViewController {
   typealias TextGroup = (title: String, subtitle: String)
   private var titleText: [TextGroup] = []
   private var screenshots: [UIImage] = []
+  private var videoFiles: [String?] = []
   
   fileprivate lazy var pages: [UIViewController] = {
-    return [
-      self.getViewController(withIdentifier: "page1", and: titleText[0], image: screenshots[0], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[1], image: screenshots[1], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[2], image: screenshots[2], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[3], image: screenshots[3], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[4], image: screenshots[4], lastVC: false),
-      self.getViewController(withIdentifier: "page1", and: titleText[5], image: screenshots[5], lastVC: true)
-    ]
+    var vcs: [OnboardingPageVC] = []
+    for i in 0...5 {
+      vcs.append(self.getViewController(withIdentifier: "page1", and: titleText[i], image: screenshots[i], lastVC: false) as! OnboardingPageVC)
+    }
+    vcs.last?.lastVC = true
+    return vcs
   }()
   
   fileprivate func getViewController(withIdentifier identifier: String, and text: TextGroup, image: UIImage, lastVC: Bool) -> UIViewController
@@ -39,12 +38,12 @@ class OnboardingVC: UIPageViewController {
     self.delegate = self
     self.dataSource = self
     titleText = [
-    ("Welcome to Conveyor!", "Using Conveyor is simple. Just create tasks, schedule them into one of three lists (Today, Tomorrow, or Later), then start getting things done!"),
-    ("Create a task", #"Tap on the "Add new task" field, type in the title, then select when you want the task scheduled."#),
-    ("Swipe right to complete a task", "Swipe left to see other options, like reschedule (to move a task to another list) and delete."),
-    ("Tasks reschedule themselves daily", #"After midnight (or the first time you open the app each day), Later tasks move to Tomorrow, Tomorrow tasks move to Today, and Today tasks become overdue."#),
-    ("Lock tasks in the Later list", #"A “Later” task can be locked in place for any number of days, or forever (until you unlock it). Just in case you don't feel like dealing with it for a while."#),
-    ("You're ready to get started!", #"We're just going to ask for a couple of authorizations, so that you can see badges for what's due today and use Siri to add tasks."#)
+      ("Welcome to Conveyor!", #"Let's start by adding a new task. Tap the "Add New Task" field near the bottom of the screen."#),
+      ("Creating a task", #"Enter some text in the box, then tap one of the buttons above the keyboard to assign it to a list ("today", "tomorrow", or "later")."#),
+      ("Swipe right to complete a task", "Swipe left to see other options, like reschedule (to move a task to another list) and delete."),
+      ("Tasks reschedule themselves daily", #"At the first launch each day, tasks change lists (Later moves to Tomorrow moves to Today)."#),
+      ("Lock tasks in the Later list", #"A “Later” task can be locked in place, so it stays in place for as long as you like. Swipe left on a task in the Later list to see the lock option."#),
+      ("You're ready to get started!", #"We're just going to ask for a couple of authorizations, so that you can see badges for what's due today and use Siri to add tasks."#)
     ]
     screenshots = [
       // 0. Welcome screenshot
@@ -58,7 +57,7 @@ class OnboardingVC: UIPageViewController {
       // 4. Locking tasks on Later list
       UIImage(named: "lockTasks.png")!,
       // 5. All done/get started using app
-      UIImage(named: "allDone")!
+      UIImage(named: "allDone.png")!
     ]
     if let firstVC = pages.first {
       setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)

@@ -40,7 +40,8 @@ struct FontStyles {
   
   static var itemCellFont: UIFont {
     get {
-      return UIFont.systemFont(ofSize: 18.0, weight: .thin)
+      let font = UIFont.preferredFont(forTextStyle: .body)
+      return font
     }
   }
   

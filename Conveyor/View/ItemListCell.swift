@@ -27,6 +27,7 @@ class ItemListCell: UITableViewCell {
     itemLabel.text = item.title ?? "no title"
     itemLabel.font = FontStyles.itemCellFont
     itemLabel.adjustsFontSizeToFitWidth = true
+    itemLabel.adjustsFontForContentSizeCategory = true
     itemLabel.minimumScaleFactor = 0.80
     self.accessoryView = nil
     let itemState: ItemState

@@ -104,6 +104,8 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     if let label = titleLabel {
       guard let bucketTitle = self.title else { return }
       label.text = getHeading(for: bucketTitle)
+      label.adjustsFontSizeToFitWidth = true
+      label.minimumScaleFactor = 0.5
     } else {
       addHeading()
     }

@@ -30,6 +30,9 @@
 		105363E4226F378A0093A549 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105363E3226F378A0093A549 /* Settings.storyboard */; };
 		106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AFD226DF4F000D43FD6 /* slide-paper.aif */; };
 		106E2B00226DF57100D43FD6 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AFF226DF57100D43FD6 /* Radio.swift */; };
+		107B97B32270916600B24BFB /* AddTask.mov in Resources */ = {isa = PBXBuildFile; fileRef = 107B97B22270916600B24BFB /* AddTask.mov */; };
+		107B97B72270959C00B24BFB /* CompleteTask.mov in Resources */ = {isa = PBXBuildFile; fileRef = 107B97B62270959C00B24BFB /* CompleteTask.mov */; };
+		107B97B9227095D600B24BFB /* LockTasks.mov in Resources */ = {isa = PBXBuildFile; fileRef = 107B97B8227095D600B24BFB /* LockTasks.mov */; };
 		10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E2D225CC28900F9D9B8 /* AppDelegate.swift */; };
 		10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
@@ -132,6 +135,9 @@
 		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		106E2AFD226DF4F000D43FD6 /* slide-paper.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-paper.aif"; sourceTree = "<group>"; };
 		106E2AFF226DF57100D43FD6 /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
+		107B97B22270916600B24BFB /* AddTask.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AddTask.mov; sourceTree = "<group>"; };
+		107B97B62270959C00B24BFB /* CompleteTask.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = CompleteTask.mov; sourceTree = "<group>"; };
+		107B97B8227095D600B24BFB /* LockTasks.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = LockTasks.mov; sourceTree = "<group>"; };
 		10807E2A225CC28900F9D9B8 /* Conveyor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conveyor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10807E2D225CC28900F9D9B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10807E35225CC28900F9D9B8 /* Conveyor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conveyor.xcdatamodel; sourceTree = "<group>"; };
@@ -323,6 +329,7 @@
 		10807E57225CC2D900F9D9B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10A2D5212270890500ABB220 /* Video */,
 				106E2AFC226DEEA900D43FD6 /* Sound */,
 				10807E50225CC2D400F9D9B8 /* Fonts */,
 			);
@@ -394,6 +401,16 @@
 				10807E90225CC48500F9D9B8 /* Info.plist */,
 			);
 			path = SiriAddTasks;
+			sourceTree = "<group>";
+		};
+		10A2D5212270890500ABB220 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				107B97B22270916600B24BFB /* AddTask.mov */,
+				107B97B62270959C00B24BFB /* CompleteTask.mov */,
+				107B97B8227095D600B24BFB /* LockTasks.mov */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		10CCB22C226BB4520029D7AF /* Settings Screen */ = {
@@ -571,11 +588,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107B97B72270959C00B24BFB /* CompleteTask.mov in Resources */,
 				10807E71225CC30E00F9D9B8 /* AppIntentVocabulary.plist in Resources */,
 				106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */,
 				10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */,
 				10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */,
 				10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */,
+				107B97B9227095D600B24BFB /* LockTasks.mov in Resources */,
+				107B97B32270916600B24BFB /* AddTask.mov in Resources */,
 				10807E55225CC2D400F9D9B8 /* SF-Pro-Text-Semibold.otf in Resources */,
 				101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */,
 				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
