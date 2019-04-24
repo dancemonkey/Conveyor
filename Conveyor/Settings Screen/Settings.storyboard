@@ -101,6 +101,9 @@
                         <segue destination="bbC-y3-wQ3" kind="show" identifier="showBadgeOptions" id="6xt-JM-9Er"/>
                         <segue destination="CFX-wa-DE0" kind="show" identifier="showLockOptions" id="dfI-6S-hDV"/>
                         <segue destination="AGF-pu-mm0" kind="show" identifier="showCompletionOptions" id="j8b-O9-s86"/>
+                        <segue destination="7Gm-3x-nNY" kind="show" identifier="showSupport" id="su7-fS-ai2"/>
+                        <segue destination="7Gm-3x-nNY" kind="show" identifier="showIAP" id="dNy-Wh-RGi"/>
+                        <segue destination="7Gm-3x-nNY" kind="show" identifier="showReview" id="eWf-r7-Hb3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfV-yw-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,6 +231,40 @@
             </objects>
             <point key="canvasLocation" x="3263" y="-340"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6fk-0b-liW">
+            <objects>
+                <viewController id="7Gm-3x-nNY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="piR-cC-irH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIj-eD-GvZ">
+                                <rect key="frame" x="32" y="384" width="350" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ilF-0k-zsU"/>
+                                </constraints>
+                                <string key="text">Whoops, this screen isn't finished yet! In the meantime if you need assistance or want to submit feedback, here is the email address. dance.monkey+conveyor@gmail.com</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EIj-eD-GvZ" firstAttribute="centerX" secondItem="piR-cC-irH" secondAttribute="centerX" id="46C-wN-NSb"/>
+                            <constraint firstItem="EIj-eD-GvZ" firstAttribute="leading" secondItem="YAb-Zb-8vj" secondAttribute="leading" constant="32" id="BS6-ve-6FV"/>
+                            <constraint firstItem="YAb-Zb-8vj" firstAttribute="trailing" secondItem="EIj-eD-GvZ" secondAttribute="trailing" constant="32" id="Df1-J9-jeT"/>
+                            <constraint firstItem="EIj-eD-GvZ" firstAttribute="centerY" secondItem="piR-cC-irH" secondAttribute="centerY" id="zaQ-Zc-00x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YAb-Zb-8vj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51O-Um-Aw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2432" y="488"/>
+        </scene>
         <!--Completion Options-->
         <scene sceneID="bhG-vr-Q2N">
             <objects>
@@ -292,4 +329,7 @@
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eWf-r7-Hb3"/>
+    </inferredMetricsTieBreakers>
 </document>
