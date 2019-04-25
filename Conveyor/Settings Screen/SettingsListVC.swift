@@ -96,7 +96,18 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
       }
     case 1:
       if let option = infoOptions?[indexPath.row] {
-        performSegue(withIdentifier: option.getSegueId(), sender: self)
+        if option == .review {
+          if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "1459794294") {
+            print("got url:\(url)")
+            if #available(iOS 10, *) {
+              UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+              UIApplication.shared.openURL(url)
+            }
+          }
+        } else {
+          performSegue(withIdentifier: option.getSegueId(), sender: self)
+        }
       }
     default:
       print("You may ask yourself how did I get here?")

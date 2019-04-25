@@ -10,7 +10,7 @@ import UIKit
 
 struct Constants {
   enum DefaultKeys: String {
-    case bucketChangeDate, hasLaunchedBefore
+    case bucketChangeDate, hasLaunchedBefore, launchesThisVersion
   }
   
   enum GroupName: String {

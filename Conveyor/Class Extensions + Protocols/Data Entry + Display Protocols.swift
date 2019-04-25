@@ -96,11 +96,25 @@ extension ItemAdder where Self: ItemListVC {
     let toolbar: UIToolbar = UIToolbar()
     toolbar.sizeToFit()
     toolbar.backgroundColor = ColorStyles.backgroundWhite
-    let today = UIBarButtonItem(title: "today", style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
+    
+    let currentTab = Bucket(rawValue: self.title!.lowercased())
+    var todayTitle = "today"
+    var tomorrowTitle = "tomorrow"
+    var laterTitle = "later"
+    switch currentTab! {
+    case .today:
+      todayTitle = todayTitle.uppercased()
+    case .tomorrow:
+      tomorrowTitle = tomorrowTitle.uppercased()
+    case .later:
+      laterTitle = laterTitle.uppercased()
+    }
+    
+    let today = UIBarButtonItem(title: todayTitle, style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
     today.tag = 0
-    let tomorrow = UIBarButtonItem(title: "tomorrow", style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
+    let tomorrow = UIBarButtonItem(title: tomorrowTitle, style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
     tomorrow.tag = 1
-    let later = UIBarButtonItem(title: "later", style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
+    let later = UIBarButtonItem(title: laterTitle, style: .done, target: self, action: #selector(bucketSelectTapped(sender:)))
     later.tag = 2
     let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     [today, tomorrow, later].forEach { (button) in

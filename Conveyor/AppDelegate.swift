@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,7 +43,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       Settings.setFirstLaunchDefaults()
     }
     
+    showReviewRequest()
+    
     return true
+  }
+  
+  func showReviewRequest() {
+    let totalLaunches = UserDefaults.standard.integer(forKey: Constants.DefaultKeys.launchesThisVersion.rawValue)
+    if totalLaunches > 0 {
+      switch totalLaunches {
+      case 14, 50:
+        SKStoreReviewController.requestReview()
+      case _ where totalLaunches % 100 == 0:
+        SKStoreReviewController.requestReview()
+      default:
+        break
+      }
+    }
+    UserDefaults.standard.set(totalLaunches + 1, forKey: Constants.DefaultKeys.launchesThisVersion.rawValue)
   }
   
   func shouldChangeBuckets() -> Bool {

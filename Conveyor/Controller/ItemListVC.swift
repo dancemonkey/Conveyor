@@ -53,7 +53,6 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    // need to set hasLaunchedBefore to true when dismissing onboarding
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
       let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
