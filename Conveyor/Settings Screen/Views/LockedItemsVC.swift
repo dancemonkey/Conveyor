@@ -34,6 +34,10 @@ extension LockedItemsOptionVC: UITableViewDataSource, UITableViewDelegate {
     return 1
   }
   
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return #"Default "Lock" task action"#
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return LockOption.allCases.count
   }

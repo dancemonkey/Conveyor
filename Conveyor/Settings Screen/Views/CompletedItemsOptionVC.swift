@@ -34,6 +34,10 @@ extension CompletedItemsOptionVC: UITableViewDataSource, UITableViewDelegate {
     return 1
   }
   
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return #"Completed task defaults"#
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return DoneOption.allCases.count
   }
