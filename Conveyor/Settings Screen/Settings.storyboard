@@ -101,9 +101,9 @@
                         <segue destination="bbC-y3-wQ3" kind="show" identifier="showBadgeOptions" id="6xt-JM-9Er"/>
                         <segue destination="CFX-wa-DE0" kind="show" identifier="showLockOptions" id="dfI-6S-hDV"/>
                         <segue destination="AGF-pu-mm0" kind="show" identifier="showCompletionOptions" id="j8b-O9-s86"/>
-                        <segue destination="7Gm-3x-nNY" kind="show" identifier="showSupport" id="su7-fS-ai2"/>
                         <segue destination="7Gm-3x-nNY" kind="show" identifier="showIAP" id="dNy-Wh-RGi"/>
                         <segue destination="7Gm-3x-nNY" kind="show" identifier="showReview" id="eWf-r7-Hb3"/>
+                        <segue destination="77B-uM-zFx" kind="show" identifier="showSupport" id="Rkw-bL-zw3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfV-yw-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,6 +265,61 @@
             </objects>
             <point key="canvasLocation" x="2432" y="488"/>
         </scene>
+        <!--Help & Support-->
+        <scene sceneID="R5v-BR-Cs5">
+            <objects>
+                <viewController title="Help &amp; Support" id="77B-uM-zFx" customClass="HelpOptionsVC" customModule="Conveyor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mgY-PU-oyg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K2y-iM-4fl">
+                                <rect key="frame" x="0.0" y="120" width="414" height="678"/>
+                                <color key="backgroundColor" name="white"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="helpOptionCell" id="bkJ-7l-5yf" customClass="HelpOptionsListCell" customModule="Conveyor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkJ-7l-5yf" id="HTX-gU-1hn">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX2-No-cCx">
+                                                    <rect key="frame" x="28" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mX2-No-cCx" firstAttribute="centerY" secondItem="HTX-gU-1hn" secondAttribute="centerY" id="OFu-wN-UIh"/>
+                                                <constraint firstItem="mX2-No-cCx" firstAttribute="leading" secondItem="HTX-gU-1hn" secondAttribute="leadingMargin" constant="8" id="sAk-NB-wfh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLbl" destination="mX2-No-cCx" id="xgQ-AD-w32"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="K2y-iM-4fl" firstAttribute="top" secondItem="jtv-hs-dS5" secondAttribute="top" constant="32" id="DD6-13-dPn"/>
+                            <constraint firstItem="jtv-hs-dS5" firstAttribute="trailing" secondItem="K2y-iM-4fl" secondAttribute="trailing" id="MtR-Gc-dlU"/>
+                            <constraint firstItem="jtv-hs-dS5" firstAttribute="bottom" secondItem="K2y-iM-4fl" secondAttribute="bottom" constant="64" id="X5Z-ql-rqg"/>
+                            <constraint firstItem="K2y-iM-4fl" firstAttribute="leading" secondItem="jtv-hs-dS5" secondAttribute="leading" id="Ymr-MO-2fz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jtv-hs-dS5"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="K2y-iM-4fl" id="AIk-Lb-jBA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sG8-nk-Tnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3213" y="482"/>
+        </scene>
         <!--Completion Options-->
         <scene sceneID="bhG-vr-Q2N">
             <objects>
@@ -326,10 +381,10 @@
             <color red="1" green="0.36862745098039218" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
-            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eWf-r7-Hb3"/>
+        <segue reference="dNy-Wh-RGi"/>
     </inferredMetricsTieBreakers>
 </document>

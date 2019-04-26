@@ -51,6 +51,7 @@ struct Settings {
       }
     }
   }
+  
   enum InfoSettingsOptions: CaseIterable {
     case support, iap, review
     
@@ -59,7 +60,7 @@ struct Settings {
       case .support:
         return "Help/Support"
       case .iap:
-        return "Unlock/Restore Features"
+        return "Additional Features"
       case .review:
         return "Review on App Store"
       }
@@ -73,6 +74,32 @@ struct Settings {
         return "showIAP"
       case .review:
         return "showReview"
+      }
+    }
+  }
+  
+  enum HelpOptionLinks: CaseIterable {
+    case faq, support, guide
+    
+    func getTitle() -> String {
+      switch self {
+      case .faq:
+        return "Frequently Asked Questions"
+      case .support:
+        return "Technical Support"
+      case .guide:
+        return "User Guide"
+      }
+    }
+    
+    func getSegueId() -> String {
+      switch self {
+      case .faq:
+        return "showFAQ"
+      case .support:
+        return "showSupport"
+      case .guide:
+        return "showGuide"
       }
     }
   }

@@ -98,7 +98,6 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
       if let option = infoOptions?[indexPath.row] {
         if option == .review {
           if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "1459794294") {
-            print("got url:\(url)")
             if #available(iOS 10, *) {
               UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
