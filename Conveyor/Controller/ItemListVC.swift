@@ -55,9 +55,15 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     super.viewDidAppear(animated)
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
-      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-      guard let vc = storyboard.instantiateInitialViewController() else { return }
-      self.present(vc, animated: true, completion: nil)
+      let onboardingRequest = AlertFactory.askForOnboarding {
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        self.present(vc, animated: true, completion: nil)
+      }
+      self.present(onboardingRequest, animated: true, completion: nil)
+//      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//      guard let vc = storyboard.instantiateInitialViewController() else { return }
+//      self.present(vc, animated: true, completion: nil)
     }
     
     // show popup to request siri authorization

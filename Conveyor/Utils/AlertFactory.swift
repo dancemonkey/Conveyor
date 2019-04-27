@@ -28,6 +28,17 @@ class AlertFactory {
     return controller
   }
   
+  static func askForOnboarding(completion: @escaping () -> ()) -> UIAlertController {
+    let controller = UIAlertController(title: "Overview?", message: "Would you like to see a brief (5 slide) overview of the app?", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "Okay", style: .default) { (action) in
+      completion()
+    }
+    let cancel = UIAlertAction(title: "No thanks", style: .cancel, handler: nil)
+    controller.addAction(ok)
+    controller.addAction(cancel)
+    return controller
+  }
+  
   static func move(item: Item, completion: @escaping () -> ()) -> UIAlertController? {
     guard let currentBucket = Bucket(rawValue: item.bucket!) else { return nil }
     let controller = UIAlertController(title: "Move item to...", message: nil, preferredStyle: .actionSheet)
