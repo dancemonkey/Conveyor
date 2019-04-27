@@ -104,6 +104,14 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
               UIApplication.shared.openURL(url)
             }
           }
+        } else if option == .support {
+          let subject = "Help with Conveyor"
+          let coded = "mailto:\(Constants.supportEmail)?subject=\(subject)&body=".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+          if let emailURL = URL(string: coded!) {
+            if UIApplication.shared.canOpenURL(emailURL) {
+              UIApplication.shared.canOpenURL(emailURL)
+            }
+          }
         } else {
           performSegue(withIdentifier: option.getSegueId(), sender: self)
         }

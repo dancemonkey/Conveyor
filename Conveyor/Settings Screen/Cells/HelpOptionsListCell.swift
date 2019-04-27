@@ -8,23 +8,23 @@
 
 import UIKit
 
-class HelpOptionsListCell: UITableViewCell {
-
-  @IBOutlet weak var titleLbl: UILabel!
-  var segueID: String = ""
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    self.layer.borderWidth = 0.25
-    self.layer.borderColor = UIColor.lightGray.cgColor
-  }
-  
-  func configure(with option: Settings.HelpOptionLinks) {
-    self.titleLbl.text = option.getTitle()
-    self.segueID = option.getSegueId()
-    self.titleLbl.font = FontStyles.settingsCellFont
-    titleLbl.textColor = ColorStyles.blackText
-    selectionStyle = .none
-  }
-
-}
+//class HelpOptionsListCell: UITableViewCell {
+//
+//  @IBOutlet weak var titleLbl: UILabel!
+//  var segueID: String = ""
+//
+//  override func awakeFromNib() {
+//    super.awakeFromNib()
+//    self.layer.borderWidth = 0.25
+//    self.layer.borderColor = UIColor.lightGray.cgColor
+//  }
+//
+//  func configure(with option: Settings.HelpOptionLinks) {
+//    self.titleLbl.text = option.getTitle()
+//    self.segueID = option.getSegueId()
+//    self.titleLbl.font = FontStyles.settingsCellFont
+//    titleLbl.textColor = ColorStyles.blackText
+//    selectionStyle = .none
+//  }
+//
+//}

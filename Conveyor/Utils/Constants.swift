@@ -9,6 +9,8 @@
 import UIKit
 
 struct Constants {
+  static var supportEmail: String = "appSupport@drewlanning.com"
+  
   enum DefaultKeys: String {
     case bucketChangeDate, hasLaunchedBefore, launchesThisVersion
   }

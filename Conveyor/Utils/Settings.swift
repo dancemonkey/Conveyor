@@ -58,7 +58,7 @@ struct Settings {
     func getTitle() -> String {
       switch self {
       case .support:
-        return "Help/Support"
+        return "Support"
       case .iap:
         return "Additional Features"
       case .review:
@@ -78,31 +78,31 @@ struct Settings {
     }
   }
   
-  enum HelpOptionLinks: CaseIterable {
-    case faq, support, guide
-    
-    func getTitle() -> String {
-      switch self {
-      case .faq:
-        return "Frequently Asked Questions"
-      case .support:
-        return "Technical Support"
-      case .guide:
-        return "User Guide"
-      }
-    }
-    
-    func getSegueId() -> String {
-      switch self {
-      case .faq:
-        return "showFAQ"
-      case .support:
-        return "showSupport"
-      case .guide:
-        return "showGuide"
-      }
-    }
-  }
+//  enum HelpOptionLinks: CaseIterable {
+//    case faq, support, guide
+//    
+//    func getTitle() -> String {
+//      switch self {
+//      case .faq:
+//        return "Frequently Asked Questions"
+//      case .support:
+//        return "Technical Support"
+//      case .guide:
+//        return "User Guide"
+//      }
+//    }
+//    
+//    func getSegueId() -> String {
+//      switch self {
+//      case .faq:
+//        return "showFAQ"
+//      case .support:
+//        return "showSupport"
+//      case .guide:
+//        return "showGuide"
+//      }
+//    }
+//  }
   
   static var defaults: UserDefaults {
     get {

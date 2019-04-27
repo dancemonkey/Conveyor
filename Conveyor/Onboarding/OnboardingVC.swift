@@ -17,7 +17,7 @@ class OnboardingVC: UIPageViewController {
   
   fileprivate lazy var pages: [UIViewController] = {
     var vcs: [OnboardingPageVC] = []
-    for i in 0...5 {
+    for i in 0...4 {
       vcs.append(self.getViewController(withIdentifier: "page1", and: titleText[i], image: screenshots[i], lastVC: false) as! OnboardingPageVC)
     }
     vcs.last?.lastVC = true
@@ -38,18 +38,15 @@ class OnboardingVC: UIPageViewController {
     self.delegate = self
     self.dataSource = self
     titleText = [
-      ("Welcome to Conveyor!", #"Let's start by adding a new task. Tap the "Add New Task" field near the bottom of the screen."#),
-      ("Creating a task", #"Enter some text in the box, then tap one of the buttons above the keyboard to assign it to a list ("today", "tomorrow", or "later")."#),
-      ("Swipe right to complete a task", "Swipe left to see other options, like reschedule (to move a task to another list) and delete."),
+      ("Welcome to Conveyor!", #"Add new tasks by tapping the "Add New Task" field near the bottom of every screen, then assign it Today, Tomorrow, or Later."#),
+      ("Swipe for actions", "Swipe right to complete, swipe left to see other task actions."),
       ("Tasks reschedule themselves daily", #"At the first launch each day, tasks change lists (Later moves to Tomorrow moves to Today)."#),
-      ("Lock tasks in the Later list", #"A “Later” task can be locked in place, so it stays in place for as long as you like. Swipe left on a task in the Later list to see the lock option."#),
+      ("Lock tasks in the Later list", #"A “Later” task can be locked in place, so it remains there for as long as you like."#),
       ("You're ready to get started!", #"We're just going to ask for a couple of authorizations, so that you can see badges for what's due today and use Siri to add tasks."#)
     ]
     screenshots = [
-      // 0. Welcome screenshot
+      // 0. Welcome screenshot and creating a task
       UIImage(named: "welcome.png")!,
-      // 1. Creating a task, data entry field with keyboard accessory view buttons
-      UIImage(named: "createTask.png")!,
       // 2. Swipe actions on tasks
       UIImage(named: "completeTask.png")!,
       // 3. Tasks moving from list to list daily
