@@ -34,7 +34,7 @@ class SettingsCell: UITableViewCell {
   
   func configure(with option: Settings.InfoSettingsOptions) {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
-    if option == .review || option == .support {
+    if option == .review || option == .support || option == .onBoarding {
       self.accessoryType = .none
     }
   }

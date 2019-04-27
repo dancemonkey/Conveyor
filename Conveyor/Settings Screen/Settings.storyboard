@@ -102,7 +102,6 @@
                         <segue destination="CFX-wa-DE0" kind="show" identifier="showLockOptions" id="dfI-6S-hDV"/>
                         <segue destination="AGF-pu-mm0" kind="show" identifier="showCompletionOptions" id="j8b-O9-s86"/>
                         <segue destination="7Gm-3x-nNY" kind="show" identifier="showIAP" id="dNy-Wh-RGi"/>
-                        <segue destination="7Gm-3x-nNY" kind="show" identifier="showReview" id="eWf-r7-Hb3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfV-yw-hN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,7 +327,4 @@
             <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dNy-Wh-RGi"/>
-    </inferredMetricsTieBreakers>
 </document>
