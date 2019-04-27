@@ -19,13 +19,24 @@ class SettingsCell: UITableViewCell {
     self.layer.borderColor = UIColor.lightGray.cgColor
   }
   
-  func configure(with title: String, segueID: String) {
+  private func configure(with title: String, segueID: String) {
     self.optionLbl.text = title
     self.segueID = segueID
     optionLbl.font = FontStyles.settingsCellFont
     optionLbl.textColor = ColorStyles.blackText
     backgroundColor = ColorStyles.backgroundWhite
     selectionStyle = .none
+  }
+  
+  func configure(with option: Settings.GeneralSettingsOptions) {
+    self.configure(with: option.getTitle(), segueID: option.getSegueId())
+  }
+  
+  func configure(with option: Settings.InfoSettingsOptions) {
+    self.configure(with: option.getTitle(), segueID: option.getSegueId())
+    if option == .review || option == .support {
+      self.accessoryType = .none
+    }
   }
   
 }

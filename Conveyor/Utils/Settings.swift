@@ -53,14 +53,14 @@ struct Settings {
   }
   
   enum InfoSettingsOptions: CaseIterable {
-    case support, iap, review
+    case iap, support, review
     
     func getTitle() -> String {
       switch self {
       case .support:
-        return "Support"
+        return "Email \(Constants.supportEmail)"
       case .iap:
-        return "Additional Features"
+        return "Additional Features (IAP)"
       case .review:
         return "Review on App Store"
       }

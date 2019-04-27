@@ -76,11 +76,11 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     switch indexPath.section {
     case 0:
       if let option = generalOptions?[indexPath.row] {
-        cell.configure(with: option.getTitle(), segueID: option.getSegueId())
+        cell.configure(with: option)
       }
     case 1:
       if let option = infoOptions?[indexPath.row] {
-        cell.configure(with: option.getTitle(), segueID: option.getSegueId())
+        cell.configure(with: option)
       }
     default:
       return cell
