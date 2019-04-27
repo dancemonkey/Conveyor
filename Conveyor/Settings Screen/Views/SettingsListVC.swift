@@ -109,7 +109,8 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
           let coded = "mailto:\(Constants.supportEmail)?subject=\(subject)&body=".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
           if let emailURL = URL(string: coded!) {
             if UIApplication.shared.canOpenURL(emailURL) {
-              UIApplication.shared.canOpenURL(emailURL)
+              UIApplication.shared.open(emailURL, options: [:]) { (success) in
+              }
             }
           }
         } else {
