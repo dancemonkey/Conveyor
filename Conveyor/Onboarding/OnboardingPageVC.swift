@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import Intents
 
 class OnboardingPageVC: UIViewController {
   
@@ -52,7 +53,16 @@ class OnboardingPageVC: UIViewController {
   
   func finishOnboarding() {
     UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
-    self.dismiss(animated: true, completion: nil)
+    if INPreferences.siriAuthorizationStatus() == .notDetermined {
+      DispatchQueue.main.async {
+        let siriPopup = AlertFactory.siriAuthNotification {
+          INPreferences.requestSiriAuthorization { (status) in }
+          self.dismiss(animated: true, completion: nil)
+        }
+        self.present(siriPopup, animated: true, completion: nil)
+      }
+    }
+//    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func skipPressed(sender: UIButton) {

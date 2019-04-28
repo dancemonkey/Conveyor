@@ -55,25 +55,23 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     super.viewDidAppear(animated)
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
-      let onboardingRequest = AlertFactory.askForOnboarding {
+      let completion: () -> () = {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         guard let vc = storyboard.instantiateInitialViewController() else { return }
         self.present(vc, animated: true, completion: nil)
       }
-      self.present(onboardingRequest, animated: true, completion: nil)
-//      let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-//      guard let vc = storyboard.instantiateInitialViewController() else { return }
-//      self.present(vc, animated: true, completion: nil)
-    }
-    
-    // show popup to request siri authorization
-    if INPreferences.siriAuthorizationStatus() == .notDetermined {
-      DispatchQueue.main.async {
-        let siriPopup = AlertFactory.siriAuthNotification {
-          INPreferences.requestSiriAuthorization { (status) in }
+      let cancellation: () -> () = {
+        if INPreferences.siriAuthorizationStatus() == .notDetermined {
+          DispatchQueue.main.async {
+            let siriPopup = AlertFactory.siriAuthNotification {
+              INPreferences.requestSiriAuthorization { (status) in }
+            }
+            self.present(siriPopup, animated: true, completion: nil)
+          }
         }
-        self.present(siriPopup, animated: true, completion: nil)
       }
+      let onboardingRequest = AlertFactory.askForOnboarding(completion: completion, cancellation: cancellation)
+      self.present(onboardingRequest, animated: true, completion: nil)
     }
   }
   
