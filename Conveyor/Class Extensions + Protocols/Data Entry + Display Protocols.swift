@@ -125,5 +125,7 @@ extension ItemAdder where Self: ItemListVC {
     bucketSelectButtons.append(contentsOf: [today, spacer, tomorrow, spacer, later])
     toolbar.setItems(bucketSelectButtons, animated: false)
     field.inputAccessoryView = toolbar
+    field.returnKeyType = .done
   }
+  
 }

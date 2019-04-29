@@ -421,15 +421,33 @@ extension ItemListVC {
     store.save()
     stopEditing()
     
-    // show toast if adding item to different bucket
+    toastTask(in: bucket)
+  }
+  
+  func toastTask(in list: Bucket) {
     let currentBucket = Bucket(rawValue: self.title!.lowercased())
-    if currentBucket != bucket {
-      showToast(from: .bottom, with: "Scheduled for \(bucket.rawValue.capitalized)")
+    if currentBucket != list {
+      showToast(from: .bottom, with: "Scheduled for \(list.rawValue.capitalized)")
     }
-    if bucket == Bucket.today {
+    if list == Bucket.today {
       requestBadgeAuthorization()
     }
   }
+  
+  func parseEntry(from text: String) -> (list: String, task: String)? {
+    var result: (list: String, task: String)? = nil
+    var components = text.lowercased().split(separator: " ")
+    let listAssignment = components.first { (string) -> Bool in
+      return string == "today" || string == "tomorrow" || string == "later"
+    }
+    guard let list = listAssignment else { return nil }
+    let listLocation = components.firstIndex(of: list)!
+    let _ = components.remove(at: listLocation)
+    let task = components.joined(separator: " ")
+    result = (list: String(list), task: task)
+    return result
+  }
+  
 }
 
 extension ItemListVC: UITextFieldDelegate {
@@ -442,5 +460,36 @@ extension ItemListVC: UITextFieldDelegate {
         textField.addTarget(textField, action: #selector(UITextField.textFieldDidChange), for: .editingChanged)
       }
     }
+  }
+  
+  func doneTapped(with text: String) {
+    let store = Store(testing: false)
+    var bucket: Bucket = Bucket(rawValue: self.title!.lowercased())!
+    var task: String = text
+    guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+      stopEditing()
+      return
+    }
+    if let result = parseEntry(from: text) {
+      bucket = Bucket(rawValue: result.list)!
+      task = result.task
+    } 
+//    guard let result = getScheduleWord(from: text) else { return }
+//    guard let bucket = Bucket(rawValue: result.list) else { return }
+    if let item = editingExistingItem {
+      store.updateExisting(item: item, withTitle: task, in: bucket)
+    } else {
+      store.addNewItem(text: task, in: bucket)
+    }
+    store.save()
+    stopEditing()
+    toastTask(in: bucket)
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if let text = textField.text {
+      doneTapped(with: text)
+    }
+    return true
   }
 }
