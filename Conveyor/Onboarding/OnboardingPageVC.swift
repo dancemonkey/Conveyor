@@ -61,8 +61,9 @@ class OnboardingPageVC: UIViewController {
         }
         self.present(siriPopup, animated: true, completion: nil)
       }
+    } else {
+      self.dismiss(animated: true, completion: nil)
     }
-//    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func skipPressed(sender: UIButton) {
