@@ -150,4 +150,17 @@ class Store {
     impactGenerator.impactOccurred()
   }
   
+  func getTodayContext() -> [Item] {
+    let itemFetch = NSFetchRequest<Item>(entityName: "Item")
+    var items: [Item] = []
+    do {
+      items = try context.fetch(itemFetch) as [Item]
+    } catch {
+      print(error)
+    }
+    return items.filter({ (item) -> Bool in
+      return item.bucket == Bucket.today.rawValue && item.state != ItemState.done.rawValue
+    })
+  }
+  
 }

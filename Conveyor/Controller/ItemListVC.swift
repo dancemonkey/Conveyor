@@ -24,6 +24,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   var titleLabel: UILabel?
   var mocSaveObserver: NSNotification?
   var radio: Radio?
+  var sessionManager: WatchSessionManager?
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var entryField: ItemEntryField!
   @IBOutlet weak var entryFieldBottomConstraint: NSLayoutConstraint!
@@ -40,6 +41,9 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     frc = initializeFRC()
     frc.delegate = self
     performFetch()
+    
+    sessionManager = WatchSessionManager.shared
+    sessionManager.startSession()
     
     NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
