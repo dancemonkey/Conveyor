@@ -54,6 +54,11 @@ class Store {
     } catch {
       print(error)
     }
+    do {
+      try WatchSessionManager.shared.updateApplicationContext(context: WatchSessionManager.shared.buildContext())
+    } catch {
+      print(error)
+    }
   }
   
   func getNextBucketChange() -> Date? {

@@ -43,7 +43,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     performFetch()
     
     sessionManager = WatchSessionManager.shared
-    sessionManager.startSession()
+    sessionManager?.startSession()
     
     NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }

@@ -28,14 +28,8 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     if activationState == .activated {
-      let store = Store()
-      let today = store.getTodayContext()
-      var context: [String: Any] = [:]
-      for (index, item) in today.enumerated() {
-        context["item\(index)"] = item.getContextItem()
-      }
       do {
-        try updateApplicationContext(context: context)
+        try updateApplicationContext(context: self.buildContext())
       } catch {
         print(error)
       }
@@ -48,6 +42,16 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
 }
 
 extension WatchSessionManager {
+  func buildContext() -> [String: Any] {
+    let store = Store()
+    let today = store.getTodayContext()
+    var context: [String: Any] = [:]
+    for (index, item) in today.enumerated() {
+      context["item\(index)"] = item.getContextItem()
+    }
+    return context
+  }
+  
   func updateApplicationContext(context: [String: Any]) throws {
     if let session = validSession {
       do {
