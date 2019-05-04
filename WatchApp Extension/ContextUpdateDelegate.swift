@@ -10,4 +10,5 @@ import Foundation
 
 protocol ContextUpdater {
   func update(with context: [String: Any])
+  func refresh()
 }

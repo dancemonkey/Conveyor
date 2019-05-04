@@ -15,27 +15,39 @@ class InterfaceController: WKInterfaceController {
   @IBOutlet var table: WKInterfaceTable!
   @IBOutlet var todayLbl: WKInterfaceLabel!
   var data: [WatchTask] = []
-  var sessionManager = WatchSessionManager.shared
+  var didReceiveData: Bool = false
   
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
-    sessionManager.contextDelegate = self
-    sessionManager.startSession()
-    // Configure interface objects here.
+    WatchSessionManager.shared.contextDelegate = self
+    WatchSessionManager.shared.startSession()
+    resetTable()
+    if !didReceiveData {
+      WatchSessionManager.shared.requestContext { (reply) in
+        self.update(with: reply)
+        self.didReceiveData = true
+      }
+    }
   }
   
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
+    WatchSessionManager.shared.contextDelegate = self
   }
   
   override func didDeactivate() {
     // This method is called when watch view controller is no longer visible
     super.didDeactivate()
-    sessionManager.contextDelegate = nil
+//    WatchSessionManager.shared.contextDelegate = nil
+  }
+  
+  func refresh() {
+    resetTable()
   }
   
   func resetTable() {
+    print("setting the table with data: \(data)")
     table.setNumberOfRows(data.count, withRowType: "taskRow")
     for i in 0 ..< table.numberOfRows {
       guard let controller = table.rowController(at: i) as? RowController else { continue }
@@ -52,12 +64,19 @@ class InterfaceController: WKInterfaceController {
 
 extension InterfaceController: ContextUpdater {
   func update(with context: [String : Any]) {
+    print("updating context")
+    didReceiveData = true
     var newData: [WatchTask] = []
     for (_, contextItem) in context {
+      print("found item in context")
       if let item = WatchTask.getItem(from: contextItem as! [String : String]) {
         newData.append(item)
+        print(item)
       }
+      print("newData: \(newData)")
       data = newData
+      print("data: \(data)")
     }
+    resetTable()
   }
 }

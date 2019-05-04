@@ -8,31 +8,27 @@
 
 import Foundation
 
-enum Status: String {
-  case incomplete, complete, overdue
-}
-
 struct WatchTask {
   
   var title: String
-  var status: Status
-  var id: String?
+  var status: ItemState
+  var id: String
   
   mutating func setDone() {
-    if self.status == .incomplete || self.status == .overdue {
-      self.status = .complete
+    if self.status == .none || self.status == .overdue {
+      self.status = .done
     } else {
-      self.status = .incomplete
+      self.status = .none
     }
   }
   
-  func getContext() -> (title: String, status: String, id: String?) {
+  func getContext() -> (title: String, status: String, id: String) {
     return (title: self.title, status: self.status.rawValue, id: self.id)
   }
   
   static func getItem(from context: [String: String]) -> WatchTask? {
     if let title = context[Constants.ItemContextFields.title.rawValue], let status = context[Constants.ItemContextFields.state.rawValue], let id = context[Constants.ItemContextFields.id.rawValue] {
-      let stat = Status(rawValue: status)!
+      let stat = ItemState(rawValue: status)!
       return WatchTask(title: title, status: stat, id: id)
     } else {
       return nil

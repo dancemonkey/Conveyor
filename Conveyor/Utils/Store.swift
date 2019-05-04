@@ -55,7 +55,8 @@ class Store {
       print(error)
     }
     do {
-      try WatchSessionManager.shared.updateApplicationContext(context: WatchSessionManager.shared.buildContext())
+      let context = WatchSessionManager.shared.buildContext()
+      try WatchSessionManager.shared.updateApplicationContext(context: context)
     } catch {
       print(error)
     }
@@ -155,11 +156,12 @@ class Store {
     impactGenerator.impactOccurred()
   }
   
-  func getTodayContext() -> [Item] {
+  func getTodaysTasks() -> [Item] {
     let itemFetch = NSFetchRequest<Item>(entityName: "Item")
     var items: [Item] = []
     do {
-      items = try context.fetch(itemFetch) as [Item]
+      print("context: \(context)")
+      items = try context.fetch(itemFetch)
     } catch {
       print(error)
     }

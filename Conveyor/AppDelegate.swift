@@ -43,7 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       Settings.setFirstLaunchDefaults()
     }
     
-    showReviewRequest()
+    DispatchQueue.main.async {
+      self.showReviewRequest()
+    }
     
     return true
   }
