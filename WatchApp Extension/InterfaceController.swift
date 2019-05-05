@@ -55,9 +55,15 @@ class InterfaceController: WKInterfaceController {
       if data[i].status == .overdue {
         controller.itemLabel.setTextColor(.red)
       } else {
-        controller.itemLabel.setTextColor(.white)
+        controller.itemLabel.setTextColor(ColorStyles.blackText)
       }
     }
+  }
+  
+  override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+    WatchSessionManager.shared.sendTaskCompletion(for: data[rowIndex])
+    data.remove(at: rowIndex)
+    resetTable()
   }
   
 }
@@ -73,10 +79,10 @@ extension InterfaceController: ContextUpdater {
         newData.append(item)
         print(item)
       }
-      print("newData: \(newData)")
-      data = newData
-      print("data: \(data)")
     }
+    print("newData: \(newData)")
+    data = newData
+    print("data: \(data)")
     resetTable()
   }
 }

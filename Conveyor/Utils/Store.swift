@@ -156,6 +156,20 @@ class Store {
     impactGenerator.impactOccurred()
   }
   
+  func completeTask(byId taskId: String) {
+    let todaysTasks = getTodaysTasks()
+    if let taskToComplete = todaysTasks.first(where: { (task) -> Bool in
+      return task.objectID.uriRepresentation().absoluteString == taskId
+    }) {
+      taskToComplete.complete()
+      do {
+        try context.save()
+      } catch {
+        print(error)
+      }
+    }
+  }
+  
   func getTodaysTasks() -> [Item] {
     let itemFetch = NSFetchRequest<Item>(entityName: "Item")
     var items: [Item] = []

@@ -23,6 +23,10 @@ struct Constants {
     case title, state, id
   }
   
+  enum WatchMessageKeys: String {
+    case request, completedTask
+  }
+  
   enum TableCellID: String {
     case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell, helpOptionCell
   }

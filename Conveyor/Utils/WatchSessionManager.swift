@@ -71,10 +71,25 @@ extension WatchSessionManager {
     }
   }
   
+  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    if message[Constants.WatchMessageKeys.completedTask.rawValue] != nil {
+      print("received task completion message")
+      if let taskId = message[Constants.WatchMessageKeys.completedTask.rawValue] as? String {
+        print("completed taskId: \(taskId)")
+        DispatchQueue.main.async {
+          let store = Store(testing: false)
+          store.completeTask(byId: taskId)
+        }
+      }
+    }
+  }
+  
   func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-    if message["request"] != nil {
-      let fullContext: [String: Any] = self.buildContext()
-      replyHandler(fullContext)
+    if message[Constants.WatchMessageKeys.request.rawValue] != nil {
+      DispatchQueue.main.async {
+        let fullContext: [String: Any] = self.buildContext()
+        replyHandler(fullContext)
+      }
     }
   }
 }

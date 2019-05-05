@@ -37,10 +37,19 @@ extension WatchSessionManager {
   }
   
   func requestContext(handle: @escaping (_ reply: [String: Any]) -> ()) {
-    self.session.sendMessage(["request" : "fullContext"], replyHandler: { (reply) in
+    self.session.sendMessage([Constants.WatchMessageKeys.request.rawValue : "fullContext"], replyHandler: { (reply) in
       handle(reply)
     }) { (error) in
       print(error)
     }
   }
+  
+  func sendTaskCompletion(for task: WatchTask) {
+    let message: [String: Any] = [Constants.WatchMessageKeys.completedTask.rawValue: task.id]
+    print("sending task completion: \(message)")
+    self.session.sendMessage(message, replyHandler: nil) { (error) in
+      print(error)
+    }
+  }
+  
 }

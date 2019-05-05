@@ -10,10 +10,10 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Conveyor-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
+                <controller title="Conveyor" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" id="Ged-Cs-k24">
                             <items>
@@ -28,10 +28,10 @@
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="IdS-Xx-hND">
                                         <items>
                                             <label alignment="left" text="Task" id="uvg-1a-fC4">
-                                                <color key="textColor" name="white"/>
+                                                <color key="textColor" name="black"/>
                                             </label>
                                         </items>
-                                        <color key="backgroundColor" name="black"/>
+                                        <color key="backgroundColor" name="white"/>
                                     </group>
                                     <connections>
                                         <outlet property="itemLabel" destination="uvg-1a-fC4" id="tfv-ce-jD7"/>

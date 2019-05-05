@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import StoreKit
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -136,6 +137,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let store = Store(testing: false)
       DispatchQueue.main.async {
         application.applicationIconBadgeNumber = store.getBadgeCount()
+      }
+      do {
+        let context = WatchSessionManager.shared.buildContext()
+        try WatchSessionManager.shared.updateApplicationContext(context: context)
+      } catch {
+        print(error)
       }
       completionHandler(.newData)
     } else {
