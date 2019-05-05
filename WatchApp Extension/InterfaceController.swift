@@ -24,6 +24,7 @@ class InterfaceController: WKInterfaceController {
     resetTable()
     if !didReceiveData {
       WatchSessionManager.shared.requestContext { (reply) in
+        print("handling reply from device")
         self.update(with: reply)
         self.didReceiveData = true
       }

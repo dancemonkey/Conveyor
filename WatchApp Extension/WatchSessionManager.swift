@@ -38,6 +38,7 @@ extension WatchSessionManager {
   
   func requestContext(handle: @escaping (_ reply: [String: Any]) -> ()) {
     self.session.sendMessage([Constants.WatchMessageKeys.request.rawValue : "fullContext"], replyHandler: { (reply) in
+      print("sending message to get full context from device")
       handle(reply)
     }) { (error) in
       print(error)
