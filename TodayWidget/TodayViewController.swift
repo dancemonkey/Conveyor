@@ -15,7 +15,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var allDoneLbl: UILabel!
   var frc: NSFetchedResultsController<Item>!
-  
   lazy var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "Conveyor")
     let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.DrewLanning.conveyor")!.appendingPathComponent("Conveyor.sqlite")
@@ -24,7 +23,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     description.shouldMigrateStoreAutomatically = true
     description.url = storeURL
     container.persistentStoreDescriptions = [description]
-    
+
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
         fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -123,7 +122,9 @@ extension TodayViewController: ItemCompleter {
       persistentContainer.viewContext.delete(item)
     }
     do {
+      persistentContainer.viewContext.refreshAllObjects()
       try persistentContainer.viewContext.save()
+      persistentContainer.viewContext.refreshAllObjects()
       Settings.didChangeObjectOn()
     } catch {
       print(error)

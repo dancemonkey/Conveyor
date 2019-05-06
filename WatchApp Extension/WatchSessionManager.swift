@@ -23,8 +23,10 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     if activationState == .activated {
-      print("session active")
-      // request data, how to get to IC?
+      requestContext { (reply) in
+        WatchStore.shared.updateData(with: reply)
+        self.contextDelegate?.refresh()
+      }
     }
   }
   
@@ -33,7 +35,9 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
 extension WatchSessionManager {
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
     print("received context")
-    contextDelegate?.update(with: applicationContext)
+//    contextDelegate?.update(with: applicationContext)
+    WatchStore.shared.updateData(with: applicationContext)
+    contextDelegate?.refresh()
   }
   
   func requestContext(handle: @escaping (_ reply: [String: Any]) -> ()) {

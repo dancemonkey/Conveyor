@@ -15,7 +15,6 @@
 		100CF989227DEB01006C7A83 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF988227DEB01006C7A83 /* ExtensionDelegate.swift */; };
 		100CF98B227DEB02006C7A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100CF98A227DEB02006C7A83 /* Assets.xcassets */; };
 		100CF98F227DEB02006C7A83 /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 100CF975227DEAFF006C7A83 /* WatchApp.app */; };
-		100CF999227DEC93006C7A83 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF998227DEC93006C7A83 /* WatchSessionManager.swift */; };
 		100CF99C227DEF0C006C7A83 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF99B227DEF0C006C7A83 /* WatchSessionManager.swift */; };
 		100CF9A1227DF14A006C7A83 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		100CF9A2227DF1CA006C7A83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
@@ -89,6 +88,8 @@
 		1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2922689F94008EFFEF /* LockOptionCell.swift */; };
 		10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE42267D54C001E448E /* SettingsCell.swift */; };
 		10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE62267D643001E448E /* SettingsListVC.swift */; };
+		10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B72280679C00774127 /* WatchSessionManager.swift */; };
+		10E0F0BA2280683500774127 /* WatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B92280683500774127 /* WatchStore.swift */; };
 		10E6F455225F799D009F1951 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
 		10E6F456225F79B0009F1951 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
 		10E6F458225F79D0009F1951 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F457225F79D0009F1951 /* WidgetCell.swift */; };
@@ -185,7 +186,6 @@
 		100CF988227DEB01006C7A83 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		100CF98A227DEB02006C7A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		100CF98C227DEB02006C7A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		100CF998227DEC93006C7A83 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		100CF99B227DEF0C006C7A83 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		100CF9A3227DF2AA006C7A83 /* ContextUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextUpdateDelegate.swift; sourceTree = "<group>"; };
 		100CF9A5227DF48D006C7A83 /* WatchTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTask.swift; sourceTree = "<group>"; };
@@ -253,6 +253,8 @@
 		1089FB2922689F94008EFFEF /* LockOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOptionCell.swift; sourceTree = "<group>"; };
 		10CB7EE42267D54C001E448E /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		10CB7EE62267D643001E448E /* SettingsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListVC.swift; sourceTree = "<group>"; };
+		10E0F0B72280679C00774127 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		10E0F0B92280683500774127 /* WatchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStore.swift; sourceTree = "<group>"; };
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
 		10F0C9C7226213200000D585 /* BadgeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeCounter.swift; path = ../Conveyor/Utils/BadgeCounter.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				100CF99B227DEF0C006C7A83 /* WatchSessionManager.swift */,
 				100CF9A3227DF2AA006C7A83 /* ContextUpdateDelegate.swift */,
 				100CF9A5227DF48D006C7A83 /* WatchTask.swift */,
+				10E0F0B92280683500774127 /* WatchStore.swift */,
 			);
 			path = "WatchApp Extension";
 			sourceTree = "<group>";
@@ -489,7 +492,7 @@
 				10807E68225CC30E00F9D9B8 /* Color Style.swift */,
 				10807E69225CC30E00F9D9B8 /* Date Styles.swift */,
 				106E2AFF226DF57100D43FD6 /* Radio.swift */,
-				100CF998227DEC93006C7A83 /* WatchSessionManager.swift */,
+				10E0F0B72280679C00774127 /* WatchSessionManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 				100CF989227DEB01006C7A83 /* ExtensionDelegate.swift in Sources */,
 				100CF987227DEB01006C7A83 /* InterfaceController.swift in Sources */,
 				101820C5227F255100AC8A36 /* Color Style.swift in Sources */,
+				10E0F0BA2280683500774127 /* WatchStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,7 +983,7 @@
 				10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */,
 				10632B5B2273339300B7173A /* HelpOptionsListCell.swift in Sources */,
 				10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */,
-				100CF999227DEC93006C7A83 /* WatchSessionManager.swift in Sources */,
+				10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
