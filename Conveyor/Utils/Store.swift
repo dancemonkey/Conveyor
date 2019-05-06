@@ -174,7 +174,6 @@ class Store {
     let itemFetch = NSFetchRequest<Item>(entityName: "Item")
     var items: [Item] = []
     do {
-      print("context: \(context)")
       items = try context.fetch(itemFetch)
     } catch {
       print(error)

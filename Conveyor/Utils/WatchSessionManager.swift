@@ -22,14 +22,12 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     return nil
   }
   func startSession() {
-    print("starting session")
     session?.delegate = self
     session?.activate()
   }
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     if activationState == .activated {
-      print("session activated")
       DispatchQueue.main.async {
         do {
           try self.updateApplicationContext(context: self.buildContext())
@@ -47,24 +45,19 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
 
 extension WatchSessionManager {
   func buildContext() -> [String: Any] {
-    print("building context")
     let store = Store(testing: false)
     let today = store.getTodaysTasks()
     var context: [String: Any] = [:]
     for (index, item) in today.enumerated() {
       context["item\(index)"] = item.getContextItem()
     }
-    print("context:")
-    print(context)
     return context
   }
   
   func updateApplicationContext(context: [String: Any]) throws {
-    print("session is valid: \(validSession)")
     if let session = validSession {
       do {
         try session.updateApplicationContext(context)
-        print("updating context")
       } catch {
         throw error
       }
@@ -73,9 +66,7 @@ extension WatchSessionManager {
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
     if message[Constants.WatchMessageKeys.completedTask.rawValue] != nil {
-      print("received task completion message")
       if let taskId = message[Constants.WatchMessageKeys.completedTask.rawValue] as? String {
-        print("completed taskId: \(taskId)")
         DispatchQueue.main.async {
           let store = Store(testing: false)
           store.completeTask(byId: taskId)

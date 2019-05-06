@@ -10,37 +10,25 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, ContextUpdater {
   
   @IBOutlet var table: WKInterfaceTable!
   @IBOutlet var todayLbl: WKInterfaceLabel!
   var data: [WatchTask] = []
-//  var didReceiveData: Bool = false
   
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     WatchSessionManager.shared.contextDelegate = self
     WatchSessionManager.shared.startSession()
-//    refresh()
-//    if !didReceiveData {
-//      WatchSessionManager.shared.requestContext { (reply) in
-//        print("handling reply from device")
-//        self.update(with: reply)
-//        self.didReceiveData = true
-//      }
-//    }
   }
   
   override func willActivate() {
-    // This method is called when watch view controller is about to be visible to user
     super.willActivate()
     WatchSessionManager.shared.contextDelegate = self
   }
   
   override func didDeactivate() {
-    // This method is called when watch view controller is no longer visible
     super.didDeactivate()
-//    WatchSessionManager.shared.contextDelegate = nil
   }
   
   func refresh() {
@@ -68,23 +56,4 @@ class InterfaceController: WKInterfaceController {
     resetTable()
   }
   
-}
-
-extension InterfaceController: ContextUpdater {
-  func update(with context: [String : Any]) {
-//    print("updating context")
-//    didReceiveData = true
-//    var newData: [WatchTask] = []
-//    for (_, contextItem) in context {
-//      print("found item in context")
-//      if let item = WatchTask.getItem(from: contextItem as! [String : String]) {
-//        newData.append(item)
-//        print(item)
-//      }
-//    }
-//    print("newData: \(newData)")
-//    data = newData
-//    print("data: \(data)")
-//    resetTable()
-  }
 }

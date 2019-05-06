@@ -215,7 +215,6 @@ extension ItemListVC: NSFetchedResultsControllerDelegate {
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-    print("controller did change: \(type)")
     switch (type) {
     case .update:
       tableView.reloadRows(at: [indexPath!], with: .fade)
