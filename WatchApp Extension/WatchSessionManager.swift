@@ -46,8 +46,17 @@ extension WatchSessionManager {
     }
   }
   
-  func sendTaskCompletion(for task: WatchTask) {
-    let message: [String: Any] = [Constants.WatchMessageKeys.completedTask.rawValue: task.id]
+  func sendTaskCompletion(for task: WatchTask?) {
+    guard let completedTask = task else { return }
+    let message: [String: Any] = [Constants.WatchMessageKeys.completedTask.rawValue: completedTask.id]
+    self.session.sendMessage(message, replyHandler: nil) { (error) in
+      print(error)
+    }
+  }
+  
+  func sendTaskReschedule(for task: WatchTask?, newList: Bucket) {
+    guard let updatedTask = task else { return }
+    let message: [String: Any] = [Constants.WatchMessageKeys.rescheduledTask.rawValue: updatedTask.id, Constants.WatchMessageKeys.newTaskList.rawValue: newList.rawValue]
     self.session.sendMessage(message, replyHandler: nil) { (error) in
       print(error)
     }

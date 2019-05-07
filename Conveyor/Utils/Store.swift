@@ -170,6 +170,20 @@ class Store {
     }
   }
   
+  func moveTask(byId taskId: String, to list: Bucket) {
+    let todaysTasks = getTodaysTasks()
+    if let task = todaysTasks.first(where: { (item) -> Bool in
+      return item.objectID.uriRepresentation().absoluteString == taskId
+    }) {
+      task.change(to: list)
+      do {
+        try context.save()
+      } catch {
+        print(error)
+      }
+    }
+  }
+  
   func getTodaysTasks() -> [Item] {
     let itemFetch = NSFetchRequest<Item>(entityName: "Item")
     var items: [Item] = []

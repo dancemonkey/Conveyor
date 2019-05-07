@@ -22,12 +22,20 @@ struct WatchTask {
     }
   }
   
-  func getContext() -> (title: String, status: String, id: String) {
-    return (title: self.title, status: self.status.rawValue, id: self.id)
+  func getContext() -> [String: String] {
+    return [
+      Constants.ItemContextFields.title.rawValue: self.title,
+      Constants.ItemContextFields.state.rawValue: self.status.rawValue,
+      Constants.ItemContextFields.id.rawValue: self.id
+    ]
   }
   
   static func getItem(from context: [String: String]) -> WatchTask? {
-    if let title = context[Constants.ItemContextFields.title.rawValue], let status = context[Constants.ItemContextFields.state.rawValue], let id = context[Constants.ItemContextFields.id.rawValue] {
+    if
+      let title = context[Constants.ItemContextFields.title.rawValue],
+      let status = context[Constants.ItemContextFields.state.rawValue],
+      let id = context[Constants.ItemContextFields.id.rawValue]
+    {
       let stat = ItemState(rawValue: status)!
       return WatchTask(title: title, status: stat, id: id)
     } else {

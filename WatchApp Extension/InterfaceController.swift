@@ -50,10 +50,31 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
     }
   }
   
-  override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-    WatchSessionManager.shared.sendTaskCompletion(for: data[rowIndex])
-    data.remove(at: rowIndex)
+  override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+    let context = TaskContext()
+    context.object = data[rowIndex]
+    context.delegate = self
+    return context
+  }
+}
+
+extension InterfaceController: ItemUpdateDelegate {
+  func complete(item: WatchTask?) {
+    guard let completeTask = item else { return }
+    WatchSessionManager.shared.sendTaskCompletion(for: completeTask)
+    data.removeAll { (task) -> Bool in
+      task.id == completeTask.id
+    }
     resetTable()
   }
   
+  func reschedule(item: WatchTask?, newList: Bucket) {
+    guard let updatedTask = item else { return }
+    // create reschedule message in session manager
+    WatchSessionManager.shared.sendTaskReschedule(for: item, newList: newList)
+    data.removeAll { (task) -> Bool in
+      task.id == updatedTask.id
+    }
+    resetTable()
+  }
 }

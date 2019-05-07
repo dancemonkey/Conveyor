@@ -98,6 +98,14 @@
 		10E6F45B225F7BED009F1951 /* Font Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E61225CC30E00F9D9B8 /* Font Styles.swift */; };
 		10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */; };
 		10F0C9C9226213910000D585 /* BadgeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C9C7226213200000D585 /* BadgeCounter.swift */; };
+		10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8D62281B793009693D1 /* TaskDetailIC.swift */; };
+		10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8D82281BEC5009693D1 /* TaskContext.swift */; };
+		10FCA8DB2281C284009693D1 /* ItemCompletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DA2281C284009693D1 /* ItemCompletionDelegate.swift */; };
+		10FCA8E02281C64D009693D1 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
+		10FCA8E12281C64D009693D1 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
+		10FCA8E22281C64D009693D1 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
+		10FCA8E32281C64D009693D1 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
+		10FCA8E42281C64D009693D1 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +266,10 @@
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
 		10F0C9C7226213200000D585 /* BadgeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeCounter.swift; path = ../Conveyor/Utils/BadgeCounter.swift; sourceTree = "<group>"; };
+		10FCA8D62281B793009693D1 /* TaskDetailIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailIC.swift; sourceTree = "<group>"; };
+		10FCA8D82281BEC5009693D1 /* TaskContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContext.swift; sourceTree = "<group>"; };
+		10FCA8DA2281C284009693D1 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
+		10FCA8DF2281C64D009693D1 /* BucketEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,14 +327,17 @@
 			isa = PBXGroup;
 			children = (
 				100CF986227DEB01006C7A83 /* InterfaceController.swift */,
+				10FCA8D62281B793009693D1 /* TaskDetailIC.swift */,
 				100CF988227DEB01006C7A83 /* ExtensionDelegate.swift */,
-				100CF98A227DEB02006C7A83 /* Assets.xcassets */,
-				100CF98C227DEB02006C7A83 /* Info.plist */,
 				100CF9A7227DF583006C7A83 /* RowController.swift */,
 				100CF99B227DEF0C006C7A83 /* WatchSessionManager.swift */,
 				100CF9A3227DF2AA006C7A83 /* ContextUpdateDelegate.swift */,
 				100CF9A5227DF48D006C7A83 /* WatchTask.swift */,
 				10E0F0B92280683500774127 /* WatchStore.swift */,
+				10FCA8D82281BEC5009693D1 /* TaskContext.swift */,
+				10FCA8DA2281C284009693D1 /* ItemCompletionDelegate.swift */,
+				100CF98A227DEB02006C7A83 /* Assets.xcassets */,
+				100CF98C227DEB02006C7A83 /* Info.plist */,
 			);
 			path = "WatchApp Extension";
 			sourceTree = "<group>";
@@ -523,6 +538,7 @@
 				10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */,
 				10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */,
 				10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */,
+				10FCA8DF2281C64D009693D1 /* BucketEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -685,6 +701,7 @@
 				TargetAttributes = {
 					100CF974227DEAFF006C7A83 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					100CF980227DEB01006C7A83 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -818,7 +835,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		100CF9A9227DF853006C7A83 /* Increment Build number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -830,13 +847,13 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n";
 		};
 		100CF9AA227DF862006C7A83 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -848,7 +865,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n";
 		};
@@ -917,9 +934,13 @@
 				100CF9A6227DF48D006C7A83 /* WatchTask.swift in Sources */,
 				100CF9A8227DF583006C7A83 /* RowController.swift in Sources */,
 				100CF9A1227DF14A006C7A83 /* State Protocols.swift in Sources */,
+				10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */,
+				10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */,
 				100CF99C227DEF0C006C7A83 /* WatchSessionManager.swift in Sources */,
 				100CF9A4227DF2AA006C7A83 /* ContextUpdateDelegate.swift in Sources */,
 				100CF989227DEB01006C7A83 /* ExtensionDelegate.swift in Sources */,
+				10FCA8DB2281C284009693D1 /* ItemCompletionDelegate.swift in Sources */,
+				10FCA8E42281C64D009693D1 /* BucketEnum.swift in Sources */,
 				100CF987227DEB01006C7A83 /* InterfaceController.swift in Sources */,
 				101820C5227F255100AC8A36 /* Color Style.swift in Sources */,
 				10E0F0BA2280683500774127 /* WatchStore.swift in Sources */,
@@ -932,6 +953,7 @@
 			files = (
 				10E6F455225F799D009F1951 /* Settings.swift in Sources */,
 				10240DD2225E1ED7001FC721 /* Item+CoreDataProperties.swift in Sources */,
+				10FCA8E32281C64D009693D1 /* BucketEnum.swift in Sources */,
 				10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */,
 				10240DD1225E1ED3001FC721 /* Item+CoreDataClass.swift in Sources */,
 				10E6F456225F79B0009F1951 /* Constants.swift in Sources */,
@@ -967,6 +989,7 @@
 				10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */,
 				10807E72225CC30E00F9D9B8 /* Color Style.swift in Sources */,
 				10807E73225CC30E00F9D9B8 /* Date Styles.swift in Sources */,
+				10FCA8E02281C64D009693D1 /* BucketEnum.swift in Sources */,
 				1011A5B8226A090100764234 /* OnboardingPageVC.swift in Sources */,
 				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
 				10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */,
@@ -991,6 +1014,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FCA8E12281C64D009693D1 /* BucketEnum.swift in Sources */,
 				10807E46225CC28C00F9D9B8 /* ConveyorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -999,6 +1023,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FCA8E22281C64D009693D1 /* BucketEnum.swift in Sources */,
 				101378162264D8C50013EFF3 /* Settings.swift in Sources */,
 				1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */,
 				1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */,
@@ -1073,14 +1098,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 5.2;
@@ -1092,10 +1124,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TFEDY5M56J;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

@@ -72,6 +72,15 @@ extension WatchSessionManager {
           store.completeTask(byId: taskId)
         }
       }
+    } else if message[Constants.WatchMessageKeys.rescheduledTask.rawValue] != nil {
+      if let taskId = message[Constants.WatchMessageKeys.completedTask.rawValue] as? String,
+        let newListName = message[Constants.WatchMessageKeys.newTaskList.rawValue] as? String {
+        DispatchQueue.main.async {
+          let store = Store(testing: false)
+          guard let newList = Bucket(rawValue: newListName) else { return }
+          store.moveTask(byId: taskId, to: newList)
+        }
+      }
     }
   }
   

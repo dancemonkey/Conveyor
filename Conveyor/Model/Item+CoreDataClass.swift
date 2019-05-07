@@ -10,11 +10,11 @@
 import UIKit
 import CoreData
 
-enum Bucket: String {
-  case today
-  case tomorrow
-  case later
-}
+//enum Bucket: String {
+//  case today
+//  case tomorrow
+//  case later
+//}
 
 @objc(Item)
 public class Item: NSManagedObject {
