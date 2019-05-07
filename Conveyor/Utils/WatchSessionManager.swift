@@ -7,6 +7,7 @@
 //
 
 import WatchConnectivity
+import UIKit
 
 class WatchSessionManager: NSObject, WCSessionDelegate {
   
@@ -70,15 +71,17 @@ extension WatchSessionManager {
         DispatchQueue.main.async {
           let store = Store(testing: false)
           store.completeTask(byId: taskId)
+          UIApplication.shared.applicationIconBadgeNumber = store.getBadgeCount()
         }
       }
     } else if message[Constants.WatchMessageKeys.rescheduledTask.rawValue] != nil {
-      if let taskId = message[Constants.WatchMessageKeys.completedTask.rawValue] as? String,
+      if let taskId = message[Constants.WatchMessageKeys.rescheduledTask.rawValue] as? String,
         let newListName = message[Constants.WatchMessageKeys.newTaskList.rawValue] as? String {
         DispatchQueue.main.async {
           let store = Store(testing: false)
           guard let newList = Bucket(rawValue: newListName) else { return }
           store.moveTask(byId: taskId, to: newList)
+          UIApplication.shared.applicationIconBadgeNumber = store.getBadgeCount()
         }
       }
     }
