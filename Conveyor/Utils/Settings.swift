@@ -65,7 +65,7 @@ struct Settings {
       case .review:
         return "Review on App Store"
       case .onBoarding:
-        return "Watch App Overview"
+        return "See Onboarding Again"
       }
     }
     
