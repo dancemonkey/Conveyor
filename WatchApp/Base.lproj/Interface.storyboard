@@ -65,7 +65,7 @@
                                     <items>
                                         <button alignment="left" verticalAlignment="bottom" backgroundImage="move" id="XPA-um-YOj">
                                             <color key="titleColor" name="secondary"/>
-                                            <color key="backgroundColor" name="secondary"/>
+                                            <color key="backgroundColor" name="white"/>
                                             <connections>
                                                 <action selector="rescheduleWithSender:" destination="Ef0-fC-y98" id="zZc-0Q-hY8"/>
                                             </connections>
