@@ -86,6 +86,11 @@
 		1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */; };
 		1089FB2822689F88008EFFEF /* DoneOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2722689F88008EFFEF /* DoneOptionCell.swift */; };
 		1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2922689F94008EFFEF /* LockOptionCell.swift */; };
+		1095DF9C228469F800A39DAF /* WatchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF9A5227DF48D006C7A83 /* WatchTask.swift */; };
+		10A026D322846D3400B8FE6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E60225CC30E00F9D9B8 /* Constants.swift */; };
+		10A026D422846EF700B8FE6B /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF99B227DEF0C006C7A83 /* WatchSessionManager.swift */; };
+		10A026D522846F2200B8FE6B /* ContextUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CF9A3227DF2AA006C7A83 /* ContextUpdateDelegate.swift */; };
+		10A026D622846F2A00B8FE6B /* WatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B92280683500774127 /* WatchStore.swift */; };
 		10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE42267D54C001E448E /* SettingsCell.swift */; };
 		10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE62267D643001E448E /* SettingsListVC.swift */; };
 		10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B72280679C00774127 /* WatchSessionManager.swift */; };
@@ -97,6 +102,10 @@
 		10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E68225CC30E00F9D9B8 /* Color Style.swift */; };
 		10E6F45B225F7BED009F1951 /* Font Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E61225CC30E00F9D9B8 /* Font Styles.swift */; };
 		10E6F45D225F80E6009F1951 /* ItemCompletionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */; };
+		10EAE6E0228466FA00DC2B54 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAE6DF228466FA00DC2B54 /* IntentHandler.swift */; };
+		10EAE6E4228466FA00DC2B54 /* WatchIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 10EAE6DD228466FA00DC2B54 /* WatchIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		10EAE6EA2284684C00DC2B54 /* BucketEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8DF2281C64D009693D1 /* BucketEnum.swift */; };
+		10EAE6EB2284686800DC2B54 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		10F0C9C9226213910000D585 /* BadgeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C9C7226213200000D585 /* BadgeCounter.swift */; };
 		10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8D62281B793009693D1 /* TaskDetailIC.swift */; };
 		10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCA8D82281BEC5009693D1 /* TaskContext.swift */; };
@@ -144,6 +153,13 @@
 			remoteGlobalIDString = 10807E8B225CC48500F9D9B8;
 			remoteInfo = SiriAddTasks;
 		};
+		10EAE6E2228466FA00DC2B54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10807E22225CC28900F9D9B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10EAE6DC228466FA00DC2B54;
+			remoteInfo = WatchIntents;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -177,6 +193,17 @@
 			files = (
 				10240DCD225E1CC1001FC721 /* TodayWidget.appex in Embed App Extensions */,
 				10807E93225CC48500F9D9B8 /* SiriAddTasks.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EAE6E8228466FA00DC2B54 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				10EAE6E4228466FA00DC2B54 /* WatchIntents.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +292,9 @@
 		10E0F0B92280683500774127 /* WatchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStore.swift; sourceTree = "<group>"; };
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		10E6F45C225F80E6009F1951 /* ItemCompletionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCompletionDelegate.swift; sourceTree = "<group>"; };
+		10EAE6DD228466FA00DC2B54 /* WatchIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WatchIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		10EAE6DF228466FA00DC2B54 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		10EAE6E1228466FA00DC2B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10F0C9C7226213200000D585 /* BadgeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeCounter.swift; path = ../Conveyor/Utils/BadgeCounter.swift; sourceTree = "<group>"; };
 		10FCA8D62281B793009693D1 /* TaskDetailIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailIC.swift; sourceTree = "<group>"; };
 		10FCA8D82281BEC5009693D1 /* TaskContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContext.swift; sourceTree = "<group>"; };
@@ -304,6 +334,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		10807E89225CC48500F9D9B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EAE6DA228466FA00DC2B54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -417,6 +454,7 @@
 				10240DC4225E1CC1001FC721 /* TodayWidget */,
 				100CF976227DEAFF006C7A83 /* WatchApp */,
 				100CF985227DEB01006C7A83 /* WatchApp Extension */,
+				10EAE6DE228466FA00DC2B54 /* WatchIntents */,
 				10240DC1225E1CC1001FC721 /* Frameworks */,
 				10807E2B225CC28900F9D9B8 /* Products */,
 			);
@@ -431,6 +469,7 @@
 				10240DC0225E1CC1001FC721 /* TodayWidget.appex */,
 				100CF975227DEAFF006C7A83 /* WatchApp.app */,
 				100CF981227DEB01006C7A83 /* WatchApp Extension.appex */,
+				10EAE6DD228466FA00DC2B54 /* WatchIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -573,6 +612,15 @@
 			path = "Settings Screen";
 			sourceTree = "<group>";
 		};
+		10EAE6DE228466FA00DC2B54 /* WatchIntents */ = {
+			isa = PBXGroup;
+			children = (
+				10EAE6DF228466FA00DC2B54 /* IntentHandler.swift */,
+				10EAE6E1228466FA00DC2B54 /* Info.plist */,
+			);
+			path = WatchIntents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -602,10 +650,12 @@
 				100CF97E227DEB01006C7A83 /* Frameworks */,
 				100CF97F227DEB01006C7A83 /* Resources */,
 				100CF9AA227DF862006C7A83 /* Increment Build Number */,
+				10EAE6E8228466FA00DC2B54 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				10EAE6E3228466FA00DC2B54 /* PBXTargetDependency */,
 			);
 			name = "WatchApp Extension";
 			productName = "WatchApp Extension";
@@ -689,6 +739,24 @@
 			productReference = 10807E8C225CC48500F9D9B8 /* SiriAddTasks.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		10EAE6DC228466FA00DC2B54 /* WatchIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10EAE6E7228466FA00DC2B54 /* Build configuration list for PBXNativeTarget "WatchIntents" */;
+			buildPhases = (
+				10EAE6D9228466FA00DC2B54 /* Sources */,
+				10EAE6DA228466FA00DC2B54 /* Frameworks */,
+				10EAE6DB228466FA00DC2B54 /* Resources */,
+				10EAE6E92284671400DC2B54 /* Increment Build Number */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WatchIntents;
+			productName = WatchIntents;
+			productReference = 10EAE6DD228466FA00DC2B54 /* WatchIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -743,6 +811,9 @@
 							};
 						};
 					};
+					10EAE6DC228466FA00DC2B54 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 10807E25225CC28900F9D9B8 /* Build configuration list for PBXProject "Conveyor" */;
@@ -764,6 +835,7 @@
 				10240DBF225E1CC1001FC721 /* TodayWidget */,
 				100CF974227DEAFF006C7A83 /* WatchApp */,
 				100CF980227DEB01006C7A83 /* WatchApp Extension */,
+				10EAE6DC228466FA00DC2B54 /* WatchIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -824,6 +896,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		10807E8A225CC48500F9D9B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10EAE6DB228466FA00DC2B54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -922,6 +1001,24 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		10EAE6E92284671400DC2B54 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1035,6 +1132,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10EAE6D9228466FA00DC2B54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10A026D422846EF700B8FE6B /* WatchSessionManager.swift in Sources */,
+				10A026D322846D3400B8FE6B /* Constants.swift in Sources */,
+				10A026D522846F2200B8FE6B /* ContextUpdateDelegate.swift in Sources */,
+				1095DF9C228469F800A39DAF /* WatchTask.swift in Sources */,
+				10EAE6EA2284684C00DC2B54 /* BucketEnum.swift in Sources */,
+				10EAE6E0228466FA00DC2B54 /* IntentHandler.swift in Sources */,
+				10EAE6EB2284686800DC2B54 /* State Protocols.swift in Sources */,
+				10A026D622846F2A00B8FE6B /* WatchStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1062,6 +1174,11 @@
 			isa = PBXTargetDependency;
 			target = 10807E8B225CC48500F9D9B8 /* SiriAddTasks */;
 			targetProxy = 10807E91225CC48500F9D9B8 /* PBXContainerItemProxy */;
+		};
+		10EAE6E3228466FA00DC2B54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10EAE6DC228466FA00DC2B54 /* WatchIntents */;
+			targetProxy = 10EAE6E2228466FA00DC2B54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1472,6 +1589,50 @@
 			};
 			name = Release;
 		};
+		10EAE6E5228466FA00DC2B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = WatchIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.watchkitapp.watchkitextension.WatchIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		10EAE6E6228466FA00DC2B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFEDY5M56J;
+				INFOPLIST_FILE = WatchIntents/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DrewLanning.Conveyor.watchkitapp.watchkitextension.WatchIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1534,6 +1695,15 @@
 			buildConfigurations = (
 				10807E95225CC48500F9D9B8 /* Debug */,
 				10807E96225CC48500F9D9B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10EAE6E7228466FA00DC2B54 /* Build configuration list for PBXNativeTarget "WatchIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10EAE6E5228466FA00DC2B54 /* Debug */,
+				10EAE6E6228466FA00DC2B54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

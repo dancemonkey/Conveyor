@@ -24,7 +24,7 @@ struct Constants {
   }
   
   enum WatchMessageKeys: String {
-    case request, completedTask, rescheduledTask, newTaskList
+    case request, completedTask, rescheduledTask, newTaskList, newTask
   }
   
   enum WatchInterfaces: String {

@@ -84,6 +84,10 @@ extension WatchSessionManager {
           UIApplication.shared.applicationIconBadgeNumber = store.getBadgeCount()
         }
       }
+    } else if message[Constants.WatchMessageKeys.newTask.rawValue] != nil {
+      let store = Store(testing: false)
+      store.addNewItem(text: message[Constants.WatchMessageKeys.newTask.rawValue] as? String, in: Bucket(rawValue: message[Constants.WatchMessageKeys.newTaskList.rawValue] as! String)!)
+      store.save()
     }
   }
   

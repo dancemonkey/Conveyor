@@ -12,7 +12,7 @@ struct WatchTask {
   
   var title: String
   var status: ItemState
-  var id: String
+  var id: String?
   
   mutating func setDone() {
     if self.status == .none || self.status == .overdue {
@@ -26,7 +26,7 @@ struct WatchTask {
     return [
       Constants.ItemContextFields.title.rawValue: self.title,
       Constants.ItemContextFields.state.rawValue: self.status.rawValue,
-      Constants.ItemContextFields.id.rawValue: self.id
+      Constants.ItemContextFields.id.rawValue: self.id ?? ""
     ]
   }
   
