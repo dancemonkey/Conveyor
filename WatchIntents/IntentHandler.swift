@@ -45,20 +45,21 @@ extension IntentHandler: INAddTasksIntentHandling {
   public func handle(intent: INAddTasksIntent, completion: @escaping (INAddTasksIntentResponse) -> Void) {
     let list = intent.targetTaskList
     guard let title = list?.title else {
+      print("no list title found")
       completion(INAddTasksIntentResponse(code: .failure, userActivity: nil))
       return
     }
     
     var tasks: [INTask] = []
     if let taskTitles = intent.taskTitles {
+      print("found and creating tasks")
       tasks = createTasks(fromTitles: taskTitles)
       add(tasks: taskTitles, to: Bucket(rawValue: title.spokenPhrase)!)
+      let response = INAddTasksIntentResponse(code: .success, userActivity: nil)
+      response.modifiedTaskList = list
+      response.addedTasks = tasks
+      completion(response)
     }
-    
-    let response = INAddTasksIntentResponse(code: .success, userActivity: nil)
-    response.modifiedTaskList = list
-    response.addedTasks = tasks
-    completion(response)
   }
   
 }

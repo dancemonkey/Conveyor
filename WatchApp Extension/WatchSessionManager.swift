@@ -16,6 +16,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   }
   private let session : WCSession = WCSession.default
   func startSession() {
+    print("session started")
     session.delegate = self
     session.activate()
   }
@@ -63,8 +64,12 @@ extension WatchSessionManager {
   }
   
   func sendNew(task: WatchTask?, in list: Bucket) {
-    guard let newTask = task else { return }
+    guard let newTask = task else {
+      print("no new task to send")
+      return
+    }
     let message: [String: Any] = [Constants.WatchMessageKeys.newTask.rawValue: newTask.title, Constants.WatchMessageKeys.newTaskList.rawValue: list.rawValue]
+    print("message sending: \(message)")
     self.session.sendMessage(message, replyHandler: nil) { (error) in
       print(error)
     }
