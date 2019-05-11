@@ -62,19 +62,19 @@ extension InterfaceController: ItemUpdateDelegate {
   func complete(item: WatchTask?) {
     guard let completeTask = item else { return }
     WatchSessionManager.shared.sendTaskCompletion(for: completeTask)
-    data.removeAll { (task) -> Bool in
+    WatchStore.shared.data.removeAll { (task) -> Bool in
       task.id == completeTask.id
     }
-    resetTable()
+    refresh()
   }
   
   func reschedule(item: WatchTask?, newList: Bucket) {
     guard let updatedTask = item else { return }
     // create reschedule message in session manager
     WatchSessionManager.shared.sendTaskReschedule(for: item, newList: newList)
-    data.removeAll { (task) -> Bool in
+    WatchStore.shared.data.removeAll { (task) -> Bool in
       task.id == updatedTask.id
     }
-    resetTable()
+    refresh()
   }
 }
