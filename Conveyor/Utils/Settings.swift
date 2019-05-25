@@ -54,7 +54,7 @@ struct Settings {
   
   enum InfoSettingsOptions: CaseIterable {
 //    case iap, support, review, onBoarding
-    case support, review, onBoarding
+    case support, review, onBoarding, upgrade
     
     func getTitle() -> String {
       switch self {
@@ -66,6 +66,8 @@ struct Settings {
         return "Review on App Store"
       case .onBoarding:
         return "See Onboarding Again"
+      case .upgrade:
+        return "Unlock / Pro Features!"
       }
     }
     
@@ -79,6 +81,8 @@ struct Settings {
         return "showReview"
       case .onBoarding:
         return ""
+      case .upgrade:
+        return "showIAP"
       }
     }
   }

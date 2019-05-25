@@ -32,7 +32,7 @@ struct Constants {
   }
   
   enum TableCellID: String {
-    case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell, helpOptionCell
+    case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell, helpOptionCell, iapCell
   }
   
   enum ItemActions: String {
