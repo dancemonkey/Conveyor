@@ -38,6 +38,7 @@
 		10240DD2225E1ED7001FC721 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		10240DD3225E20C0001FC721 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
+		1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027D7D4229AD17E001CE87F /* IAPCell.swift */; };
 		1029A8622299ACEC00C319DA /* IapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029A8612299ACEC00C319DA /* IapVC.swift */; };
 		1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
@@ -220,6 +221,7 @@
 		10240DC8225E1CC1001FC721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		10240DCA225E1CC1001FC721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		1027D7D4229AD17E001CE87F /* IAPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPCell.swift; sourceTree = "<group>"; };
 		1029A8612299ACEC00C319DA /* IapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapVC.swift; sourceTree = "<group>"; };
 		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		10632B5A2273339300B7173A /* HelpOptionsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpOptionsListCell.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				1089FB2722689F88008EFFEF /* DoneOptionCell.swift */,
 				1089FB2922689F94008EFFEF /* LockOptionCell.swift */,
 				10632B5A2273339300B7173A /* HelpOptionsListCell.swift */,
+				1027D7D4229AD17E001CE87F /* IAPCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				10807E6E225CC30E00F9D9B8 /* Settings.swift in Sources */,
 				10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */,
 				10632B5B2273339300B7173A /* HelpOptionsListCell.swift in Sources */,
+				1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */,
 				10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */,
 				10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */,
 			);

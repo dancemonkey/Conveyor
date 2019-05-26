@@ -34,6 +34,24 @@ struct FontStyles {
     }
   }
   
+  static var iapTitleFont: UIFont {
+    get {
+      return UIFont(name: "SFProText-Semibold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .semibold)
+    }
+  }
+  
+  static var iapDescFont: UIFont {
+    get {
+      return UIFont(name: "SFProText-Medium", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0, weight: .medium)
+    }
+  }
+  
+  static var iapPriceFont: UIFont {
+    get {
+      return UIFont(name: "SFProText-Semibold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .semibold)
+    }
+  }
+  
   static var toastFont: UIFont {
     return UIFont(name: "SFProText-Medium", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
   }

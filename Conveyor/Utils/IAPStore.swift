@@ -26,9 +26,9 @@ enum IAPHandlerAlertType {
 class IAPStore: NSObject {
   static let shared = IAPStore()
   
-  let smallTip = "com.DrewLanning.Conveyor.smallTip"
-  let mediumTip = "com.DrewLanning.Conveyor.largerTip"
-  let largeTip = "com.DrewLanning.Conveyor.largestTip"
+  let smallTip = "com.DrewLanning.Conveyor.small"
+  let mediumTip = "com.DrewLanning.Conveyor.medium"
+  let largeTip = "com.DrewLanning.Conveyor.large"
   let proUpgrade = "com.DrewLanning.Conveyor.proUpgrade"
   
   fileprivate var productID = ""
@@ -42,7 +42,7 @@ class IAPStore: NSObject {
   // MARK: - MAKE PURCHASE OF A PRODUCT
   func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
   
-  func purchaseMyProduct(index: Int){
+  func purchaseMyProduct(index: Int) {
     if iapProducts.count == 0 { return }
     
     if self.canMakePurchases() {
@@ -62,6 +62,12 @@ class IAPStore: NSObject {
   func restorePurchase() {
     SKPaymentQueue.default().add(self)
     SKPaymentQueue.default().restoreCompletedTransactions()
+  }
+  
+  // MARK: - Check if Purchased Pro upgrade
+  func isProUser() -> Bool {
+    
+    return true
   }
   
   
