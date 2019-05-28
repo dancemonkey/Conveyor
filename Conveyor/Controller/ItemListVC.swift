@@ -51,7 +51,6 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateHeading()
-//    updateData()
   }
   
   override func viewDidAppear(_ animated: Bool) {
