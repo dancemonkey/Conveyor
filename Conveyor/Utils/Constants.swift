@@ -15,6 +15,13 @@ struct Constants {
     case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename
   }
   
+  enum IAPProductIds: String {
+    case smallTip = "com.DrewLanning.Conveyor.small",
+    mediumTip = "com.DrewLanning.Conveyor.medium",
+    largeTip = "com.DrewLanning.Conveyor.large",
+    proUpgrade = "com.DrewLanning.Conveyor.proUpgrade"
+  }
+  
   enum GroupName: String {
     case value = "group.com.DrewLanning.conveyor"
   }

@@ -48,6 +48,10 @@ extension IapVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    IAPStore.shared.purchaseMyProduct(index: indexPath.row)
+    let cell = tableView.cellForRow(at: indexPath) as! IAPCell
+    cell.startPurchase()
+    IAPStore.shared.purchaseMyProduct(index: indexPath.row) {
+      cell.purchaseComplete()
+    }
   }
 }

@@ -248,6 +248,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eiK-x3-KYh">
+                                                    <rect key="frame" x="355" y="27.5" width="20" height="20"/>
+                                                    <color key="color" name="primary"/>
+                                                </activityIndicatorView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bj8-h9-l6b">
                                                     <rect key="frame" x="28" y="13" width="358" height="49"/>
                                                     <subviews>
@@ -268,7 +272,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hue-aF-ekB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hue-aF-ekB">
                                                             <rect key="frame" x="316" y="0.0" width="42" height="49"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -278,7 +282,9 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="eiK-x3-KYh" firstAttribute="centerY" secondItem="61Z-tK-aau" secondAttribute="centerY" id="3Fb-c0-705"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Bj8-h9-l6b" secondAttribute="trailing" constant="8" id="FN6-Bm-FHP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eiK-x3-KYh" secondAttribute="trailing" constant="19" id="HJr-U0-ZcT"/>
                                                 <constraint firstItem="Bj8-h9-l6b" firstAttribute="centerY" secondItem="61Z-tK-aau" secondAttribute="centerY" id="Jsy-zZ-nkN"/>
                                                 <constraint firstItem="Bj8-h9-l6b" firstAttribute="centerX" secondItem="61Z-tK-aau" secondAttribute="centerX" id="Ltu-aa-iki"/>
                                                 <constraint firstItem="Bj8-h9-l6b" firstAttribute="leading" secondItem="61Z-tK-aau" secondAttribute="leadingMargin" constant="8" id="gVq-bL-M6Y"/>
@@ -287,6 +293,7 @@
                                         <connections>
                                             <outlet property="descLbl" destination="IyC-Ap-zh2" id="Vyr-zc-Pk8"/>
                                             <outlet property="priceLbl" destination="Hue-aF-ekB" id="LIy-Nd-v4n"/>
+                                            <outlet property="spinner" destination="eiK-x3-KYh" id="Zyy-6h-GIz"/>
                                             <outlet property="titleLbl" destination="3qa-58-K2E" id="mOZ-Js-Shs"/>
                                         </connections>
                                     </tableViewCell>

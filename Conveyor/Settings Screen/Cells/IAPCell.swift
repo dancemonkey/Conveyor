@@ -13,6 +13,7 @@ class IAPCell: SettingsCell {
   @IBOutlet weak var titleLbl: UILabel!
   @IBOutlet weak var descLbl: UILabel!
   @IBOutlet weak var priceLbl: UILabel!
+  @IBOutlet weak var spinner: UIActivityIndicatorView!
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -23,16 +24,38 @@ class IAPCell: SettingsCell {
     priceLbl.font = FontStyles.iapPriceFont
     priceLbl.textColor = ColorStyles.primary
     backgroundColor = ColorStyles.backgroundWhite
+    spinner.hidesWhenStopped = true
+    spinner.stopAnimating()
+  }
+  
+  func startPurchase() {
+    spinner.isHidden = false
+    spinner.startAnimating()
+    priceLbl.isHidden = spinner.isAnimating
+    print("animating")
+  }
+  
+  func purchaseComplete() {
+    spinner.stopAnimating()
+    priceLbl.isHidden = spinner.isAnimating
+    print("done animating")
   }
   
   func configure(with product: SKProduct) {
     self.titleLbl.text = product.localizedTitle
     self.descLbl.text = product.localizedDescription
-    self.priceLbl.text = {
-      let formatter = NumberFormatter()
-      formatter.numberStyle = .currency
-      formatter.locale = product.priceLocale
-      return formatter.string(from: product.price) ?? "Unknown Price"
-    }()
+    if product.productIdentifier == Constants.IAPProductIds.proUpgrade.rawValue {
+      self.priceLbl.text = "Pro User"
+      self.priceLbl.textColor = ColorStyles.blackText
+      selectionStyle = .none
+      isUserInteractionEnabled = false
+    } else {
+      self.priceLbl.text = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = product.priceLocale
+        return formatter.string(from: product.price) ?? "Unknown Price"
+      }()
+    }
   }
 }

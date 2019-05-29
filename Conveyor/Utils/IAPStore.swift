@@ -28,35 +28,34 @@ enum IAPHandlerAlertType {
 class IAPStore: NSObject {
   static let shared = IAPStore()
   
-  let smallTip = "com.DrewLanning.Conveyor.small"
-  let mediumTip = "com.DrewLanning.Conveyor.medium"
-  let largeTip = "com.DrewLanning.Conveyor.large"
-  let proUpgrade = "com.DrewLanning.Conveyor.proUpgrade"
+  let smallTip = Constants.IAPProductIds.smallTip.rawValue
+  let mediumTip = Constants.IAPProductIds.mediumTip.rawValue
+  let largeTip = Constants.IAPProductIds.largeTip.rawValue
+  let proUpgrade = Constants.IAPProductIds.proUpgrade.rawValue
   
   fileprivate var productID = ""
   fileprivate var productsRequest = SKProductsRequest()
-//  fileprivate
   var iapProducts = [SKProduct]()
 
   var purchaseStatusBlock: ((IAPHandlerAlertType) -> Void)? = { (purchaseStatus) in
     if purchaseStatus == .purchased {
-      print(purchaseStatus.message())
       do {
-        // MUST TEST WHAT WAS PURCHASED FIRST, SMALL TIP DOESN'T GET YOU PRO
         try shared.setProUser()
       } catch {
         print("did not set pro user")
       }
     }
+    shared.purchaseCompleteBlock?()
   }
-  var productRequestComplete: (() -> ())?
+  private var purchaseCompleteBlock: (() -> ())?
+  private var productRequestComplete: (() -> ())?
   
   // MARK: - MAKE PURCHASE OF A PRODUCT
   func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
   
-  func purchaseMyProduct(index: Int) {
+  func purchaseMyProduct(index: Int, completion: @escaping () -> ()) {
     if iapProducts.count == 0 { return }
-    
+    purchaseCompleteBlock = completion
     if self.canMakePurchases() {
       let product = iapProducts[index]
       let payment = SKPayment(product: product)
@@ -79,7 +78,6 @@ class IAPStore: NSObject {
   // MARK: - FETCH AVAILABLE IAP PRODUCTS
   func fetchAvailableProducts(completion: (() -> ())?) {
     
-    // Put here your IAP Products ID's
     let productIdentifiers = NSSet(objects:
       smallTip,
       mediumTip,
@@ -180,6 +178,7 @@ extension IAPStore: SKProductsRequestDelegate, SKPaymentTransactionObserver {
         case .failed:
           print("failed")
           SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+          purchaseCompleteBlock?()
           break
         case .restored:
           print("restored")
