@@ -49,6 +49,8 @@
 		10632B5F227334C900B7173A /* HelpOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632B5E227334C900B7173A /* HelpOptionsVC.swift */; };
 		106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AFD226DF4F000D43FD6 /* slide-paper.aif */; };
 		106E2B00226DF57100D43FD6 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E2AFF226DF57100D43FD6 /* Radio.swift */; };
+		107503F822A0078A000F6399 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107503F722A0078A000F6399 /* HelpVC.swift */; };
+		107503FA22A0084C000F6399 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107503F922A0084B000F6399 /* WebKit.framework */; };
 		1078965422999F1100DF6638 /* IAPStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078965322999F1100DF6638 /* IAPStore.swift */; };
 		107B97B32270916600B24BFB /* AddTask.mov in Resources */ = {isa = PBXBuildFile; fileRef = 107B97B22270916600B24BFB /* AddTask.mov */; };
 		107B97B72270959C00B24BFB /* CompleteTask.mov in Resources */ = {isa = PBXBuildFile; fileRef = 107B97B62270959C00B24BFB /* CompleteTask.mov */; };
@@ -91,6 +93,7 @@
 		1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2922689F94008EFFEF /* LockOptionCell.swift */; };
 		10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE42267D54C001E448E /* SettingsCell.swift */; };
 		10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE62267D643001E448E /* SettingsListVC.swift */; };
+		10DFF2E222A00A700053C5BE /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 10DFF2E122A00A700053C5BE /* help.html */; };
 		10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B72280679C00774127 /* WatchSessionManager.swift */; };
 		10E0F0BA2280683500774127 /* WatchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F0B92280683500774127 /* WatchStore.swift */; };
 		10E6F455225F799D009F1951 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
@@ -228,6 +231,8 @@
 		10632B5E227334C900B7173A /* HelpOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpOptionsVC.swift; sourceTree = "<group>"; };
 		106E2AFD226DF4F000D43FD6 /* slide-paper.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-paper.aif"; sourceTree = "<group>"; };
 		106E2AFF226DF57100D43FD6 /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
+		107503F722A0078A000F6399 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		107503F922A0084B000F6399 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1078965322999F1100DF6638 /* IAPStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStore.swift; sourceTree = "<group>"; };
 		107B97B22270916600B24BFB /* AddTask.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AddTask.mov; sourceTree = "<group>"; };
 		107B97B62270959C00B24BFB /* CompleteTask.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = CompleteTask.mov; sourceTree = "<group>"; };
@@ -277,6 +282,7 @@
 		1089FB2922689F94008EFFEF /* LockOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOptionCell.swift; sourceTree = "<group>"; };
 		10CB7EE42267D54C001E448E /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		10CB7EE62267D643001E448E /* SettingsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListVC.swift; sourceTree = "<group>"; };
+		10DFF2E122A00A700053C5BE /* help.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		10E0F0B72280679C00774127 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		10E0F0B92280683500774127 /* WatchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStore.swift; sourceTree = "<group>"; };
 		10E6F457225F79D0009F1951 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107503FA22A0084C000F6399 /* WebKit.framework in Frameworks */,
 				1002F0BD22675B8B008418E6 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +380,7 @@
 		10240DC1225E1CC1001FC721 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				107503F922A0084B000F6399 /* WebKit.framework */,
 				1002F0BC22675B8B008418E6 /* StoreKit.framework */,
 				10240DC2225E1CC1001FC721 /* NotificationCenter.framework */,
 			);
@@ -415,6 +423,7 @@
 				1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */,
 				10632B5E227334C900B7173A /* HelpOptionsVC.swift */,
 				1029A8612299ACEC00C319DA /* IapVC.swift */,
+				107503F722A0078A000F6399 /* HelpVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +434,13 @@
 				106E2AFD226DF4F000D43FD6 /* slide-paper.aif */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		107503FB22A00A0A000F6399 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		10807E21225CC28900F9D9B8 = {
@@ -498,6 +514,7 @@
 		10807E57225CC2D900F9D9B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10DFF2E122A00A700053C5BE /* help.html */,
 				10A2D5212270890500ABB220 /* Video */,
 				106E2AFC226DEEA900D43FD6 /* Sound */,
 				10807E50225CC2D400F9D9B8 /* Fonts */,
@@ -588,6 +605,7 @@
 		10CCB22C226BB4520029D7AF /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
+				107503FB22A00A0A000F6399 /* Resources */,
 				10632B5D2273349200B7173A /* Views */,
 				10632B5C2273348500B7173A /* Cells */,
 				105363E3226F378A0093A549 /* Settings.storyboard */,
@@ -845,6 +863,7 @@
 				10807E54225CC2D400F9D9B8 /* SF-UI-Display-Bold.otf in Resources */,
 				1011A5B3226A080300764234 /* Onboarding.storyboard in Resources */,
 				105363E4226F378A0093A549 /* Settings.storyboard in Resources */,
+				10DFF2E222A00A700053C5BE /* help.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1023,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */,
+				107503F822A0078A000F6399 /* HelpVC.swift in Sources */,
 				1089FB202268978E008EFFEF /* BadgeOptionCell.swift in Sources */,
 				10807E7C225CC36800F9D9B8 /* ToastView.swift in Sources */,
 				10807E9B225CC5E000F9D9B8 /* TabController.swift in Sources */,

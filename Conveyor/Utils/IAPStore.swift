@@ -18,7 +18,7 @@ enum IAPHandlerAlertType {
   func message() -> String {
     switch self {
     case .disabled: return "Purchases are disabled in your device!"
-    case .restored: return "You've successfully restored your purchase!"
+    case .restored: return "You've successfully restored your purchases!"
     case .purchased: return "Thank you for your support!"
     case .proPurchase: return "Thank you for upgrading to Pro!"
     }
@@ -70,9 +70,10 @@ class IAPStore: NSObject {
   }
   
   // MARK: - RESTORE PURCHASE
-  func restorePurchase() {
+  func restorePurchase(completion: (()->())?) {
     SKPaymentQueue.default().add(self)
     SKPaymentQueue.default().restoreCompletedTransactions()
+    completion?()
   }
   
   // MARK: - FETCH AVAILABLE IAP PRODUCTS
@@ -184,7 +185,6 @@ extension IAPStore: SKProductsRequestDelegate, SKPaymentTransactionObserver {
           print("restored")
           SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
           break
-          
         default: break
         }}}
   }

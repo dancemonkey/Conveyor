@@ -113,10 +113,10 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
               }
             }
           }
-        } else if option == .onBoarding {
-          let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-          guard let vc = storyboard.instantiateInitialViewController() else { return }
-          self.present(vc, animated: true, completion: nil)
+//        } else if option == .onBoarding {
+//          let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//          guard let vc = storyboard.instantiateInitialViewController() else { return }
+//          self.present(vc, animated: true, completion: nil)
         } else {
           performSegue(withIdentifier: option.getSegueId(), sender: self)
         }

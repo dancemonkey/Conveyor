@@ -28,6 +28,13 @@ class AlertFactory {
     return controller
   }
   
+  static func purchasesRestored() -> UIAlertController {
+    let controller = UIAlertController(title: "Purchases Restored", message: IAPHandlerAlertType.restored.message(), preferredStyle: .alert)
+    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+    controller.addAction(ok)
+    return controller
+  }
+  
   static func askForOnboarding(completion: @escaping () -> (), cancellation: @escaping () -> ()) -> UIAlertController {
     let controller = UIAlertController(title: "Overview?", message: "Would you like to see a brief (5 slide) overview of the app?", preferredStyle: .alert)
     let ok = UIAlertAction(title: "Okay", style: .default) { (action) in

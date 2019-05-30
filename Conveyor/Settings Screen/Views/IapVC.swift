@@ -28,7 +28,11 @@ class IapVC: UIViewController {
   
   @IBAction func restorePressed(sender: UIBarButtonItem) {
     print("restoring purchases")
-    IAPStore.shared.restorePurchase()
+    restoreBtn.title = "Restoring..."
+    IAPStore.shared.restorePurchase {
+      self.restoreBtn.title = "Restore"
+      self.present(AlertFactory.purchasesRestored(), animated: true, completion: nil)
+    }
   }
 }
 
