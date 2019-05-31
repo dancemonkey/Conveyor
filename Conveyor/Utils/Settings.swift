@@ -34,9 +34,9 @@ struct Settings {
       case .badge:
         return "Badge Options"
       case .lockingItems:
-        return "Item Lock Options"
+        return "Task Lock Options"
       case .completedItems:
-        return "Item Completion Options"
+        return "Task Completion Options"
       }
     }
     
@@ -67,7 +67,7 @@ struct Settings {
 //      case .onBoarding:
 //        return "See Onboarding Again"
       case .upgrade:
-        return "Unlock / Pro Features!"
+        return "Unlock Pro Features!"
       case .help:
         return "Help"
       }
