@@ -6,25 +6,54 @@
         color: #21171C;
         background-color: #F9F9F9
       }
-    h1 { font-size: 75;
-      color: #FF5E35;
-    }
-    h2 { font-size: 65;
-      color: #FF5E35;
-    }
-    h3 { font-size: 55;
-      color: #FF5E35;
-    }
-    p { font-size: 45;
-    }
-    li { font-size: 45; }
-    ul { list-style-type: circle; }
-      </style>
+      h1 { font-size: 75;
+        color: #FF5E35;
+      }
+      h2 { font-size: 65;
+        color: #FF5E35;
+      }
+      h3 { font-size: 55;
+        color: #FF5E35;
+      }
+      p { font-size: 45;
+      }
+      li { font-size: 45; }
+      ul { list-style-type: circle; }
+      
+      #toc_container {
+        background: #f9f9f9 none repeat scroll 0 0;
+        border: 1px solid #aaa;
+        display: table;
+        font-size: 95%;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
+      }
+    
+      .toc_title {
+        font-weight: 700;
+        text-align: center;
+      }
+    
+      #toc_container li, #toc_container ul, #toc_container ul li{
+        list-style: outside none none !important;
+      }
+    </style>
   </head>
   <body>
+    <div id="toc_container">
+      <p class="toc_title" id="toc_top">Contents</p>
+      <ul class="toc_list">
+        <li><a href="#First_Point_Header">Adding Tasks</a></li>
+        <li><a href="#Second_Point_Header">Task Migration</a></li>
+        <li><a href="#Third_Point_Header">Task Swipe Actions</a></li>
+        <li><a href="#Fourth_Point_Header">Locking Tasks</a></li>
+        <li><a href="#Fifth_Point_Header">Settings</a></li>
+      </ul>
+    </div>
     <h2>How To Use Conveyor</h2>
     <p>Conveyor is a task list app like many others but with most of the complex options, toggles, and settings removed so you can focus on creating and completing tasks.</p>
-    <h3>Adding a Task</h3>
+    <h3 id="First_Point_Header">Adding a Task</h3>
     <p>Tap the "add new task" text entry field, which hangs out towards the bottom of the screen. The keyboard appears as if by magic, and the task entry field floats to the center of the screen so you can see what the heck you're typing!</p>
     <p>You have a few different ways to save the task:</p>
     <ul>
@@ -32,7 +61,8 @@
       <li>A little twist on the above: if you end your task with the words "today", "tomorrow", or "later" it will be saved in that list when you hit "Done" (and that word will be stripped from the task when saved).</li>
       <li>Above the keyboard as you type the task is a row of buttons, labelled "today", "tomorrow", and "later". You can tap one of those buttons to save the task on that list.</li>
     </ul>
-    <h3>Tasks Reschedule Themselves</h3>
+    <p align="right"><a href="#toc_top">top</a></p>
+    <h3 id="Second_Point_Header">Task Migration</h3>
     <p>Each day at or around midnight (it's not entirely up to the app, iOS plays by its own set of rules sometimes), your entire list of tasks in each list will reschedule themselves.</p>
     <ul>
       <li>Tasks in the "Later" list move to the "Tomorrow" list.</li>
@@ -40,7 +70,8 @@
       <li>Any tasks on the "Today" list that were not completed are marked as "Overdue". This just means they turn red.</li>
     </ul>
     <p>If the reschedule doesn't happen automatically, it will happen immediately the first time you open the app each day.</p>
-    <h3>Task Swipe Actions</h3>
+    <p align="right"><a href="#toc_top">top</a></p>
+    <h3 id="Third_Point_Header">Task Swipe Actions</h3>
     <p>You can swipe left and right on a task to perform a set of actions.</p>
     <p>Swipe right to:</p>
     <ul>
@@ -53,11 +84,13 @@
       <li>Reschedule the action (which basically just means move it to another list)</li>
       <li>Lock the action (this is only available on the "Later" list)</li>
     </ul>
-    <h3>Locking Tasks</h3>
+    <p align="right"><a href="#toc_top">top</a></p>
+    <h3 id="Fourth_Point_Header">Locking Tasks</h3>
     <p>Locking tasks deserves a little explanation.</p>
     <p>When a task is on the "Later" list, you can lock it in place so that it doesn't get rescheduled automatically nightly. You can choose to lock it forever so it remains in place until you unlock it, or choose to lock it for a specific number of days.</p>
     <p>Locking it temporarily will mark the task with a numbered icon showing you how many days are left until it automatically unlocks, and this number gets smaller every day.</p>
-    <h3>Settings</h3>
+    <p align="right"><a href="#toc_top">top</a></p>
+    <h3 id="Fifth_Point_Header">Settings</h3>
     <p>Conveyor has a settings screen with a few options for you to play with.</p>
     <ul>
       <li><strong>Badge Options</strong>: If you have allowed notifications, the app has a badge number showing the total items in the "Today" list that remain to be done. You can configure this in settings to only show Overdue items, or to just remove the badge altogether.</li>
@@ -68,5 +101,6 @@
       <li><strong>Help</strong>: What you're reading right now.</li>
       <li><strong>Unlock Pro Features</strong>: The list of in-app purchases. Unlock the set of Pro features, or just send us a much-appreciated tip to help keep the lights on and keep us developing cool new features!</li>
     </ul>
+    <p align="right"><a href="#toc_top">top</a></p>
   </body>
 </html>
