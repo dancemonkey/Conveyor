@@ -60,12 +60,8 @@ struct Settings {
       switch self {
       case .support:
         return "Email \(Constants.supportEmail)"
-//      case .iap:
-//        return "Additional Features (IAP)"
       case .review:
         return "Review on App Store"
-//      case .onBoarding:
-//        return "See Onboarding Again"
       case .upgrade:
         return "Unlock Pro Features!"
       case .help:
@@ -77,12 +73,8 @@ struct Settings {
       switch self {
       case .support:
         return "showSupport"
-//      case .iap:
-//        return "showIAP"
       case .review:
         return "showReview"
-//      case .onBoarding:
-//        return ""
       case .upgrade:
         return "showIAP"
       case .help:
@@ -90,32 +82,6 @@ struct Settings {
       }
     }
   }
-  
-//  enum HelpOptionLinks: CaseIterable {
-//    case faq, support, guide
-//    
-//    func getTitle() -> String {
-//      switch self {
-//      case .faq:
-//        return "Frequently Asked Questions"
-//      case .support:
-//        return "Technical Support"
-//      case .guide:
-//        return "User Guide"
-//      }
-//    }
-//    
-//    func getSegueId() -> String {
-//      switch self {
-//      case .faq:
-//        return "showFAQ"
-//      case .support:
-//        return "showSupport"
-//      case .guide:
-//        return "showGuide"
-//      }
-//    }
-//  }
   
   static var defaults: UserDefaults {
     get {
