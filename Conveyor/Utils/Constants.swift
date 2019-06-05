@@ -12,7 +12,7 @@ struct Constants {
   static var supportEmail: String = "appSupport@drewlanning.com"
   
   enum DefaultKeys: String {
-    case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename
+    case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename, darkModeActive
   }
   
   enum IAPProductIds: String {

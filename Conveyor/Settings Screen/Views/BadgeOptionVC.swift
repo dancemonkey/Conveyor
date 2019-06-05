@@ -17,6 +17,7 @@ class BadgeOptionVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setColors()
     
     options = []
     BadgeOption.allCases.forEach { (option) in
@@ -26,7 +27,7 @@ class BadgeOptionVC: UIViewController {
     deniedBadgeAuthLbl.text = "You have not approved notifications for this app. Please visit the iOS Settings app to grant authorization if you would like to have badges."
     deniedBadgeAuthLbl.numberOfLines = 4
     deniedBadgeAuthLbl.font = FontStyles.settingsCellFont
-    deniedBadgeAuthLbl.textColor = ColorStyles.blackText
+    deniedBadgeAuthLbl.textColor = ColorStyles.textColor
     deniedBadgeAuthLbl.textAlignment = .center
     
     tableView.delegate = self
@@ -48,6 +49,11 @@ class BadgeOptionVC: UIViewController {
         }
       }
     }
+  }
+  
+  func setColors() {
+    view.backgroundColor = ColorStyles.background
+    tableView.backgroundColor = ColorStyles.background
   }
   
   func updateSettings(with option: BadgeOption) {

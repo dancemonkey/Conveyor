@@ -34,7 +34,7 @@ class WidgetCell: UITableViewCell {
     if let state = item.state, let itemState = ItemState(rawValue: state) {
       if itemState == .none {
         completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
-        title.textColor = ColorStyles.blackText
+        title.textColor = ColorStyles.textColor
       } else if itemState == .overdue {
         completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
         title.textColor = ColorStyles.accent

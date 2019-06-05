@@ -21,19 +21,19 @@ class ItemEntryField: UITextField {
     adjustsFontSizeToFitWidth = true
     minimumFontSize = 11.0
     self.font = FontStyles.dataEntryFont
-    self.textColor = ColorStyles.blackText
+    self.textColor = ColorStyles.textColor
     self.borderStyle = .line
     self.layer.borderWidth = 1.0
     self.layer.borderColor = ColorStyles.primaryFaded.cgColor
-    self.attributedPlaceholder = NSAttributedString(string: "add new task", attributes: [NSAttributedString.Key.foregroundColor: ColorStyles.blackText])
+    self.attributedPlaceholder = NSAttributedString(string: "add new task", attributes: [NSAttributedString.Key.foregroundColor: ColorStyles.textColor])
     UIView.animate(withDuration: 0.5) {
-      self.backgroundColor = ColorStyles.blackText.withAlphaComponent(0.7)
+      self.backgroundColor = ColorStyles.textColor.withAlphaComponent(0.7)
     }
   }
   
   func styleForEntry() {
     UIView.animate(withDuration: 0.5) {
-      self.backgroundColor = ColorStyles.backgroundWhite.withAlphaComponent(1.0)
+      self.backgroundColor = ColorStyles.background.withAlphaComponent(1.0)
       self.placeholder = ""
     }
   }

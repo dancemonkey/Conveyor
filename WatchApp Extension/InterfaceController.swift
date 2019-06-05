@@ -45,7 +45,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
       if data[i].status == .overdue {
         controller.itemLabel.setTextColor(.red)
       } else {
-        controller.itemLabel.setTextColor(ColorStyles.blackText)
+        controller.itemLabel.setTextColor(ColorStyles.textColor)
       }
     }
   }

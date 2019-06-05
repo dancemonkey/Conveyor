@@ -34,15 +34,15 @@ class OnboardingPageVC: UIViewController {
   }
   
   private func styleViews() {
-    self.view.backgroundColor = ColorStyles.backgroundWhite
+    self.view.backgroundColor = ColorStyles.background
     if lastVC {
       skipBtn.setTitle("DONE", for: .normal)
       skipBtn.backgroundColor = ColorStyles.primary
-      skipBtn.setTitleColor(ColorStyles.backgroundWhite, for: .normal)
+      skipBtn.setTitleColor(ColorStyles.background, for: .normal)
       skipBtn.layer.cornerRadius = 10
     } else {
       skipBtn?.backgroundColor = .clear
-      skipBtn?.setTitleColor(ColorStyles.blackText.withAlphaComponent(0.7), for: .normal)
+      skipBtn?.setTitleColor(ColorStyles.textColor.withAlphaComponent(0.7), for: .normal)
       skipBtn.setTitle("Skip", for: .normal)
     }
     titleLbl.font = FontStyles.onboardingTitleFont

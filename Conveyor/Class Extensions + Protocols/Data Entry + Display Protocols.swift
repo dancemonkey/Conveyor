@@ -95,7 +95,7 @@ extension ItemAdder where Self: ItemListVC {
   func addBucketButtons(to field: UITextField) {
     let toolbar: UIToolbar = UIToolbar()
     toolbar.sizeToFit()
-    toolbar.backgroundColor = ColorStyles.backgroundWhite
+    toolbar.backgroundColor = ColorStyles.background
     
     let currentTab = Bucket(rawValue: self.title!.lowercased())
     var todayTitle = "today"

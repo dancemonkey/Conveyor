@@ -18,12 +18,12 @@ class IAPCell: SettingsCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     titleLbl.font = FontStyles.iapTitleFont
-    titleLbl.textColor = ColorStyles.blackText
+    titleLbl.textColor = ColorStyles.textColor
     descLbl.font = FontStyles.iapDescFont
-    descLbl.textColor = ColorStyles.blackText
+    descLbl.textColor = ColorStyles.textColor
     priceLbl.font = FontStyles.iapPriceFont
     priceLbl.textColor = ColorStyles.primary
-    backgroundColor = ColorStyles.backgroundWhite
+    backgroundColor = ColorStyles.background
     spinner.hidesWhenStopped = true
     spinner.stopAnimating()
   }
@@ -45,10 +45,20 @@ class IAPCell: SettingsCell {
     self.titleLbl.text = product.localizedTitle
     self.descLbl.text = product.localizedDescription
     if product.productIdentifier == Constants.IAPProductIds.proUpgrade.rawValue {
-      self.priceLbl.text = "Pro User"
-      self.priceLbl.textColor = ColorStyles.blackText
-      selectionStyle = .none
-      isUserInteractionEnabled = false
+      if IAPStore.shared.isProUser() {
+        self.priceLbl.text = "Pro User"
+        self.priceLbl.textColor = ColorStyles.textColor
+        selectionStyle = .none
+        isUserInteractionEnabled = false
+      } else {
+        self.priceLbl.text = {
+          let formatter = NumberFormatter()
+          formatter.numberStyle = .currency
+          formatter.locale = product.priceLocale
+          return formatter.string(from: product.price) ?? "Unknown Price"
+        }()
+      }
+      
     } else {
       self.priceLbl.text = {
         let formatter = NumberFormatter()

@@ -10,16 +10,18 @@ import UIKit
 
 struct ColorStyles {
   
-  static var blackText: UIColor {
-    return UIColor(named: "black")!
+  static var textColor: UIColor {
+    return Settings.darkModeActive ? UIColor(named: "white")! : UIColor(named: "black")!
+//    return UIColor(named: "black")!
   }
   
   static var primaryFaded: UIColor {
     return primary.withAlphaComponent(0.3)
   }
   
-  static var backgroundWhite: UIColor {
-    return UIColor(named: "white")!
+  static var background: UIColor {
+    return Settings.darkModeActive ? UIColor(named: "black")! : UIColor(named: "white")!
+//    return UIColor(named: "white")!
   }
   
   static var primary: UIColor {

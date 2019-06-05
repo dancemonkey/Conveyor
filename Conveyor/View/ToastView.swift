@@ -15,7 +15,7 @@ class ToastView: UIView {
     self.init()
     label = UILabel()
     label?.text = text
-    label?.textColor = ColorStyles.backgroundWhite
+    label?.textColor = ColorStyles.background
     label?.textAlignment = .center
     label?.font = FontStyles.toastFont
     label?.adjustsFontSizeToFitWidth = true

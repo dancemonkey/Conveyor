@@ -40,6 +40,7 @@
 		10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027D7D4229AD17E001CE87F /* IAPCell.swift */; };
 		1029A8622299ACEC00C319DA /* IapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029A8612299ACEC00C319DA /* IapVC.swift */; };
+		1043997822A7F3CD0007599C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
 		1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
@@ -990,6 +991,7 @@
 				100CF99C227DEF0C006C7A83 /* WatchSessionManager.swift in Sources */,
 				100CF9A4227DF2AA006C7A83 /* ContextUpdateDelegate.swift in Sources */,
 				100CF989227DEB01006C7A83 /* ExtensionDelegate.swift in Sources */,
+				1043997822A7F3CD0007599C /* Settings.swift in Sources */,
 				10FCA8DB2281C284009693D1 /* ItemCompletionDelegate.swift in Sources */,
 				10FCA8E42281C64D009693D1 /* BucketEnum.swift in Sources */,
 				100CF987227DEB01006C7A83 /* InterfaceController.swift in Sources */,

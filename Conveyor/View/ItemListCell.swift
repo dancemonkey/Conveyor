@@ -23,7 +23,7 @@ class ItemListCell: UITableViewCell {
   }
   
   func configure(item: Item, in state: ItemState?) {
-    itemLabel.textColor = ColorStyles.blackText
+    itemLabel.textColor = ColorStyles.textColor
     itemLabel.text = item.title ?? "no title"
     itemLabel.font = FontStyles.itemCellFont
     itemLabel.adjustsFontSizeToFitWidth = true
@@ -41,10 +41,10 @@ class ItemListCell: UITableViewCell {
       let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: itemLabel.text ?? "")
       attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
       itemLabel.attributedText = attributeString
-      itemLabel.textColor = ColorStyles.blackText
+      itemLabel.textColor = ColorStyles.textColor
       self.itemLabel.alpha = 0.3
     case .held:
-      itemLabel.textColor = ColorStyles.blackText.withAlphaComponent(0.5)
+      itemLabel.textColor = ColorStyles.textColor.withAlphaComponent(0.5)
       if !item.holdForever {
         setLockView(for: Int(item.holdDays))
       } else {
@@ -53,7 +53,7 @@ class ItemListCell: UITableViewCell {
     case .overdue:
       itemLabel.textColor = ColorStyles.accent
     case .none:
-      itemLabel.textColor = ColorStyles.blackText
+      itemLabel.textColor = ColorStyles.textColor
     }
   }
   
@@ -76,7 +76,7 @@ class ItemListCell: UITableViewCell {
       let paraStyle = NSMutableParagraphStyle()
       paraStyle.alignment = .center
       let string: NSString = "∞" as NSString
-      let attributes = [NSAttributedString.Key.paragraphStyle: paraStyle, NSAttributedString.Key.foregroundColor: ColorStyles.backgroundWhite, NSAttributedString.Key.font: FontStyles.itemCellFont]
+      let attributes = [NSAttributedString.Key.paragraphStyle: paraStyle, NSAttributedString.Key.foregroundColor: ColorStyles.background, NSAttributedString.Key.font: FontStyles.itemCellFont]
       string.draw(with: lock.frame.offsetBy(dx: 0.0, dy: 14.0), options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
     }
     return UIImageView(image: img)
@@ -91,7 +91,7 @@ class ItemListCell: UITableViewCell {
       let paraStyle = NSMutableParagraphStyle()
       paraStyle.alignment = .center
       let string: NSString = "\(days)" as NSString
-      let attributes = [NSAttributedString.Key.paragraphStyle: paraStyle, NSAttributedString.Key.foregroundColor: ColorStyles.backgroundWhite]
+      let attributes = [NSAttributedString.Key.paragraphStyle: paraStyle, NSAttributedString.Key.foregroundColor: ColorStyles.background]
       string.draw(with: lock.frame.offsetBy(dx: 0.0, dy: 18.0), options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
     }
     return UIImageView(image: img)

@@ -22,6 +22,12 @@ class SettingsListVC: UIViewController {
     tableView.dataSource = self
     populateSettingsInfo()
     setCopyrightText()
+    setColors()
+  }
+  
+  func setColors() {
+    view.backgroundColor = ColorStyles.background
+    tableView.backgroundColor = ColorStyles.background
   }
   
   func populateSettingsInfo() {
@@ -63,7 +69,8 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      return Settings.GeneralSettingsOptions.allCases.count
+      print("is pro user: \(IAPStore.shared.isProUser())")
+      return IAPStore.shared.isProUser() ? Settings.GeneralSettingsOptions.allCases.count + 1 : Settings.GeneralSettingsOptions.allCases.count
     case 1:
       return Settings.InfoSettingsOptions.allCases.count
     default:
@@ -75,9 +82,18 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableCellID.settingsCell.rawValue) as! SettingsCell
     switch indexPath.section {
     case 0:
-      if let option = generalOptions?[indexPath.row] {
-        cell.configure(with: option)
+      if let size = generalOptions?.count {
+        print("size of general options: \(size)")
+        if indexPath.row + 1 > size {
+          print("configuring dark mode cell")
+          cell.configure(with: .darkMode)
+        } else if let option = generalOptions?[indexPath.row] {
+          cell.configure(with: option)
+        }
       }
+//      if let option = generalOptions?[indexPath.row] {
+//        cell.configure(with: option)
+//      }
     case 1:
       if let option = infoOptions?[indexPath.row] {
         cell.configure(with: option)
@@ -91,9 +107,21 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     switch indexPath.section {
     case 0:
-      if let option = generalOptions?[indexPath.row] {
-        performSegue(withIdentifier: option.getSegueId(), sender: self)
+      if let title = (tableView.visibleCells[indexPath.row] as! SettingsCell).optionLbl.text {
+        if title == Settings.ProOptions.darkMode.getTitle() {
+          Settings.setDarkMode(active: true)
+          self.viewDidLoad()
+        } else {
+          if let option = generalOptions?[indexPath.row] {
+            performSegue(withIdentifier: option.getSegueId(), sender: self)
+          }
+        }
       }
+//      if let size = generalOptions?.count {
+//        if indexPath.row + 1 <= size, let option = generalOptions?[indexPath.row] {
+//          performSegue(withIdentifier: option.getSegueId(), sender: self)
+//        }
+//      }
     case 1:
       if let option = infoOptions?[indexPath.row] {
         if option == .review {
@@ -113,10 +141,6 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
               }
             }
           }
-//        } else if option == .onBoarding {
-//          let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-//          guard let vc = storyboard.instantiateInitialViewController() else { return }
-//          self.present(vc, animated: true, completion: nil)
         } else {
           performSegue(withIdentifier: option.getSegueId(), sender: self)
         }

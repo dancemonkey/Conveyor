@@ -23,7 +23,13 @@ class IapVC: UIViewController {
       self?.tableView.reloadData()
       self?.activitySpinner.stopAnimating()
     }
+    setColors()
     // Do any additional setup after loading the view.
+  }
+  
+  func setColors() {
+    view.backgroundColor = ColorStyles.background
+    tableView.backgroundColor = ColorStyles.background
   }
   
   @IBAction func restorePressed(sender: UIBarButtonItem) {

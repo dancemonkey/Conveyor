@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     tableView.delegate = self
     tableView.dataSource = self
     allDoneLbl.font = FontStyles.mainTitleFont
-    allDoneLbl.textColor = ColorStyles.blackText.withAlphaComponent(0.5)
+    allDoneLbl.textColor = ColorStyles.textColor.withAlphaComponent(0.5)
   }
   
   func fetch() {

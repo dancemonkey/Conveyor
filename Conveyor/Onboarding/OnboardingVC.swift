@@ -66,7 +66,7 @@ class OnboardingVC: UIPageViewController {
     let pageControl = UIPageControl.appearance()
     pageControl.pageIndicatorTintColor = ColorStyles.primaryFaded
     pageControl.currentPageIndicatorTintColor = ColorStyles.primary
-    pageControl.backgroundColor = ColorStyles.blackText
+    pageControl.backgroundColor = ColorStyles.textColor
   }
   
 }

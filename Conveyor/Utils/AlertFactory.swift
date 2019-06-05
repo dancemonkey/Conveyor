@@ -93,7 +93,7 @@ class AlertFactory {
       let heightConstraint = NSLayoutConstraint(item: field, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 35)
       field.addConstraint(heightConstraint)
     }
-    daySelect.setValue(ColorStyles.blackText, forKey: "titleTextColor")
+    daySelect.setValue(ColorStyles.textColor, forKey: "titleTextColor")
     controller.addAction(daySelect)
     let foreverAction = UIAlertAction(title: "Lock Forever", style: .default, handler: { (_) in
       item.hold(forever: true, or: nil)

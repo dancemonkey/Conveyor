@@ -21,11 +21,17 @@ class CompletedItemsOptionVC: UIViewController {
     }
     tableView.delegate = self
     tableView.dataSource = self
+    setColors()
   }
   
   func updateSettings(with option: DoneOption) {
     Settings.defaults.set(option.rawValue, forKey: UserDefaultKeys.doneSetting.rawValue)
     tableView.reloadData()
+  }
+  
+  func setColors() {
+    view.backgroundColor = ColorStyles.background
+    tableView.backgroundColor = ColorStyles.background
   }
 }
 

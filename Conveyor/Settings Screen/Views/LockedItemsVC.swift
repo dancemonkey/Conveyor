@@ -21,6 +21,12 @@ class LockedItemsOptionVC: UIViewController {
     }
     tableView.delegate = self
     tableView.dataSource = self
+    setColors()
+  }
+  
+  func setColors() {
+    view.backgroundColor = ColorStyles.background
+    tableView.backgroundColor = ColorStyles.background
   }
   
   func updateSettings(with option: LockOption) {

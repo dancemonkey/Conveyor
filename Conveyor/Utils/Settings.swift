@@ -52,6 +52,24 @@ struct Settings {
     }
   }
   
+  enum ProOptions {
+    case darkMode
+    
+    func getTitle() -> String {
+      switch self {
+      case .darkMode:
+        return "Set Dark Mode"
+      }
+    }
+    
+    func getSegueId() -> String {
+      switch self {
+      case .darkMode:
+        return ""
+      }
+    }
+  }
+  
   enum InfoSettingsOptions: CaseIterable {
 //    case iap, support, review, onBoarding
     case support, review, help, upgrade
@@ -89,6 +107,16 @@ struct Settings {
         UserDefaults(suiteName: Constants.GroupName.value.rawValue)!
         }()
     }
+  }
+  
+  static var darkModeActive: Bool {
+    get {
+      return self.defaults.bool(forKey: Constants.DefaultKeys.darkModeActive.rawValue)
+    }
+  }
+  
+  static func setDarkMode(active: Bool) {
+    self.defaults.set(active, forKey: Constants.DefaultKeys.darkModeActive.rawValue)
   }
   
   static var didChangeObject: Bool {

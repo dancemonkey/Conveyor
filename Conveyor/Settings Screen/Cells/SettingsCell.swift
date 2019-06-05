@@ -23,8 +23,8 @@ class SettingsCell: UITableViewCell {
     self.optionLbl.text = title
     self.segueID = segueID
     optionLbl.font = FontStyles.settingsCellFont
-    optionLbl.textColor = ColorStyles.blackText
-    backgroundColor = ColorStyles.backgroundWhite
+    optionLbl.textColor = ColorStyles.textColor
+    backgroundColor = ColorStyles.background
     selectionStyle = .none
   }
   
@@ -39,4 +39,10 @@ class SettingsCell: UITableViewCell {
     }
   }
   
+  func configure(with option: Settings.ProOptions) {
+    self.configure(with: option.getTitle(), segueID: option.getSegueId())
+    if option == .darkMode {
+      self.accessoryType = .none
+    }
+  }
 }

@@ -100,7 +100,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   }
   
   func applyGlobalStyles() {
-    self.view.backgroundColor = ColorStyles.backgroundWhite
+    self.view.backgroundColor = ColorStyles.background
     tableView.backgroundColor = .clear
     entryField.styleView()
     entryField.delegate = self
@@ -142,7 +142,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     default:
       titleLabel?.text = "where are we?"
     }
-    titleLabel?.textColor = ColorStyles.blackText
+    titleLabel?.textColor = ColorStyles.textColor
     titleLabel?.font = FontStyles.mainTitleFont
     titleLabel?.textAlignment = .right
     titleLabel?.adjustsFontSizeToFitWidth = true
