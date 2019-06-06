@@ -12,7 +12,6 @@ struct ColorStyles {
   
   static var textColor: UIColor {
     return Settings.darkModeActive ? UIColor(named: "white")! : UIColor(named: "black")!
-//    return UIColor(named: "black")!
   }
   
   static var primaryFaded: UIColor {
@@ -21,7 +20,6 @@ struct ColorStyles {
   
   static var background: UIColor {
     return Settings.darkModeActive ? UIColor(named: "black")! : UIColor(named: "white")!
-//    return UIColor(named: "white")!
   }
   
   static var primary: UIColor {

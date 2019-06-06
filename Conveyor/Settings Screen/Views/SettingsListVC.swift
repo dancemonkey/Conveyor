@@ -23,11 +23,14 @@ class SettingsListVC: UIViewController {
     populateSettingsInfo()
     setCopyrightText()
     setColors()
+    NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: .onDarkModeSelected, object: nil)
   }
   
   func setColors() {
     view.backgroundColor = ColorStyles.background
     tableView.backgroundColor = ColorStyles.background
+    copyrightLbl.textColor = ColorStyles.primary
+    copyrightLbl.backgroundColor = ColorStyles.background
   }
   
   func populateSettingsInfo() {
@@ -48,7 +51,11 @@ class SettingsListVC: UIViewController {
     © 2019 Drew Lanning
     All Rights Reserved
     """
-    copyrightLbl.textColor = ColorStyles.primary
+  }
+  
+  @objc func refreshUI() {
+    setColors()
+    tableView.reloadData()
   }
   
   @IBAction func doneTapped(sender: UIBarButtonItem) {
@@ -78,6 +85,10 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     }
   }
   
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.lightGray
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableCellID.settingsCell.rawValue) as! SettingsCell
     switch indexPath.section {
@@ -91,9 +102,6 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
           cell.configure(with: option)
         }
       }
-//      if let option = generalOptions?[indexPath.row] {
-//        cell.configure(with: option)
-//      }
     case 1:
       if let option = infoOptions?[indexPath.row] {
         cell.configure(with: option)
@@ -109,19 +117,17 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     case 0:
       if let title = (tableView.visibleCells[indexPath.row] as! SettingsCell).optionLbl.text {
         if title == Settings.ProOptions.darkMode.getTitle() {
-          Settings.setDarkMode(active: true)
-          self.viewDidLoad()
+          if Settings.darkModeActive {
+            Settings.setDarkMode(active: false)
+          } else {
+            Settings.setDarkMode(active: true)
+          }
         } else {
           if let option = generalOptions?[indexPath.row] {
             performSegue(withIdentifier: option.getSegueId(), sender: self)
           }
         }
       }
-//      if let size = generalOptions?.count {
-//        if indexPath.row + 1 <= size, let option = generalOptions?[indexPath.row] {
-//          performSegue(withIdentifier: option.getSegueId(), sender: self)
-//        }
-//      }
     case 1:
       if let option = infoOptions?[indexPath.row] {
         if option == .review {

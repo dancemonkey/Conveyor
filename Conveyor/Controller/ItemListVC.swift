@@ -46,6 +46,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     sessionManager?.startSession()
     
     NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: .onDarkModeSelected, object: nil)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -91,6 +92,11 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     updateData()
   }
   
+  @objc func refreshUI() {
+    applyGlobalStyles()
+    tableView.reloadData()
+  }
+  
   func performFetch() {
     do {
       try frc.performFetch()
@@ -104,6 +110,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     tableView.backgroundColor = .clear
     entryField.styleView()
     entryField.delegate = self
+    titleLabel?.textColor = ColorStyles.textColor
   }
   
   private func updateHeading() {

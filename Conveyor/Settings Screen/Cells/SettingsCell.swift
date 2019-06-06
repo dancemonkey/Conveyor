@@ -42,7 +42,11 @@ class SettingsCell: UITableViewCell {
   func configure(with option: Settings.ProOptions) {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
     if option == .darkMode {
-      self.accessoryType = .none
+      if Settings.darkModeActive {
+        self.accessoryType = .checkmark
+      } else {
+        self.accessoryType = .none
+      }
     }
   }
 }

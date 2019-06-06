@@ -30,6 +30,10 @@
 		101820C5227F255100AC8A36 /* Color Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E68225CC30E00F9D9B8 /* Color Style.swift */; };
 		101820C6227F25BB00AC8A36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10807E37225CC28C00F9D9B8 /* Assets.xcassets */; };
 		101BCD52225CC8CC007470B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101BCD51225CC8CC007470B9 /* Main.storyboard */; };
+		1021FD5822A93B010063A206 /* Notification Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021FD5722A93B010063A206 /* Notification Name Extension.swift */; };
+		1021FD5922A93D7E0063A206 /* Notification Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021FD5722A93B010063A206 /* Notification Name Extension.swift */; };
+		1021FD5A22A93D800063A206 /* Notification Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021FD5722A93B010063A206 /* Notification Name Extension.swift */; };
+		1021FD5B22A93D830063A206 /* Notification Name Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1021FD5722A93B010063A206 /* Notification Name Extension.swift */; };
 		10240DC3225E1CC1001FC721 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10240DC2225E1CC1001FC721 /* NotificationCenter.framework */; };
 		10240DC6225E1CC1001FC721 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10240DC5225E1CC1001FC721 /* TodayViewController.swift */; };
 		10240DC9225E1CC1001FC721 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10240DC7225E1CC1001FC721 /* MainInterface.storyboard */; };
@@ -219,6 +223,7 @@
 		1011A5B5226A08E600764234 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		1011A5B7226A090100764234 /* OnboardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageVC.swift; sourceTree = "<group>"; };
 		101BCD51225CC8CC007470B9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1021FD5722A93B010063A206 /* Notification Name Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Name Extension.swift"; sourceTree = "<group>"; };
 		10240DC0225E1CC1001FC721 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		10240DC2225E1CC1001FC721 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		10240DC5225E1CC1001FC721 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -548,6 +553,7 @@
 				106E2AFF226DF57100D43FD6 /* Radio.swift */,
 				10E0F0B72280679C00774127 /* WatchSessionManager.swift */,
 				1078965322999F1100DF6638 /* IAPStore.swift */,
+				1021FD5722A93B010063A206 /* Notification Name Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -985,6 +991,7 @@
 				100CF9A2227DF1CA006C7A83 /* Constants.swift in Sources */,
 				100CF9A6227DF48D006C7A83 /* WatchTask.swift in Sources */,
 				100CF9A8227DF583006C7A83 /* RowController.swift in Sources */,
+				1021FD5B22A93D830063A206 /* Notification Name Extension.swift in Sources */,
 				100CF9A1227DF14A006C7A83 /* State Protocols.swift in Sources */,
 				10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */,
 				10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */,
@@ -1017,6 +1024,7 @@
 				10E6F458225F79D0009F1951 /* WidgetCell.swift in Sources */,
 				10F0C9C9226213910000D585 /* BadgeCounter.swift in Sources */,
 				10E6F45A225F7BE6009F1951 /* Color Style.swift in Sources */,
+				1021FD5A22A93D800063A206 /* Notification Name Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1024,6 +1032,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1021FD5822A93B010063A206 /* Notification Name Extension.swift in Sources */,
 				1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */,
 				107503F822A0078A000F6399 /* HelpVC.swift in Sources */,
 				1089FB202268978E008EFFEF /* BadgeOptionCell.swift in Sources */,
@@ -1087,6 +1096,7 @@
 				1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */,
 				1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */,
 				101378172264D9130013EFF3 /* BadgeCounter.swift in Sources */,
+				1021FD5922A93D7E0063A206 /* Notification Name Extension.swift in Sources */,
 				10807E8F225CC48500F9D9B8 /* IntentHandler.swift in Sources */,
 				101378182264D94D0013EFF3 /* Constants.swift in Sources */,
 			);

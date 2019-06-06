@@ -117,6 +117,7 @@ struct Settings {
   
   static func setDarkMode(active: Bool) {
     self.defaults.set(active, forKey: Constants.DefaultKeys.darkModeActive.rawValue)
+    NotificationCenter.default.post(name: .onDarkModeSelected, object: nil)
   }
   
   static var didChangeObject: Bool {

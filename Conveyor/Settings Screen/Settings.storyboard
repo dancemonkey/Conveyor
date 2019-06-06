@@ -39,7 +39,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6l1-T1-Xah">
                                 <rect key="frame" x="0.0" y="120" width="414" height="678"/>
-                                <color key="backgroundColor" name="white"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="HV4-5U-Rde" customClass="SettingsCell" customModule="Conveyor" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -68,13 +68,11 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conveyor 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHv-Ex-XZm">
                                 <rect key="frame" x="0.0" y="798" width="414" height="64"/>
-                                <color key="backgroundColor" name="white"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <color key="textColor" name="primary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="white"/>
                         <constraints>
                             <constraint firstItem="t3I-H0-fLH" firstAttribute="trailing" secondItem="AHv-Ex-XZm" secondAttribute="trailing" id="3sP-B3-K4F"/>
                             <constraint firstItem="6l1-T1-Xah" firstAttribute="leading" secondItem="t3I-H0-fLH" secondAttribute="leading" id="A6J-Pg-ZqV"/>

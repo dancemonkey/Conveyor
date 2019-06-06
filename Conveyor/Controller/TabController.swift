@@ -21,13 +21,4 @@ class TabController: UITabBarController {
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : FontStyles.tabBarFont], for: .normal)
   }
   
-//  @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-//    if sender.direction == .left {
-//      self.selectedIndex += 1
-//    }
-//    if sender.direction == .right {
-//      self.selectedIndex -= 1
-//    }
-//  }
-  
 }
