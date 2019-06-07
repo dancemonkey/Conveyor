@@ -11,7 +11,7 @@ import UIKit
 struct ColorStyles {
   
   static var textColor: UIColor {
-    return Settings.darkModeActive ? UIColor(named: "white")! : UIColor(named: "black")!
+    return Settings.darkModeActive ? UIColor(named: "white")!.withAlphaComponent(0.5) : UIColor(named: "black")!
   }
   
   static var primaryFaded: UIColor {

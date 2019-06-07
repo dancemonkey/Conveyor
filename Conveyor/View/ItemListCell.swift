@@ -83,10 +83,11 @@ class ItemListCell: UITableViewCell {
   }
   
   private func drawOnLock(days: Int) -> UIImageView {
-    let lock = UIImageView(image: UIImage(named: "heldItem"))
+    let fileName: String = Settings.darkModeActive ? "heldItemDark" : "heldItem"
+    let lock = UIImageView(image: UIImage(named: fileName))
     let renderer = UIGraphicsImageRenderer(size: lock.frame.size)
     let img = renderer.image { ctx in
-      let lockImage = UIImage(named: "heldItem")
+      let lockImage = UIImage(named: fileName)
       lockImage?.draw(at: CGPoint.zero)
       let paraStyle = NSMutableParagraphStyle()
       paraStyle.alignment = .center

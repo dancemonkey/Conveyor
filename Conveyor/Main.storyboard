@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="entryField" destination="iXl-37-OY7" id="ZOd-Ox-nw9"/>
                         <outlet property="entryFieldBottomConstraint" destination="Ase-s3-JWg" id="IBp-6S-4XJ"/>
+                        <outlet property="settingsBtn" destination="lKY-yG-4ke" id="iEp-wD-UPL"/>
                         <outlet property="tableView" destination="AyQ-N3-ycg" id="wrK-Rr-OEO"/>
                     </connections>
                 </viewController>

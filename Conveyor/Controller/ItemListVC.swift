@@ -28,6 +28,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var entryField: ItemEntryField!
   @IBOutlet weak var entryFieldBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak var settingsBtn: UIButton?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -111,6 +112,8 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     entryField.styleView()
     entryField.delegate = self
     titleLabel?.textColor = ColorStyles.textColor
+    let settingsImage: UIImage? = Settings.darkModeActive ? UIImage(named: "settingsDark")! : UIImage(named: "settings")!
+    settingsBtn?.setImage(settingsImage, for: .normal)
   }
   
   private func updateHeading() {
@@ -279,7 +282,7 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
         let store = Store(testing: false)
         store.save()
         if item.bucket!.lowercased() != self?.title!.lowercased() {
-          self?.showToast(from: .bottom, with: "Postponed until \(item.bucket!.capitalized)")
+          self?.showToast(from: .bottom, with: "Moved to \(item.bucket!.capitalized)")
         }
         success(true)
       }) else { return }
