@@ -61,4 +61,8 @@ extension LockedItemsOptionVC: UITableViewDataSource, UITableViewDelegate {
       updateSettings(with: option)
     }
   }
+  
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    (view as! UITableViewHeaderFooterView).backgroundView?.backgroundColor = UIColor.lightGray
+  }
 }

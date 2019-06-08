@@ -36,6 +36,9 @@ class ItemListCell: UITableViewCell {
     } else {
       itemState = state!
     }
+    if item.repeating && itemState != .held {
+      self.accessoryView = Settings.darkModeActive == true ? UIImageView(image: UIImage(named: "repeatDark")) : UIImageView(image: UIImage(named: "repeat"))
+    }
     switch itemState {
     case .done:
       let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: itemLabel.text ?? "")
@@ -68,7 +71,8 @@ class ItemListCell: UITableViewCell {
   }
   
   private func drawInfinity() -> UIImageView {
-    let lock = UIImageView(image: UIImage(named: "heldItem"))
+    let fileName: String = Settings.darkModeActive ? "heldItemDark" : "heldItem"
+    let lock = UIImageView(image: UIImage(named: fileName))
     let renderer = UIGraphicsImageRenderer(size: lock.frame.size)
     let img = renderer.image { ctx in
       let lockImage = UIImage(named: "heldItem")

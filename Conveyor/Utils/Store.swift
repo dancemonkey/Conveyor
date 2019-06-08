@@ -126,7 +126,7 @@ class Store {
   }
   
   // MARK: Item Creation
-  func addNewItem(text: String?, in bucket: Bucket) {
+  func addNewItem(text: String?, in bucket: Bucket, repeating: Bool = false) {
     let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
     item.bucket = bucket.rawValue
     switch bucket {
@@ -139,6 +139,7 @@ class Store {
     }
     item.title = text
     item.creation = Date() as NSDate
+    item.repeating = repeating
     generator.notificationOccurred(.success)
   }
   
@@ -156,11 +157,21 @@ class Store {
     impactGenerator.impactOccurred()
   }
   
+  func complete(task: Item) {
+    if task.repeating == true {
+      addNewItem(text: task.title, in: .tomorrow, repeating: true)
+    }
+    task.complete()
+  }
+  
   func completeTask(byId taskId: String) {
     let todaysTasks = getTodaysTasks()
     if let taskToComplete = todaysTasks.first(where: { (task) -> Bool in
       return task.objectID.uriRepresentation().absoluteString == taskId
     }) {
+      if taskToComplete.repeating == true {
+        addNewItem(text: taskToComplete.title, in: .tomorrow, repeating: true)
+      }
       taskToComplete.complete()
       do {
         try context.save()

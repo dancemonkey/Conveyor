@@ -14,6 +14,14 @@ struct ColorStyles {
     return Settings.darkModeActive ? UIColor(named: "white")!.withAlphaComponent(0.5) : UIColor(named: "black")!
   }
   
+  static var extensionTextColor: UIColor {
+    return UIColor(named: "black")!
+  }
+  
+  static var lockAlertTextColor: UIColor {
+    return UIColor(named: "black")!
+  }
+  
   static var primaryFaded: UIColor {
     return primary.withAlphaComponent(0.3)
   }

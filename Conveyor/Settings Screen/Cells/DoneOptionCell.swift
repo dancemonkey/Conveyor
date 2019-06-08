@@ -33,5 +33,7 @@ class DoneOptionCell: UITableViewCell {
     } else {
       self.accessoryType = .none
     }
+    backgroundColor = ColorStyles.background
+    titleLbl.textColor = ColorStyles.textColor
   }
 }

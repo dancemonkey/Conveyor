@@ -21,9 +21,24 @@ public class Item: NSManagedObject {
   
   let generator = UINotificationFeedbackGenerator()
 
-  func complete() {
+  func complete(fromExtension: Bool = false) {
+    if fromExtension && self.repeating {
+      let context = self.managedObjectContext!
+      let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
+      item.bucket = Bucket.tomorrow.rawValue
+      item.state = ItemState.none.rawValue
+      item.title = self.title
+      item.creation = self.creation
+      item.repeating = true
+      do {
+        try context.save()
+      } catch {
+        print(error)
+      }
+    }
     self.bucket = Bucket.today.rawValue
     self.state = ItemState.done.rawValue
+    self.repeating = false
     generator.notificationOccurred(.success)
   }
   

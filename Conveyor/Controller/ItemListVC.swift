@@ -340,7 +340,7 @@ extension ItemListVC: UITableViewDelegate, UITableViewDataSource {
         item.unComplete()
       } else {
         if doneSetting == .strikethrough {
-          item.complete()
+          store.complete(task: item)
         } else if doneSetting == .delete {
           store.delete(item: item)
         }
@@ -393,7 +393,8 @@ extension ItemListVC {
     if self.addingItem == false {
       let _ = entryField.becomeFirstResponder()
       editingExistingItem = item
-      entryField.text = item.title ?? ""
+      let text = (item.title ?? "") + (item.repeating == true ? " @rpt" : "")
+      entryField.text = text
       entryField.selectAll(nil)
     }
   }
@@ -447,7 +448,7 @@ extension ItemListVC {
     }
   }
   
-  func parseEntry(from text: String) -> (list: String, task: String)? {
+  private func parseEntry(from text: String) -> (list: String, task: String)? {
     var result: (list: String, task: String)? = nil
     var components = text.lowercased().split(separator: " ")
     let listAssignment = components.first { (string) -> Bool in
@@ -459,6 +460,20 @@ extension ItemListVC {
     let task = components.joined(separator: " ")
     result = (list: String(list), task: task)
     return result
+  }
+  
+  private func isRepeatingTask(from text: String) -> (repeating: Bool, text: String)? {
+    var components = text.lowercased().split(separator: " ")
+    let repeating = components.first { (word) -> Bool in
+      return word == "@rpt"
+    }
+    guard repeating != nil else {
+      return (repeating: false, text: text)
+    }
+    let repeatLocation = components.firstIndex(of: repeating!)!
+    let _ = components.remove(at: repeatLocation)
+    let task = components.joined(separator: " ")
+    return (repeating: true, text: task)
   }
   
 }
@@ -479,20 +494,24 @@ extension ItemListVC: UITextFieldDelegate {
     let store = Store(testing: false)
     var bucket: Bucket = Bucket(rawValue: self.title!.lowercased())!
     var task: String = text
+    var repeating = false
     guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
       stopEditing()
       return
     }
-    if let result = parseEntry(from: text) {
+    if let result = parseEntry(from: task) {
       bucket = Bucket(rawValue: result.list)!
       task = result.task
-    } 
-//    guard let result = getScheduleWord(from: text) else { return }
-//    guard let bucket = Bucket(rawValue: result.list) else { return }
+    }
+    if let repeatingResult = isRepeatingTask(from: task) {
+      repeating = repeatingResult.repeating
+      task = repeatingResult.text
+    }
     if let item = editingExistingItem {
+      item.repeating = repeating
       store.updateExisting(item: item, withTitle: task, in: bucket)
     } else {
-      store.addNewItem(text: task, in: bucket)
+      store.addNewItem(text: task, in: bucket, repeating: repeating)
     }
     store.save()
     stopEditing()

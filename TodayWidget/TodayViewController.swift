@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     tableView.delegate = self
     tableView.dataSource = self
     allDoneLbl.font = FontStyles.mainTitleFont
-    allDoneLbl.textColor = ColorStyles.textColor.withAlphaComponent(0.5)
+    allDoneLbl.textColor = ColorStyles.extensionTextColor.withAlphaComponent(0.5)
   }
   
   func fetch() {
@@ -117,7 +117,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 extension TodayViewController: ItemCompleter {
   func complete(item: Item) {
     if Settings.doneOption() == .strikethrough {
-      item.complete()
+      item.complete(fromExtension: true)
     } else if Settings.doneOption() == .delete {
       persistentContainer.viewContext.delete(item)
     }
