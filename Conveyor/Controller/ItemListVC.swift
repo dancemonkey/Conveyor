@@ -503,9 +503,11 @@ extension ItemListVC: UITextFieldDelegate {
       bucket = Bucket(rawValue: result.list)!
       task = result.task
     }
-    if let repeatingResult = isRepeatingTask(from: task) {
-      repeating = repeatingResult.repeating
-      task = repeatingResult.text
+    if IAPStore.shared.isProUser() {
+      if let repeatingResult = isRepeatingTask(from: task) {
+        repeating = repeatingResult.repeating
+        task = repeatingResult.text
+      }
     }
     if let item = editingExistingItem {
       item.repeating = repeating

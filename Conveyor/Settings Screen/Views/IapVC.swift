@@ -24,7 +24,6 @@ class IapVC: UIViewController {
       self?.activitySpinner.stopAnimating()
     }
     setColors()
-    // Do any additional setup after loading the view.
   }
   
   func setColors() {
@@ -33,7 +32,6 @@ class IapVC: UIViewController {
   }
   
   @IBAction func restorePressed(sender: UIBarButtonItem) {
-    print("restoring purchases")
     restoreBtn.title = "Restoring..."
     IAPStore.shared.restorePurchase {
       self.restoreBtn.title = "Restore"
@@ -59,9 +57,13 @@ extension IapVC: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath) as! IAPCell
-    cell.startPurchase()
-    IAPStore.shared.purchaseMyProduct(index: indexPath.row) {
-      cell.purchaseComplete()
+    if cell.proUpgradeCell {
+      performSegue(withIdentifier: Constants.SegueID.showProUserDescription.rawValue, sender: self)
+    } else {
+      cell.startPurchase()
+      IAPStore.shared.purchaseMyProduct(index: indexPath.row) {
+        cell.purchaseComplete()
+      }
     }
   }
 }

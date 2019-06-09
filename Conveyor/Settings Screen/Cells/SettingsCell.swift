@@ -30,23 +30,17 @@ class SettingsCell: UITableViewCell {
   
   func configure(with option: Settings.GeneralSettingsOptions) {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
+    if Settings.darkModeActive && option == .darkMode {
+      self.accessoryType = .checkmark
+    } else {
+      self.accessoryType = .none
+    }
   }
   
   func configure(with option: Settings.InfoSettingsOptions) {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
     if option == .review || option == .support { //|| option == .onBoarding {
       self.accessoryType = .none
-    }
-  }
-  
-  func configure(with option: Settings.ProOptions) {
-    self.configure(with: option.getTitle(), segueID: option.getSegueId())
-    if option == .darkMode {
-      if Settings.darkModeActive {
-        self.accessoryType = .checkmark
-      } else {
-        self.accessoryType = .none
-      }
     }
   }
 }

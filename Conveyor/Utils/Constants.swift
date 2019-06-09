@@ -15,6 +15,10 @@ struct Constants {
     case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename, darkModeActive
   }
   
+  enum SegueID: String {
+    case showProUserDescription
+  }
+  
   enum IAPProductIds: String {
     case smallTip = "com.DrewLanning.Conveyor.small",
     mediumTip = "com.DrewLanning.Conveyor.medium",

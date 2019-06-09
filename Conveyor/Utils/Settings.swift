@@ -27,7 +27,7 @@ enum UserDefaultKeys: String {
 struct Settings {
   
   enum GeneralSettingsOptions: CaseIterable {
-    case badge, lockingItems, completedItems
+    case badge, lockingItems, completedItems, darkMode
     
     func getTitle() -> String {
       switch self {
@@ -37,6 +37,8 @@ struct Settings {
         return "Task Lock Options"
       case .completedItems:
         return "Task Completion Options"
+      case .darkMode:
+        return "Dark Mode"
       }
     }
     
@@ -48,22 +50,6 @@ struct Settings {
         return "showLockOptions"
       case .completedItems:
         return "showCompletionOptions"
-      }
-    }
-  }
-  
-  enum ProOptions {
-    case darkMode
-    
-    func getTitle() -> String {
-      switch self {
-      case .darkMode:
-        return "Set Dark Mode"
-      }
-    }
-    
-    func getSegueId() -> String {
-      switch self {
       case .darkMode:
         return ""
       }
@@ -71,7 +57,6 @@ struct Settings {
   }
   
   enum InfoSettingsOptions: CaseIterable {
-//    case iap, support, review, onBoarding
     case support, review, help, upgrade
     
     func getTitle() -> String {
@@ -81,7 +66,7 @@ struct Settings {
       case .review:
         return "Review on App Store"
       case .upgrade:
-        return "Unlock Pro Features!"
+        return "Go Pro, and more!"
       case .help:
         return "Help"
       }

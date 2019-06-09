@@ -76,8 +76,7 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      print("is pro user: \(IAPStore.shared.isProUser())")
-      return IAPStore.shared.isProUser() ? Settings.GeneralSettingsOptions.allCases.count + 1 : Settings.GeneralSettingsOptions.allCases.count
+      return Settings.GeneralSettingsOptions.allCases.count
     case 1:
       return Settings.InfoSettingsOptions.allCases.count
     default:
@@ -93,14 +92,8 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableCellID.settingsCell.rawValue) as! SettingsCell
     switch indexPath.section {
     case 0:
-      if let size = generalOptions?.count {
-        print("size of general options: \(size)")
-        if indexPath.row + 1 > size {
-          print("configuring dark mode cell")
-          cell.configure(with: .darkMode)
-        } else if let option = generalOptions?[indexPath.row] {
-          cell.configure(with: option)
-        }
+      if let option = generalOptions?[indexPath.row] {
+        cell.configure(with: option)
       }
     case 1:
       if let option = infoOptions?[indexPath.row] {
@@ -116,7 +109,7 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
     switch indexPath.section {
     case 0:
       if let title = (tableView.visibleCells[indexPath.row] as! SettingsCell).optionLbl.text {
-        if title == Settings.ProOptions.darkMode.getTitle() {
+        if title == Settings.GeneralSettingsOptions.darkMode.getTitle() {
           if Settings.darkModeActive {
             Settings.setDarkMode(active: false)
           } else {

@@ -358,11 +358,35 @@
                         <outlet property="activitySpinner" destination="SSY-aj-hcf" id="xkn-nH-o5j"/>
                         <outlet property="restoreBtn" destination="0A0-jI-0v8" id="req-b3-xRX"/>
                         <outlet property="tableView" destination="9v9-6H-Zyd" id="azv-D1-UCj"/>
+                        <segue destination="RHe-Uq-7rv" kind="show" identifier="showProUserDescription" id="l6b-4P-G7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51O-Um-Aw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2432" y="488"/>
+        </scene>
+        <!--Pro User Advantages-->
+        <scene sceneID="SC9-Ei-wVD">
+            <objects>
+                <viewController title="Pro User Advantages" hidesBottomBarWhenPushed="YES" id="RHe-Uq-7rv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qBb-0u-qKK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pro user stuff here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV0-qO-kp9">
+                                <rect key="frame" x="186" y="438" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2xI-yZ-0c5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPI-P5-F1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3326" y="476"/>
         </scene>
         <!--Completion Options-->
         <scene sceneID="bhG-vr-Q2N">

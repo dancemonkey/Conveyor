@@ -14,6 +14,7 @@ class IAPCell: SettingsCell {
   @IBOutlet weak var descLbl: UILabel!
   @IBOutlet weak var priceLbl: UILabel!
   @IBOutlet weak var spinner: UIActivityIndicatorView!
+  var proUpgradeCell: Bool = false
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -32,24 +33,22 @@ class IAPCell: SettingsCell {
     spinner.isHidden = false
     spinner.startAnimating()
     priceLbl.isHidden = spinner.isAnimating
-    print("animating")
   }
   
   func purchaseComplete() {
     spinner.stopAnimating()
     priceLbl.isHidden = spinner.isAnimating
-    print("done animating")
   }
   
   func configure(with product: SKProduct) {
     self.titleLbl.text = product.localizedTitle
     self.descLbl.text = product.localizedDescription
+    selectionStyle = .none
     if product.productIdentifier == Constants.IAPProductIds.proUpgrade.rawValue {
+      proUpgradeCell = true
       if IAPStore.shared.isProUser() {
         self.priceLbl.text = "Pro User"
         self.priceLbl.textColor = ColorStyles.textColor
-        selectionStyle = .none
-        isUserInteractionEnabled = false
       } else {
         self.priceLbl.text = {
           let formatter = NumberFormatter()
@@ -58,7 +57,6 @@ class IAPCell: SettingsCell {
           return formatter.string(from: product.price) ?? "Unknown Price"
         }()
       }
-      
     } else {
       self.priceLbl.text = {
         let formatter = NumberFormatter()
