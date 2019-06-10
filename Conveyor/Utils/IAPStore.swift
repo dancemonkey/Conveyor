@@ -36,9 +36,10 @@ class IAPStore: NSObject {
   fileprivate var productID = ""
   fileprivate var productsRequest = SKProductsRequest()
   var iapProducts = [SKProduct]()
+  var proIndex: Int = 0
 
   var purchaseStatusBlock: ((IAPHandlerAlertType) -> Void)? = { (purchaseStatus) in
-    if purchaseStatus == .purchased {
+    if purchaseStatus == .proPurchase || purchaseStatus == .restored {
       do {
         try shared.setProUser()
       } catch {
@@ -60,9 +61,20 @@ class IAPStore: NSObject {
       let product = iapProducts[index]
       let payment = SKPayment(product: product)
       SKPaymentQueue.default().add(self)
+      SKPaymentQueue.default().add(payment)      
+      productID = product.productIdentifier
+    } else {
+      purchaseStatusBlock?(.disabled)
+    }
+  }
+  
+  func purchasePro(completion: @escaping () -> ()) {
+    purchaseCompleteBlock = completion
+    if self.canMakePurchases() {
+      let product = iapProducts[proIndex]
+      let payment = SKPayment(product: product)
+      SKPaymentQueue.default().add(self)
       SKPaymentQueue.default().add(payment)
-      
-      print("PRODUCT TO PURCHASE: \(product.productIdentifier)")
       productID = product.productIdentifier
     } else {
       purchaseStatusBlock?(.disabled)
@@ -116,6 +128,29 @@ class IAPStore: NSObject {
     return false
   }
   
+  func clearProUser() {
+    guard let filename = UserDefaults.standard.value(forKey: Constants.DefaultKeys.filename.rawValue) as? String else { return }
+    var filePath = ""
+    let dirs: [String] = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
+    if dirs.count > 0 {
+      let dir = dirs[0]
+      filePath = dir.appendingFormat("/", filename)
+    } else {
+      print("could not find directory")
+    }
+    let fullPath = getDocumentsDirectory().appendingPathComponent(filename)
+    do {
+      let manager = FileManager.default
+      if manager.fileExists(atPath: filePath) {
+        try manager.removeItem(atPath: filePath)
+      } else {
+        print("file not found")
+      }
+    } catch {
+      print("error deleting file")
+    }
+  }
+  
   func setProUser() throws {
     enum WriteError: Error {
       case failed
@@ -144,13 +179,15 @@ extension IAPStore: SKProductsRequestDelegate, SKPaymentTransactionObserver {
   func productsRequest(_ request:SKProductsRequest, didReceive response:SKProductsResponse) {
     if (response.products.count > 0) {
       iapProducts = response.products
-      for product in iapProducts {
+      for (index, product) in iapProducts.enumerated() {
         let numberFormatter = NumberFormatter()
         numberFormatter.formatterBehavior = .behavior10_4
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = product.priceLocale
-        let price1Str = numberFormatter.string(from: product.price)
-        print(product.localizedDescription + "\nfor just \(price1Str!)")
+//        let priceStr = numberFormatter.string(from: product.price)
+        if product.productIdentifier == proUpgrade {
+          self.proIndex = index
+        }
       }
     }
     if let handleRequest = self.productRequestComplete {

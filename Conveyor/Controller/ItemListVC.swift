@@ -47,7 +47,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     sessionManager?.startSession()
     
     NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: .onDarkModeSelected, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: .onDarkModeSelected, object: nil)    
   }
   
   override func viewWillAppear(_ animated: Bool) {

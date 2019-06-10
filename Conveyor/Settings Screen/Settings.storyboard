@@ -123,23 +123,31 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="MKy-jn-ITQ">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="tintColor" name="primary"/>
+                                <color key="color" name="primary"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3Eu-Yg-p5W" firstAttribute="bottom" secondItem="MNT-Dl-12X" secondAttribute="bottom" id="b0n-Ry-fXX"/>
+                            <constraint firstItem="MKy-jn-ITQ" firstAttribute="centerX" secondItem="20W-uh-590" secondAttribute="centerX" id="S4h-WR-ypU"/>
+                            <constraint firstItem="3Eu-Yg-p5W" firstAttribute="bottom" secondItem="MNT-Dl-12X" secondAttribute="bottom" id="cB7-Qs-aWm"/>
                             <constraint firstItem="MNT-Dl-12X" firstAttribute="leading" secondItem="3Eu-Yg-p5W" secondAttribute="leading" id="msv-Qu-Jwu"/>
                             <constraint firstItem="MNT-Dl-12X" firstAttribute="top" secondItem="3Eu-Yg-p5W" secondAttribute="top" id="nmr-ku-dtB"/>
                             <constraint firstItem="3Eu-Yg-p5W" firstAttribute="trailing" secondItem="MNT-Dl-12X" secondAttribute="trailing" id="oi1-M1-8uY"/>
+                            <constraint firstItem="MKy-jn-ITQ" firstAttribute="centerY" secondItem="20W-uh-590" secondAttribute="centerY" id="puB-lR-AmP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Eu-Yg-p5W"/>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="MKy-jn-ITQ" id="y0X-BB-ssG"/>
                         <outlet property="webView" destination="MNT-Dl-12X" id="4MB-Xd-Cy3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eN-a4-Hfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="-1047"/>
+            <point key="canvasLocation" x="2431.8840579710145" y="-1047.3214285714284"/>
         </scene>
         <!--Lock Options-->
         <scene sceneID="IwL-eC-lhO">
@@ -368,25 +376,65 @@
         <!--Pro User Advantages-->
         <scene sceneID="SC9-Ei-wVD">
             <objects>
-                <viewController title="Pro User Advantages" hidesBottomBarWhenPushed="YES" id="RHe-Uq-7rv" sceneMemberID="viewController">
+                <viewController title="Pro User Advantages" hidesBottomBarWhenPushed="YES" id="RHe-Uq-7rv" customClass="ProFeaturesVC" customModule="Conveyor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qBb-0u-qKK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pro user stuff here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV0-qO-kp9">
-                                <rect key="frame" x="186" y="438" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70O-Vg-mux">
+                                <rect key="frame" x="0.0" y="88" width="414" height="697"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-SA-WSz">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="tintColor" name="primary"/>
+                                <color key="color" name="primary"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Osq-pz-kRz">
+                                <rect key="frame" x="197" y="813.5" width="20" height="20"/>
+                                <color key="tintColor" name="primary"/>
+                                <color key="color" name="primary"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-ql-77i">
+                                <rect key="frame" x="157" y="801" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="k4M-hK-bZ0"/>
+                                    <constraint firstAttribute="width" constant="100" id="ogg-lX-94A"/>
+                                </constraints>
+                                <state key="normal" title="Go Pro!"/>
+                                <connections>
+                                    <action selector="goProTappedWithSender:" destination="RHe-Uq-7rv" eventType="touchUpInside" id="Dkb-KL-Fzz"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="2xI-yZ-0c5" firstAttribute="trailing" secondItem="70O-Vg-mux" secondAttribute="trailing" id="9SS-HC-nTt"/>
+                            <constraint firstItem="Osq-pz-kRz" firstAttribute="centerX" secondItem="vOt-ql-77i" secondAttribute="centerX" id="9vW-Mt-eA8"/>
+                            <constraint firstItem="Osq-pz-kRz" firstAttribute="centerY" secondItem="vOt-ql-77i" secondAttribute="centerY" id="Iw2-mp-ezx"/>
+                            <constraint firstItem="oh7-SA-WSz" firstAttribute="centerY" secondItem="qBb-0u-qKK" secondAttribute="centerY" id="P1W-Ps-t6a"/>
+                            <constraint firstItem="2xI-yZ-0c5" firstAttribute="bottom" secondItem="vOt-ql-77i" secondAttribute="bottom" constant="16" id="Qn9-cw-TNj"/>
+                            <constraint firstItem="70O-Vg-mux" firstAttribute="top" secondItem="2xI-yZ-0c5" secondAttribute="top" id="azx-sR-L5Y"/>
+                            <constraint firstItem="vOt-ql-77i" firstAttribute="top" secondItem="70O-Vg-mux" secondAttribute="bottom" constant="16" id="b2Q-U8-Ebm"/>
+                            <constraint firstItem="70O-Vg-mux" firstAttribute="leading" secondItem="2xI-yZ-0c5" secondAttribute="leading" id="bOc-ZX-Pqz"/>
+                            <constraint firstItem="vOt-ql-77i" firstAttribute="centerX" secondItem="qBb-0u-qKK" secondAttribute="centerX" id="dRN-7X-bXf"/>
+                            <constraint firstItem="oh7-SA-WSz" firstAttribute="centerX" secondItem="qBb-0u-qKK" secondAttribute="centerX" id="yDg-7P-Y59"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2xI-yZ-0c5"/>
                     </view>
+                    <connections>
+                        <outlet property="goProBtn" destination="vOt-ql-77i" id="HSq-9T-MbL"/>
+                        <outlet property="purchaseSpinner" destination="Osq-pz-kRz" id="ihv-QP-Hgx"/>
+                        <outlet property="spinner" destination="oh7-SA-WSz" id="Rq2-Ko-Qrd"/>
+                        <outlet property="webView" destination="70O-Vg-mux" id="jAJ-mz-u6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPI-P5-F1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="476"/>
+            <point key="canvasLocation" x="3324.6376811594205" y="475.44642857142856"/>
         </scene>
         <!--Completion Options-->
         <scene sceneID="bhG-vr-Q2N">

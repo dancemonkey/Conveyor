@@ -50,6 +50,8 @@
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
 		105363E4226F378A0093A549 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105363E3226F378A0093A549 /* Settings.storyboard */; };
+		105ED4DC22AE7B3B00FEF09B /* ProFeaturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */; };
+		105ED4DE22AE7C2600FEF09B /* proFeatures.html in Resources */ = {isa = PBXBuildFile; fileRef = 105ED4DD22AE7C2600FEF09B /* proFeatures.html */; };
 		10632B5B2273339300B7173A /* HelpOptionsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632B5A2273339300B7173A /* HelpOptionsListCell.swift */; };
 		10632B5F227334C900B7173A /* HelpOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632B5E227334C900B7173A /* HelpOptionsVC.swift */; };
 		106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */ = {isa = PBXBuildFile; fileRef = 106E2AFD226DF4F000D43FD6 /* slide-paper.aif */; };
@@ -233,6 +235,8 @@
 		1027D7D4229AD17E001CE87F /* IAPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPCell.swift; sourceTree = "<group>"; };
 		1029A8612299ACEC00C319DA /* IapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapVC.swift; sourceTree = "<group>"; };
 		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeaturesVC.swift; sourceTree = "<group>"; };
+		105ED4DD22AE7C2600FEF09B /* proFeatures.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = proFeatures.html; sourceTree = "<group>"; };
 		10632B5A2273339300B7173A /* HelpOptionsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpOptionsListCell.swift; sourceTree = "<group>"; };
 		10632B5E227334C900B7173A /* HelpOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpOptionsVC.swift; sourceTree = "<group>"; };
 		106E2AFD226DF4F000D43FD6 /* slide-paper.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-paper.aif"; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 				10632B5E227334C900B7173A /* HelpOptionsVC.swift */,
 				1029A8612299ACEC00C319DA /* IapVC.swift */,
 				107503F722A0078A000F6399 /* HelpVC.swift */,
+				105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				10DFF2E122A00A700053C5BE /* help.html */,
+				105ED4DD22AE7C2600FEF09B /* proFeatures.html */,
 				10A2D5212270890500ABB220 /* Video */,
 				106E2AFC226DEEA900D43FD6 /* Sound */,
 				10807E50225CC2D400F9D9B8 /* Fonts */,
@@ -859,6 +865,7 @@
 			files = (
 				107B97B72270959C00B24BFB /* CompleteTask.mov in Resources */,
 				10807E71225CC30E00F9D9B8 /* AppIntentVocabulary.plist in Resources */,
+				105ED4DE22AE7C2600FEF09B /* proFeatures.html in Resources */,
 				106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */,
 				10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */,
 				10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */,
@@ -1059,6 +1066,7 @@
 				10807E7F225CC36800F9D9B8 /* BucketSelectBtn.swift in Sources */,
 				10807E6A225CC30E00F9D9B8 /* Constants.swift in Sources */,
 				10807E2E225CC28900F9D9B8 /* AppDelegate.swift in Sources */,
+				105ED4DC22AE7B3B00FEF09B /* ProFeaturesVC.swift in Sources */,
 				1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */,
 				1089FB2822689F88008EFFEF /* DoneOptionCell.swift in Sources */,
 				1089FB22226899AF008EFFEF /* BadgeOptionVC.swift in Sources */,
