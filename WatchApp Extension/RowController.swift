@@ -12,4 +12,7 @@ class RowController: NSObject {
   @IBOutlet weak var itemLabel: WKInterfaceLabel!
   @IBOutlet weak var priorityIcon: WKImage!
   @IBOutlet weak var repeatIcon: WKImage!
+  @IBOutlet weak var repeatIconGroup: WKInterfaceGroup!
+  @IBOutlet weak var priorityIconGroup: WKInterfaceGroup!
+  
 }

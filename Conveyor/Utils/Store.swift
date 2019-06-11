@@ -140,6 +140,7 @@ class Store {
     item.title = text
     item.creation = Date() as NSDate
     item.repeating = repeating
+    item.priority = priority
     generator.notificationOccurred(.success)
   }
   

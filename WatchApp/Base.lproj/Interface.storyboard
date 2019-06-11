@@ -25,16 +25,24 @@
                         <table alignment="left" id="70a-RX-gr9">
                             <items>
                                 <tableRow identifier="taskRow" id="yod-Kq-Azm" customClass="RowController" customModule="WatchApp_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="IdS-Xx-hND">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="IdS-Xx-hND">
                                         <items>
                                             <label alignment="left" text="Task" id="uvg-1a-fC4">
                                                 <color key="textColor" name="black"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
-                                            <group alignment="right" layout="vertical" id="D75-35-WE6">
+                                            <group alignment="left" id="D75-35-WE6">
                                                 <items>
-                                                    <imageView alignment="left" image="repeat" id="UkD-3L-dMm"/>
-                                                    <imageView alignment="left" image="priority" id="8af-hO-XBN"/>
+                                                    <group alignment="right" id="6hL-EJ-HLl">
+                                                        <items>
+                                                            <imageView alignment="left" image="priority" id="8af-hO-XBN"/>
+                                                        </items>
+                                                    </group>
+                                                    <group alignment="right" id="omU-Me-7Dr">
+                                                        <items>
+                                                            <imageView alignment="left" image="repeat" id="UkD-3L-dMm"/>
+                                                        </items>
+                                                    </group>
                                                 </items>
                                             </group>
                                         </items>
@@ -46,7 +54,9 @@
                                     <connections>
                                         <outlet property="itemLabel" destination="uvg-1a-fC4" id="tfv-ce-jD7"/>
                                         <outlet property="priorityIcon" destination="8af-hO-XBN" id="umR-RD-Ke8"/>
+                                        <outlet property="priorityIconGroup" destination="6hL-EJ-HLl" id="e9p-wt-deh"/>
                                         <outlet property="repeatIcon" destination="UkD-3L-dMm" id="8t1-7w-AiD"/>
+                                        <outlet property="repeatIconGroup" destination="omU-Me-7Dr" id="87p-bQ-TpO"/>
                                     </connections>
                                 </tableRow>
                             </items>

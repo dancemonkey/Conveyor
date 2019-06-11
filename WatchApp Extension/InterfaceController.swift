@@ -38,7 +38,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   
   func sortData() {
     data.sort { (task1, task2) -> Bool in
-      task1.priority == true && task1.priority == false
+      task1.priority == true && task2.priority == false
     }
   }
   
@@ -53,10 +53,9 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
       } else {
         controller.itemLabel.setTextColor(ColorStyles.textColor)
       }
-      
-      // no exposed isHidden property for WKImage, no idea if this will work
-      controller.priorityIcon.setValue(!data[i].priority, forKey: "hidden")
-      controller.repeatIcon.setValue(!data[i].repeating, forKey: "hidden")
+  
+      controller.priorityIconGroup.setHidden(!data[i].priority)
+      controller.repeatIconGroup.setHidden(!data[i].repeating)
     }
   }
   

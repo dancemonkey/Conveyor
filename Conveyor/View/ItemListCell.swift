@@ -111,6 +111,8 @@ class ItemListCell: UITableViewCell {
   override func prepareForReuse() {
     itemLabel.alpha = 1.0
     itemLabel.attributedText = nil
+    priorityIcon?.isHidden = true
+    accessoryType = .none
     super.prepareForReuse()
   }
   
