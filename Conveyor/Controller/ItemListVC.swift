@@ -393,7 +393,9 @@ extension ItemListVC {
     if self.addingItem == false {
       let _ = entryField.becomeFirstResponder()
       editingExistingItem = item
-      let text = (item.title ?? "") + (item.repeating == true ? " @rpt" : "")
+      let text = (item.title ?? "") +
+        (item.repeating == true ? " @rpt" : "") +
+        (item.priority == true ? " @!" : "")
       entryField.text = text
       entryField.selectAll(nil)
     }
@@ -449,7 +451,6 @@ extension ItemListVC {
   }
   
   private func parseEntry(from text: String) -> (list: String, task: String)? {
-    var result: (list: String, task: String)? = nil
     var components = text.lowercased().split(separator: " ")
     let listAssignment = components.first { (string) -> Bool in
       return string == "today" || string == "tomorrow" || string == "later"
@@ -458,8 +459,7 @@ extension ItemListVC {
     let listLocation = components.firstIndex(of: list)!
     let _ = components.remove(at: listLocation)
     let task = components.joined(separator: " ")
-    result = (list: String(list), task: task)
-    return result
+    return (list: String(list), task: task)
   }
   
   private func isRepeatingTask(from text: String) -> (repeating: Bool, text: String)? {
@@ -476,6 +476,19 @@ extension ItemListVC {
     return (repeating: true, text: task)
   }
   
+  private func isPriorityTask(from text: String) -> (priority: Bool, text: String)? {
+    var components = text.lowercased().split(separator: " ")
+    let priority = components.first { (word) -> Bool in
+      return word == "@!"
+    }
+    guard priority != nil else {
+      return (priority: false, text: text)
+    }
+    let priorityLoc = components.firstIndex(of: priority!)!
+    let _ = components.remove(at: priorityLoc)
+    let task = components.joined(separator: " ")
+    return (priority: true, text: task)
+  }
 }
 
 extension ItemListVC: UITextFieldDelegate {
@@ -495,6 +508,7 @@ extension ItemListVC: UITextFieldDelegate {
     var bucket: Bucket = Bucket(rawValue: self.title!.lowercased())!
     var task: String = text
     var repeating = false
+    var priority = false
     guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
       stopEditing()
       return
@@ -504,16 +518,21 @@ extension ItemListVC: UITextFieldDelegate {
       task = result.task
     }
     if IAPStore.shared.isProUser() {
-      if let repeatingResult = isRepeatingTask(from: task) {
-        repeating = repeatingResult.repeating
-        task = repeatingResult.text
+      if let result = isRepeatingTask(from: task) {
+        repeating = result.repeating
+        task = result.text
+      }
+      if let result = isPriorityTask(from: task) {
+        priority = result.priority
+        task = result.text
       }
     }
     if let item = editingExistingItem {
       item.repeating = repeating
+      item.priority = priority
       store.updateExisting(item: item, withTitle: task, in: bucket)
     } else {
-      store.addNewItem(text: task, in: bucket, repeating: repeating)
+      store.addNewItem(text: task, in: bucket, repeating: repeating, priority: priority)
     }
     store.save()
     stopEditing()

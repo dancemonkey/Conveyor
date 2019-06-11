@@ -138,7 +138,6 @@ class IAPStore: NSObject {
     } else {
       print("could not find directory")
     }
-    let fullPath = getDocumentsDirectory().appendingPathComponent(filename)
     do {
       let manager = FileManager.default
       if manager.fileExists(atPath: filePath) {
@@ -152,6 +151,7 @@ class IAPStore: NSObject {
   }
   
   func setProUser() throws {
+    print("setting pro user")
     enum WriteError: Error {
       case failed
       case alreadyProUser

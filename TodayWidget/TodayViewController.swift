@@ -75,7 +75,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let todayPredicate = NSPredicate(format: "bucket == %@", "today")
     let incompletePredicate = NSPredicate(format: "state != %@", "done")
     fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [todayPredicate, incompletePredicate])
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "state", ascending: false), NSSortDescriptor(key: "priority", ascending: false), NSSortDescriptor(key: "holdDays", ascending: true), NSSortDescriptor(key: "creation", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Item> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }

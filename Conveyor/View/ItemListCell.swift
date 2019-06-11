@@ -11,11 +11,14 @@ import UIKit
 class ItemListCell: UITableViewCell {
   
   @IBOutlet weak var itemLabel: UILabel!
+  @IBOutlet weak var priorityIcon: UIImageView?
   
   override func awakeFromNib() {
     super.awakeFromNib()
     self.backgroundColor = .clear
     selectionStyle = .none
+    priorityIcon?.image = UIImage(named: "priority")
+    priorityIcon?.isHidden = true
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +41,9 @@ class ItemListCell: UITableViewCell {
     }
     if item.repeating && itemState != .held {
       self.accessoryView = Settings.darkModeActive == true ? UIImageView(image: UIImage(named: "repeatDark")) : UIImageView(image: UIImage(named: "repeat"))
+    }
+    if item.priority {
+      priorityIcon?.isHidden = false
     }
     switch itemState {
     case .done:

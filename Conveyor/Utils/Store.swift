@@ -126,7 +126,7 @@ class Store {
   }
   
   // MARK: Item Creation
-  func addNewItem(text: String?, in bucket: Bucket, repeating: Bool = false) {
+  func addNewItem(text: String?, in bucket: Bucket, repeating: Bool = false, priority: Bool = false) {
     let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
     item.bucket = bucket.rawValue
     switch bucket {

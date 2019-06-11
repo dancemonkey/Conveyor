@@ -117,7 +117,9 @@ public class Item: NSManagedObject {
     return [
       Constants.ItemContextFields.title.rawValue: self.title ?? "",
       Constants.ItemContextFields.state.rawValue: self.state ?? "",
-      Constants.ItemContextFields.id.rawValue: self.objectID.uriRepresentation().absoluteString
+      Constants.ItemContextFields.id.rawValue: self.objectID.uriRepresentation().absoluteString,
+      Constants.ItemContextFields.priority.rawValue: self.priority.description,
+      Constants.ItemContextFields.repeating.rawValue: self.repeating.description
     ]
   }
 }
