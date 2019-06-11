@@ -412,6 +412,10 @@ extension ItemListVC {
   }
   
   @objc func bucketSelectTapped(sender: UIBarButtonItem) {
+    var repeating = false
+    var priority = false
+    var taskText = ""
+    
     self.bucketSelectButtons.forEach { (button) in
       if button === sender {
         button.tintColor = ColorStyles.primary
@@ -428,11 +432,26 @@ extension ItemListVC {
       stopEditing()
       return
     }
+    taskText = text
     guard let bucket = Bucket(rawValue: sender.title!.lowercased()) else { return }
+    
+    if IAPStore.shared.isProUser() {
+      if let result = isRepeatingTask(from: taskText) {
+        repeating = result.repeating
+        taskText = result.text
+      }
+      if let result = isPriorityTask(from: taskText) {
+        priority = result.priority
+        taskText = result.text
+      }
+    }
+    
     if let item = editingExistingItem {
-      store.updateExisting(item: item, withTitle: text, in: bucket)
+      item.repeating = repeating
+      item.priority = priority
+      store.updateExisting(item: item, withTitle: taskText, in: bucket)
     } else {
-      store.addNewItem(text: text, in: bucket)
+      store.addNewItem(text: taskText, in: bucket, repeating: repeating, priority: priority)
     }
     store.save()
     stopEditing()
