@@ -12,11 +12,16 @@ class WidgetCell: UITableViewCell {
   
   @IBOutlet weak var title: UILabel!
   @IBOutlet weak var completeBtn: UIButton!
+  @IBOutlet weak var priorityIcon: UIImageView!
+  @IBOutlet weak var repeatIcon: UIImageView!
+  
   var delegate: ItemCompleter?
   var complete: (()->())?
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    priorityIcon.isHidden = true
+    repeatIcon.isHidden = true
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,6 +45,8 @@ class WidgetCell: UITableViewCell {
         title.textColor = ColorStyles.accent
       }
     }
+    repeatIcon.isHidden = !item.repeating
+    priorityIcon.isHidden = !item.priority
     self.complete = {
       delegate.complete(item: item)
     }
@@ -50,6 +57,8 @@ class WidgetCell: UITableViewCell {
   override func prepareForReuse() {
     title.alpha = 1.0
     title.attributedText = nil
+    priorityIcon.isHidden = true
+    repeatIcon.isHidden = true
     super.prepareForReuse()
   }
   
