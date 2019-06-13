@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WatchKit
 
 class WatchStore {
   static let shared = WatchStore()
@@ -21,6 +22,16 @@ class WatchStore {
         newData.append(item)
       }
     }
-    self.data = newData
+    self.data = newData.sorted(by: { (task1, task2) -> Bool in
+      task1.priority == true && task2.priority == false
+    })
+  }
+  
+  func tasksDueToday() -> Int {
+    return data.count
+  }
+  
+  func nextTaskDue() -> WatchTask? {
+    return data.first
   }
 }

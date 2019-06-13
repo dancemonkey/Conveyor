@@ -16,7 +16,6 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   }
   private let session : WCSession = WCSession.default
   func startSession() {
-    print("session started")
     session.delegate = self
     session.activate()
   }

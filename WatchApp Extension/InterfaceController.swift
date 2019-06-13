@@ -8,12 +8,13 @@
 
 import WatchKit
 import Foundation
-
+import ClockKit
 
 class InterfaceController: WKInterfaceController, ContextUpdater {
   
   @IBOutlet var table: WKInterfaceTable!
   @IBOutlet var todayLbl: WKInterfaceLabel!
+  @IBOutlet var tableGrp: WKInterfaceGroup!
   var data: [WatchTask] = []
   
   override func awake(withContext context: Any?) {
@@ -34,17 +35,21 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   func refresh() {
     self.data = WatchStore.shared.data
     resetTable()
+    reloadComplications()
   }
   
-  func sortData() {
-    data.sort { (task1, task2) -> Bool in
-      task1.priority == true && task2.priority == false
+  func reloadComplications() {
+    let server = CLKComplicationServer.sharedInstance()
+    guard let comps = server.activeComplications, comps.count > 0 else {
+      return
+    }
+    for comp in comps {
+      server.reloadTimeline(for: comp)
     }
   }
   
   func resetTable() {
     table.setNumberOfRows(data.count, withRowType: "taskRow")
-    sortData()
     for i in 0 ..< table.numberOfRows {
       guard let controller = table.rowController(at: i) as? RowController else { continue }
       controller.itemLabel.setText(data[i].title)
@@ -56,6 +61,12 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   
       controller.priorityIconGroup.setHidden(!data[i].priority)
       controller.repeatIconGroup.setHidden(!data[i].repeating)
+    }
+    
+    if table.numberOfRows > 0 {
+      tableGrp.setBackgroundImage(nil)
+    } else {
+      tableGrp.setBackgroundImageNamed("watchWatermark")
     }
   }
   
@@ -79,7 +90,6 @@ extension InterfaceController: ItemUpdateDelegate {
   
   func reschedule(item: WatchTask?, newList: Bucket) {
     guard let updatedTask = item else { return }
-    // create reschedule message in session manager
     WatchSessionManager.shared.sendTaskReschedule(for: item, newList: newList)
     WatchStore.shared.data.removeAll { (task) -> Bool in
       task.id == updatedTask.id

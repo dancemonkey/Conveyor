@@ -98,6 +98,7 @@
 		1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */; };
 		1089FB2822689F88008EFFEF /* DoneOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2722689F88008EFFEF /* DoneOptionCell.swift */; };
 		1089FB2A22689F94008EFFEF /* LockOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089FB2922689F94008EFFEF /* LockOptionCell.swift */; };
+		10A845D922B12DD000CB4A99 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A845D822B12DCF00CB4A99 /* ComplicationController.swift */; };
 		10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE42267D54C001E448E /* SettingsCell.swift */; };
 		10CB7EE72267D643001E448E /* SettingsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7EE62267D643001E448E /* SettingsListVC.swift */; };
 		10DFF2E222A00A700053C5BE /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 10DFF2E122A00A700053C5BE /* help.html */; };
@@ -290,6 +291,7 @@
 		1089FB2522689E86008EFFEF /* CompletedItemsOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedItemsOptionVC.swift; sourceTree = "<group>"; };
 		1089FB2722689F88008EFFEF /* DoneOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneOptionCell.swift; sourceTree = "<group>"; };
 		1089FB2922689F94008EFFEF /* LockOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOptionCell.swift; sourceTree = "<group>"; };
+		10A845D822B12DCF00CB4A99 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		10CB7EE42267D54C001E448E /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		10CB7EE62267D643001E448E /* SettingsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListVC.swift; sourceTree = "<group>"; };
 		10DFF2E122A00A700053C5BE /* help.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				100CF9A3227DF2AA006C7A83 /* ContextUpdateDelegate.swift */,
 				100CF9A5227DF48D006C7A83 /* WatchTask.swift */,
 				10E0F0B92280683500774127 /* WatchStore.swift */,
+				10A845D822B12DCF00CB4A99 /* ComplicationController.swift */,
 				10FCA8D82281BEC5009693D1 /* TaskContext.swift */,
 				10FCA8DA2281C284009693D1 /* ItemCompletionDelegate.swift */,
 				100CF98A227DEB02006C7A83 /* Assets.xcassets */,
@@ -999,6 +1002,7 @@
 				100CF9A6227DF48D006C7A83 /* WatchTask.swift in Sources */,
 				100CF9A8227DF583006C7A83 /* RowController.swift in Sources */,
 				1021FD5B22A93D830063A206 /* Notification Name Extension.swift in Sources */,
+				10A845D922B12DD000CB4A99 /* ComplicationController.swift in Sources */,
 				100CF9A1227DF14A006C7A83 /* State Protocols.swift in Sources */,
 				10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */,
 				10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */,
@@ -1190,7 +1194,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
@@ -1215,7 +1219,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};
@@ -1237,7 +1241,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Debug;
 		};
@@ -1259,7 +1263,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.1;
 			};
 			name = Release;
 		};

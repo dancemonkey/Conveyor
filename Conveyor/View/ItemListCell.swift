@@ -52,6 +52,9 @@ class ItemListCell: UITableViewCell {
       itemLabel.attributedText = attributeString
       itemLabel.textColor = ColorStyles.textColor
       self.itemLabel.alpha = 0.3
+      if let pr = priorityIcon, pr.isHidden == false {
+        priorityIcon?.alpha = 0.5
+      }
     case .held:
       itemLabel.textColor = ColorStyles.textColor.withAlphaComponent(0.5)
       if !item.holdForever {
