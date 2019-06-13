@@ -44,13 +44,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-r3-h4Q">
-                                                    <rect key="frame" x="61" y="17.5" width="209" height="20.5"/>
+                                                    <rect key="frame" x="61" y="17.5" width="201" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OJJ-FH-wAZ">
-                                                    <rect key="frame" x="278" y="20" width="34" height="15"/>
+                                                    <rect key="frame" x="270" y="20" width="34" height="15"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="priority" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-Py-Hz1">
                                                             <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -71,7 +71,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CkJ-PI-Q4R" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="2Xw-FG-55o"/>
-                                                <constraint firstAttribute="trailing" secondItem="OJJ-FH-wAZ" secondAttribute="trailing" constant="8" id="8TI-RM-Vll"/>
+                                                <constraint firstAttribute="trailing" secondItem="OJJ-FH-wAZ" secondAttribute="trailing" constant="16" id="8TI-RM-Vll"/>
                                                 <constraint firstItem="2yb-r3-h4Q" firstAttribute="leading" secondItem="CkJ-PI-Q4R" secondAttribute="trailing" constant="8" id="ACD-ut-KrH"/>
                                                 <constraint firstItem="OJJ-FH-wAZ" firstAttribute="centerY" secondItem="Lhr-DM-bQQ" secondAttribute="centerY" id="G43-m6-GUp"/>
                                                 <constraint firstItem="CkJ-PI-Q4R" firstAttribute="leading" secondItem="Lhr-DM-bQQ" secondAttribute="leading" constant="8" id="T3A-Td-076"/>
