@@ -7,32 +7,49 @@
 //
 
 import WatchConnectivity
+import ClockKit
 
 class WatchSessionManager: NSObject, WCSessionDelegate {
   
   static let shared = WatchSessionManager()
+  
   private override init() {
     super.init()
   }
+  
   private let session : WCSession = WCSession.default
+  
+  var contextDelegate: ContextUpdater?
+  
   func startSession() {
     session.delegate = self
     session.activate()
   }
-  var contextDelegate: ContextUpdater?
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     if activationState == .activated {
       requestContext { (reply) in
         WatchStore.shared.updateData(with: reply)
-        self.contextDelegate?.refresh()
+//        self.contextDelegate?.refresh()
+        self.updateComplications()
       }
+    }
+  }
+  
+  func updateComplications() {
+    let server = CLKComplicationServer.sharedInstance()
+    guard let comps = server.activeComplications, comps.count > 0 else {
+      return
+    }
+    for comp in comps {
+      server.reloadTimeline(for: comp)
     }
   }
   
 }
 
 extension WatchSessionManager {
+  
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
     WatchStore.shared.updateData(with: applicationContext)
     contextDelegate?.refresh()

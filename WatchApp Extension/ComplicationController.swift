@@ -33,8 +33,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   // MARK: - Timeline Population
   
   func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-    // Call the handler with the current timeline entry
-    print("getting timeline entry")
     var entry: CLKComplicationTimelineEntry?
     switch complication.family {
     case .circularSmall:
