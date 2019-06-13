@@ -40,13 +40,59 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     case .circularSmall:
       let template = CLKComplicationTemplateCircularSmallSimpleText()
       template.textProvider = CLKSimpleTextProvider(text: "\(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .modularSmall:
       let template = CLKComplicationTemplateModularSmallSimpleText()
       template.textProvider = CLKSimpleTextProvider(text: "\(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
+    case .modularLarge:
+      let template = CLKComplicationTemplateModularLargeTallBody()
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
+      template.bodyTextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .utilitarianSmall:
+      let template = CLKComplicationTemplateUtilitarianSmallFlat()
+      let text = "due: \(WatchStore.shared.tasksDueToday())"
+      template.textProvider = CLKSimpleTextProvider(text: "\(text)")
+      template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "watchUtilSmall")!)
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .graphicRectangular:
+      let template = CLKComplicationTemplateGraphicRectangularStandardBody()
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
+      template.body1TextProvider = CLKSimpleTextProvider(text: "Due: \(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
+      let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
+      template.body2TextProvider = CLKSimpleTextProvider(text: "\(text)")
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .graphicCircular:
+      let template = CLKComplicationTemplateGraphicCircularImage()
+      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchUtilSmall")!)
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .utilitarianLarge:
+      let template = CLKComplicationTemplateUtilitarianLargeFlat()
+      let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
+      template.textProvider = CLKSimpleTextProvider(text: "\(text)")
+      template.tintColor = ColorStyles.primary
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .utilitarianSmallFlat:
+      let template = CLKComplicationTemplateUtilitarianSmallFlat()
+      template.textProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+//    case .extraLarge:
+//    case .graphicCorner:
+//    case .graphicBezel:
     default:
       handler(nil)
     }
@@ -74,6 +120,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     case .modularSmall:
       let template = CLKComplicationTemplateModularSmallSimpleText()
       template.textProvider = CLKSimpleTextProvider(text: "6")
+      handler(template)
+    case .modularLarge:
+      let template = CLKComplicationTemplateModularLargeTallBody()
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Today")
+      template.bodyTextProvider = CLKSimpleTextProvider(text: "due: 6")
+      handler(template)
+    case .utilitarianSmall:
+      let template = CLKComplicationTemplateUtilitarianSmallFlat()
+      let text = "Walk the dog"
+      template.textProvider = CLKSimpleTextProvider(text: "\(text)")
+      template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "watchUtilSmall")!)
+      handler(template)
+    case .graphicRectangular:
+      let template = CLKComplicationTemplateGraphicRectangularStandardBody()
+      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchUtilSmall")!)
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
+      template.body1TextProvider = CLKSimpleTextProvider(text: "due: 3")
+      let text = "Walk the dog"
+      template.body2TextProvider = CLKSimpleTextProvider(text: "\(text)")
+      handler(template)
+    case .graphicCircular:
+      let template = CLKComplicationTemplateGraphicCircularImage()
+      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchUtilSmall")!)
+      handler(template)
+    case .utilitarianLarge:
+      let template = CLKComplicationTemplateUtilitarianLargeFlat()
+      let text = "Walk the dog"
+      template.textProvider = CLKSimpleTextProvider(text: "\(text)")
+      template.tintColor = ColorStyles.primary
+      handler(template)
+    case .utilitarianSmallFlat:
+      let template = CLKComplicationTemplateUtilitarianSmallFlat()
+      template.textProvider = CLKSimpleTextProvider(text: "due: 6")
+      template.tintColor = ColorStyles.primary
       handler(template)
     default:
       handler(nil)
