@@ -24,35 +24,38 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   func startSession() {
     session.delegate = self
     session.activate()
+    print("session activated")
   }
   
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     if activationState == .activated {
       requestContext { (reply) in
         WatchStore.shared.updateData(with: reply)
-//        self.contextDelegate?.refresh()
-        self.updateComplications()
+//        self.updateComplications()
       }
     }
   }
   
-  func updateComplications() {
-    let server = CLKComplicationServer.sharedInstance()
-    guard let comps = server.activeComplications, comps.count > 0 else {
-      return
-    }
-    for comp in comps {
-      server.reloadTimeline(for: comp)
-    }
-  }
+//  func updateComplications() {
+//    print("updating complications")
+//    let server = CLKComplicationServer.sharedInstance()
+//    guard let comps = server.activeComplications, comps.count > 0 else {
+//      return
+//    }
+//    for comp in comps {
+//      server.reloadTimeline(for: comp)
+//    }
+//  }
   
 }
 
 extension WatchSessionManager {
   
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    print("received new context")
     WatchStore.shared.updateData(with: applicationContext)
     contextDelegate?.refresh()
+//    self.updateComplications()
   }
   
   func requestContext(handle: @escaping (_ reply: [String: Any]) -> ()) {

@@ -20,7 +20,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     WatchSessionManager.shared.contextDelegate = self
-    WatchSessionManager.shared.startSession()
+//    WatchSessionManager.shared.startSession()
   }
   
   override func willActivate() {
@@ -35,7 +35,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   func refresh() {
     self.data = WatchStore.shared.data
     resetTable()
-    reloadComplications()
+//    reloadComplications()
   }
   
   func reloadComplications() {
@@ -86,6 +86,7 @@ extension InterfaceController: ItemUpdateDelegate {
       task.id == completeTask.id
     }
     refresh()
+    reloadComplications()
   }
   
   func reschedule(item: WatchTask?, newList: Bucket) {
@@ -95,5 +96,6 @@ extension InterfaceController: ItemUpdateDelegate {
       task.id == updatedTask.id
     }
     refresh()
+    reloadComplications()
   }
 }

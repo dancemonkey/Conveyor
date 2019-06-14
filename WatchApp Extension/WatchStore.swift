@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import ClockKit
 
 class WatchStore {
   static let shared = WatchStore()
@@ -16,6 +17,7 @@ class WatchStore {
   
   func updateData(with reply: [String: Any]) {
     didReceiveData = true
+    print("updating data")
     var newData: [WatchTask] = []
     for (_, contextItem) in reply {
       if let item = WatchTask.getItem(from: contextItem as! [String: String]) {
@@ -25,6 +27,18 @@ class WatchStore {
     self.data = newData.sorted(by: { (task1, task2) -> Bool in
       task1.priority == true && task2.priority == false
     })
+    self.updateComplications()
+  }
+  
+  func updateComplications() {
+    print("updating complications")
+    let server = CLKComplicationServer.sharedInstance()
+    guard let comps = server.activeComplications, comps.count > 0 else {
+      return
+    }
+    for comp in comps {
+      server.reloadTimeline(for: comp)
+    }
   }
   
   func tasksDueToday() -> Int {

@@ -88,8 +88,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       template.tintColor = ColorStyles.primary
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
-//    case .extraLarge:
-//    case .graphicCorner:
+    case .extraLarge:
+      let template = CLKComplicationTemplateExtraLargeStackImage()
+      template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
+      template.line2TextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      template.tintColor = ColorStyles.primary
+      template.highlightLine2 = true
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
+    case .graphicCorner:
+      let template = CLKComplicationTemplateGraphicCornerTextImage()
+      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "GraphicCornerComplication")!)
+      template.textProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      handler(entry)
 //    case .graphicBezel:
     default:
       handler(nil)
@@ -152,6 +164,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       let template = CLKComplicationTemplateUtilitarianSmallFlat()
       template.textProvider = CLKSimpleTextProvider(text: "due: 6")
       template.tintColor = ColorStyles.primary
+      handler(template)
+    case .extraLarge:
+      let template = CLKComplicationTemplateExtraLargeStackImage()
+      template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
+      template.line2TextProvider = CLKSimpleTextProvider(text: "due: 6")
+      template.tintColor = ColorStyles.primary
+      template.highlightLine2 = true
+      handler(template)
+    case .graphicCorner:
+      let template = CLKComplicationTemplateGraphicCornerTextImage()
+      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "GraphicCornerComplication")!)
+      template.textProvider = CLKSimpleTextProvider(text: "due: 6")
       handler(template)
     default:
       handler(nil)
