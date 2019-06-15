@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -81,14 +80,15 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="IfM-Oc-JUF">
                             <items>
-                                <label alignment="left" text="Task Title" numberOfLines="0" minimumScaleFactor="0.75" id="KZv-Sy-eCO">
-                                    <color key="textColor" name="white"/>
+                                <button width="1" alignment="left" title="Button" enabled="NO" id="3UD-db-3If">
+                                    <color key="titleColor" name="black"/>
+                                    <color key="backgroundColor" name="white"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
+                                </button>
                                 <group width="1" alignment="center" verticalAlignment="bottom" id="4xU-lx-eNj">
                                     <items>
                                         <button alignment="left" verticalAlignment="bottom" id="XPA-um-YOj">
-                                            <group key="contentGroup" width="0.5" height="30" alignment="left" id="jYk-ZU-yhp">
+                                            <group key="contentGroup" width="0.5" height="40" alignment="left" id="jYk-ZU-yhp">
                                                 <items>
                                                     <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="moveWatch" id="ROM-PE-mo6">
                                                         <color key="tintColor" name="white"/>
@@ -101,7 +101,7 @@
                                             </connections>
                                         </button>
                                         <button alignment="right" verticalAlignment="bottom" id="Ulk-yv-iFc">
-                                            <group key="contentGroup" width="0.5" height="30" alignment="left" id="ANF-Ud-aIT">
+                                            <group key="contentGroup" width="0.5" height="40" alignment="left" id="ANF-Ud-aIT">
                                                 <items>
                                                     <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="completeWatch" id="eMR-H6-Ppp">
                                                         <color key="tintColor" name="white"/>
@@ -119,11 +119,11 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="taskTitleLbl" destination="KZv-Sy-eCO" id="EAW-9I-COY"/>
+                        <outlet property="taskTitleBtn" destination="3UD-db-3If" id="WtH-1j-lVw"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="391" y="168"/>
+            <point key="canvasLocation" x="538" y="138"/>
         </scene>
     </scenes>
     <resources>

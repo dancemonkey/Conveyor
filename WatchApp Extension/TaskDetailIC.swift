@@ -11,7 +11,8 @@ import Foundation
 
 class TaskDetailIC: WKInterfaceController {
 
-  @IBOutlet var taskTitleLbl: WKInterfaceLabel!
+//  @IBOutlet var taskTitleLbl: WKInterfaceLabel!
+  @IBOutlet var taskTitleBtn: WKInterfaceButton!
   var task: WatchTask?
   var updateDelegate: ItemUpdateDelegate?
   
@@ -23,7 +24,13 @@ class TaskDetailIC: WKInterfaceController {
     }
     self.task = cxt.object
     self.updateDelegate = cxt.delegate
-    taskTitleLbl.setText(task?.title ?? "NO TASK THIS IS AWFUL")
+    setText()
+  }
+  
+  func setText() {
+    //    taskTitleLbl.setText(task?.title ?? "NO TASK THIS IS AWFUL")
+    taskTitleBtn.setTitle(task?.title ?? "NO TASK THIS IS AWFUL")
+//    taskTitleLbl.setHidden(true)
   }
   
   @IBAction func reschedule(sender: WKInterfaceButton) {

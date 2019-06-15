@@ -16,10 +16,12 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   @IBOutlet var todayLbl: WKInterfaceLabel!
   @IBOutlet var tableGrp: WKInterfaceGroup!
   var data: [WatchTask] = []
+  var watermarkImage: UIImage?
   
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     WatchSessionManager.shared.contextDelegate = self
+    watermarkImage = UIImage(named: "watchWatermark")
 //    WatchSessionManager.shared.startSession()
   }
   
@@ -67,7 +69,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
     if table.numberOfRows > 0 {
       tableGrp.setBackgroundImage(nil)
     } else {
-      tableGrp.setBackgroundImageNamed("watchWatermark")
+      tableGrp.setBackgroundImage(watermarkImage)
     }
   }
   
