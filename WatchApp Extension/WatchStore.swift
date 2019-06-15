@@ -27,7 +27,7 @@ class WatchStore {
     self.data = newData.sorted(by: { (task1, task2) -> Bool in
       task1.priority == true && task2.priority == false
     })
-    self.updateComplications()
+//    self.updateComplications()
   }
   
   func updateComplications() {

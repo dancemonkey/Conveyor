@@ -31,21 +31,21 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     if activationState == .activated {
       requestContext { (reply) in
         WatchStore.shared.updateData(with: reply)
-//        self.updateComplications()
+        self.updateComplications()
       }
     }
   }
   
-//  func updateComplications() {
-//    print("updating complications")
-//    let server = CLKComplicationServer.sharedInstance()
-//    guard let comps = server.activeComplications, comps.count > 0 else {
-//      return
-//    }
-//    for comp in comps {
-//      server.reloadTimeline(for: comp)
-//    }
-//  }
+  func updateComplications() {
+    print("updating complications")
+    let server = CLKComplicationServer.sharedInstance()
+    guard let comps = server.activeComplications, comps.count > 0 else {
+      return
+    }
+    for comp in comps {
+      server.reloadTimeline(for: comp)
+    }
+  }
   
 }
 

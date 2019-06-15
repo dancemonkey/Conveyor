@@ -27,8 +27,6 @@ class TaskDetailIC: WKInterfaceController {
   }
   
   @IBAction func reschedule(sender: WKInterfaceButton) {
-    // reschedule task then send update to ios device app
-    // pop up alert to select new list
     let tomorrow = WKAlertAction(title: "Tomorrow", style: .default) {
       self.updateDelegate?.reschedule(item: self.task, newList: .tomorrow)
       self.pop()

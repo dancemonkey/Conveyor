@@ -33,9 +33,10 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   }
   
   func refresh() {
+    print("refreshing interface controller")
     self.data = WatchStore.shared.data
     resetTable()
-//    reloadComplications()
+    reloadComplications()
   }
   
   func reloadComplications() {

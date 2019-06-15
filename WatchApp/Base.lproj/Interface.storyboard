@@ -37,12 +37,12 @@
                                                         <items>
                                                             <group alignment="right" id="6hL-EJ-HLl">
                                                                 <items>
-                                                                    <imageView alignment="left" image="priority" id="8af-hO-XBN"/>
+                                                                    <imageView alignment="left" image="priorityWatch" id="8af-hO-XBN"/>
                                                                 </items>
                                                             </group>
                                                             <group alignment="right" id="omU-Me-7Dr">
                                                                 <items>
-                                                                    <imageView alignment="left" image="repeat" id="UkD-3L-dMm"/>
+                                                                    <imageView alignment="left" image="repeatWatch" id="UkD-3L-dMm"/>
                                                                 </items>
                                                             </group>
                                                         </items>
@@ -83,19 +83,32 @@
                             <items>
                                 <label alignment="left" text="Task Title" numberOfLines="0" minimumScaleFactor="0.75" id="KZv-Sy-eCO">
                                     <color key="textColor" name="white"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                                 <group width="1" alignment="center" verticalAlignment="bottom" id="4xU-lx-eNj">
                                     <items>
-                                        <button alignment="left" verticalAlignment="bottom" backgroundImage="move" id="XPA-um-YOj">
-                                            <color key="titleColor" name="secondary"/>
-                                            <color key="backgroundColor" name="white"/>
+                                        <button alignment="left" verticalAlignment="bottom" id="XPA-um-YOj">
+                                            <group key="contentGroup" width="0.5" height="30" alignment="left" id="jYk-ZU-yhp">
+                                                <items>
+                                                    <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="moveWatch" id="ROM-PE-mo6">
+                                                        <color key="tintColor" name="white"/>
+                                                    </imageView>
+                                                </items>
+                                                <color key="backgroundColor" name="secondary"/>
+                                            </group>
                                             <connections>
                                                 <action selector="rescheduleWithSender:" destination="Ef0-fC-y98" id="zZc-0Q-hY8"/>
                                             </connections>
                                         </button>
-                                        <button alignment="right" verticalAlignment="bottom" backgroundImage="complete" id="Ulk-yv-iFc">
-                                            <color key="titleColor" name="primary"/>
-                                            <color key="backgroundColor" name="primary"/>
+                                        <button alignment="right" verticalAlignment="bottom" id="Ulk-yv-iFc">
+                                            <group key="contentGroup" width="0.5" height="30" alignment="left" id="ANF-Ud-aIT">
+                                                <items>
+                                                    <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="completeWatch" id="eMR-H6-Ppp">
+                                                        <color key="tintColor" name="white"/>
+                                                    </imageView>
+                                                </items>
+                                                <color key="backgroundColor" name="primary"/>
+                                            </group>
                                             <connections>
                                                 <action selector="completeWithSender:" destination="Ef0-fC-y98" id="g81-nl-tm1"/>
                                             </connections>
