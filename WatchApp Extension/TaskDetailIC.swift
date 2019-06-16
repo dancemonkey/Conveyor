@@ -28,17 +28,17 @@ class TaskDetailIC: WKInterfaceController {
   }
   
   func setText() {
-    //    taskTitleLbl.setText(task?.title ?? "NO TASK THIS IS AWFUL")
     taskTitleBtn.setTitle(task?.title ?? "NO TASK THIS IS AWFUL")
-//    taskTitleLbl.setHidden(true)
   }
   
   @IBAction func reschedule(sender: WKInterfaceButton) {
     let tomorrow = WKAlertAction(title: "Tomorrow", style: .default) {
+      WKInterfaceDevice.current().play(.success)
       self.updateDelegate?.reschedule(item: self.task, newList: .tomorrow)
       self.pop()
     }
     let later = WKAlertAction(title: "Later", style: .default) {
+      WKInterfaceDevice.current().play(.success)
       self.updateDelegate?.reschedule(item: self.task, newList: .later)
       self.pop()
     }
@@ -47,6 +47,7 @@ class TaskDetailIC: WKInterfaceController {
   
   @IBAction func complete(sender: WKInterfaceButton) {
     task?.setDone()
+    WKInterfaceDevice.current().play(.success)
     updateDelegate?.complete(item: task)
     self.pop()
   }
