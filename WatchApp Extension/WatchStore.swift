@@ -25,9 +25,15 @@ class WatchStore {
       }
     }
     self.data = newData.sorted(by: { (task1, task2) -> Bool in
-      task1.priority == true && task2.priority == false
+//      task1.priority == true && task2.priority == false
+      if task1.priority != task2.priority {
+        return task1.priority == true && task2.priority == false
+      } else {
+        return task1.status == .overdue && task2.status != .overdue
+      }
     })
-//    self.updateComplications()
+    
+    self.updateComplications()
   }
   
   func updateComplications() {
@@ -47,5 +53,10 @@ class WatchStore {
   
   func nextTaskDue() -> WatchTask? {
     return data.first
+  }
+  
+  func topThreeTasksDue() -> [WatchTask]? {
+    guard tasksDueToday() > 0 else { return nil }
+    return data
   }
 }

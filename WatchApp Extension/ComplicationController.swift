@@ -14,7 +14,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   // MARK: - Timeline Configuration
   
   func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-//    handler([.forward, .backward])
     handler([])
   }
   
@@ -48,9 +47,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .modularLarge:
-      let template = CLKComplicationTemplateModularLargeTallBody()
-      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
-      template.bodyTextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      let template = CLKComplicationTemplateModularLargeStandardBody()
+//      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
+//      template.bodyTextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      if let nextThreeTasks = WatchStore.shared.topThreeTasksDue() {
+        template.headerTextProvider = CLKSimpleTextProvider(text: nextThreeTasks[0].title)
+        if nextThreeTasks[0].priority {
+          template.headerTextProvider.tintColor = ColorStyles.accent
+        }
+        if nextThreeTasks.count > 1 {
+          template.body1TextProvider = CLKSimpleTextProvider(text: nextThreeTasks[1].title)
+          if nextThreeTasks[1].priority {
+            template.body1TextProvider.tintColor = ColorStyles.accent
+          }
+        }
+        if nextThreeTasks.count > 2 {
+          template.body2TextProvider = CLKSimpleTextProvider(text: nextThreeTasks[2].title)
+          if nextThreeTasks[2].priority {
+            template.body2TextProvider?.tintColor = ColorStyles.accent
+          }
+        }
+      } else {
+        template.headerTextProvider = CLKSimpleTextProvider(text: "All done!")
+        template.body1TextProvider = CLKSimpleTextProvider(text: "Great job today!")
+      }
       template.tintColor = ColorStyles.primary
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
@@ -63,11 +83,32 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
-      template.body1TextProvider = CLKSimpleTextProvider(text: "Due: \(WatchStore.shared.tasksDueToday())")
-      template.tintColor = ColorStyles.primary
-      let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
-      template.body2TextProvider = CLKSimpleTextProvider(text: "\(text)")
+      if let nextThreeTasks = WatchStore.shared.topThreeTasksDue() {
+        template.headerTextProvider = CLKSimpleTextProvider(text: nextThreeTasks[0].title)
+        if nextThreeTasks[0].priority {
+          template.headerTextProvider.tintColor = ColorStyles.accent
+        }
+        if nextThreeTasks.count > 1 {
+          template.body1TextProvider = CLKSimpleTextProvider(text: nextThreeTasks[1].title)
+          if nextThreeTasks[1].priority {
+            template.body1TextProvider.tintColor = ColorStyles.accent
+          }
+        }
+        if nextThreeTasks.count > 2 {
+          template.body2TextProvider = CLKSimpleTextProvider(text: nextThreeTasks[2].title)
+          if nextThreeTasks[2].priority {
+            template.body2TextProvider?.tintColor = ColorStyles.accent
+          }
+        }
+      } else {
+        template.headerTextProvider = CLKSimpleTextProvider(text: "All done!")
+        template.body1TextProvider = CLKSimpleTextProvider(text: "Great job today!")
+      }
+//      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
+//      template.body1TextProvider = CLKSimpleTextProvider(text: "Due: \(WatchStore.shared.tasksDueToday())")
+//      template.tintColor = ColorStyles.primary
+//      let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
+//      template.body2TextProvider = CLKSimpleTextProvider(text: "\(text)")
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .graphicCircular:
@@ -132,9 +173,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       template.textProvider = CLKSimpleTextProvider(text: "6")
       handler(template)
     case .modularLarge:
-      let template = CLKComplicationTemplateModularLargeTallBody()
-      template.headerTextProvider = CLKSimpleTextProvider(text: "Today")
-      template.bodyTextProvider = CLKSimpleTextProvider(text: "due: 6")
+      let template = CLKComplicationTemplateModularLargeStandardBody()
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Take out the papers")
+      template.body1TextProvider = CLKSimpleTextProvider(text: "Take out the trash")
+      template.body2TextProvider = CLKSimpleTextProvider(text: "Get your spending cash")
+      template.tintColor = ColorStyles.primary
       handler(template)
     case .utilitarianSmall:
       let template = CLKComplicationTemplateUtilitarianSmallFlat()
@@ -144,11 +187,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(template)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchUtilSmall")!)
-      template.headerTextProvider = CLKSimpleTextProvider(text: "Conveyor Today")
-      template.body1TextProvider = CLKSimpleTextProvider(text: "due: 3")
-      let text = "Walk the dog"
-      template.body2TextProvider = CLKSimpleTextProvider(text: "\(text)")
+      template.headerTextProvider = CLKSimpleTextProvider(text: "Take out the papers")
+      template.body1TextProvider = CLKSimpleTextProvider(text: "Take out the trash")
+      template.body2TextProvider = CLKSimpleTextProvider(text: "Get your spending cash")
       handler(template)
     case .graphicCircular:
       let template = CLKComplicationTemplateGraphicCircularImage()

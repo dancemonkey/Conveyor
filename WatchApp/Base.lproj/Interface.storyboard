@@ -80,7 +80,7 @@
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" id="IfM-Oc-JUF">
                             <items>
-                                <button width="1" alignment="left" title="Button" enabled="NO" id="3UD-db-3If">
+                                <button width="1" height="0.59999999999999998" alignment="left" title="Button" enabled="NO" id="3UD-db-3If">
                                     <color key="titleColor" name="black"/>
                                     <color key="backgroundColor" name="white"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
@@ -88,7 +88,7 @@
                                 <group width="1" alignment="center" verticalAlignment="bottom" id="4xU-lx-eNj">
                                     <items>
                                         <button alignment="left" verticalAlignment="bottom" id="XPA-um-YOj">
-                                            <group key="contentGroup" width="0.5" height="40" alignment="left" id="jYk-ZU-yhp">
+                                            <group key="contentGroup" width="0.5" height="1" alignment="left" id="jYk-ZU-yhp">
                                                 <items>
                                                     <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="moveWatch" id="ROM-PE-mo6">
                                                         <color key="tintColor" name="white"/>
@@ -101,7 +101,7 @@
                                             </connections>
                                         </button>
                                         <button alignment="right" verticalAlignment="bottom" id="Ulk-yv-iFc">
-                                            <group key="contentGroup" width="0.5" height="40" alignment="left" id="ANF-Ud-aIT">
+                                            <group key="contentGroup" width="0.5" height="1" alignment="left" id="ANF-Ud-aIT">
                                                 <items>
                                                     <imageView width="25" height="25" alignment="center" verticalAlignment="center" image="completeWatch" id="eMR-H6-Ppp">
                                                         <color key="tintColor" name="white"/>
