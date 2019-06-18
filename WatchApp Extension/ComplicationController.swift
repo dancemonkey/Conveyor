@@ -48,6 +48,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .modularLarge:
       let template = CLKComplicationTemplateModularLargeStandardBody()
+      template.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "watchModularLargeStandard")!)
       if let nextThreeTasks = WatchStore.shared.topThreeTasksDue() {
         template.headerTextProvider = CLKSimpleTextProvider(text: nextThreeTasks[0].title)
         if nextThreeTasks[0].priority {
@@ -83,6 +84,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
+//      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchGraphicRectangularStandard")!)
       if let nextThreeTasks = WatchStore.shared.topThreeTasksDue() {
         template.headerTextProvider = CLKSimpleTextProvider(text: nextThreeTasks[0].title)
         if nextThreeTasks[0].priority {
@@ -179,6 +181,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(template)
     case .modularLarge:
       let template = CLKComplicationTemplateModularLargeStandardBody()
+      template.headerImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "watchModularLargeStandard")!)
       template.headerTextProvider = CLKSimpleTextProvider(text: "Take out the papers")
       template.body1TextProvider = CLKSimpleTextProvider(text: "Take out the trash")
       template.body2TextProvider = CLKSimpleTextProvider(text: "Get your spending cash")
@@ -192,6 +195,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(template)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
+//      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchGraphicRectangularStandard")!)
       template.headerTextProvider = CLKSimpleTextProvider(text: "Take out the papers")
       template.body1TextProvider = CLKSimpleTextProvider(text: "Take out the trash")
       template.body2TextProvider = CLKSimpleTextProvider(text: "Get your spending cash")

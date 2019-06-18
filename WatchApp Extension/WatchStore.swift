@@ -13,10 +13,10 @@ import ClockKit
 class WatchStore {
   static let shared = WatchStore()
   var data: [WatchTask] = []
-  var didReceiveData: Bool = false
+//  var didReceiveData: Bool = false
   
   func updateData(with reply: [String: Any]) {
-    didReceiveData = true
+//    didReceiveData = true
     print("updating data")
     var newData: [WatchTask] = []
     for (_, contextItem) in reply {
@@ -24,15 +24,16 @@ class WatchStore {
         newData.append(item)
       }
     }
+    newData.sort { (task1, task2) -> Bool in
+      return task1.title < task2.title
+    }
     self.data = newData.sorted(by: { (task1, task2) -> Bool in
-//      task1.priority == true && task2.priority == false
       if task1.priority != task2.priority {
         return task1.priority == true && task2.priority == false
       } else {
         return task1.status == .overdue && task2.status != .overdue
       }
     })
-    
     self.updateComplications()
   }
   

@@ -20,6 +20,7 @@ class ItemEntryField: UITextField {
     self.tag = TextFieldId.newItem.rawValue
     adjustsFontSizeToFitWidth = true
     minimumFontSize = 11.0
+    self.autocapitalizationType = .sentences
     self.font = FontStyles.dataEntryFont
     self.textColor = ColorStyles.textColor
     self.borderStyle = .line
