@@ -12,6 +12,7 @@ class TabController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(setTabColor), name: .onDarkModeSelected, object: nil)
     setTabStyling()
   }
   
@@ -19,6 +20,12 @@ class TabController: UITabBarController {
   func setTabStyling() {
     UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -15.0)
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : FontStyles.tabBarFont], for: .normal)
+    setTabColor()
+  }
+  
+  @objc func setTabColor() {
+    UITabBar.appearance().barTintColor = Settings.darkModeActive ? UIColor.black : ColorStyles.textColor
+    
   }
   
 }

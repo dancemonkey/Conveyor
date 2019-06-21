@@ -11,7 +11,8 @@ import UIKit
 struct ColorStyles {
   
   static var textColor: UIColor {
-    return Settings.darkModeActive ? UIColor(named: "white")!.withAlphaComponent(0.5) : UIColor(named: "black")!
+    return Settings.darkModeActive ? UIColor.white : UIColor(named: "black")!
+    // original dark mode color UIColor(named: "white")!.withAlphaComponent(0.5)
   }
   
   static var extensionTextColor: UIColor {
@@ -27,7 +28,8 @@ struct ColorStyles {
   }
   
   static var background: UIColor {
-    return Settings.darkModeActive ? UIColor(named: "black")! : UIColor(named: "white")!
+    return Settings.darkModeActive ? UIColor.black : UIColor(named: "white")!
+    // original dark mode color UIColor(named: "black")!
   }
   
   static var primary: UIColor {

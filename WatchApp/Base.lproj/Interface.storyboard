@@ -36,12 +36,12 @@
                                                         <items>
                                                             <group alignment="right" id="6hL-EJ-HLl">
                                                                 <items>
-                                                                    <imageView alignment="left" image="priorityWatch" id="8af-hO-XBN"/>
+                                                                    <imageView alignment="left" hidden="YES" image="priorityWatch" id="8af-hO-XBN"/>
                                                                 </items>
                                                             </group>
                                                             <group alignment="right" id="omU-Me-7Dr">
                                                                 <items>
-                                                                    <imageView alignment="left" image="repeatWatch" id="UkD-3L-dMm"/>
+                                                                    <imageView alignment="left" hidden="YES" image="repeatWatch" id="UkD-3L-dMm"/>
                                                                 </items>
                                                             </group>
                                                         </items>

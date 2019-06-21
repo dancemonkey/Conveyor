@@ -84,7 +84,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-//      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchGraphicRectangularStandard")!)
       if let nextThreeTasks = WatchStore.shared.topThreeTasksDue() {
         template.headerTextProvider = CLKSimpleTextProvider(text: nextThreeTasks[0].title)
         if nextThreeTasks[0].priority {
@@ -137,9 +136,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .graphicCorner:
-      let template = CLKComplicationTemplateGraphicCornerTextImage()
-      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "GraphicCornerComplication")!)
-      template.textProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      let template = CLKComplicationTemplateGraphicCornerStackText()
+      template.outerTextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
+      template.innerTextProvider = CLKSimpleTextProvider(text: text)
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .graphicBezel:
@@ -223,9 +223,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       template.highlightLine2 = true
       handler(template)
     case .graphicCorner:
-      let template = CLKComplicationTemplateGraphicCornerTextImage()
-      template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "GraphicCornerComplication")!)
-      template.textProvider = CLKSimpleTextProvider(text: "due: 6")
+      let template = CLKComplicationTemplateGraphicCornerStackText()
+      template.outerTextProvider = CLKSimpleTextProvider(text: "due: 6")
+      let text = WatchStore.shared.nextTaskDue()?.title ?? "Cook up something special"
+      template.innerTextProvider = CLKSimpleTextProvider(text: text)
       handler(template)
     case .graphicBezel:
       let template = CLKComplicationTemplateGraphicBezelCircularText()

@@ -55,15 +55,14 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
     table.setNumberOfRows(data.count, withRowType: "taskRow")
     for i in 0 ..< table.numberOfRows {
       guard let controller = table.rowController(at: i) as? RowController else { continue }
+      controller.priorityIconGroup.setHidden(!data[i].priority)
+      controller.repeatIconGroup.setHidden(!data[i].repeating)
       controller.itemLabel.setText(data[i].title)
       if data[i].status == .overdue {
         controller.itemLabel.setTextColor(.red)
       } else {
         controller.itemLabel.setTextColor(ColorStyles.textColor)
       }
-  
-      controller.priorityIconGroup.setHidden(!data[i].priority)
-      controller.repeatIconGroup.setHidden(!data[i].repeating)
     }
     
     if table.numberOfRows > 0 {
