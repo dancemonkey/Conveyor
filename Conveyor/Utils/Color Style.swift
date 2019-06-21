@@ -11,7 +11,7 @@ import UIKit
 struct ColorStyles {
   
   static var textColor: UIColor {
-    return Settings.darkModeActive ? UIColor.white : UIColor(named: "black")!
+    return Settings.darkModeActive ? UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : UIColor(named: "black")!
     // original dark mode color UIColor(named: "white")!.withAlphaComponent(0.5)
   }
   
@@ -28,7 +28,7 @@ struct ColorStyles {
   }
   
   static var background: UIColor {
-    return Settings.darkModeActive ? UIColor.black : UIColor(named: "white")!
+    return Settings.darkModeActive ? UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0) : UIColor(named: "white")!
     // original dark mode color UIColor(named: "black")!
   }
   
@@ -51,6 +51,7 @@ extension UIColor {
   }
   
   func toHex(alpha: Bool = false) -> String? {
+    print("getting hex value")
     guard let components = cgColor.components, components.count >= 3 else {
       return nil
     }
