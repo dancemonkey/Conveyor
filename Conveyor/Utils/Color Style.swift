@@ -11,7 +11,7 @@ import UIKit
 struct ColorStyles {
   
   static var textColor: UIColor {
-    return Settings.darkModeActive ? UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : UIColor(named: "black")!
+    return Settings.darkModeActive ? UIColor(named: "white")!.withAlphaComponent(0.8) : UIColor(named: "black")!
     // original dark mode color UIColor(named: "white")!.withAlphaComponent(0.5)
   }
   

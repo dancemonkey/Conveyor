@@ -26,7 +26,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   }
   
   func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
-    handler(.showOnLockScreen)
+    handler(.hideOnLockScreen)
   }
   
   // MARK: - Timeline Population
@@ -136,11 +136,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .graphicCorner:
-      let template = CLKComplicationTemplateGraphicCornerStackText()
-      template.outerTextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      let totalDue = WatchStore.shared.tasksDueToday()
       let text = WatchStore.shared.nextTaskDue()?.title ?? "All done!"
-      template.innerTextProvider = CLKSimpleTextProvider(text: text)
-      entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      if totalDue == 0 {
+        let template = CLKComplicationTemplateGraphicCornerTextImage()
+        template.imageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "GraphicCornerComplication")!)
+        template.textProvider = CLKSimpleTextProvider(text: text)
+        entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      } else {
+        let template = CLKComplicationTemplateGraphicCornerStackText()
+        template.outerTextProvider = CLKSimpleTextProvider(text: "due: \(totalDue)")
+        template.innerTextProvider = CLKSimpleTextProvider(text: text)
+        entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+      }
       handler(entry)
     case .graphicBezel:
       let template = CLKComplicationTemplateGraphicBezelCircularText()
@@ -195,7 +203,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(template)
     case .graphicRectangular:
       let template = CLKComplicationTemplateGraphicRectangularStandardBody()
-//      template.headerImageProvider = CLKFullColorImageProvider(fullColorImage: UIImage(named: "watchGraphicRectangularStandard")!)
       template.headerTextProvider = CLKSimpleTextProvider(text: "Take out the papers")
       template.body1TextProvider = CLKSimpleTextProvider(text: "Take out the trash")
       template.body2TextProvider = CLKSimpleTextProvider(text: "Get your spending cash")

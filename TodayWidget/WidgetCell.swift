@@ -37,11 +37,15 @@ class WidgetCell: UITableViewCell {
     title.font = FontStyles.widgetItemCellFont
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
+      completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
+      completeBtn.alpha = 0.7
       if itemState == .none {
-        completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
+//        completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
+//        completeBtn.alpha = 0.7
         title.textColor = ColorStyles.extensionTextColor
       } else if itemState == .overdue {
-        completeBtn.setImage(#imageLiteral(resourceName: "widgetComplete"), for: .normal)
+//        completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
+//        completeBtn.alpha = 0.7
         title.textColor = ColorStyles.accent
       }
     }

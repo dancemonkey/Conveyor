@@ -19,6 +19,10 @@ struct Constants {
     case showProUserDescription
   }
   
+  enum TextParseKeywords: String {
+    case priority = "@!", repeatTask = "@rpt"
+  }
+  
   enum IAPProductIds: String {
     case smallTip = "com.DrewLanning.Conveyor.small",
     mediumTip = "com.DrewLanning.Conveyor.medium",
