@@ -65,6 +65,11 @@ extension WatchSessionManager {
     }
   }
   
+  func updateComplication(with userInfo: [String: Any]) {
+    guard let session = validSession, session.activationState == .activated else { return }
+    session.transferCurrentComplicationUserInfo(userInfo)
+  }
+  
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
     if message[Constants.WatchMessageKeys.completedTask.rawValue] != nil {
       if let taskId = message[Constants.WatchMessageKeys.completedTask.rawValue] as? String {

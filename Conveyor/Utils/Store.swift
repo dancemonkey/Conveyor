@@ -57,6 +57,7 @@ class Store {
     do {
       let context = WatchSessionManager.shared.buildContext()
       try WatchSessionManager.shared.updateApplicationContext(context: context)
+      WatchSessionManager.shared.updateComplication(with: context)
     } catch {
       print(error)
     }

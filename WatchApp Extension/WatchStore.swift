@@ -13,11 +13,8 @@ import ClockKit
 class WatchStore {
   static let shared = WatchStore()
   var data: [WatchTask] = []
-//  var didReceiveData: Bool = false
   
   func updateData(with reply: [String: Any]) {
-//    didReceiveData = true
-    print("updating data")
     var newData: [WatchTask] = []
     for (_, contextItem) in reply {
       if let item = WatchTask.getItem(from: contextItem as! [String: String]) {
@@ -38,7 +35,6 @@ class WatchStore {
   }
   
   func updateComplications() {
-    print("updating complications")
     let server = CLKComplicationServer.sharedInstance()
     guard let comps = server.activeComplications, comps.count > 0 else {
       return

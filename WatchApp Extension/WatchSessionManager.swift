@@ -52,10 +52,12 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
 extension WatchSessionManager {
   
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    print("received new context")
     WatchStore.shared.updateData(with: applicationContext)
     contextDelegate?.refresh()
-//    self.updateComplications()
+  }
+  
+  func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+    self.updateComplications()
   }
   
   func requestContext(handle: @escaping (_ reply: [String: Any]) -> ()) {
