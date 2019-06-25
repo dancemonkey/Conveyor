@@ -34,14 +34,14 @@
                                                     </label>
                                                     <group alignment="left" id="D75-35-WE6">
                                                         <items>
-                                                            <group alignment="right" id="6hL-EJ-HLl">
+                                                            <group alignment="right" hidden="YES" id="6hL-EJ-HLl">
                                                                 <items>
-                                                                    <imageView alignment="left" hidden="YES" image="priorityWatch" id="8af-hO-XBN"/>
+                                                                    <imageView alignment="left" image="priorityWatch" id="8af-hO-XBN"/>
                                                                 </items>
                                                             </group>
-                                                            <group alignment="right" id="omU-Me-7Dr">
+                                                            <group alignment="right" hidden="YES" id="omU-Me-7Dr">
                                                                 <items>
-                                                                    <imageView alignment="left" hidden="YES" image="repeatWatch" id="UkD-3L-dMm"/>
+                                                                    <imageView alignment="left" image="repeatWatch" id="UkD-3L-dMm"/>
                                                                 </items>
                                                             </group>
                                                         </items>
