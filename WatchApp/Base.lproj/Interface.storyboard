@@ -60,6 +60,17 @@
                                                 <outlet property="repeatIconGroup" destination="omU-Me-7Dr" id="87p-bQ-TpO"/>
                                             </connections>
                                         </tableRow>
+                                        <tableRow identifier="noTasksRow" id="Lsw-Zz-G8k">
+                                            <group key="rootItem" width="1" alignment="left" id="O5J-ef-cIf">
+                                                <items>
+                                                    <label width="1" height="1" alignment="center" verticalAlignment="center" text="All done!" textAlignment="center" id="5Gb-Ar-cmf">
+                                                        <color key="textColor" name="white"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </group>
+                                        </tableRow>
                                     </items>
                                 </table>
                             </items>

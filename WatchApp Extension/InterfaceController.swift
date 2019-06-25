@@ -21,8 +21,6 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     WatchSessionManager.shared.contextDelegate = self
-    watermarkImage = UIImage(named: "watchWatermark")
-//    WatchSessionManager.shared.startSession()
   }
   
   override func willActivate() {
@@ -35,10 +33,9 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   }
   
   func refresh() {
-    print("refreshing interface controller")
     self.data = WatchStore.shared.data
     resetTable()
-//    reloadComplications()
+    reloadComplications()
   }
   
   func reloadComplications() {
@@ -52,23 +49,21 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   }
   
   func resetTable() {
-    table.setNumberOfRows(data.count, withRowType: "taskRow")
-    for i in 0 ..< table.numberOfRows {
-      guard let controller = table.rowController(at: i) as? RowController else { continue }
-      controller.priorityIconGroup.setHidden(!data[i].priority)
-      controller.repeatIconGroup.setHidden(!data[i].repeating)
-      controller.itemLabel.setText(data[i].title)
-      if data[i].status == .overdue {
-        controller.itemLabel.setTextColor(.red)
-      } else {
-        controller.itemLabel.setTextColor(ColorStyles.textColor)
-      }
-    }
-    
-    if table.numberOfRows > 0 {
-      tableGrp.setBackgroundImage(nil)
+    if data.count == 0 {
+      table.setNumberOfRows(1, withRowType: "noTasksRow")
     } else {
-      tableGrp.setBackgroundImage(watermarkImage)
+      table.setNumberOfRows(data.count, withRowType: "taskRow")
+      for i in 0 ..< table.numberOfRows {
+        guard let controller = table.rowController(at: i) as? RowController else { continue }
+        controller.priorityIconGroup.setHidden(!data[i].priority)
+        controller.repeatIconGroup.setHidden(!data[i].repeating)
+        controller.itemLabel.setText(data[i].title)
+        if data[i].status == .overdue {
+          controller.itemLabel.setTextColor(.red)
+        } else {
+          controller.itemLabel.setTextColor(ColorStyles.textColor)
+        }
+      }
     }
   }
   

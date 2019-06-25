@@ -65,9 +65,10 @@ extension WatchSessionManager {
     }
   }
   
-  func updateComplication(with userInfo: [String: Any]) {
+  func updateComplication(with userInfo: [String: Any]?) {
     guard let session = validSession, session.activationState == .activated else { return }
-    session.transferCurrentComplicationUserInfo(userInfo)
+    session.transferCurrentComplicationUserInfo(["update": "now"])
+    // just a trigger to fire the watch app userInfo received method and update the complications from existing data store
   }
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
