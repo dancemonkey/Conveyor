@@ -51,7 +51,6 @@ extension UIColor {
   }
   
   func toHex(alpha: Bool = false) -> String? {
-    print("getting hex value")
     guard let components = cgColor.components, components.count >= 3 else {
       return nil
     }
