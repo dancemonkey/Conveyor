@@ -32,6 +32,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     applyGlobalStyles()
     setupKeyboardObserver()
     tableView.delegate = self
