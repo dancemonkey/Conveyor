@@ -15,6 +15,8 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   @IBOutlet var table: WKInterfaceTable!
   @IBOutlet var todayLbl: WKInterfaceLabel!
   @IBOutlet var tableGrp: WKInterfaceGroup!
+  @IBOutlet var newItemBtn: WKInterfaceButton!
+
   var data: [WatchTask] = []
   var watermarkImage: UIImage?
   var receivedRecentData = false
@@ -81,6 +83,13 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
     context.object = data[rowIndex]
     context.delegate = self
     return context
+  }
+  
+  @IBAction func addNewItem(sender: WKInterfaceButton) {
+    presentTextInputController(withSuggestions: nil, allowedInputMode: .allowEmoji) { (input) in
+      print("input: \(input)")
+    }
+    print("adding new item")
   }
 }
 

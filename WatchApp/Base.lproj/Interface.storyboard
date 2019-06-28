@@ -73,10 +73,19 @@
                                         </tableRow>
                                     </items>
                                 </table>
+                                <button width="1" alignment="right" verticalAlignment="center" title="+" id="gmg-gH-GkX">
+                                    <color key="titleColor" name="white"/>
+                                    <color key="backgroundColor" name="primary"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                    <connections>
+                                        <action selector="addNewItemWithSender:" destination="AgC-eL-Hgc" id="HrL-Rt-tiB"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="newItemBtn" destination="gmg-gH-GkX" id="ccs-xk-tiG"/>
                         <outlet property="table" destination="70a-RX-gr9" id="7mB-da-Put"/>
                         <outlet property="tableGrp" destination="9hJ-Zo-Mhx" id="pqX-WZ-G3B"/>
                         <outlet property="todayLbl" destination="b2S-44-xnm" id="Uo4-wM-od8"/>
