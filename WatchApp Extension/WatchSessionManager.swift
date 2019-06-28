@@ -31,7 +31,6 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     if activationState == .activated {
       requestContext { (reply) in
         WatchStore.shared.updateData(with: reply)
-//        self.updateComplications()
       }
     }
   }

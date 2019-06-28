@@ -17,10 +17,19 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   @IBOutlet var tableGrp: WKInterfaceGroup!
   var data: [WatchTask] = []
   var watermarkImage: UIImage?
+  var receivedRecentData = false
   
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     WatchSessionManager.shared.contextDelegate = self
+    
+    if data.isEmpty, receivedRecentData == false {
+      WatchSessionManager.shared.requestContext { (context) in
+        WatchStore.shared.updateData(with: context)
+        self.receivedRecentData = true
+      }
+    }
+    
   }
   
   override func willActivate() {
