@@ -14,11 +14,19 @@
             <objects>
                 <controller title="Conveyor" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="Ged-Cs-k24">
+                        <group width="1" alignment="left" layout="vertical" id="Ged-Cs-k24">
                             <items>
                                 <label alignment="left" text="TODAY" id="b2S-44-xnm">
                                     <color key="textColor" name="primary"/>
                                 </label>
+                                <button width="1" alignment="right" verticalAlignment="center" title="+" id="gmg-gH-GkX">
+                                    <color key="titleColor" name="white"/>
+                                    <color key="backgroundColor" name="primary"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                    <connections>
+                                        <action selector="addNewItemWithSender:" destination="AgC-eL-Hgc" id="HrL-Rt-tiB"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <group height="1" alignment="left" layout="vertical" id="9hJ-Zo-Mhx">
@@ -73,14 +81,6 @@
                                         </tableRow>
                                     </items>
                                 </table>
-                                <button width="1" alignment="right" verticalAlignment="center" title="+" id="gmg-gH-GkX">
-                                    <color key="titleColor" name="white"/>
-                                    <color key="backgroundColor" name="primary"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
-                                    <connections>
-                                        <action selector="addNewItemWithSender:" destination="AgC-eL-Hgc" id="HrL-Rt-tiB"/>
-                                    </connections>
-                                </button>
                             </items>
                         </group>
                     </items>
