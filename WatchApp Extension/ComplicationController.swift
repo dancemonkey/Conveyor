@@ -77,7 +77,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .utilitarianSmall:
       let template = CLKComplicationTemplateUtilitarianSmallFlat()
-      let text = "due: \(WatchStore.shared.tasksDueToday())"
+      let text = "Today: \(WatchStore.shared.tasksDueToday())"
       template.textProvider = CLKSimpleTextProvider(text: "\(text)")
       template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "watchUtilSmall")!)
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
@@ -123,14 +123,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(entry)
     case .utilitarianSmallFlat:
       let template = CLKComplicationTemplateUtilitarianSmallFlat()
-      template.textProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      template.textProvider = CLKSimpleTextProvider(text: "Today: \(WatchStore.shared.tasksDueToday())")
       template.tintColor = ColorStyles.primary
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       handler(entry)
     case .extraLarge:
       let template = CLKComplicationTemplateExtraLargeStackImage()
       template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
-      template.line2TextProvider = CLKSimpleTextProvider(text: "due: \(WatchStore.shared.tasksDueToday())")
+      template.line2TextProvider = CLKSimpleTextProvider(text: "Today: \(WatchStore.shared.tasksDueToday())")
       template.tintColor = ColorStyles.primary
       template.highlightLine2 = true
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
@@ -145,7 +145,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       } else {
         let template = CLKComplicationTemplateGraphicCornerStackText()
-        template.outerTextProvider = CLKSimpleTextProvider(text: "due: \(totalDue)")
+        template.outerTextProvider = CLKSimpleTextProvider(text: "Today: \(totalDue)")
         template.innerTextProvider = CLKSimpleTextProvider(text: text)
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
       }
@@ -219,19 +219,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       handler(template)
     case .utilitarianSmallFlat:
       let template = CLKComplicationTemplateUtilitarianSmallFlat()
-      template.textProvider = CLKSimpleTextProvider(text: "due: 6")
+      template.textProvider = CLKSimpleTextProvider(text: "Today: 6")
       template.tintColor = ColorStyles.primary
       handler(template)
     case .extraLarge:
       let template = CLKComplicationTemplateExtraLargeStackImage()
       template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
-      template.line2TextProvider = CLKSimpleTextProvider(text: "due: 6")
+      template.line2TextProvider = CLKSimpleTextProvider(text: "Today: 6")
       template.tintColor = ColorStyles.primary
       template.highlightLine2 = true
       handler(template)
     case .graphicCorner:
       let template = CLKComplicationTemplateGraphicCornerStackText()
-      template.outerTextProvider = CLKSimpleTextProvider(text: "due: 6")
+      template.outerTextProvider = CLKSimpleTextProvider(text: "Today: 6")
       let text = WatchStore.shared.nextTaskDue()?.title ?? "Cook up something special"
       template.innerTextProvider = CLKSimpleTextProvider(text: text)
       handler(template)
