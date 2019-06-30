@@ -88,8 +88,14 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
   @IBAction func addNewItem(sender: WKInterfaceButton) {
     presentTextInputController(withSuggestions: nil, allowedInputMode: .allowEmoji) { (input) in
       guard let taskText = input?.first else { return }
-      let newTask = WatchTask(title: taskText as! String, status: .none, id: nil, priority: false, repeating: false)
-      WatchSessionManager.shared.sendNew(task: newTask, in: .today)
+      if let result = TaskTextParser.parseEntry(from: taskText as! String) {
+        let newTask = WatchTask(title: result.task, status: .none, id: nil, priority: false, repeating: false)
+        let list = Bucket(rawValue: result.list)!
+        WatchSessionManager.shared.sendNew(task: newTask, in: list)
+      } else {
+        let newTask = WatchTask(title: taskText as! String, status: .none, id: nil, priority: false, repeating: false)
+        WatchSessionManager.shared.sendNew(task: newTask, in: .today)
+      }
       self.dismissTextInputController()
     }
   }

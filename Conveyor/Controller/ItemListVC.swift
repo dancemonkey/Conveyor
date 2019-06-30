@@ -437,11 +437,11 @@ extension ItemListVC {
     guard let bucket = Bucket(rawValue: sender.title!.lowercased()) else { return }
     
     if IAPStore.shared.isProUser() {
-      if let result = isRepeatingTask(from: taskText) {
+      if let result = TaskTextParser.isRepeatingTask(from: taskText) {
         repeating = result.repeating
         taskText = result.text
       }
-      if let result = isPriorityTask(from: taskText) {
+      if let result = TaskTextParser.isPriorityTask(from: taskText) {
         priority = result.priority
         taskText = result.text
       }
@@ -470,48 +470,48 @@ extension ItemListVC {
     }
   }
   
-  private func parseEntry(from text: String) -> (list: String, task: String)? {
-    let lcComponents = text.lowercased().split(separator: " ")
-    var origComponents = text.split(separator: " ")
-    let listAssignment = lcComponents.first { (string) -> Bool in
-      return string == "today" || string == "tomorrow" || string == "later"
-    }
-    guard let list = listAssignment else { return nil }
-    let listLocation = lcComponents.firstIndex(of: list)!
-    let _ = origComponents.remove(at: listLocation)
-    let task = origComponents.joined(separator: " ")
-    return (list: String(list), task: task)
-  }
-  
-  private func isRepeatingTask(from text: String) -> (repeating: Bool, text: String)? {
-    let lcComponents = text.lowercased().split(separator: " ")
-    var origComponents = text.split(separator: " ")
-    let repeating = lcComponents.first { (word) -> Bool in
-      return word == Constants.TextParseKeywords.repeatTask.rawValue
-    }
-    guard repeating != nil else {
-      return (repeating: false, text: text)
-    }
-    let repeatLocation = lcComponents.firstIndex(of: repeating!)!
-    let _ = origComponents.remove(at: repeatLocation)
-    let task = origComponents.joined(separator: " ")
-    return (repeating: true, text: task)
-  }
-  
-  private func isPriorityTask(from text: String) -> (priority: Bool, text: String)? {
-    let lcComponents = text.lowercased().split(separator: " ")
-    var origComponents = text.split(separator: " ")
-    let priority = lcComponents.first { (word) -> Bool in
-      return word == Constants.TextParseKeywords.priority.rawValue
-    }
-    guard priority != nil else {
-      return (priority: false, text: text)
-    }
-    let priorityLoc = lcComponents.firstIndex(of: priority!)!
-    let _ = origComponents.remove(at: priorityLoc)
-    let task = origComponents.joined(separator: " ")
-    return (priority: true, text: task)
-  }
+//  private func parseEntry(from text: String) -> (list: String, task: String)? {
+//    let lcComponents = text.lowercased().split(separator: " ")
+//    var origComponents = text.split(separator: " ")
+//    let listAssignment = lcComponents.first { (string) -> Bool in
+//      return string == "today" || string == "tomorrow" || string == "later"
+//    }
+//    guard let list = listAssignment else { return nil }
+//    let listLocation = lcComponents.firstIndex(of: list)!
+//    let _ = origComponents.remove(at: listLocation)
+//    let task = origComponents.joined(separator: " ")
+//    return (list: String(list), task: task)
+//  }
+//
+//  private func isRepeatingTask(from text: String) -> (repeating: Bool, text: String)? {
+//    let lcComponents = text.lowercased().split(separator: " ")
+//    var origComponents = text.split(separator: " ")
+//    let repeating = lcComponents.first { (word) -> Bool in
+//      return word == Constants.TextParseKeywords.repeatTask.rawValue
+//    }
+//    guard repeating != nil else {
+//      return (repeating: false, text: text)
+//    }
+//    let repeatLocation = lcComponents.firstIndex(of: repeating!)!
+//    let _ = origComponents.remove(at: repeatLocation)
+//    let task = origComponents.joined(separator: " ")
+//    return (repeating: true, text: task)
+//  }
+//
+//  private func isPriorityTask(from text: String) -> (priority: Bool, text: String)? {
+//    let lcComponents = text.lowercased().split(separator: " ")
+//    var origComponents = text.split(separator: " ")
+//    let priority = lcComponents.first { (word) -> Bool in
+//      return word == Constants.TextParseKeywords.priority.rawValue
+//    }
+//    guard priority != nil else {
+//      return (priority: false, text: text)
+//    }
+//    let priorityLoc = lcComponents.firstIndex(of: priority!)!
+//    let _ = origComponents.remove(at: priorityLoc)
+//    let task = origComponents.joined(separator: " ")
+//    return (priority: true, text: task)
+//  }
 }
 
 extension ItemListVC: UITextFieldDelegate {
@@ -536,16 +536,16 @@ extension ItemListVC: UITextFieldDelegate {
       stopEditing()
       return
     }
-    if let result = parseEntry(from: task) {
+    if let result = TaskTextParser.parseEntry(from: task) {
       bucket = Bucket(rawValue: result.list)!
       task = result.task
     }
     if IAPStore.shared.isProUser() {
-      if let result = isRepeatingTask(from: task) {
+      if let result = TaskTextParser.isRepeatingTask(from: task) {
         repeating = result.repeating
         task = result.text
       }
-      if let result = isPriorityTask(from: task) {
+      if let result = TaskTextParser.isPriorityTask(from: task) {
         priority = result.priority
         task = result.text
       }
