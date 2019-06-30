@@ -50,6 +50,8 @@
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
 		1044CF8D225CDB3700868537 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E82225CC3E300F9D9B8 /* Item+CoreDataProperties.swift */; };
 		1044CF8E225CDB6F00868537 /* State Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E62225CC30E00F9D9B8 /* State Protocols.swift */; };
+		104C0FA422C8EE9C00DF2D18 /* TaskTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C0FA322C8EE9C00DF2D18 /* TaskTextParser.swift */; };
+		104C0FA522C8EE9C00DF2D18 /* TaskTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C0FA322C8EE9C00DF2D18 /* TaskTextParser.swift */; };
 		105363E4226F378A0093A549 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105363E3226F378A0093A549 /* Settings.storyboard */; };
 		105ED4DC22AE7B3B00FEF09B /* ProFeaturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */; };
 		105ED4DE22AE7C2600FEF09B /* proFeatures.html in Resources */ = {isa = PBXBuildFile; fileRef = 105ED4DD22AE7C2600FEF09B /* proFeatures.html */; };
@@ -236,6 +238,7 @@
 		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		1027D7D4229AD17E001CE87F /* IAPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPCell.swift; sourceTree = "<group>"; };
 		1029A8612299ACEC00C319DA /* IapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapVC.swift; sourceTree = "<group>"; };
+		104C0FA322C8EE9C00DF2D18 /* TaskTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextParser.swift; sourceTree = "<group>"; };
 		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeaturesVC.swift; sourceTree = "<group>"; };
 		105ED4DD22AE7C2600FEF09B /* proFeatures.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = proFeatures.html; sourceTree = "<group>"; };
@@ -564,6 +567,7 @@
 				10E0F0B72280679C00774127 /* WatchSessionManager.swift */,
 				1078965322999F1100DF6638 /* IAPStore.swift */,
 				1021FD5722A93B010063A206 /* Notification Name Extension.swift */,
+				104C0FA322C8EE9C00DF2D18 /* TaskTextParser.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1008,6 +1012,7 @@
 				100CF9A1227DF14A006C7A83 /* State Protocols.swift in Sources */,
 				10FCA8D92281BEC5009693D1 /* TaskContext.swift in Sources */,
 				10FCA8D72281B793009693D1 /* TaskDetailIC.swift in Sources */,
+				104C0FA522C8EE9C00DF2D18 /* TaskTextParser.swift in Sources */,
 				100CF99C227DEF0C006C7A83 /* WatchSessionManager.swift in Sources */,
 				100CF9A4227DF2AA006C7A83 /* ContextUpdateDelegate.swift in Sources */,
 				100CF989227DEB01006C7A83 /* ExtensionDelegate.swift in Sources */,
@@ -1054,6 +1059,7 @@
 				10807E7D225CC36800F9D9B8 /* ItemListCell.swift in Sources */,
 				10807E36225CC28900F9D9B8 /* Conveyor.xcdatamodeld in Sources */,
 				10CB7EE52267D54C001E448E /* SettingsCell.swift in Sources */,
+				104C0FA422C8EE9C00DF2D18 /* TaskTextParser.swift in Sources */,
 				1029A8622299ACEC00C319DA /* IapVC.swift in Sources */,
 				10807E6D225CC30E00F9D9B8 /* AlertFactory.swift in Sources */,
 				1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */,
