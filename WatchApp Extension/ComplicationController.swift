@@ -130,7 +130,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     case .extraLarge:
       let template = CLKComplicationTemplateExtraLargeStackImage()
       template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
-      template.line2TextProvider = CLKSimpleTextProvider(text: "Today: \(WatchStore.shared.tasksDueToday())")
+      template.line2TextProvider = CLKSimpleTextProvider(text: "Due: \(WatchStore.shared.tasksDueToday())")
       template.tintColor = ColorStyles.primary
       template.highlightLine2 = true
       entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
@@ -225,7 +225,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     case .extraLarge:
       let template = CLKComplicationTemplateExtraLargeStackImage()
       template.line1ImageProvider = CLKImageProvider(onePieceImage: UIImage(named: "xLargeComplication")!)
-      template.line2TextProvider = CLKSimpleTextProvider(text: "Today: 6")
+      template.line2TextProvider = CLKSimpleTextProvider(text: "Due: 6")
       template.tintColor = ColorStyles.primary
       template.highlightLine2 = true
       handler(template)
