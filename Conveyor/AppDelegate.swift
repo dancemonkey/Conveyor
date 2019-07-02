@@ -83,6 +83,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func changeAllItemBuckets() {
     DispatchQueue.main.async {
       Store(testing: false).changeAllItemBuckets()
+      do {
+        let context = WatchSessionManager.shared.buildContext()
+        try WatchSessionManager.shared.updateApplicationContext(context: context)
+      } catch {
+        print(error)
+      }
     }
   }
   
@@ -138,12 +144,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       DispatchQueue.main.async {
         application.applicationIconBadgeNumber = store.getBadgeCount()
       }
-      do {
-        let context = WatchSessionManager.shared.buildContext()
-        try WatchSessionManager.shared.updateApplicationContext(context: context)
-      } catch {
-        print(error)
-      }
+//      do {
+//        let context = WatchSessionManager.shared.buildContext()
+//        try WatchSessionManager.shared.updateApplicationContext(context: context)
+//      } catch {
+//        print(error)
+//      }
       completionHandler(.newData)
     } else {
       completionHandler(.noData)

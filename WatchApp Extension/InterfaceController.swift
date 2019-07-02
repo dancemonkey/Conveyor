@@ -68,6 +68,14 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
         guard let controller = table.rowController(at: i) as? RowController else { continue }
         controller.priorityIconGroup.setHidden(!data[i].priority)
         controller.repeatIconGroup.setHidden(!data[i].repeating)
+        controller.taskCompletion = {
+          WatchSessionManager.shared.sendTaskCompletion(for: self.data[i])
+          WatchStore.shared.data.removeAll { (task) -> Bool in
+            task.id == self.data[i].id
+          }
+          self.refresh()
+          self.reloadComplications()
+        }
         controller.itemLabel.setText(data[i].title)
         if data[i].status == .overdue {
           controller.itemLabel.setTextColor(.red)
