@@ -11,7 +11,6 @@ import Foundation
 
 class TaskDetailIC: WKInterfaceController {
 
-//  @IBOutlet var taskTitleLbl: WKInterfaceLabel!
   @IBOutlet var taskTitleBtn: WKInterfaceButton!
   var task: WatchTask?
   var updateDelegate: ItemUpdateDelegate?

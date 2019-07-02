@@ -70,6 +70,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
         controller.repeatIconGroup.setHidden(!data[i].repeating)
         controller.taskCompletion = {
           WatchSessionManager.shared.sendTaskCompletion(for: self.data[i])
+          WKInterfaceDevice.current().play(.success)
           WatchStore.shared.data.removeAll { (task) -> Bool in
             task.id == self.data[i].id
           }
@@ -113,6 +114,7 @@ extension InterfaceController: ItemUpdateDelegate {
   func complete(item: WatchTask?) {
     guard let completeTask = item else { return }
     WatchSessionManager.shared.sendTaskCompletion(for: completeTask)
+    WKInterfaceDevice.current().play(.success)
     WatchStore.shared.data.removeAll { (task) -> Bool in
       task.id == completeTask.id
     }
@@ -123,6 +125,7 @@ extension InterfaceController: ItemUpdateDelegate {
   func reschedule(item: WatchTask?, newList: Bucket) {
     guard let updatedTask = item else { return }
     WatchSessionManager.shared.sendTaskReschedule(for: item, newList: newList)
+    WKInterfaceDevice.current().play(.success)
     WatchStore.shared.data.removeAll { (task) -> Bool in
       task.id == updatedTask.id
     }

@@ -39,7 +39,7 @@
                                                     <button alignment="left" verticalAlignment="center" id="O4K-gD-pWh">
                                                         <group key="contentGroup" alignment="left" id="hiJ-vS-sMY">
                                                             <items>
-                                                                <imageView alignment="left" image="completeWatch" id="z3d-lW-bKC">
+                                                                <imageView width="20" height="20" alignment="left" image="completeWatch" id="z3d-lW-bKC">
                                                                     <color key="tintColor" name="primary"/>
                                                                 </imageView>
                                                             </items>
@@ -48,32 +48,33 @@
                                                             <action selector="completeTask" destination="yod-Kq-Azm" id="891-LN-edZ"/>
                                                         </connections>
                                                     </button>
-                                                    <group width="0.80000000000000004" height="1" alignment="left" layout="vertical" id="IdS-Xx-hND">
-                                                        <items>
-                                                            <label alignment="left" text="Task" id="uvg-1a-fC4">
-                                                                <color key="textColor" name="black"/>
-                                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
-                                                            </label>
-                                                            <group alignment="left" id="D75-35-WE6">
-                                                                <items>
-                                                                    <group alignment="right" hidden="YES" id="6hL-EJ-HLl">
-                                                                        <items>
-                                                                            <imageView alignment="left" image="priorityWatch" id="8af-hO-XBN"/>
-                                                                        </items>
-                                                                    </group>
-                                                                    <group alignment="right" hidden="YES" id="omU-Me-7Dr">
-                                                                        <items>
-                                                                            <imageView alignment="left" image="repeatWatch" id="UkD-3L-dMm"/>
-                                                                        </items>
-                                                                    </group>
-                                                                </items>
-                                                            </group>
-                                                        </items>
-                                                        <color key="backgroundColor" name="white"/>
+                                                    <button alignment="left" verticalAlignment="center" id="82t-uo-K9g">
+                                                        <group key="contentGroup" width="0.90000000000000002" height="1" alignment="left" layout="vertical" id="3aV-pn-Fcy">
+                                                            <items>
+                                                                <label alignment="left" text="Task" id="uvg-1a-fC4">
+                                                                    <color key="textColor" name="black"/>
+                                                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                                </label>
+                                                                <group alignment="left" id="D75-35-WE6">
+                                                                    <items>
+                                                                        <group alignment="right" hidden="YES" id="6hL-EJ-HLl">
+                                                                            <items>
+                                                                                <imageView alignment="left" image="priorityWatch" id="8af-hO-XBN"/>
+                                                                            </items>
+                                                                        </group>
+                                                                        <group alignment="right" hidden="YES" id="omU-Me-7Dr">
+                                                                            <items>
+                                                                                <imageView alignment="left" image="repeatWatch" id="UkD-3L-dMm"/>
+                                                                            </items>
+                                                                        </group>
+                                                                    </items>
+                                                                </group>
+                                                            </items>
+                                                        </group>
                                                         <connections>
-                                                            <segue destination="Ef0-fC-y98" kind="push" identifier="showTaskDetail" id="JLh-Y4-2Cg"/>
+                                                            <segue destination="Ef0-fC-y98" kind="push" identifier="showTaskDetail" id="4mA-GH-Uzy"/>
                                                         </connections>
-                                                    </group>
+                                                    </button>
                                                 </items>
                                                 <color key="backgroundColor" name="white"/>
                                             </group>
