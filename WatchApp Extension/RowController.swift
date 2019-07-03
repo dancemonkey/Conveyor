@@ -15,9 +15,13 @@ class RowController: NSObject {
   @IBOutlet weak var repeatIconGroup: WKInterfaceGroup!
   @IBOutlet weak var priorityIconGroup: WKInterfaceGroup!
   @IBOutlet weak var doneBtn: WKInterfaceButton!
+  @IBOutlet weak var doneBtnImg: WKInterfaceImage!
   var taskCompletion: (() -> ())?
   
   @IBAction func completeTask() {
-    self.taskCompletion?()
+    self.doneBtnImg.setImage(UIImage(named: "circleCheck"))
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      self.taskCompletion?()
+    }
   }
 }

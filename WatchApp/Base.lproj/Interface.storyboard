@@ -39,7 +39,7 @@
                                                     <button alignment="left" verticalAlignment="center" id="O4K-gD-pWh">
                                                         <group key="contentGroup" alignment="left" id="hiJ-vS-sMY">
                                                             <items>
-                                                                <imageView width="20" height="20" alignment="left" image="completeWatch" id="z3d-lW-bKC">
+                                                                <imageView width="20" height="20" alignment="left" image="circle" id="z3d-lW-bKC">
                                                                     <color key="tintColor" name="black"/>
                                                                 </imageView>
                                                             </items>
@@ -80,6 +80,7 @@
                                             </group>
                                             <connections>
                                                 <outlet property="doneBtn" destination="O4K-gD-pWh" id="Fb8-I7-rZo"/>
+                                                <outlet property="doneBtnImg" destination="z3d-lW-bKC" id="2zZ-9q-Off"/>
                                                 <outlet property="itemLabel" destination="uvg-1a-fC4" id="tfv-ce-jD7"/>
                                                 <outlet property="priorityIcon" destination="8af-hO-XBN" id="umR-RD-Ke8"/>
                                                 <outlet property="priorityIconGroup" destination="6hL-EJ-HLl" id="e9p-wt-deh"/>
