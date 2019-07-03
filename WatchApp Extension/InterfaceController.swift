@@ -101,9 +101,11 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
         let newTask = WatchTask(title: result.task, status: .none, id: nil, priority: false, repeating: false)
         let list = Bucket(rawValue: result.list)!
         WatchSessionManager.shared.sendNew(task: newTask, in: list)
+        WKInterfaceDevice.current().play(.notification)
       } else {
         let newTask = WatchTask(title: taskText as! String, status: .none, id: nil, priority: false, repeating: false)
         WatchSessionManager.shared.sendNew(task: newTask, in: .today)
+        WKInterfaceDevice.current().play(.notification)
       }
       self.dismissTextInputController()
     }

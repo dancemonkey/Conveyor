@@ -40,7 +40,7 @@
                                                         <group key="contentGroup" alignment="left" id="hiJ-vS-sMY">
                                                             <items>
                                                                 <imageView width="20" height="20" alignment="left" image="completeWatch" id="z3d-lW-bKC">
-                                                                    <color key="tintColor" name="primary"/>
+                                                                    <color key="tintColor" name="black"/>
                                                                 </imageView>
                                                             </items>
                                                         </group>
