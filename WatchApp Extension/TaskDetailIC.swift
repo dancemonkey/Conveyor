@@ -12,6 +12,7 @@ import Foundation
 class TaskDetailIC: WKInterfaceController {
 
   @IBOutlet var taskTitleBtn: WKInterfaceButton!
+  @IBOutlet var taskTitleLabel: WKInterfaceLabel!
   var task: WatchTask?
   var updateDelegate: ItemUpdateDelegate?
   
@@ -27,7 +28,8 @@ class TaskDetailIC: WKInterfaceController {
   }
   
   func setText() {
-    taskTitleBtn.setTitle(task?.title ?? "NO TASK THIS IS AWFUL")
+    taskTitleLabel.setText(task?.title ?? "NO TASK THIS IS AWFUL")
+//    taskTitleBtn.setTitle(task?.title ?? "NO TASK THIS IS AWFUL")
   }
   
   @IBAction func reschedule(sender: WKInterfaceButton) {
