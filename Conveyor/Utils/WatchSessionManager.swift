@@ -59,6 +59,7 @@ extension WatchSessionManager {
     if let session = validSession {
       do {
         try session.updateApplicationContext(context)
+        updateComplication(with: nil)
       } catch {
         throw error
       }

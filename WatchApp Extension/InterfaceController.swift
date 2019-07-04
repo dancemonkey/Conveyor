@@ -76,6 +76,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
           }
           self.refresh()
           self.reloadComplications()
+          print("closure loaded into task list item")
         }
         controller.itemLabel.setText(data[i].title)
         if data[i].status == .overdue {

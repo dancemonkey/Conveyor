@@ -86,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       do {
         let context = WatchSessionManager.shared.buildContext()
         try WatchSessionManager.shared.updateApplicationContext(context: context)
+        
       } catch {
         print(error)
       }
