@@ -34,6 +34,12 @@ struct FontStyles {
     }
   }
   
+  static var settingsCellBoldFont: UIFont {
+    get {
+      return UIFont(name: "SFProText-Semibold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .medium)
+    }
+  }
+  
   static var iapTitleFont: UIFont {
     get {
       return UIFont(name: "SFProText-Semibold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .semibold)

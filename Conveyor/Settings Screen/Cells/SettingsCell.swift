@@ -39,8 +39,12 @@ class SettingsCell: UITableViewCell {
   
   func configure(with option: Settings.InfoSettingsOptions) {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
-    if option == .review || option == .support { //|| option == .onBoarding {
+    if option == .review || option == .support {
       self.accessoryType = .none
+    }
+    if option == .upgrade {
+      self.optionLbl.font = FontStyles.settingsCellBoldFont
+      self.optionLbl.text = self.optionLbl.text?.uppercased()
     }
   }
 }

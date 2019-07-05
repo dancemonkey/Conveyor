@@ -28,6 +28,15 @@ class AlertFactory {
     return controller
   }
   
+  static func whatsNewLatestVersion(completion: @escaping () -> ()) -> UIAlertController {
+    let controller = UIAlertController(title: "What's New in 1.3!", message: "The Watch app has been redesigned to make it easier and more convenient to use: you can now complete tasks with a single tap from the task list on the watch.", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+      completion()
+    }
+    controller.addAction(ok)
+    return controller
+  }
+  
   static func purchasesRestored() -> UIAlertController {
     let controller = UIAlertController(title: "Purchases Restored", message: IAPHandlerAlertType.restored.message(), preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -36,7 +45,7 @@ class AlertFactory {
   }
   
   static func askForOnboarding(completion: @escaping () -> (), cancellation: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "Overview?", message: "Would you like to see a brief (5 slide) overview of the app?", preferredStyle: .alert)
+    let controller = UIAlertController(title: "Overview?", message: "Would you like to see a brief (6 slide) overview of the app?", preferredStyle: .alert)
     let ok = UIAlertAction(title: "Okay", style: .default) { (action) in
       completion()
     }

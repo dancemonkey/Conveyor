@@ -59,6 +59,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
+    let hasSeenWhatsNew = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.whatsNew130.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
       let completion: () -> () = {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
@@ -78,6 +79,12 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
       }
       let onboardingRequest = AlertFactory.askForOnboarding(completion: completion, cancellation: cancellation)
       self.present(onboardingRequest, animated: true, completion: nil)
+    } else if hasSeenWhatsNew == false && self.title == "Today" {
+      // launch whats new popup
+      let whatsNewAlert = AlertFactory.whatsNewLatestVersion {
+        UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.whatsNew130.rawValue)
+      }
+      self.present(whatsNewAlert, animated: true, completion: nil)
     }
   }
   

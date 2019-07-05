@@ -493,6 +493,7 @@
 		10807E2C225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXGroup;
 			children = (
+				10FF447122CF846A0019E9F1 /* What's New 1.3 */,
 				10CCB22C226BB4520029D7AF /* Settings Screen */,
 				1011A5B4226A087700764234 /* Onboarding */,
 				10807E87225CC46000F9D9B8 /* Conveyor.entitlements */,
@@ -641,6 +642,13 @@
 				10EAE6E1228466FA00DC2B54 /* Info.plist */,
 			);
 			path = WatchIntents;
+			sourceTree = "<group>";
+		};
+		10FF447122CF846A0019E9F1 /* What's New 1.3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "What's New 1.3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

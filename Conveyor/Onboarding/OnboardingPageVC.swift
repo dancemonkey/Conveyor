@@ -29,6 +29,7 @@ class OnboardingPageVC: UIViewController {
     }
     if let img = image {
       self.screenshot.image = img
+      self.screenshot.layer.cornerRadius = 4.0
     }
     styleViews()
   }
