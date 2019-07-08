@@ -46,6 +46,7 @@ class SettingsCell: UITableViewCell {
       self.optionLbl.font = FontStyles.settingsCellBoldFont
       if IAPStore.shared.isProUser() == false {
         self.optionLbl.text = self.optionLbl.text?.uppercased()
+        self.backgroundColor = ColorStyles.primaryFaded
       }
     }
   }

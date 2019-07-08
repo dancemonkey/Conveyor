@@ -66,7 +66,7 @@ struct Settings {
       case .review:
         return "Review on App Store"
       case .upgrade:
-        return "Go Pro, and more!"
+        return "Go Pro for new features!"
       case .help:
         return "Help"
       }
