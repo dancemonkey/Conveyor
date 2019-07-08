@@ -47,6 +47,8 @@ class SettingsCell: UITableViewCell {
       if IAPStore.shared.isProUser() == false {
         self.optionLbl.text = self.optionLbl.text?.uppercased()
         self.backgroundColor = ColorStyles.primaryFaded
+      } else {
+        self.optionLbl.text = "Thanks for being a Pro user!"
       }
     }
   }

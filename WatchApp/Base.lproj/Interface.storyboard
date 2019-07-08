@@ -34,10 +34,10 @@
                                 <table alignment="left" id="70a-RX-gr9">
                                     <items>
                                         <tableRow identifier="taskRow" id="yod-Kq-Azm" customClass="RowController" customModule="WatchApp_Extension">
-                                            <group key="rootItem" width="1" alignment="left" id="zXI-Ci-grd">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" id="zXI-Ci-grd">
                                                 <items>
                                                     <button alignment="left" verticalAlignment="center" id="O4K-gD-pWh">
-                                                        <group key="contentGroup" width="30" height="1" alignment="left" id="hiJ-vS-sMY">
+                                                        <group key="contentGroup" width="30" alignment="left" id="hiJ-vS-sMY">
                                                             <items>
                                                                 <imageView width="20" height="20" alignment="center" verticalAlignment="center" image="circle" id="z3d-lW-bKC">
                                                                     <color key="tintColor" name="black"/>
@@ -49,8 +49,8 @@
                                                             <action selector="completeTask" destination="yod-Kq-Azm" id="891-LN-edZ"/>
                                                         </connections>
                                                     </button>
-                                                    <button alignment="left" verticalAlignment="center" id="82t-uo-K9g">
-                                                        <group key="contentGroup" width="0.76000000000000001" height="1" alignment="left" layout="vertical" id="3aV-pn-Fcy">
+                                                    <button alignment="left" id="82t-uo-K9g">
+                                                        <group key="contentGroup" width="0.76000000000000001" alignment="left" layout="vertical" id="3aV-pn-Fcy">
                                                             <items>
                                                                 <label alignment="left" text="Task" numberOfLines="2" minimumScaleFactor="0.69999999999999996" id="uvg-1a-fC4">
                                                                     <color key="textColor" name="black"/>
@@ -69,6 +69,7 @@
                                                                             </items>
                                                                         </group>
                                                                     </items>
+                                                                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="2"/>
                                                                 </group>
                                                             </items>
                                                             <color key="backgroundColor" name="white"/>
