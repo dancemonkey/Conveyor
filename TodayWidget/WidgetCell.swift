@@ -29,7 +29,10 @@ class WidgetCell: UITableViewCell {
   }
   
   @IBAction func complete(sender: UIButton) {
-    complete?()
+    self.completeBtn.setImage(UIImage(named: "np_complete_2147852_000000"), for: .normal)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      self.complete?()
+    }
   }
   
   func configure(with item: Item, and delegate: ItemCompleter) {
@@ -37,15 +40,11 @@ class WidgetCell: UITableViewCell {
     title.font = FontStyles.widgetItemCellFont
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
-      completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
+      completeBtn.setImage(UIImage(named: "np_circle_2665817_000000"), for: .normal)
       completeBtn.alpha = 0.7
       if itemState == .none {
-//        completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
-//        completeBtn.alpha = 0.7
         title.textColor = ColorStyles.extensionTextColor
       } else if itemState == .overdue {
-//        completeBtn.setImage(#imageLiteral(resourceName: "allDone"), for: .normal)
-//        completeBtn.alpha = 0.7
         title.textColor = ColorStyles.accent
       }
     }

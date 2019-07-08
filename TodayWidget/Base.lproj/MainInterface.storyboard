@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-PI-Q4R">
+                                                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkJ-PI-Q4R">
                                                     <rect key="frame" x="8" y="5" width="45" height="45"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -38,6 +38,7 @@
                                                         <constraint firstAttribute="width" constant="45" id="OoD-qM-sL1"/>
                                                     </constraints>
                                                     <color key="tintColor" name="primary"/>
+                                                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <connections>
                                                         <action selector="completeWithSender:" destination="eoe-g3-jQA" eventType="touchUpInside" id="4EX-em-iwi"/>
                                                     </connections>

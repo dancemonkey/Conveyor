@@ -44,7 +44,9 @@ class SettingsCell: UITableViewCell {
     }
     if option == .upgrade {
       self.optionLbl.font = FontStyles.settingsCellBoldFont
-      self.optionLbl.text = self.optionLbl.text?.uppercased()
+      if IAPStore.shared.isProUser() == false {
+        self.optionLbl.text = self.optionLbl.text?.uppercased()
+      }
     }
   }
 }
