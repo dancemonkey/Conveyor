@@ -73,7 +73,7 @@
                                                                 </group>
                                                             </items>
                                                             <color key="backgroundColor" name="white"/>
-                                                            <edgeInsets key="margins" left="4" right="0.0" top="2" bottom="0.0"/>
+                                                            <edgeInsets key="margins" left="4" right="0.0" top="2" bottom="2"/>
                                                         </group>
                                                         <connections>
                                                             <segue destination="Ef0-fC-y98" kind="push" identifier="showTaskDetail" id="4mA-GH-Uzy"/>
