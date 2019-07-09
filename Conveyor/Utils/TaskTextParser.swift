@@ -53,4 +53,18 @@ class TaskTextParser {
     return (priority: true, text: task)
   }
   
+  static func hasColorTag(from text: String) -> (color: String?, text: String)? {
+    let lcComponents = text.lowercased().split(separator: " ")
+    var origComponents = text.split(separator: " ")
+    for (index, word) in lcComponents.enumerated() {
+      if let colorTag = Constants.TextColorKeywords(rawValue: String(word)) {
+        // do stuff
+        let _ = origComponents.remove(at: index)
+        let task = origComponents.joined(separator: " ")
+        return (color: colorTag.rawValue, text: task)
+      }
+    }
+    return (color: "clear", text: text)
+  }
+  
 }

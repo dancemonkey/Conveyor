@@ -12,6 +12,7 @@ class ItemListCell: UITableViewCell {
   
   @IBOutlet weak var itemLabel: UILabel!
   @IBOutlet weak var priorityIcon: UIImageView?
+  @IBOutlet weak var tagColorView: UIView?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -33,6 +34,7 @@ class ItemListCell: UITableViewCell {
     itemLabel.adjustsFontForContentSizeCategory = true
     itemLabel.minimumScaleFactor = 0.80
     self.accessoryView = nil
+    self.tagColorView?.backgroundColor = item.getColorTag()
     let itemState: ItemState
     if state == nil {
       itemState = .none

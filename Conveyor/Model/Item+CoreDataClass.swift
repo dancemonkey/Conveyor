@@ -10,12 +10,6 @@
 import UIKit
 import CoreData
 
-//enum Bucket: String {
-//  case today
-//  case tomorrow
-//  case later
-//}
-
 @objc(Item)
 public class Item: NSManagedObject {
   
@@ -121,5 +115,41 @@ public class Item: NSManagedObject {
       Constants.ItemContextFields.priority.rawValue: self.priority.description,
       Constants.ItemContextFields.repeating.rawValue: self.repeating.description,
     ]
+  }
+  
+  func getColorTag() -> UIColor {
+    guard let color = self.colorTag else { return .clear }
+    switch color {
+    case "@black":
+      return .black
+    case "@blue":
+      return .blue
+    case "@brown":
+      return .brown
+    case "@cyan":
+      return .cyan
+    case "@darkGray":
+      return .darkGray
+    case "@gray":
+      return .gray
+    case "@green":
+      return .green
+    case "@lightGray":
+      return .lightGray
+    case "@magenta":
+      return .magenta
+    case "@orange":
+      return .orange
+    case "@purple":
+      return .purple
+    case "@red":
+      return .red
+    case "@yellow":
+      return .yellow
+    case "@white":
+      return .white
+    default:
+      return .clear
+    }
   }
 }

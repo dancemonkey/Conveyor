@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  Conveyor
 //
-//  Created by Drew Lanning on 6/11/19.
+//  Created by Drew Lanning on 7/9/19.
 //  Copyright © 2019 Drew Lanning. All rights reserved.
 //
 //
@@ -21,10 +21,11 @@ extension Item {
     @NSManaged public var creation: NSDate?
     @NSManaged public var holdDays: Int16
     @NSManaged public var holdForever: Bool
+    @NSManaged public var priority: Bool
     @NSManaged public var repeating: Bool
     @NSManaged public var sortOrder: Int32
     @NSManaged public var state: String?
     @NSManaged public var title: String?
-    @NSManaged public var priority: Bool
+    @NSManaged public var colorTag: String?
 
 }

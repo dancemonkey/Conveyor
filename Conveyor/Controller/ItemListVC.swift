@@ -497,6 +497,7 @@ extension ItemListVC: UITextFieldDelegate {
     var task: String = text
     var repeating = false
     var priority = false
+    var color: String?
     guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
       stopEditing()
       return
@@ -515,9 +516,18 @@ extension ItemListVC: UITextFieldDelegate {
         task = result.text
       }
     }
+    // testing color tagging
+    // ONLY WORKS WITH EXISTING ITEMS FOR NOW
+    if let result = TaskTextParser.hasColorTag(from: task) {
+      color = result.color
+      task = result.text
+    }
+    
+    // end test
     if let item = editingExistingItem {
       item.repeating = repeating
       item.priority = priority
+      item.colorTag = color
       store.updateExisting(item: item, withTitle: task, in: bucket)
     } else {
       store.addNewItem(text: task, in: bucket, repeating: repeating, priority: priority)

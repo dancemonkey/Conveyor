@@ -30,8 +30,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGd-PF-Ode">
+                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="8" id="IVH-tx-FDX"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGO-yg-tRe">
-                                                    <rect key="frame" x="15" y="11.5" width="321" height="21"/>
+                                                    <rect key="frame" x="23" y="11.5" width="313" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,10 +52,13 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="LGO-yg-tRe" firstAttribute="leading" secondItem="Odr-yU-hTk" secondAttribute="leadingMargin" id="25t-eW-bU3"/>
+                                                <constraint firstItem="LGO-yg-tRe" firstAttribute="leading" secondItem="Odr-yU-hTk" secondAttribute="leadingMargin" constant="8" id="25t-eW-bU3"/>
                                                 <constraint firstItem="LGO-yg-tRe" firstAttribute="centerY" secondItem="Odr-yU-hTk" secondAttribute="centerY" id="2Ny-Xr-Otb"/>
                                                 <constraint firstAttribute="trailing" secondItem="MFq-Yz-Eqe" secondAttribute="trailing" constant="16" id="4us-iI-uA8"/>
+                                                <constraint firstItem="XGd-PF-Ode" firstAttribute="top" secondItem="Odr-yU-hTk" secondAttribute="top" id="Ebd-Ex-YHD"/>
                                                 <constraint firstItem="MFq-Yz-Eqe" firstAttribute="centerY" secondItem="Odr-yU-hTk" secondAttribute="centerY" id="EiB-7D-5m4"/>
+                                                <constraint firstItem="XGd-PF-Ode" firstAttribute="leading" secondItem="Odr-yU-hTk" secondAttribute="leading" id="RIo-wc-sH4"/>
+                                                <constraint firstAttribute="bottom" secondItem="XGd-PF-Ode" secondAttribute="bottom" id="fKg-8n-guJ"/>
                                                 <constraint firstItem="MFq-Yz-Eqe" firstAttribute="leading" secondItem="LGO-yg-tRe" secondAttribute="trailing" constant="8" id="wmb-bA-cyp"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -56,6 +66,7 @@
                                         <connections>
                                             <outlet property="itemLabel" destination="LGO-yg-tRe" id="3RN-CG-tJs"/>
                                             <outlet property="priorityIcon" destination="MFq-Yz-Eqe" id="4nr-gD-mIH"/>
+                                            <outlet property="tagColorView" destination="XGd-PF-Ode" id="DPT-Mf-03x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

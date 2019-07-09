@@ -23,6 +23,23 @@ struct Constants {
     case priority = "@!", repeatTask = "@rpt"
   }
   
+  enum TextColorKeywords: String, CaseIterable {
+    case black = "@black",
+    blue = "@blue",
+    brown = "@brown",
+    cyan = "@cyan",
+    darkGray = "@darkGray",
+    gray = "@gray",
+    green = "@green",
+    lightgray = "@lightGray",
+    magenta = "@magenta",
+    orange = "@orange",
+    purple = "@purple",
+    red = "@red",
+    white = "@white",
+    yellow = "@yellow"
+  }
+  
   enum IAPProductIds: String {
     case smallTip = "com.DrewLanning.Conveyor.small",
     mediumTip = "com.DrewLanning.Conveyor.medium",
