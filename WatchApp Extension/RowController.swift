@@ -24,4 +24,23 @@ class RowController: NSObject {
       self.taskCompletion?()
     }
   }
+  
+//  private func createContext() -> CGContext? {
+//    UIGraphicsBeginImageContextWithOptions(CGSize(width: 20.0, height: 20.0), false, 1.0)
+//    let context = UIGraphicsGetCurrentContext()
+//    context?.beginPath()
+//    return context
+//  }
+  
+//  func drawCircle(color: UIColor) {
+//    let context = createContext()
+//    let diameter = 19
+//    context?.setLineWidth(2.0)
+//    context?.setStrokeColor(UIColor.black.cgColor)
+//    context?.setFillColor(color.cgColor)
+//    let path = CGPath(ellipseIn: CGRect(x: 0, y: 0, width: diameter, height: diameter), transform: nil)
+//    context?.addPath(path)
+//    context?.drawPath(using: .fillStroke)
+//  }
+  
 }

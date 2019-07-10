@@ -128,14 +128,10 @@ public class Item: NSManagedObject {
       return .brown
     case "@cyan":
       return .cyan
-    case "@darkGray":
-      return .darkGray
     case "@gray":
       return .gray
     case "@green":
       return .green
-    case "@lightGray":
-      return .lightGray
     case "@magenta":
       return .magenta
     case "@orange":

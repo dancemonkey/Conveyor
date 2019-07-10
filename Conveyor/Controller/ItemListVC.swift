@@ -403,7 +403,8 @@ extension ItemListVC {
       editingExistingItem = item
       let text = (item.title ?? "") +
         (item.repeating == true ? " \(Constants.TextParseKeywords.repeatTask.rawValue)" : "") +
-        (item.priority == true ? " \(Constants.TextParseKeywords.priority.rawValue)" : "")
+        (item.priority == true ? " \(Constants.TextParseKeywords.priority.rawValue)" : "") +
+        (item.colorTag != nil ? " \(item.colorTag!)" : "")
       entryField.text = text
       entryField.selectAll(nil)
     }
@@ -419,52 +420,56 @@ extension ItemListVC {
     self.view.removeGestureRecognizer(stopEditingTap!)
   }
   
-  @objc func bucketSelectTapped(sender: UIBarButtonItem) {
+  private func saveTask(text: String, in list: Bucket) {
+    let store = Store(testing: false)
+    var task: String = text
     var repeating = false
     var priority = false
-    var taskText = ""
+    var color: String?
     
-    self.bucketSelectButtons.forEach { (button) in
-      if button === sender {
-        button.tintColor = ColorStyles.primary
-      } else {
-        button.tintColor = ColorStyles.primaryFaded
-      }
-    }
-    let store = Store(testing: false)
-    guard let text = self.entryField.text else {
-      stopEditing()
-      return
-    }
     guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
       stopEditing()
       return
     }
-    taskText = text
-    guard let bucket = Bucket(rawValue: sender.title!.lowercased()) else { return }
     
     if IAPStore.shared.isProUser() {
-      if let result = TaskTextParser.isRepeatingTask(from: taskText) {
+      if let result = TaskTextParser.isRepeatingTask(from: task) {
         repeating = result.repeating
-        taskText = result.text
+        task = result.text
       }
-      if let result = TaskTextParser.isPriorityTask(from: taskText) {
+      if let result = TaskTextParser.isPriorityTask(from: task) {
         priority = result.priority
-        taskText = result.text
+        task = result.text
       }
     }
+    
+    // testing color tagging
+    if let result = TaskTextParser.hasColorTag(from: task) {
+      color = result.color
+      task = result.text
+    }
+    // end test
     
     if let item = editingExistingItem {
       item.repeating = repeating
       item.priority = priority
-      store.updateExisting(item: item, withTitle: taskText, in: bucket)
+      item.colorTag = color
+      store.updateExisting(item: item, withTitle: task, in: list)
     } else {
-      store.addNewItem(text: taskText, in: bucket, repeating: repeating, priority: priority)
+      store.addNewItem(text: task, in: list, repeating: repeating, priority: priority, color: color)
     }
     store.save()
     stopEditing()
-    
-    toastTask(in: bucket)
+    toastTask(in: list)
+  }
+  
+  @objc func bucketSelectTapped(sender: UIBarButtonItem) {
+    guard let text = self.entryField.text else {
+      stopEditing()
+      return
+    }
+    guard let bucket = Bucket(rawValue: sender.title!.lowercased()) else { return }
+    saveTask(text: text, in: bucket)
   }
   
   func toastTask(in list: Bucket) {
@@ -492,49 +497,13 @@ extension ItemListVC: UITextFieldDelegate {
   }
   
   func doneTapped(with text: String) {
-    let store = Store(testing: false)
     var bucket: Bucket = Bucket(rawValue: self.title!.lowercased())!
     var task: String = text
-    var repeating = false
-    var priority = false
-    var color: String?
-    guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-      stopEditing()
-      return
-    }
     if let result = TaskTextParser.parseEntry(from: task) {
       bucket = Bucket(rawValue: result.list)!
       task = result.task
     }
-    if IAPStore.shared.isProUser() {
-      if let result = TaskTextParser.isRepeatingTask(from: task) {
-        repeating = result.repeating
-        task = result.text
-      }
-      if let result = TaskTextParser.isPriorityTask(from: task) {
-        priority = result.priority
-        task = result.text
-      }
-    }
-    // testing color tagging
-    // ONLY WORKS WITH EXISTING ITEMS FOR NOW
-    if let result = TaskTextParser.hasColorTag(from: task) {
-      color = result.color
-      task = result.text
-    }
-    
-    // end test
-    if let item = editingExistingItem {
-      item.repeating = repeating
-      item.priority = priority
-      item.colorTag = color
-      store.updateExisting(item: item, withTitle: task, in: bucket)
-    } else {
-      store.addNewItem(text: task, in: bucket, repeating: repeating, priority: priority)
-    }
-    store.save()
-    stopEditing()
-    toastTask(in: bucket)
+    saveTask(text: task, in: bucket)
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

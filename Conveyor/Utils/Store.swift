@@ -127,7 +127,7 @@ class Store {
   }
   
   // MARK: Item Creation
-  func addNewItem(text: String?, in bucket: Bucket, repeating: Bool = false, priority: Bool = false) {
+  func addNewItem(text: String?, in bucket: Bucket, repeating: Bool = false, priority: Bool = false, color: String? = nil) {
     let item = Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: context)
     item.bucket = bucket.rawValue
     switch bucket {
@@ -142,6 +142,7 @@ class Store {
     item.creation = Date() as NSDate
     item.repeating = repeating
     item.priority = priority
+    item.colorTag = color
     generator.notificationOccurred(.success)
   }
   

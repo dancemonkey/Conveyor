@@ -40,7 +40,8 @@ class WidgetCell: UITableViewCell {
     title.font = FontStyles.widgetItemCellFont
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
-      completeBtn.setImage(UIImage(named: "np_circle_2665817_000000"), for: .normal)
+      let img = drawCircle(color: item.getColorTag(), with: UIImage(named: "np_circle_2665817_000000")!)
+      completeBtn.setImage(img, for: .normal)
       completeBtn.alpha = 0.7
       if itemState == .none {
         title.textColor = ColorStyles.extensionTextColor
@@ -53,8 +54,6 @@ class WidgetCell: UITableViewCell {
     self.complete = {
       delegate.complete(item: item)
     }
-    completeBtn.layer.cornerRadius = 4.0
-    completeBtn.layer.masksToBounds = true
   }
   
   override func prepareForReuse() {
@@ -63,6 +62,23 @@ class WidgetCell: UITableViewCell {
     priorityIcon.isHidden = true
     repeatIcon.isHidden = true
     super.prepareForReuse()
+  }
+  
+  private func drawCircle(color: UIColor, with graphic: UIImage) -> UIImage {
+    let checkBox = UIImageView(image: graphic)
+    let size = CGSize(width: checkBox.frame.width, height: checkBox.frame.height)
+    let renderer = UIGraphicsImageRenderer(size: size)
+    let image = UIImage()
+    let img = renderer.image { ctx in
+      image.draw(at: CGPoint.zero)
+      let circle = CGPath(ellipseIn: checkBox.frame, transform: nil)
+//      ctx.cgContext.setFillColor(color.cgColor)
+      ctx.cgContext.setStrokeColor(color.cgColor)
+      ctx.cgContext.setLineWidth(2.0)
+      ctx.cgContext.addPath(circle)
+      ctx.cgContext.drawPath(using: .stroke)
+    }
+    return img
   }
   
 }

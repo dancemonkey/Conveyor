@@ -43,7 +43,6 @@
                                                                     <color key="tintColor" name="black"/>
                                                                 </imageView>
                                                             </items>
-                                                            <color key="backgroundColor" name="white"/>
                                                         </group>
                                                         <connections>
                                                             <action selector="completeTask" destination="yod-Kq-Azm" id="891-LN-edZ"/>

@@ -64,7 +64,7 @@ class TaskTextParser {
         return (color: colorTag.rawValue, text: task)
       }
     }
-    return (color: "clear", text: text)
+    return (color: nil, text: text)
   }
   
 }

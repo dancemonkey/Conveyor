@@ -34,12 +34,16 @@ class ItemListCell: UITableViewCell {
     itemLabel.adjustsFontForContentSizeCategory = true
     itemLabel.minimumScaleFactor = 0.80
     self.accessoryView = nil
-    self.tagColorView?.backgroundColor = item.getColorTag()
     let itemState: ItemState
     if state == nil {
       itemState = .none
     } else {
       itemState = state!
+    }
+    if itemState != .done {
+      self.tagColorView?.backgroundColor = item.getColorTag()
+    } else {
+      self.tagColorView?.backgroundColor = .clear
     }
     if item.repeating && itemState != .held {
       self.accessoryView = Settings.darkModeActive == true ? UIImageView(image: UIImage(named: "repeatDark")) : UIImageView(image: UIImage(named: "repeat"))
