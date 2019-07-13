@@ -162,7 +162,7 @@ class Store {
   
   func complete(task: Item) {
     if task.repeating == true {
-      addNewItem(text: task.title, in: .tomorrow, repeating: true)
+      addNewItem(text: task.title, in: .tomorrow, repeating: true, priority: task.priority, color: task.colorTag)
     }
     task.complete()
   }

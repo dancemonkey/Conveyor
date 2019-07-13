@@ -441,14 +441,11 @@ extension ItemListVC {
         priority = result.priority
         task = result.text
       }
+      if let result = TaskTextParser.hasColorTag(from: task) {
+        color = result.color
+        task = result.text
+      }
     }
-    
-    // testing color tagging
-    if let result = TaskTextParser.hasColorTag(from: task) {
-      color = result.color
-      task = result.text
-    }
-    // end test
     
     if let item = editingExistingItem {
       item.repeating = repeating

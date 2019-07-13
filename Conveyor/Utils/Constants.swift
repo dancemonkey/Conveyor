@@ -52,7 +52,7 @@ struct Constants {
   }
   
   enum ItemContextFields: String {
-    case title, state, id, priority, repeating
+    case title, state, id, priority, repeating, colorTag
   }
   
   enum WatchMessageKeys: String {

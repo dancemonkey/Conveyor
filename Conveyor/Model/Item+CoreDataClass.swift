@@ -114,6 +114,7 @@ public class Item: NSManagedObject {
       Constants.ItemContextFields.id.rawValue: self.objectID.uriRepresentation().absoluteString,
       Constants.ItemContextFields.priority.rawValue: self.priority.description,
       Constants.ItemContextFields.repeating.rawValue: self.repeating.description,
+      Constants.ItemContextFields.colorTag.rawValue: self.colorTag ?? "@clear"
     ]
   }
   

@@ -41,6 +41,7 @@ class WidgetCell: UITableViewCell {
     self.delegate = delegate
     if let state = item.state, let itemState = ItemState(rawValue: state) {
       let img = drawCircle(color: item.getColorTag(), with: UIImage(named: "np_circle_2665817_000000")!)
+      completeBtn.contentMode = .scaleAspectFit
       completeBtn.setImage(img, for: .normal)
       completeBtn.alpha = 0.7
       if itemState == .none {
@@ -68,15 +69,13 @@ class WidgetCell: UITableViewCell {
     let checkBox = UIImageView(image: graphic)
     let size = CGSize(width: checkBox.frame.width, height: checkBox.frame.height)
     let renderer = UIGraphicsImageRenderer(size: size)
-    let image = UIImage()
     let img = renderer.image { ctx in
-      image.draw(at: CGPoint.zero)
-      let circle = CGPath(ellipseIn: checkBox.frame, transform: nil)
-//      ctx.cgContext.setFillColor(color.cgColor)
-      ctx.cgContext.setStrokeColor(color.cgColor)
-      ctx.cgContext.setLineWidth(2.0)
+      checkBox.image?.draw(at: CGPoint.zero)
+      let frame = CGRect(x: 2, y: 2, width: checkBox.frame.width - 4.0, height: checkBox.frame.height - 4.0)
+      let circle = CGPath(ellipseIn: frame, transform: nil)
+      ctx.cgContext.setFillColor(color.cgColor)
       ctx.cgContext.addPath(circle)
-      ctx.cgContext.drawPath(using: .stroke)
+      ctx.cgContext.drawPath(using: .fill)
     }
     return img
   }

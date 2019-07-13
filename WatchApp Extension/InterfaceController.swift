@@ -68,6 +68,7 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
         guard let controller = table.rowController(at: i) as? RowController else { continue }
         controller.priorityIconGroup.setHidden(!data[i].priority)
         controller.repeatIconGroup.setHidden(!data[i].repeating)
+        controller.setCheckBox(withColor: data[i].getColorTag())
         controller.taskCompletion = {
           WatchSessionManager.shared.sendTaskCompletion(for: self.data[i])
           WKInterfaceDevice.current().play(.success)
@@ -98,12 +99,12 @@ class InterfaceController: WKInterfaceController, ContextUpdater {
     presentTextInputController(withSuggestions: nil, allowedInputMode: .allowEmoji) { (input) in
       guard let taskText = input?.first else { return }
       if let result = TaskTextParser.parseEntry(from: taskText as! String) {
-        let newTask = WatchTask(title: result.task, status: .none, id: nil, priority: false, repeating: false)
+        let newTask = WatchTask(title: result.task, status: .none, id: nil, priority: false, repeating: false, colorTag: nil)
         let list = Bucket(rawValue: result.list)!
         WatchSessionManager.shared.sendNew(task: newTask, in: list)
         WKInterfaceDevice.current().play(.success)
       } else {
-        let newTask = WatchTask(title: taskText as! String, status: .none, id: nil, priority: false, repeating: false)
+        let newTask = WatchTask(title: taskText as! String, status: .none, id: nil, priority: false, repeating: false, colorTag: nil)
         WatchSessionManager.shared.sendNew(task: newTask, in: .today)
         WKInterfaceDevice.current().play(.success)
       }
