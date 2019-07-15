@@ -28,13 +28,17 @@ class AlertFactory {
     return controller
   }
   
-  static func whatsNewLatestVersion(completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "What's New in 1.4!", message: "The Watch app has been redesigned to make it easier and more convenient to use: you can now complete tasks with a single tap from the task list on the watch.", preferredStyle: .alert)
-    let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-      completion()
-    }
-    controller.addAction(ok)
-    return controller
+  static func whatsNewLatestVersion(delegate: UIPopoverPresentationControllerDelegate, completion: @escaping () -> ()) -> UIViewController {
+    let storyboard: UIStoryboard = UIStoryboard(name: "WhatsNewLatestVersion", bundle: nil)
+    let vc = storyboard.instantiateInitialViewController() as! WhatsNewVC
+    vc.modalPresentationStyle = .popover
+    vc.completion = completion
+    let popover = vc.popoverPresentationController!
+    popover.delegate = delegate
+    popover.permittedArrowDirections = .any
+    popover.sourceView = vc.view
+    popover.sourceRect = vc.view.bounds
+    return vc
   }
   
   static func purchasesRestored() -> UIAlertController {

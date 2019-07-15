@@ -12,7 +12,7 @@ import Intents
 import UserNotifications
 import AVFoundation
 
-class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
+class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopoverPresentationControllerDelegate {
   
   var fadedView: UIView?
   var addingItem: Bool = false
@@ -59,7 +59,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
-    let hasSeenWhatsNew = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.whatsNew130.rawValue)
+    let hasSeenWhatsNew = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.whatsNew140.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
       let completion: () -> () = {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
@@ -80,12 +80,23 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
       let onboardingRequest = AlertFactory.askForOnboarding(completion: completion, cancellation: cancellation)
       self.present(onboardingRequest, animated: true, completion: nil)
     } else if hasSeenWhatsNew == false && self.title == "Today" {
-      // launch whats new popup
-      let whatsNewAlert = AlertFactory.whatsNewLatestVersion {
-        UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.whatsNew130.rawValue)
+      
+      let storyboard: UIStoryboard = UIStoryboard(name: "WhatsNewLatestVersion", bundle: nil)
+      let vc = storyboard.instantiateInitialViewController() as! WhatsNewVC
+      vc.modalPresentationStyle = .popover
+      vc.completion = {
+        UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.whatsNew140.rawValue)
+        self.removeBlurEffect()
       }
-      self.present(whatsNewAlert, animated: true, completion: nil)
+      let popover = vc.popoverPresentationController!
+      popover.delegate = self
+      popover.permittedArrowDirections = .init(rawValue: 0)
+      popover.sourceView = self.view
+      popover.sourceRect = self.view.bounds
+      
+      self.present(vc, animated: true, completion: nil)
     }
+
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -220,6 +231,16 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable {
     guard let vc = storyboard.instantiateInitialViewController() else { return }
     self.present(vc, animated: true, completion: nil)
   }
+  
+  // MARK: PresentationController delegate
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    return .none
+  }
+  
+  func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+    addBlurEffect()
+  }
+  
 }
 
 extension ItemListVC: NSFetchedResultsControllerDelegate {
