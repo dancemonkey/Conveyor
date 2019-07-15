@@ -45,6 +45,7 @@
 		10240DD4225E2238001FC721 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027D7D4229AD17E001CE87F /* IAPCell.swift */; };
 		1029A8622299ACEC00C319DA /* IapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029A8612299ACEC00C319DA /* IapVC.swift */; };
+		103E884722DCA92F00D929DA /* WhatsNewLatestVersion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103E884622DCA92F00D929DA /* WhatsNewLatestVersion.storyboard */; };
 		1043997822A7F3CD0007599C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E64225CC30E00F9D9B8 /* Settings.swift */; };
 		1044CF8B225CDA9000868537 /* Conveyor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10807E34225CC28900F9D9B8 /* Conveyor.xcdatamodeld */; };
 		1044CF8C225CDB1A00868537 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10807E81225CC3E300F9D9B8 /* Item+CoreDataClass.swift */; };
@@ -238,6 +239,7 @@
 		10240DD5225E235D001FC721 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		1027D7D4229AD17E001CE87F /* IAPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPCell.swift; sourceTree = "<group>"; };
 		1029A8612299ACEC00C319DA /* IapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapVC.swift; sourceTree = "<group>"; };
+		103E884622DCA92F00D929DA /* WhatsNewLatestVersion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatsNewLatestVersion.storyboard; sourceTree = "<group>"; };
 		104C0FA322C8EE9C00DF2D18 /* TaskTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextParser.swift; sourceTree = "<group>"; };
 		105363E3226F378A0093A549 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeaturesVC.swift; sourceTree = "<group>"; };
@@ -418,6 +420,14 @@
 			path = TodayWidget;
 			sourceTree = "<group>";
 		};
+		103E884522DCA91600D929DA /* What's New  */ = {
+			isa = PBXGroup;
+			children = (
+				103E884622DCA92F00D929DA /* WhatsNewLatestVersion.storyboard */,
+			);
+			path = "What's New ";
+			sourceTree = "<group>";
+		};
 		10632B5C2273348500B7173A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +503,7 @@
 		10807E2C225CC28900F9D9B8 /* Conveyor */ = {
 			isa = PBXGroup;
 			children = (
+				103E884522DCA91600D929DA /* What's New  */,
 				10CCB22C226BB4520029D7AF /* Settings Screen */,
 				1011A5B4226A087700764234 /* Onboarding */,
 				10807E87225CC46000F9D9B8 /* Conveyor.entitlements */,
@@ -878,6 +889,7 @@
 				106E2AFE226DF4F000D43FD6 /* slide-paper.aif in Resources */,
 				10807E3B225CC28C00F9D9B8 /* LaunchScreen.storyboard in Resources */,
 				10807E38225CC28C00F9D9B8 /* Assets.xcassets in Resources */,
+				103E884722DCA92F00D929DA /* WhatsNewLatestVersion.storyboard in Resources */,
 				10807E56225CC2D400F9D9B8 /* SF-Pro-Text-Medium.otf in Resources */,
 				107B97B9227095D600B24BFB /* LockTasks.mov in Resources */,
 				107B97B32270916600B24BFB /* AddTask.mov in Resources */,

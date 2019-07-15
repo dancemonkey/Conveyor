@@ -29,7 +29,7 @@ class AlertFactory {
   }
   
   static func whatsNewLatestVersion(completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "What's New in 1.3.1!", message: "The Watch app has been redesigned to make it easier and more convenient to use: you can now complete tasks with a single tap from the task list on the watch.", preferredStyle: .alert)
+    let controller = UIAlertController(title: "What's New in 1.4!", message: "The Watch app has been redesigned to make it easier and more convenient to use: you can now complete tasks with a single tap from the task list on the watch.", preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
       completion()
     }
