@@ -172,10 +172,7 @@ class Store {
     if let taskToComplete = todaysTasks.first(where: { (task) -> Bool in
       return task.objectID.uriRepresentation().absoluteString == taskId
     }) {
-      if taskToComplete.repeating == true {
-        addNewItem(text: taskToComplete.title, in: .tomorrow, repeating: true)
-      }
-      taskToComplete.complete()
+      self.complete(task: taskToComplete)
       do {
         try context.save()
       } catch {

@@ -24,6 +24,7 @@ public class Item: NSManagedObject {
       item.title = self.title
       item.creation = self.creation
       item.repeating = true
+      item.colorTag = self.colorTag
       do {
         try context.save()
       } catch {
