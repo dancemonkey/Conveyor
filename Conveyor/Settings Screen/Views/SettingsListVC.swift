@@ -46,8 +46,10 @@ class SettingsListVC: UIViewController {
   }
   
   func setCopyrightText() {
+    let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    let noVersion = ""
     copyrightLbl.text = """
-    Conveyor 1.4.0
+    Conveyor \(version ?? noVersion)
     © 2019 Drew Lanning
     All Rights Reserved
     """
