@@ -47,7 +47,7 @@ class SettingsListVC: UIViewController {
   
   func setCopyrightText() {
     copyrightLbl.text = """
-    Conveyor 1.0
+    Conveyor 1.4.0
     © 2019 Drew Lanning
     All Rights Reserved
     """
