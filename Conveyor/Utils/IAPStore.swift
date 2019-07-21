@@ -125,6 +125,7 @@ class IAPStore: NSObject {
     } catch {
       print("no isUserPro data found")
     }
+//    return true
     return false
   }
   

@@ -22,6 +22,7 @@ class SettingsCell: UITableViewCell {
   private func configure(with title: String, segueID: String) {
     self.optionLbl.text = title
     self.segueID = segueID
+    self.accessoryType = .disclosureIndicator
     optionLbl.font = FontStyles.settingsCellFont
     optionLbl.textColor = ColorStyles.textColor
     backgroundColor = ColorStyles.background
@@ -32,7 +33,7 @@ class SettingsCell: UITableViewCell {
     self.configure(with: option.getTitle(), segueID: option.getSegueId())
     if Settings.darkModeActive && option == .darkMode {
       self.accessoryType = .checkmark
-    } else {
+    } else if option == .darkMode {
       self.accessoryType = .none
     }
   }
