@@ -20,6 +20,27 @@ enum DoneOption: Int, CaseIterable {
   case strikethrough = 0, delete
 }
 
+enum ColorOption: Int, CaseIterable {
+  case black = 0, blue, brown, cyan, gray, green, magenta, orange, purple, red, white, yellow
+  
+  func getTextValue() -> String {
+    switch self {
+    case .black: return "black"
+    case .blue: return "blue"
+    case .brown: return "brown"
+    case .cyan: return "cyan"
+    case .gray: return "gray"
+    case .green: return "green"
+    case .magenta: return "magenta"
+    case .orange: return "orange"
+    case .purple: return "purple"
+    case .red: return "red"
+    case .white: return "white"
+    case .yellow: return "yellow"
+    }
+  }
+}
+
 enum UserDefaultKeys: String {
   case doneSetting, badgeSetting, alwaysAsk, holdSetting, everLaunched, didChangeObject
 }
@@ -38,7 +59,7 @@ struct Settings {
       case .completedItems:
         return "Task Completion Options"
       case .colorTags:
-        return "Colors"
+        return "Color Tag Options"
       case .darkMode:
         return "Dark Mode"
       }
@@ -109,6 +130,26 @@ struct Settings {
     NotificationCenter.default.post(name: .onDarkModeSelected, object: nil)
   }
   
+  static var getUserColors: [String: String]? {
+    get {
+      return self.defaults.object(forKey: Constants.DefaultKeys.userDefinedColors.rawValue) as? [String: String]
+    }
+  }
+  
+  static func setAllUserColors(to value: [String: String]) {
+    self.defaults.set(value, forKey: Constants.DefaultKeys.userDefinedColors.rawValue)
+  }
+  
+  static func setUserColor(to value: (color: String, tag: String)) {
+    var colors = self.getUserColors
+    if colors != nil {
+      colors![value.color] = value.tag
+      setAllUserColors(to: colors!)
+    } else {
+      setAllUserColors(to: [value.color: value.tag])
+    }
+  }
+  
   static var didChangeObject: Bool {
     return defaults.bool(forKey: UserDefaultKeys.didChangeObject.rawValue)
   }
@@ -156,4 +197,5 @@ struct Settings {
   static func didChangeObjectOff() {
     defaults.set(false, forKey: UserDefaultKeys.didChangeObject.rawValue)
   }
+  
 }

@@ -12,7 +12,7 @@ struct Constants {
   static var supportEmail: String = "appSupport@drewlanning.com"
   
   enum DefaultKeys: String {
-    case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename, darkModeActive, whatsNew140
+    case bucketChangeDate, hasLaunchedBefore, launchesThisVersion, filename, darkModeActive, whatsNew140, userDefinedColors
   }
   
   enum SegueID: String {
@@ -62,7 +62,7 @@ struct Constants {
   }
   
   enum TableCellID: String {
-    case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell, helpOptionCell, iapCell
+    case todayCell, tomorrowCell, laterCell, settingsCell, badgeOptionCell, doneOptionCell, lockOptionCell, helpOptionCell, iapCell, colorOptionCell
   }
   
   enum ItemActions: String {

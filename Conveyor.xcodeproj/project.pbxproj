@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1002F0BD22675B8B008418E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1002F0BC22675B8B008418E6 /* StoreKit.framework */; };
+		10074EEA22E5E937000FC354 /* ColorTagSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */; };
+		10074EEC22E5E96C000FC354 /* ColorTagSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10074EEB22E5E96C000FC354 /* ColorTagSettingCell.swift */; };
 		100CF979227DEAFF006C7A83 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100CF977227DEAFF006C7A83 /* Interface.storyboard */; };
 		100CF97B227DEB01006C7A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100CF97A227DEB01006C7A83 /* Assets.xcassets */; };
 		100CF982227DEB01006C7A83 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 100CF981227DEB01006C7A83 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -214,6 +216,8 @@
 
 /* Begin PBXFileReference section */
 		1002F0BC22675B8B008418E6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSetupVC.swift; sourceTree = "<group>"; };
+		10074EEB22E5E96C000FC354 /* ColorTagSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSettingCell.swift; sourceTree = "<group>"; };
 		100CF975227DEAFF006C7A83 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		100CF978227DEAFF006C7A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		100CF97A227DEB01006C7A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 				1089FB2922689F94008EFFEF /* LockOptionCell.swift */,
 				10632B5A2273339300B7173A /* HelpOptionsListCell.swift */,
 				1027D7D4229AD17E001CE87F /* IAPCell.swift */,
+				10074EEB22E5E96C000FC354 /* ColorTagSettingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				1029A8612299ACEC00C319DA /* IapVC.swift */,
 				107503F722A0078A000F6399 /* HelpVC.swift */,
 				105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */,
+				10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1066,6 +1072,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1021FD5822A93B010063A206 /* Notification Name Extension.swift in Sources */,
+				10074EEA22E5E937000FC354 /* ColorTagSetupVC.swift in Sources */,
 				103E884922DCAAB700D929DA /* WhatsNewVC.swift in Sources */,
 				1089FB2622689E86008EFFEF /* CompletedItemsOptionVC.swift in Sources */,
 				107503F822A0078A000F6399 /* HelpVC.swift in Sources */,
@@ -1107,6 +1114,7 @@
 				10807E84225CC3E300F9D9B8 /* Item+CoreDataProperties.swift in Sources */,
 				10632B5B2273339300B7173A /* HelpOptionsListCell.swift in Sources */,
 				1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */,
+				10074EEC22E5E96C000FC354 /* ColorTagSettingCell.swift in Sources */,
 				10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */,
 				10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */,
 			);
