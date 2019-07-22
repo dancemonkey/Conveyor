@@ -15,7 +15,6 @@ class ColorTagSetupVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setColors()
     for color in ColorOption.allCases {
       colors.append(color)
     }
@@ -28,6 +27,7 @@ class ColorTagSetupVC: UIViewController {
       tableView.isUserInteractionEnabled = false
       tableView.alpha = 0.5
     }
+    setColors()
   }
   
   func setColors() {

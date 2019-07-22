@@ -14,6 +14,12 @@ class ColorTagSettingCell: UITableViewCell {
     super.awakeFromNib()
     self.layer.borderWidth = 0.25
     self.layer.borderColor = UIColor.lightGray.cgColor
+    backgroundColor = ColorStyles.background
+    contentView.backgroundColor = ColorStyles.background
+    self.textLabel?.font = FontStyles.settingsCellFont
+    self.detailTextLabel?.font = FontStyles.settingsCellFont
+    self.textLabel?.textColor = ColorStyles.textColor
+    self.detailTextLabel?.textColor = ColorStyles.textColor
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,9 +35,6 @@ class ColorTagSettingCell: UITableViewCell {
       return
     }
     self.detailTextLabel?.text = "@\(color)"
-    self.textLabel?.font = FontStyles.settingsCellFont
-    self.detailTextLabel?.font = FontStyles.settingsCellFont
-    backgroundColor = ColorStyles.background
   }
   
 }
