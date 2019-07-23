@@ -10,6 +10,8 @@
 		1002F0BD22675B8B008418E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1002F0BC22675B8B008418E6 /* StoreKit.framework */; };
 		10074EEA22E5E937000FC354 /* ColorTagSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */; };
 		10074EEC22E5E96C000FC354 /* ColorTagSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10074EEB22E5E96C000FC354 /* ColorTagSettingCell.swift */; };
+		1007C9AD22E73AE9007F96E5 /* ColorTagSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007C9AC22E73AE9007F96E5 /* ColorTagSelectVC.swift */; };
+		1007C9AF22E73B8A007F96E5 /* ColorTagSaveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007C9AE22E73B8A007F96E5 /* ColorTagSaveProtocol.swift */; };
 		100CF979227DEAFF006C7A83 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100CF977227DEAFF006C7A83 /* Interface.storyboard */; };
 		100CF97B227DEB01006C7A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100CF97A227DEB01006C7A83 /* Assets.xcassets */; };
 		100CF982227DEB01006C7A83 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 100CF981227DEB01006C7A83 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -218,6 +220,8 @@
 		1002F0BC22675B8B008418E6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSetupVC.swift; sourceTree = "<group>"; };
 		10074EEB22E5E96C000FC354 /* ColorTagSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSettingCell.swift; sourceTree = "<group>"; };
+		1007C9AC22E73AE9007F96E5 /* ColorTagSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSelectVC.swift; sourceTree = "<group>"; };
+		1007C9AE22E73B8A007F96E5 /* ColorTagSaveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagSaveProtocol.swift; sourceTree = "<group>"; };
 		100CF975227DEAFF006C7A83 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		100CF978227DEAFF006C7A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		100CF97A227DEB01006C7A83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 				107503F722A0078A000F6399 /* HelpVC.swift */,
 				105ED4DB22AE7B3B00FEF09B /* ProFeaturesVC.swift */,
 				10074EE922E5E937000FC354 /* ColorTagSetupVC.swift */,
+				1007C9AC22E73AE9007F96E5 /* ColorTagSelectVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,11 +478,12 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
-		107503FB22A00A0A000F6399 /* Resources */ = {
+		107503FB22A00A0A000F6399 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1007C9AE22E73B8A007F96E5 /* ColorTagSaveProtocol.swift */,
 			);
-			path = Resources;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		10807E21225CC28900F9D9B8 = {
@@ -646,7 +652,7 @@
 		10CCB22C226BB4520029D7AF /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
-				107503FB22A00A0A000F6399 /* Resources */,
+				107503FB22A00A0A000F6399 /* Utils */,
 				10632B5D2273349200B7173A /* Views */,
 				10632B5C2273348500B7173A /* Cells */,
 				105363E3226F378A0093A549 /* Settings.storyboard */,
@@ -1088,6 +1094,7 @@
 				1089FB2422689E61008EFFEF /* LockedItemsVC.swift in Sources */,
 				1011A5B6226A08E600764234 /* OnboardingVC.swift in Sources */,
 				10807E5E225CC2F500F9D9B8 /* Data Entry + Display Protocols.swift in Sources */,
+				1007C9AF22E73B8A007F96E5 /* ColorTagSaveProtocol.swift in Sources */,
 				106E2B00226DF57100D43FD6 /* Radio.swift in Sources */,
 				10632B5F227334C900B7173A /* HelpOptionsVC.swift in Sources */,
 				10807E6F225CC30E00F9D9B8 /* Store.swift in Sources */,
@@ -1116,6 +1123,7 @@
 				1027D7D5229AD17E001CE87F /* IAPCell.swift in Sources */,
 				10074EEC22E5E96C000FC354 /* ColorTagSettingCell.swift in Sources */,
 				10807E6C225CC30E00F9D9B8 /* State Protocols.swift in Sources */,
+				1007C9AD22E73AE9007F96E5 /* ColorTagSelectVC.swift in Sources */,
 				10E0F0B82280679C00774127 /* WatchSessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

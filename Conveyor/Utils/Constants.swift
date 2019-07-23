@@ -16,7 +16,7 @@ struct Constants {
   }
   
   enum SegueID: String {
-    case showProUserDescription
+    case showProUserDescription, showColorTagSelect
   }
   
   enum TextParseKeywords: String {

@@ -8,6 +8,27 @@
 
 import UIKit
 
+enum ColorOption: Int, CaseIterable {
+  case black = 0, blue, brown, cyan, gray, green, magenta, orange, purple, red, white, yellow
+  
+  func getTextValue() -> String {
+    switch self {
+    case .black: return "black"
+    case .blue: return "blue"
+    case .brown: return "brown"
+    case .cyan: return "cyan"
+    case .gray: return "gray"
+    case .green: return "green"
+    case .magenta: return "magenta"
+    case .orange: return "orange"
+    case .purple: return "purple"
+    case .red: return "red"
+    case .white: return "white"
+    case .yellow: return "yellow"
+    }
+  }
+}
+
 struct ColorStyles {
   
   static var textColor: UIColor {

@@ -53,7 +53,21 @@ extension ColorTagSetupVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // segue to color selection screen
-    // set delegate to save color selection
+    performSegue(withIdentifier: Constants.SegueID.showColorTagSelect.rawValue, sender: indexPath)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == Constants.SegueID.showColorTagSelect.rawValue {
+      let destVC = segue.destination as! ColorTagSelectVC
+      destVC.colorOption = self.colors[(sender as! IndexPath).row]
+      destVC.delegate = self
+    }
+  }
+}
+
+extension ColorTagSetupVC: ColorTagSave {
+  func save(color: String, withTag tag: String) {
+    Settings.setUserColor(to: (color: color, tag: tag))
+    tableView?.reloadData()
   }
 }
