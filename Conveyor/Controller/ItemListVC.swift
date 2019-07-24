@@ -34,6 +34,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
     super.viewDidLoad()
     
     applyGlobalStyles()
+    setupDefaultColors()
     setupKeyboardObserver()
     tableView.delegate = self
     tableView.dataSource = self
@@ -122,6 +123,35 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
       try frc.performFetch()
     } catch {
       print("stop trying to make fetch happen")
+    }
+  }
+  
+  func setupDefaultColors() {
+    if let colors = Settings.getUserColors {
+      ColorOption.allCases.forEach { (option) in
+        if !colors.keys.contains(where: { (key) -> Bool in
+          key == option.getTextValue()
+        }) {
+          Settings.setUserColor(to: (color: option.getTextValue(), tag: "\(option.getTextValue())"))
+        }
+      }
+      return
+    } else {
+      Settings.setAllUserColors(to:
+        ["black" : "black",
+         "blue": "blue",
+         "brown": "brown",
+         "cyan": "cyan",
+         "gray": "gray",
+         "green": "green",
+         "magenta": "magenta",
+         "orange": "orange",
+         "purple": "purple",
+         "red": "red",
+         "white": "white",
+         "yellow": "yellow"
+        ]
+      )
     }
   }
   

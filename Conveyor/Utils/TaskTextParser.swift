@@ -57,11 +57,16 @@ class TaskTextParser {
     let lcComponents = text.lowercased().split(separator: " ")
     var origComponents = text.split(separator: " ")
     for (index, word) in lcComponents.enumerated() {
-      if let colorTag = Constants.TextColorKeywords(rawValue: String(word)) {
-        // do stuff
-        let _ = origComponents.remove(at: index)
-        let task = origComponents.joined(separator: " ")
-        return (color: colorTag.rawValue, text: task)
+      if let colors = Settings.getUserColors {
+        for color in colors {
+          if "\(word)" == "@\(color.value)" {
+            let _ = origComponents.remove(at: index)
+            let task = origComponents.joined(separator: " ")
+            return (color: "@\(color.key)", text: task)
+          } else {
+            print("word does not match custom color tag")
+          }
+        }
       }
     }
     return (color: nil, text: text)

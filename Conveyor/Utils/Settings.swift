@@ -129,6 +129,10 @@ struct Settings {
     }
   }
   
+  static func clearUserColors() {
+    self.defaults.set(nil, forKey: Constants.DefaultKeys.userDefinedColors.rawValue)
+  }
+  
   static var didChangeObject: Bool {
     return defaults.bool(forKey: UserDefaultKeys.didChangeObject.rawValue)
   }
