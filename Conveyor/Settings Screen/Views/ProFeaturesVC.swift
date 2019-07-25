@@ -37,7 +37,7 @@ class ProFeaturesVC: UIViewController {
     purchaseSpinner.hidesWhenStopped = true
     purchaseSpinner.isHidden = true
     goProBtn.backgroundColor = ColorStyles.primary
-    goProBtn.setTitleColor(ColorStyles.textColor, for: .normal)
+    goProBtn.setTitleColor(ColorStyles.buttonLabel, for: .normal)
     goProBtn.layer.cornerRadius = 4.0
     view.backgroundColor = ColorStyles.background
     webView.backgroundColor = .clear

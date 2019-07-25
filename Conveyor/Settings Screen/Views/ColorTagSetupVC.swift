@@ -35,6 +35,15 @@ class ColorTagSetupVC: UIViewController {
     tableView.backgroundColor = ColorStyles.background
   }
   
+  @IBAction func resetAllPressed() {
+    // reset all colors to original
+    let confirmation = AlertFactory.confirmColorReset { [weak self] in
+      Settings.resetAllColors()
+      self?.tableView.reloadData()
+    }
+    self.present(confirmation, animated: true, completion: nil)
+  }
+  
 }
 
 extension ColorTagSetupVC: UITableViewDelegate, UITableViewDataSource {

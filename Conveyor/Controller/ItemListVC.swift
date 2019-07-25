@@ -137,21 +137,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
       }
       return
     } else {
-      Settings.setAllUserColors(to:
-        ["black" : "black",
-         "blue": "blue",
-         "brown": "brown",
-         "cyan": "cyan",
-         "gray": "gray",
-         "green": "green",
-         "magenta": "magenta",
-         "orange": "orange",
-         "purple": "purple",
-         "red": "red",
-         "white": "white",
-         "yellow": "yellow"
-        ]
-      )
+      Settings.resetAllColors()
     }
   }
   
@@ -454,10 +440,8 @@ extension ItemListVC {
       editingExistingItem = item
       var customColorTag = ""
       if let color = item.colorTag {
-        print(color)
         if let customTags = Settings.getUserColors {
           customColorTag = customTags[String(color.dropFirst())] ?? ""
-          print(String(color.dropFirst()))
         }
       }
       let text = (item.title ?? "") +

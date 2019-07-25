@@ -28,6 +28,17 @@ class AlertFactory {
     return controller
   }
   
+  static func confirmColorReset(completion: @escaping () -> ()) -> UIAlertController {
+    let controller = UIAlertController(title: "Reset Colors?", message: "You are about to reset all custom color tags to their original values, are you sure?", preferredStyle: .alert)
+    let yes = UIAlertAction(title: "YES!", style: .destructive) { (action) in
+      completion()
+    }
+    let no = UIAlertAction(title: "Nope", style: .cancel, handler: nil)
+    controller.addAction(yes)
+    controller.addAction(no)
+    return controller
+  }
+  
   static func whatsNewLatestVersion(delegate: UIPopoverPresentationControllerDelegate, completion: @escaping () -> ()) -> UIViewController {
     let storyboard: UIStoryboard = UIStoryboard(name: "WhatsNewLatestVersion", bundle: nil)
     let vc = storyboard.instantiateInitialViewController() as! WhatsNewVC

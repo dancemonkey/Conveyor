@@ -33,7 +33,10 @@ struct ColorStyles {
   
   static var textColor: UIColor {
     return Settings.darkModeActive ? UIColor(named: "white")!.withAlphaComponent(0.8) : UIColor(named: "black")!
-    // original dark mode color UIColor(named: "white")!.withAlphaComponent(0.5)
+  }
+  
+  static var buttonLabel: UIColor {
+    return UIColor(named: "white")!
   }
   
   static var extensionTextColor: UIColor {

@@ -13,6 +13,7 @@ class ColorTagSelectVC: UIViewController {
   @IBOutlet weak var colorLbl: UILabel!
   @IBOutlet weak var customTagField: UITextField!
   @IBOutlet weak var saveBtn: UIButton!
+  @IBOutlet weak var atSymbolLbl: UILabel!
   
   var colorOption: ColorOption?
   var delegate: ColorTagSave?
@@ -21,7 +22,7 @@ class ColorTagSelectVC: UIViewController {
     super.viewDidLoad()
     uiStyle()
     if let option = colorOption {
-      colorLbl.text = option.getTextValue()
+      colorLbl.text = option.getTextValue().uppercased()
       guard let color = Settings.getUserColors?[option.getTextValue()] else {
         customTagField.placeholder = "\(option.getTextValue())"
         return
@@ -33,8 +34,10 @@ class ColorTagSelectVC: UIViewController {
   func uiStyle() {
     view.backgroundColor = ColorStyles.background
     saveBtn.backgroundColor = ColorStyles.primary
-    saveBtn.setTitleColor(ColorStyles.textColor, for: .normal)
+    saveBtn.setTitleColor(ColorStyles.buttonLabel, for: .normal)
     saveBtn.layer.cornerRadius = 4.0
+    colorLbl.textColor = ColorStyles.textColor
+    atSymbolLbl.textColor = ColorStyles.textColor
   }
   
   @IBAction func savePressed(sender: UIButton) {

@@ -39,11 +39,11 @@ class OnboardingPageVC: UIViewController {
     if lastVC {
       skipBtn.setTitle("DONE", for: .normal)
       skipBtn.backgroundColor = ColorStyles.primary
-      skipBtn.setTitleColor(ColorStyles.background, for: .normal)
+      skipBtn.setTitleColor(ColorStyles.buttonLabel, for: .normal)
       skipBtn.layer.cornerRadius = 10
     } else {
       skipBtn?.backgroundColor = .clear
-      skipBtn?.setTitleColor(ColorStyles.textColor.withAlphaComponent(0.7), for: .normal)
+      skipBtn?.setTitleColor(ColorStyles.buttonLabel.withAlphaComponent(0.7), for: .normal)
       skipBtn.setTitle("Skip", for: .normal)
     }
     titleLbl.font = FontStyles.onboardingTitleFont

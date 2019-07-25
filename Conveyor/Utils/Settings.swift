@@ -118,6 +118,24 @@ struct Settings {
   static func setAllUserColors(to value: [String: String]) {
     self.defaults.set(value, forKey: Constants.DefaultKeys.userDefinedColors.rawValue)
   }
+  
+  static func resetAllColors() {
+    self.setAllUserColors(to:
+      ["black" : "black",
+       "blue": "blue",
+       "brown": "brown",
+       "cyan": "cyan",
+       "gray": "gray",
+       "green": "green",
+       "magenta": "magenta",
+       "orange": "orange",
+       "purple": "purple",
+       "red": "red",
+       "white": "white",
+       "yellow": "yellow"
+      ]
+    )
+  }
  
   static func setUserColor(to value: (color: String, tag: String)) {
     var colors = self.getUserColors
