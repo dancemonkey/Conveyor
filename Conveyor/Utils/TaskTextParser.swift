@@ -63,8 +63,6 @@ class TaskTextParser {
             let _ = origComponents.remove(at: index)
             let task = origComponents.joined(separator: " ")
             return (color: "@\(color.key)", text: task)
-          } else {
-            print("word does not match custom color tag")
           }
         }
       }
