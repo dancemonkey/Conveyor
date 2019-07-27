@@ -14,6 +14,7 @@ class ColorTagSelectVC: UIViewController {
   @IBOutlet weak var customTagField: UITextField!
   @IBOutlet weak var saveBtn: UIButton!
   @IBOutlet weak var atSymbolLbl: UILabel!
+  @IBOutlet weak var colorSwatch: UIView!
   
   var colorOption: ColorOption?
   var delegate: ColorTagSave?
@@ -28,6 +29,8 @@ class ColorTagSelectVC: UIViewController {
         return
       }
       customTagField.text = "\(color)"
+      colorSwatch.backgroundColor = option.getColor()
+      colorSwatch.layer.cornerRadius = colorSwatch.frame.width / 2
     }
   }
   
