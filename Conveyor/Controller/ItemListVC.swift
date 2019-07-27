@@ -60,7 +60,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     let hasLaunchedBefore = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.hasLaunchedBefore.rawValue)
-    let hasSeenWhatsNew = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.whatsNew140.rawValue)
+    let hasSeenWhatsNew = UserDefaults.standard.bool(forKey: Constants.DefaultKeys.whatsNew150.rawValue)
     if hasLaunchedBefore == false && self.title == "Today" {
       let completion: () -> () = {
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
@@ -86,7 +86,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
       let vc = storyboard.instantiateInitialViewController() as! WhatsNewVC
       vc.modalPresentationStyle = .popover
       vc.completion = {
-        UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.whatsNew140.rawValue)
+        UserDefaults.standard.set(true, forKey: Constants.DefaultKeys.whatsNew150.rawValue)
         self.removeBlurEffect()
       }
       let popover = vc.popoverPresentationController!
