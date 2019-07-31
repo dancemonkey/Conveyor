@@ -438,7 +438,7 @@ extension ItemListVC {
     if self.addingItem == false {
       let _ = entryField.becomeFirstResponder()
       editingExistingItem = item
-      var customColorTag = ""
+      var customColorTag: String? = nil
       if let color = item.colorTag {
         if let customTags = Settings.getUserColors {
           customColorTag = customTags[String(color.dropFirst())] ?? ""
@@ -447,7 +447,7 @@ extension ItemListVC {
       let text = (item.title ?? "") +
         (item.repeating == true ? " \(Constants.TextParseKeywords.repeatTask.rawValue)" : "") +
         (item.priority == true ? " \(Constants.TextParseKeywords.priority.rawValue)" : "") +
-        " @\(customColorTag)"
+        (customColorTag != nil ? " @\(customColorTag!)" : "")
       entryField.text = text
       entryField.selectAll(nil)
     }
