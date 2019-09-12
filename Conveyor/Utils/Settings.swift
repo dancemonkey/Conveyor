@@ -100,7 +100,11 @@ struct Settings {
   
   static var darkModeActive: Bool {
     get {
-      return self.defaults.bool(forKey: Constants.DefaultKeys.darkModeActive.rawValue)
+      if #available(iOS 13, *) {
+        return false
+      } else {
+        return self.defaults.bool(forKey: Constants.DefaultKeys.darkModeActive.rawValue)
+      }
     }
   }
   

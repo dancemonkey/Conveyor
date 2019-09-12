@@ -20,7 +20,7 @@ class AlertFactory {
   }
   
   static func badgeAuthNotification(completion: @escaping () -> ()) -> UIAlertController {
-    let controller = UIAlertController(title: "Badge Authorization", message: "We're asking for Notifications acccess so you can have badge on the app icon showing incomplete Today list items. You can change your mind later from iOS Settings.", preferredStyle: .alert)
+    let controller = UIAlertController(title: "Badge Authorization", message: "We're asking for Notifications access so you can have badge on the app icon showing incomplete Today list items. You can change your mind later from iOS Settings.", preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default) { (action) in
       completion()
     }

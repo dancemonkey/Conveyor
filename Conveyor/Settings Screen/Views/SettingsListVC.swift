@@ -38,7 +38,15 @@ class SettingsListVC: UIViewController {
     generalOptions = []
     infoOptions = []
     Settings.GeneralSettingsOptions.allCases.forEach { (option) in
-      generalOptions?.append(option)
+      if option == .darkMode {
+        if #available(iOS 13, *) {
+          return
+        } else {
+          generalOptions?.append(option)
+        }
+      } else {
+        generalOptions?.append(option)
+      }
     }
     Settings.InfoSettingsOptions.allCases.forEach { (option) in
       infoOptions?.append(option)
@@ -78,7 +86,7 @@ extension SettingsListVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      return Settings.GeneralSettingsOptions.allCases.count
+      return generalOptions?.count ?? 0
     case 1:
       return Settings.InfoSettingsOptions.allCases.count
     default:
