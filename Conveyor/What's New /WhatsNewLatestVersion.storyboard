@@ -26,20 +26,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Custom Tag Colors!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-9n-ccA" userLabel="Custom Tag Colors!">
-                                        <rect key="frame" x="64" y="57.5" width="156.5" height="20.5"/>
+                                        <rect key="frame" x="64" y="52" width="156.5" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8U-fb-NpD">
-                                        <rect key="frame" x="6.5" y="104" width="271.5" height="130.5"/>
-                                        <string key="text">You can now define custom "@"-tags for each color available in the app. For instance, associate the color green with the tag "@money" or red with "@lava" (because why not?).</string>
+                                        <rect key="frame" x="0.0" y="93" width="284" height="86.5"/>
+                                        <string key="text">Conveyor now supports Dark Mode in iOS 13! Don't worry, we've kept the dark mode toggle option in settings for iOS 12 and earlier devices.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just look under &quot;Color Tag Options&quot; in Settings." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-T4-JJN">
-                                        <rect key="frame" x="3" y="260.5" width="278.5" height="42.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-T4-JJN">
+                                        <rect key="frame" x="2.5" y="200" width="279.5" height="108.5"/>
+                                        <string key="text">We've unfortunately had to temporarily remove iOS 11 support, due to an Apple framework bug that causes crashing. It will be restored shortly.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
