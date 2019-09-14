@@ -24,8 +24,12 @@ class TabController: UITabBarController {
   }
   
   @objc func setTabColor() {
-    UITabBar.appearance().barTintColor = Settings.darkModeActive ? UIColor.black : ColorStyles.textColor
-    
+    // is iOS 13, use named color with dark mode option
+    if #available(iOS 13, *) {
+      UITabBar.appearance().barTintColor = UIColor(named: "tabBarColor")!
+    } else {
+      UITabBar.appearance().barTintColor = Settings.darkModeActive ? UIColor.black : ColorStyles.textColor
+    }
   }
   
 }

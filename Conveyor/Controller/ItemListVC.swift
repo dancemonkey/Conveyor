@@ -169,7 +169,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
     case "Tomorrow":
       return DateStyles.headingDate.string(from: DateStyles.getTomorrow(from: Date()))
     case "Later":
-      return DateStyles.headingDate.string(from: DateStyles.getLater()) + "..."
+      return DateStyles.headingDate.string(from: DateStyles.getLater()) + " ..."
     default:
       return "where are we?"
     }
@@ -183,7 +183,7 @@ class ItemListVC: UIViewController, ItemAdder, ItemDisplayer, Toastable, UIPopov
     case "Tomorrow":
       titleLabel?.text = DateStyles.headingDate.string(from: DateStyles.getTomorrow(from: Date()))
     case "Later":
-      titleLabel?.text = DateStyles.headingDate.string(from: DateStyles.getLater()) + " and beyond"
+      titleLabel?.text = DateStyles.headingDate.string(from: DateStyles.getLater()) + " ..."
     default:
       titleLabel?.text = "where are we?"
     }
